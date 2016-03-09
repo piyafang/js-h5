@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script>
+$.fn.cd=function(y,m,d){
+	this.each(function(index,element){
+		var obj = $(this);
+		var oTarget = new Date();
+		oTarget.setFullYear(y,m,d);
+		oTarget.setHours(0,0,0,0);
+		function countDown(){
+			var oDate = new Date();
+			var s = parseInt((oTarget.getTime()-oDate.getTime())/1000);
+			var d = parseInt(s/86400);
+			s%=86400;
+			var h = parseInt(s/3600);
+			s%=3600;
+			var m = parseInt(s/60);
+			s%=60;
+			obj.html(d+'天 '+h+'时'+m+'分'+s+'秒');
+		}
+		countDown();
+		setInterval(countDown,1000);
+	});
+}
+$(function(){
+	$('.countDown1').cd(2015,9,1);
+	$('.countDown2').cd(2016,9,1);
+	$('.countDown3').cd(2020,0,1);
+});
+</script>
+</head>
+
+<body>
+<div class="countDown1"></div>
+<div class="countDown2"></div>
+<div class="countDown3"></div>
+</body>
+</html>
+
+
+
+
+
+
+

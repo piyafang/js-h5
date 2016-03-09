@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black;}
+#c1 {background:white;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	//createLinearGradient(x1, y1, x2, y2)
+	var grad=gd.createLinearGradient(100, 100, 100, 400);
+	grad.addColorStop(0.5, 'red');
+	grad.addColorStop(0.5, 'green');
+	
+	gd.fillStyle=grad;
+	gd.fillRect(100, 100, 400, 300);
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+

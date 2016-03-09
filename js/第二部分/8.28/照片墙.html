@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="move.js"></script>
+<style>
+	*{ marin:0;padding:0; list-style:none;}
+	ul{ overflow:hidden; width:636px; margin:50px auto;}
+	li{ float:left; width:200px; border:1px solid #ccc; margin-right:10px;}
+	img{ width:100%;}
+	li.on{border:1px dashed #ccc;}
+</style>
+<script>
+	window.onload=function(){
+		var oBtn = document.getElementById('btn1');
+		var oPhotoWall=document.getElementById('photoWall');
+		var aLi=oPhotoWall.children;
+		var aPos=[];
+		var zIndex=20;
+
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].index=i;
+			aPos.push({left:aLi[i].offsetLeft,top:aLi[i].offsetTop});
+		}
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].style.position='absolute';	
+			aLi[i].style.left=aPos[i].left+'px';	
+			aLi[i].style.top=aPos[i].top+'px';	
+			aLi[i].style.margin=0;	
+		}
+		for(var i=0;i<aLi.length;i++){
+			drag(aLi[i]);
+			aLi[i].index=i;
+		}
+
+		oBtn.onclick=function(){
+			aPos.sort(function(){
+				return Math.random()-0.5;
+			});
+			for(var i=0;i<aLi.length;i++){
+				/*aLi[i].style.left=aPos[i].left+'px';
+				aLi[i].style.top=aPos[i].top+'px';*/
+				startMove(aLi[i],aPos[i]);
+			}
+		};
+		
+		
+		function drag(obj){
+			obj.onmousedown=function(ev){
+				var oEv=ev||event;
+				var oldL=obj.offsetLeft;
+				var oldT=obj.offsetTop;
+				var disX=oEv.clientX-obj.offsetLeft;
+				var disY=oEv.clientY-obj.offsetTop;
+				obj.style.zIndex=zIndex++;
+				document.onmousemove=function(ev){
+					var oEv=ev||event;
+					obj.style.left=oEv.clientX-disX+'px';	
+					obj.style.top=oEv.clientY-disY+'px';
+
+					var oNear=findNearest(obj);
+					if(oNear){
+						for(var i=0;i<aLi.length;i++){
+							aLi[i].className='';
+						}
+						oNear.className='on';
+					}
+				};	
+				document.onmouseup=function(){
+					for(var i=0;i<aLi.length;i++){
+					findNearest(obj,aLi[i]);}
+					document.onmousemove=null;
+					document.onmouseup=null;
+					obj.releaseCapture&&obj.releaseCapture();
+					var oNear=findNearest(obj);
+					if(oNear){
+						oNear.className='';
+						// obj.style.left=aPos[oNear.index].left+'px';
+						// obj.style.top=aPos[oNear.index].top+'px';
+						// oNear.style.left=aPos[obj.index].left+'px';
+						// oNear.style.top=aPos[obj.index].top+'px';
+						startMove(obj,aPos[oNear.index]);
+						startMove(oNear,aPos[obj.index]);
+						var cur;
+						cur=obj.index;
+						obj.index=oNear.index;
+						oNear.index=cur;
+					}else{
+						// obj.style.left=aPos[obj.index].left+'px';
+						// obj.style.top=aPos[obj.index].top+'px';
+						startMove(obj,aPos[obj.index]);
+					}
+				};
+				obj.setCapture&&obj.setCapture();
+				return false;
+			};	
+		}
+		function findNearest(obj){
+			var iMin=99999;
+			var iMinIndex=-1;
+			for(var i=0;i<aLi.length;i++){
+				if(obj==aLi[i])continue;
+				if(collTest(obj,aLi[i])){
+					var d=getDis(obj,aLi[i]);
+					if(d<iMin)
+						iMin=d;
+						iMinIndex=i;
+				}else{
+					aLi[i].className='';
+				}
+			}
+			if(iMinIndex==-1){
+				return null;
+			}else{
+				return aLi[iMinIndex];
+			}
+		}
+		function getDis(obj1,obj2){
+			var a=obj1.offsetLeft-obj2.offsetLeft;
+			var b=obj1.offsetTop-obj2.offsetTop;
+			return Math.sqrt(Math.pow(a,2)+Math.pow(b,2));
+		}
+
+		function collTest(obj,obj2){
+			var l1=obj.offsetLeft;
+			var t1=obj.offsetTop;
+			var r1=obj.offsetLeft+obj.offsetWidth;
+			var b1=obj.offsetTop+obj.offsetHeight;
+			var l2=obj2.offsetLeft;
+			var t2=obj2.offsetTop;
+			var r2=obj2.offsetLeft+obj2.offsetWidth;
+			var b2=obj2.offsetTop+obj2.offsetHeight;
+			if(r1<l2||b1<t2||l1>r2||t1>b2){
+				return false;
+			}else{
+				return true;	
+			}
+		}
+
+	};
+</script>
+</head>
+
+<body>
+	<input type="button" value="随机换一换" id="btn1" />
+	<ul id="photoWall">
+		<li><img src="img/1.jpg" /></li>
+		<li><img src="img/2.jpg" /></li>
+		<li><img src="img/3.jpg" /></li>
+		<li><img src="img/4.jpg" /></li>
+		<li><img src="img/5.jpg" /></li>
+		<li><img src="img/1.jpg" /></li>
+		<li><img src="img/2.jpg" /></li>
+		<li><img src="img/3.jpg" /></li>
+		<li><img src="img/4.jpg" /></li>
+	</ul>
+	
+	
+</body>
+</html>

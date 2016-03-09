@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	#box{width:900px; height:50px;background:#ccc;margin:100px auto;}
+	#bar{ height:100%; background:#93F; width:0;}
+</style>
+<script>
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var oBar=document.getElementById('bar');
+		var oS=oBox.getElementsByTagName('span')[0];
+		
+		var count=0;
+		
+		for(var i=0;i<77;i++){
+			var timer=null;
+			var oImg=new Image();
+			oImg.src='img2/'+i+'.jpg';
+		}		
+		timer=setInterval(function(){				
+					count++;
+					var scale=count/77;
+					if(scale==1){
+						clearInterval(timer);
+					}
+					oBar.style.width=scale*100+'%';	
+					oS.innerHTML='正在加载'+(scale*100).toFixed()+'%';
+
+					if(scale*100==100){
+						oS.innerHTML='加载完毕';
+						setTimeout(function(){
+							oBox.style.display='none';
+						},1000);
+					}
+										
+				},100);
+				
+	};
+</script>
+</head>
+
+<body>
+	<div id="box">
+		<div id="bar"></div>
+		<span>正在加载00.00%</span>
+	</div>
+</body>
+</html>

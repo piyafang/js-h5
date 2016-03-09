@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*头部菜单*/
+.showAuto{width: 930px; margin: 0 auto;}
+a{color: #8C8C8C;}
+
+.head_t_bg{ height: 36px; border-bottom: 1px solid #dfdfdf;
+			 background:#fafafa;}
+.head_t{ height: 24px; color: #8C8C8C; font-size: 12px; 
+		padding-top: 12px;}
+.head_t_l{ float: left;}
+.head_t_r{ float: right;}
+.head_t_l li{ float: left;}
+.head_t_r a{ float:  left;  }
+.head_t a:hover{ color:#FF4A00;}
+
+.head_t_l li span{ line-height: 12px; padding-left: 12px; 
+	padding-right: 16px; }
+.head_t_r span{ float:left;line-height: 12px; padding-left: 16px; 
+	padding-right: 15px; }
+
+/*头部log+search*/
+.head_b{ height: 110px;}
+.head_b h1{ float: left; background: url(../img/log.png) no-repeat;
+ width: 70px; height: 70px; margin-top: 25px; text-indent: -999em;}
+.head_b_r{ float: right; position: relative; height: 110px;}
+.alarm{ width: 144px; height: 16px; 
+	padding-bottom: 16px; position: absolute;right:0; top:23px;}
+.alarm i{float: left; display:inline-block; background: url(../img/mi_ico.png)  no-repeat -66px 0;
+ 		width: 15px; height: 16px; margin-right: 6px;}
+.alarm	a{float: left; display:inline-block; line-height: 16px;}
+.alarm:hover i{ background-position: -90px 0;}
+.alarm:hover a{ color: #FF4A00;}	
+
+.search{ position: absolute; right:0; top:55px; width: 560px; }
+.search_l{ float: left; width: 407px; height: 38px;  background: #fff;
+			border: 1px solid #dfdfdf; padding-left: 15px;margin-right: 10px;
+			position: relative;}
+.search_l input{line-height: 38px;}
+.search_l p{ width: 26px; height: 26px; border-left: 1px solid #dfdfdf;
+			 position: absolute;right:0; top:0; padding-left: 12px;
+			 padding-top: 12px;}
+.search_l p a{ display:block; background: url(../img/mi_ico.png)  no-repeat; width: 14px;
+				height: 14px;}
+.search_l p:hover { background: #FF4A00;}
+.search_l p:hover a{ background-position: -21px 0;}				
+.search_l  div{ position: absolute;right:49px; top:9px; line-height: 20px;}
+.search_l  div a{ padding-left: 3px; padding-right: 3px; background: #f3f3f3;
+font-size: 12px; height: 20px; display: inline-block;}
+.search_l  div a:hover { color: #FF4A00;}
+
+
+.buycar{ float: left; width: 126px; height: 40px;
+		 text-align: center;position: relative; z-index: 2;}
+.buycar .choose{ width: 124px; height: 38px;border: 1px solid #FFDB3D;
+			background: #FFDB3D;line-height:38px;}
+.buycar a{ color: #333; font-size: 14px; margin-left: 4px;}
+.buycar i{ display: inline-block; background: url(../img/mi_ico.png)  no-repeat 
+			-43px 0; width: 13px; height: 12px;}
+.buycar p{ font-size: 14px; color: #ccc; width: 300px; height: 100px;
+			 position: absolute;right:0; top:61px; line-height:100px;
+			  border: 1px solid #FF4A00; z-index:-1; display: none;}
+
+.buycar:hover .choose{ background: #fff;border: 1px solid #FF4A00;
+				height: 61px; border-bottom: none; }
+.buycar:hover i{ background-position:-111px 0;}
+.buycar:hover a{ color:#FF4A00; }
+.buycar:hover p{ display: block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

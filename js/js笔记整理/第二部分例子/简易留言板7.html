@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oTxt1 = document.getElementById('txt1');
+	var oBtn1 = document.getElementById('btn1');
+	var oUl = document.getElementById('ul1');
+	//获取页面最初所有的写死的a
+	var aRemove = oUl.getElementsByTagName('a');
+	//给每个a加一个点击事件，删除
+	for(var i=0;i<aRemove.length;i++){
+		aRemove[i].onclick=function(){
+			oUl.removeChild(this.parentNode);
+		};
+	}
+	//点击按钮一次就添加一条留言
+	oBtn1.onclick=function(){
+		//判断用户是否输入，如果没输入return
+		if(oTxt1.value=='')return;
+		//创建一个li
+		var oLi = document.createElement('li');
+		//给li设置文字内容
+		oLi.innerHTML=oTxt1.value;
+		//创建删除按钮
+		var oA = document.createElement('a');
+		oA.href='javascript:;';
+		oA.innerHTML='删除';
+		//给删除按钮加点击事件
+		oA.onclick=function(){
+			oUl.removeChild(this.parentNode);
+		};
+		//把删除按钮加到li里面去
+		oLi.appendChild(oA);
+		//把li插入到ul里面去
+		if(oUl.children.length){
+			oUl.insertBefore(oLi,oUl.children[0]);
+		}else{
+			oUl.appendChild(oLi);
+		}
+		//把文本框清空
+		oTxt1.value='';
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" id="txt1" />
+<input type="button" value="留言" id="btn1" />
+<ul id="ul1">
+	<li>第一条留言<a href="javascript:;">删除</a></li>
+	<li>第2条留言<a href="javascript:;">删除</a></li>
+	<li>第3条留言<a href="javascript:;">删除</a></li>
+	<li>第4条留言<a href="javascript:;">删除</a></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+

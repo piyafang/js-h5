@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+.wrap{
+	width:500px;
+	height:290px;
+}
+.left{
+	width:300px;
+	height:290px;
+	background:#999;
+	float:left;
+	margin-right:10px;
+}
+.right{
+	width:190px;
+	height:200px;
+	float:left;
+}
+
+.green , .blue{
+	width:190px;
+	height:140px;
+}
+.green{
+	background:#99ff00;
+	margin-bottom:10px;
+}
+.blue{
+	background:#0099ff;
+}

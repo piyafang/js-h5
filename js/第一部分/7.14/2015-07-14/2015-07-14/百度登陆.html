@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#shadow{position:fixed; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.3; filter:alpha(opacity:30); display:none;}
+#login_box{width:300px; height:300px; background:#666; position:absolute; top:50%; left:50%; margin-top:-150px; margin-left:-150px; display:none;}
+#login_box span{font-size:50px; position:absolute; top:0; right:0; color:#fff; cursor:pointer;}
+</style>
+<script>
+function toShow(){
+	var oShadow = document.getElementById('shadow');
+	var oLogin = document.getElementById('login_box');
+	oShadow.style.display='block';
+	oLogin.style.display='block';
+	
+}
+function toHide(){
+	var oShadow = document.getElementById('shadow');
+	var oLogin = document.getElementById('login_box');
+	oShadow.style.display='none';
+	oLogin.style.display='none';
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="登录" onclick="toShow()" />
+<div id="shadow"></div>
+<div id="login_box">
+	<span onclick="toHide()">×</span>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

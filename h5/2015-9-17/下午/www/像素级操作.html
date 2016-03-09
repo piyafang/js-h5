@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black; text-align:center;}
+#c1 {background:white;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	var oImg=new Image();
+	
+	oImg.src='game_bg_2_hd.jpg';
+	
+	oImg.onload=function ()
+	{
+		gd.drawImage(oImg, 0, 0);
+		
+		//像素级操作
+		//获取一块像素区域——(x, y, w, h)
+		var imgData=gd.getImageData(0,0,oC.width,oC.height);
+		var arr=imgData.data;
+		
+		//alert(imgData.data.length);
+		
+		//x, y这个像素
+		//arr[(y*w+x)*4]
+		//arr[3]=0.6;
+		
+		//alert(arr[3]);
+	};
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>

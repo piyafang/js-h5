@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:150px; height:150px; background:#CCC;}
+#div2 {margin-top:50px;}
+
+#div3 {width:150px; height:150px; background:#CCC; overflow:hidden;}
+#div4 {margin-top:50px;}
+</style>
+</head>
+
+<body>
+<h1>这不是一个兼容问题：</h1>
+子级加了margin，他自己没反应，反而父级有了margin
+<div id="div1">
+	<div id="div2">aaa</div>
+</div>
+<br>
+<br>
+解决方法：<br>
+父级加overflow:hidden
+<div id="div3">
+	<div id="div4">aaa</div>
+</div>
+</body>
+</html>

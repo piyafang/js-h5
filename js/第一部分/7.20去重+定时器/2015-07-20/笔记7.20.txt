@@ -1,0 +1,222 @@
+笔记
+==============================
+javascript 		干什么的
+修改css样式和修改属性
+
+修改样式
+.style 			修改行间样式
+.className 		操作class
+
+
+操作属性的
+. 	简单，操作已有的属性
+[]	灵活，点能做的，方括号都能做。里面放的是字符串，可以放变量。
+
+函数:
+两个阶段
+声明	只是告诉浏览器有这个函数，但是不会执行
+function 函数名(){
+}
+调用 	真正执行里面的代码
+函数名();
+
+获取元素
+document.getElementById(id)		通过id获取一个元素
+obj.getElementsByTagName(tname) 通过标签名获取一组元素
+
+变量
+相当于一个别名。当名字出现的地方，就相当于值本身出现一样。
+var 变量名;
+
+请写出流程控制语句？
+if..else..
+
+switch
+
+if有简写。
+if(条件){
+	语句1
+}
+条件&&语句1
+
+if(条件){
+	语句1
+}else{
+	语句2
+}
+条件?语句1:语句2;
+
+循环		只要遇到一组就用循环。
+循环四部分：初始化，条件，自增，语句
+while(条件){
+	语句
+}
+for(初始值;条件;自增){
+	语句
+}	
+
+typeof 		检测数据类型
+常见的数据类型有哪些？
+string 		字符串
+number 	数字
+boolean 	布尔
+object 		对象
+undefined 	未定义
+function	函数
+
+undefined 	出现的情况？
+1.变量声明但是没有赋值
+2.使用了一个没有的属性
+3.使用了没有传参的参数
+
+null 		object	空对象 	出现的情况？
+1.document.getElementById() 	没有获取到
+
+数据类型转换
+parseInt 	转整数 			'12.5px' 	12
+parseFloat 	转小数 			'12.5px' 	12.5
+Number 	转数字，更严格 	'12.5px' 	NaN
+
+NaN 		not a number
+		不是一个数字
+是number类型
+
+NaN跟任何东西都不想等包括它自己。
+检测NaN
+isNaN();	如果是NaN就是true，否则是false
+
+什么是真
+true 	非空对象 	非0数字	非空字符串
+什么是假
+false 	0 	'' 	null 	undefined 	NaN
+
+获取非行间样式
+obj.currentStyle.样式名
+getComputedStyle(obj,false).样式名
+
+if(obj.currentStyle){
+}else{
+}
+
+
+带加减的数字框
+
+计算任意个文本框的和
+
+
+eval(str) 	把字符串变成可执行的语句
+eval() 		特别强大，尽量不要使用。
+太强大了，太危险了。
+注入攻击
+
+作用域:		起作用的范围。
+全局变量：在函数外声明.	在哪都可以使用。
+局部变量：在函数中声明. 	在声明它的函数内可以使用
+闭包：		子函数可以使用父函数的变量
+
+特性
+同名：
+
+匈牙利命名法: 	前面有类型前缀后面跟单词首字母大写
+必须要遵守
+o 	object  	oBtn		一个对象
+a 	array 		aBtn 		多个东西
+
+可以遵守
+i 	int 		iNum 		整数
+s 	string 		sName 	字符串
+b 	boolean 	bOk 		布尔值
+
+不用管
+fn 	function 	fnShow 	函数
+f 	float 小数 	fHeight 	小数
+re 	RegExp	reTest		正则
+V 			VCount 	变体变量
+
+function show(){}
+window.onload=function(){};
+
+
+所有的大括号结尾都不加分号。
+例外：事件函数时,要加分号
+分号不是给函数加的，是给赋值加的。
+
+var a = 12;
+var str = 'abc';
+var bOk = true;
+window.onload=function(){};
+
+函数：
+function 函数名(){
+	语句
+	return
+}
+return 	返回值;
+特性：
+1.后面的代码不会执行
+2.写return，但是没有写值，会返回undefined
+3.没写return，返回undefined
+
+作用:
+return可以阻断后面的程序执行。
+封装
+return可以返回任何东西。
+
+return 		返回		只能在函数中使用。
+break 		跳出 		
+	跳出循环。
+continue 	继续 		
+	跳出本次循环，进行下一次循环
+
+彩票
+6个球 		1-33的随机数 		不重复
+
+
+给数组加东西
+arr.push(); 		
+
+骰子 	笔
+
+1	2	3
+3 	 	
+
+先在数组中找有没有这个数字，如果没有就插入
+
+定时器
+打开一个定时器
+setInterval(函数,时间);			时间：ms  毫秒
+					1s=1000ms
+每隔一会就执行一次。	连续执行
+
+关闭一个定时器
+clearInterval();
+*写定时器：一定要先清后开
+
+setTimeout(函数,时间) 			ms
+
+
+定时器：
+setInterval(函数,时间)		连续执行
+clearInterval()
+setTimeout(函数,时间) 		只执行一次
+clearTimeout()
+
+
+听能听懂，写不出来。
+欠练
+
+=================================
+上课代码一遍。
+不会的多写几遍。
+长期作业360
+
+
+
+
+
+
+
+
+
+
+

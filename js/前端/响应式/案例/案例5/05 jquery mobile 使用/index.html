@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.2.min.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="page0">
+		<div data-role="header">
+			<a href="#" data-icon="back" data-iconpos="notext">返回</a>
+			<h1>我的网站</h1>
+			<a href="#" data-icon="heart">收藏</a>
+		</div>
+		<div data-role="content">
+			<a href="#page1" data-transition="flip">歌手</a>
+			<a href="other.html" rel="external">注册</a>
+			<a href="#page2" data-rel="dialog">购买</a>
+			<a href="#page3" data-rel="dialog">关机</a>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h4>页面底部</h4>
+		</div>
+	</div>
+	<div data-role="page" id="page1">
+		<div data-role="header">
+			<h1>喜欢的歌手</h1>
+		</div>
+		<div data-role="content">
+			刘德华
+			<a href="#page0" data-transition="slidedown">首页</a>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h4>订票</h4>
+		</div>
+	</div>
+
+	<div data-role="page" id="page2">
+		<div data-role="header">
+			<h1>您要购票吗?</h1>
+		</div>
+		<div data-role="content">
+			确定  返回
+		</div>
+	
+	</div>
+	<div data-role="page" id="page3">
+		
+		<div data-role="content">
+			<a href="#" data-role="button">关机</a>
+			<a href="#" data-role="button">重启</a>
+			<a href="#" data-role="button">待机</a>
+			<a href="#" data-role="button">震动</a>
+		</div>
+	
+	</div>
+
+</body>
+</html>

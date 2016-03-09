@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+window.onload=function ()
+{
+	var oV=document.getElementById('v1');
+	var oBtn1=document.getElementById('btn1');
+	var oBtn2=document.getElementById('btn2');
+	var oBtn3=document.getElementById('btn3');
+	
+	//播放
+	oBtn1.onclick=function ()
+	{
+		oV.play();
+	};
+	
+	//停止——停下+回到头
+	oBtn2.onclick=function ()
+	{
+		//没有stop
+		//oV.stop();
+		
+		//自己模拟
+		oV.pause();
+		oV.currentTime=0;
+	};
+	
+	//暂停
+	oBtn3.onclick=function ()
+	{
+		oV.pause();
+	};
+	
+	/*
+	setInterval(function (){
+		document.title=oV.currentTime;
+	}, 30);
+	*/
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="播放" id="btn1" />
+<input type="button" value="停止" id="btn2" />
+<input type="button" value="暂停" id="btn3" />
+<video src="aaa.mp4" id="v1">
+</video>
+</body>
+</html>
+
+
+
+
+
+

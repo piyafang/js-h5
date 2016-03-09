@@ -1,0 +1,7 @@
+/*清除默认样式*/
+body, div, p, h1, h2, h3, h4, h5, h6, ul, li, ol, dl, dt, dd, span, strong, i, b, em, img, a{ margin:0; padding:0; }
+li{ list-style:none; }
+a{ text-decoration:none; }
+.clearFix:after{ content:''; clear:both; display:block; }
+/*清除默认样式*/
+body{ padding-bottom:1000px; }

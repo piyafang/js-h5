@@ -1,0 +1,135 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>超酷数码钟表 - 智能社 - www.zhinengshe.com</title>
+<link href="style/zns_style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    #clock img,#clock  div{ float: left;}
+</style>
+<script type="text/javascript">
+function toDou(iNum){
+        return iNum<10?'0'+iNum:''+iNum;
+    }
+    window.onload=function(){
+        var oYear=document.getElementById('year');
+        var aYearimg=oYear.getElementsByTagName('img');
+        var oTime=document.getElementById('time');
+
+        var oHoursbox=document.getElementById('hoursbox');
+        var aHoursimg=oHoursbox.getElementsByTagName('img');
+        var oMinutesbox=document.getElementById('minutesbox');
+        var aMinutesimg=oMinutesbox.getElementsByTagName('img');
+        var oSecondsbox=document.getElementById('secondsbox');
+        var aSecondsimg=oSecondsbox.getElementsByTagName('img');
+minutesbox
+secondsbox
+
+
+
+       function tick1(){
+            var oDate=new Date();
+            var h=oDate.getHours();
+            var m=oDate.getMinutes();
+            var s=oDate.getSeconds();
+            var str1=toDou(h);
+            var str2=toDou(m);
+            var str3=toDou(s);
+            for(var i=0;i<aHoursimg.length;i++){
+                aHoursimg[i].src='images/'+str1.charAt(i)+'.png';
+            }
+            for(var i=0;i<aMinutesimg.length;i++){
+                aMinutesimg[i].src='images/'+str2.charAt(i)+'.png';
+            }
+            for(var i=0;i<aSecondsimg.length;i++){
+                aSecondsimg[i].src='images/'+str3.charAt(i)+'.png';
+            }
+            
+        }
+        tick1();
+        setInterval(tick1,1000); 
+
+        var oYearbox=document.getElementById('yearbox');
+        var aYearsimg=oYearbox.getElementsByTagName('img');
+        var oMonthbox=document.getElementById('monthbox');
+        var aMonthimg=oMonthbox.getElementsByTagName('img');
+        var oDaybox=document.getElementById('daybox');
+        var aDayimg=oDaybox.getElementsByTagName('img');
+
+         function tick2(){
+            var oDate=new Date();
+            var Y=oDate.getFullYear();
+            var M=oDate.getMonth()+1;
+            var D=oDate.getDate();
+            var str4=toDou(Y);
+            var str5=toDou(M);
+            var str6=toDou(D);
+            for(var i=0;i<aYearsimg.length;i++){
+                aYearsimg[i].src='images/'+str4.charAt(i)+'.png';
+            }
+            for(var i=0;i<aMonthimg.length;i++){
+                aMonthimg[i].src='images/'+str5.charAt(i)+'.png';
+            }
+            for(var i=0;i<aDayimg.length;i++){
+                aDayimg[i].src='images/'+str6.charAt(i)+'.png';
+            }
+            
+        }
+         tick2();
+        setInterval(tick2,1000); 
+
+    };
+
+
+</script>
+</head>
+<body>
+
+<div id="clock" class="date">
+    <h2><img src="images/title.png" /></h2>
+    <div class="year" id="year">
+        <div id="yearbox">
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+        </div>
+        <img src="images/year.png" alt="year" />
+        <div id="monthbox">
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+        </div>
+        
+        <img src="images/month.png" alt="month" />
+        <div id="daybox">
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+        </div>
+        
+        <img src="images/seven.png" alt="seven" />
+    </div>
+    <div class="time" id="time">
+        <div id="hoursbox">
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+        </div>
+        <img src="images/sign.png" alt="sign" />
+        <div id="minutesbox">
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+        </div>
+        
+        <img src="images/sign.png" alt="sign" />
+        <div id="secondsbox">
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+        </div>
+        
+        <img class="pos2" src="images/week.png" alt="week" />
+        <img class="num2" src="images/one.png" alt="one" />
+    </div>
+    <div class="url" title="智能社-超酷时钟"><a href="http://www.zhinengshe.com/" target="_blank"><img src="images/zns.png" alt="智能社" /></a></div>
+</div>
+
+</body>
+</html>

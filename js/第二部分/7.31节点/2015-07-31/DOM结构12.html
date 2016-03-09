@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+li{background:#ccc; margin:5px;}
+li#on{background:green;}
+</style>
+<script>
+window.onload=function(){
+	var oOn = document.getElementById('on');
+	//var oNext = oOn.nextSibling||oOn.nextElementSibling;//错的
+	var oNext = oOn.nextElementSibling||oOn.nextSibling;
+	alert(oNext);
+};
+</script>
+</head>
+
+<body>
+<ul>
+	<li>111</li>
+	<li>222</li>
+	<li id="on">333</li>
+	<li>444</li>
+	<li>555</li>
+	<li>666</li>
+	<li>777</li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

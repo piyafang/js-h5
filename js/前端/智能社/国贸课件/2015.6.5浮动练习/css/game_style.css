@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+.active{ width:710px; margin:0 auto;}
+.head{ border-bottom:3px solid #FF7A01;}
+
+/*头部*/
+.tool{ height:30px; line-height:30px;}
+.tool span{ float:left;}
+.tool .r_bg{ background:url(../img/game_bg_r.png) no-repeat; width:30px; height:30px;}
+.tool .c_bg{margin-left:-9px; background:#FF7A01 url(../img/game_mid_bg.png) no-repeat left bottom;}
+.tool .l_bg{width:24px;height:30px;background: url(../img/game_bg.png) no-repeat left bottom;}
+
+
+/*内容*/
+.content{ width:710px; overflow:hidden;}
+.content ul{width:736px; }
+.content li{ float:left; width:308px; height:105px; border:1px solid #d3d3d3; margin-top:12px; padding:8px 24px 7px 8px; margin-right:26px;}
+.content .list{ float:left;}
+.content .brief{ float:right; width:172px; color:#333; font-size:12px;}
+.brief a{ font-size:16px;color:#333;}
+.brief h3{ padding-top:5px; padding-bottom:11px;}
+.brief p{ white-space:nowrap; text-overflow:ellipsis; overflow:hidden; padding-bottom:15px;}
+.brief .short{ padding-bottom:11px;}
+.brief .enter{ color:#fff; background:#5F83CE; width:85px; height:23px; line-height:23px; text-align:center;}

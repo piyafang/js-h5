@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#box{width:200px; height:200px; background:#f90; position:absolute; top:50px; left:0;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var timer =null;
+	var start = 0;//起点
+	var iTarget = 500;//重点
+	var dis = iTarget-start;//总距离
+	var time = 1000;//总时间
+	var count = time/30;  //总次数
+	var n = 0;//当前走了多少次;
+	timer = setInterval(function(){
+		n++;
+		
+		oBox.style.left=n*dis/count+'px';
+		console.log(n+'----'+count);
+		if(n==count){
+			clearInterval(timer);
+		}
+	},30);
+	
+};
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

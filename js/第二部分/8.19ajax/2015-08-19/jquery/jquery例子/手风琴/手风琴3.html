@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+#box{width:500px; height:281px; margin:100px auto; overflow:hidden;}
+ul{position:relative; top:0; left:0;}
+li{width:500px; height:281px; position:absolute; top:0; left:0;}
+li img{width:100%;}
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function(){
+	var aLi = document.getElementsByTagName('li');
+	var oneW = aLi[0].offsetWidth;
+	for(var i=1;i<aLi.length;i++){
+		aLi[i].style.left=oneW-(aLi.length-i)%aLi.length*40+'px';
+	}
+	for(var i=0;i<aLi.length;i++){
+		(function(index){
+			aLi[i].onmouseover=function(){
+				for(var i=0;i<aLi.length;i++){
+					if(i<=index){
+						startMove(aLi[i],{left:i*40});
+					}else{
+						startMove(aLi[i],{left:oneW-(aLi.length-i)*40});
+					}
+				}
+			};
+		})(i);
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul>
+    	<li><img src="img/1.jpg" /></li>
+    	<li><img src="img/2.jpg" /></li>
+    	<li><img src="img/3.jpg" /></li>
+    	<li><img src="img/4.jpg" /></li>
+    	<li><img src="img/5.jpg" /></li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+//1.添加xmlns
+//xmlns:zns="urn:schemas-microsoft-com:vml"
+
+//不行——用普通属性的方式，不行
+//document.documentElement['xmlns:zns']="urn:schemas-microsoft-com:vml";
+//document.documentElement.setAttribute('xmlns:zns', "urn:schemas-microsoft-com:vml");
+
+//只支持IE6-8
+document.namespaces.add('zns', 'urn:schemas-microsoft-com:vml');
+
+
+
+
+
+
+
+
+
+//2.添加style
+</script>
+<style>
+zns\:* {behavior: url(#default#VML); position:absolute;}
+</style>
+</head>
+
+<body>
+<zns:line from="100,100" to="400,300" strokecolor="red" strokeweight="5" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

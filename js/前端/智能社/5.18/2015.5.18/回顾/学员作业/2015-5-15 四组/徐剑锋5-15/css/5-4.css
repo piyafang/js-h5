@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+div{margin-top:10px;
+     margin-right:10px;}
+.top{width:620px;
+    height:60px;
+	background:#3399FF;
+	clear:both;
+	}
+.left{width:200px;
+       height:34px;
+	   background:#999999;
+	   float:left;}
+.black{width:200px;
+       height:34px;
+	   background:#000;
+	   float:left;}
+.right{width:200px;
+       height:34px;
+	   background:#999999;
+	   float:left;}
+

@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-05-17 17:13:00
+ * @version $Id$
+ */
+*{margin:0;padding:0;list-style:none;}
+.box{
+	width:958px;
+	height:600px;
+	border:1px solid #ccc;
+	margin:0 auto;
+}
+.top{
+	width:958px;
+	height:50px;
+	background:#4e9ce9;
+	font-size:16px;
+	line-height:50px;
+	text-align:center;
+
+}
+.center{
+	width:958px;
+	height:500px;
+	font-size:16px;
+	line-height:500px;
+	text-align:center;
+	overflow:hidden;
+
+}
+
+.list1{
+	width:150px;
+	height:500px;
+	float:left;
+	background:#d3e3e6;
+
+}
+.list2{
+	width:600px;
+	height:500px;
+	float:left;
+	background:#fafafa;
+
+
+}
+.list3{
+	width:207px;
+	height:500px;
+	border-left:1px solid #ccc;
+	float:left;
+	background:#fafafa;
+
+
+}
+.bottom{
+	width:958px;
+	height:50px;
+	background:#4e9ce9;
+	font-size:16px;
+	line-height:50px;
+	text-align:center;
+
+}

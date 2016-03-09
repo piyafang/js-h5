@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+.wrap{
+	width:700px;
+	height:408px;
+	
+}
+h4{
+	padding:10px 15px;
+	background:#f60;
+	line-height:20px;
+	font-family:"微软雅黑";
+	color:#fff;
+	width:80px;
+	margin-left:0;
+}
+ul{
+	padding:15px;
+	border:1px solid #eee;
+	border-top:2px solid #f60;
+	overflow:hidden;
+	
+}
+ul li{
+	width:125px;
+	height:180px;
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+ul li p a{
+	color:#333;
+}
+
+ul li p{
+	font-size:14px;
+	font-family:"微软雅黑";
+	text-align:center;
+	margin-bottom:5px;
+}
+ul li p span{
+	color:#f60;
+}
+ul li .buy {
+	width:86px;
+	height:24px;
+	background:#7fbf5b;
+	line-height:24px;
+}
+ul li .buy a{
+	color:#fff;
+
+}
+ul .margin_none{
+	margin-right:0;
+}

@@ -1,0 +1,268 @@
+=====================
+	2015-5-13
+=====================
+回顾
+
+	i em 斜体
+	b strong 加粗
+
+	font-size  字体大小
+	font-family 字体
+		中文  英文  Unicode
+	font-weight:bold/normal;
+	font-style:italic/normal;
+
+	font:bold italic 12px/24px '微软雅黑';
+	字体多个
+		\5b8b\4f53,tahoma,arial,'Hiragino Sans GB',sans-serif
+	&nbsp;
+	选择器
+		标签  class id
+		id>class>标签
+---------------------------------------------------------
+折叠代码
+	ctrl+shift+c
+
+span   空标签
+
+书写规范
+	代码合理缩进
+	标签名必须小写
+	所有符号必须英文
+	img必须有alt
+	属性名与标签名用空格隔开
+	属性与属性之间用空格隔开
+	写完开始标签立即写结束标签
+	单标签要合理闭合
+---------------------------------------------------------
+PS
+	矩形选区工具 c
+	ctrl + c 复制
+	ctrl + n 新建
+	ctrl + v 粘贴
+	ctrl + s 保存
+
+	撤销  ctrl+z   ctrl+alt+z
+DW
+	撤销  ctrl+z
+
+---------------------------------
+ *<标签<class<id
+
+选择器
+	嵌套选择器
+	与文字相关都会继承
+	群组选择器
+	* 通配符
+---------------------------------
+
+HTML标签
+	双标签
+	h1-h6 p div a b strong span i em style 
+
+	单标签
+		br img
+CSS 
+	
+
+=====================
+	2015-5-13
+=====================
+回顾
+
+	i em 斜体
+	b strong 加粗
+
+	font-size  字体大小
+	font-family 字体
+		中文  英文  Unicode
+	font-weight:bold/normal;
+	font-style:italic/normal;
+
+	font:bold italic 12px/24px '微软雅黑';
+	字体多个
+		\5b8b\4f53,tahoma,arial,'Hiragino Sans GB',sans-serif
+	&nbsp;
+	选择器
+		标签  class id
+		id>class>标签
+---------------------------------------------------------
+折叠代码
+	ctrl+shift+c
+
+span   空标签
+
+书写规范
+	代码合理缩进
+	标签名必须小写
+	所有符号必须英文
+	img必须有alt
+	属性名与标签名用空格隔开
+	属性与属性之间用空格隔开
+	写完开始标签立即写结束标签
+	单标签要合理闭合
+---------------------------------------------------------
+PS
+	矩形选区工具 c
+	ctrl + c 复制
+	ctrl + n 新建
+	ctrl + v 粘贴
+	ctrl + s 保存
+
+	撤销  ctrl+z   ctrl+alt+z
+DW
+	撤销  ctrl+z
+
+---------------------------------
+ *<标签<class<id
+
+选择器
+	嵌套选择器
+	与文字相关都会继承
+	群组选择器
+	* 通配符
+---------------------------------
+
+HTML标签
+	双标签
+	h1-h6 p div a b strong span i em style 
+
+	单标签
+		br img
+CSS 
+	
+
+=====================
+	2015-5-13
+=====================
+回顾
+
+	i em 斜体
+	b strong 加粗
+
+	font-size  字体大小
+	font-family 字体
+		中文  英文  Unicode
+	font-weight:bold/normal;
+	font-style:italic/normal;
+
+	font:bold italic 12px/24px '微软雅黑';
+	字体多个
+		\5b8b\4f53,tahoma,arial,'Hiragino Sans GB',sans-serif
+	&nbsp;
+	选择器
+		标签  class id
+		id>class>标签
+---------------------------------------------------------
+折叠代码
+	ctrl+shift+c
+
+span   空标签
+
+书写规范
+	代码合理缩进
+	标签名必须小写
+	所有符号必须英文
+	img必须有alt
+	属性名与标签名用空格隔开
+	属性与属性之间用空格隔开
+	写完开始标签立即写结束标签
+	单标签要合理闭合
+---------------------------------------------------------
+PS
+	矩形选区工具 c
+	ctrl + c 复制
+	ctrl + n 新建
+	ctrl + v 粘贴
+	ctrl + s 保存
+
+	撤销  ctrl+z   ctrl+alt+z
+DW
+	撤销  ctrl+z
+
+---------------------------------
+ *<标签<class<id
+
+选择器
+	嵌套选择器
+	与文字相关都会继承
+	群组选择器
+	* 通配符
+---------------------------------
+
+HTML标签
+	双标签
+	h1-h6 p div a b strong span i em style 
+
+	单标签
+		br img
+CSS 
+	
+=====================
+	2015-5-13
+=====================
+回顾
+
+	i em 斜体
+	b strong 加粗
+
+	font-size  字体大小
+	font-family 字体
+		中文  英文  Unicode
+	font-weight:bold/normal;
+	font-style:italic/normal;
+
+	font:bold italic 12px/24px '微软雅黑';
+	字体多个
+		\5b8b\4f53,tahoma,arial,'Hiragino Sans GB',sans-serif
+	&nbsp;
+	选择器
+		标签  class id
+		id>class>标签
+---------------------------------------------------------
+折叠代码
+	ctrl+shift+c
+
+span   空标签
+
+书写规范
+	代码合理缩进
+	标签名必须小写
+	所有符号必须英文
+	img必须有alt
+	属性名与标签名用空格隔开
+	属性与属性之间用空格隔开
+	写完开始标签立即写结束标签
+	单标签要合理闭合
+---------------------------------------------------------
+PS
+	矩形选区工具 c
+	ctrl + c 复制
+	ctrl + n 新建
+	ctrl + v 粘贴
+	ctrl + s 保存
+
+	撤销  ctrl+z   ctrl+alt+z
+DW
+	撤销  ctrl+z
+
+---------------------------------
+ *<标签<class<id
+
+选择器
+	嵌套选择器
+	与文字相关都会继承
+	群组选择器
+	* 通配符
+---------------------------------
+
+HTML标签
+	双标签
+	h1-h6 p div a b strong span i em style 
+
+	单标签
+		br img
+CSS 
+	
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	div{ width: 100px;height: 100px; background: #99c; border-radius: 50%; position: absolute;left: 0;top: 0;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oDiv=document.getElementsByTagName('div')[0];
+		var bDown=false,bLeft=true,bRight=true,bTop=true,bBottom=true;
+		var iNum=0;
+		var timer=null;
+
+		oDiv.style.left=oDiv.offsetLeft+'px';
+		oDiv.style.top=oDiv.offsetTop+'px';
+		document.onkeydown=function(ev){
+			var oEvent=ev||event;
+			bDown=true;
+			switch(oEvent.keyCode){
+				case 37:
+					if(bLeft){iNum+=1;}
+					bLeft=false;
+				break;
+				case 38:
+					if(bTop){iNum+=2;}
+					bTop=false;
+				break;
+				case 39:
+					if(bRight){iNum+=4;}
+					bRight=false;
+				break;
+				case 40:
+					if(bBottom){iNum+=7;}
+					bBottom=false;
+				break;
+			}
+		};
+
+		document.onkeyup=function(ev){
+			var oEvent=ev||event;
+			if(bLeft==true&&bRight==true&&bTop==true&&bBottom==true){
+				bDown=false;
+			}
+			switch(oEvent.keyCode){
+				case 37:
+					iNum-=1;
+					bLeft=true;
+				break;
+				case 38:
+					iNum-=2;
+					bTop=true;
+				break;
+				case 39:
+					iNum-=4;
+					bRight=true;
+				break;
+				case 40:
+					iNum-=7;
+					bBottom=true;
+				break;
+			}
+		};
+		
+		clearInterval(timer);
+		timer=setInterval(function(){
+			if(bDown){
+				switch(iNum){
+					case 1:
+						oDiv.style.left=oDiv.offsetLeft-10+'px';
+					break;
+					case 2:
+						oDiv.style.top=oDiv.offsetTop-10+'px';
+					break;
+					case 4:
+						oDiv.style.left=oDiv.offsetLeft+10+'px';
+					break;
+					case 7:
+						oDiv.style.top=oDiv.offsetTop+10+'px';
+					break;
+					case 3:
+						oDiv.style.left=oDiv.offsetLeft-10+'px';
+						oDiv.style.top=oDiv.offsetTop-10+'px';
+					break;
+					case 6:
+						oDiv.style.left=oDiv.offsetLeft+10+'px';
+						oDiv.style.top=oDiv.offsetTop-10+'px';
+					break;
+					case 8:
+						oDiv.style.left=oDiv.offsetLeft-10+'px';
+						oDiv.style.top=oDiv.offsetTop+10+'px';
+					break;
+					case 11:
+						oDiv.style.left=oDiv.offsetLeft+10+'px';
+						oDiv.style.top=oDiv.offsetTop+10+'px';
+					break;
+				}
+			}
+		},30);
+	};
+</script>
+</head>
+<body>
+	
+	<div></div>
+
+</body>
+</html>
+

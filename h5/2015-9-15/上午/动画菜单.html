@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+
+#div1 {width:700px; height:30px; background:#555; margin:10px auto;}
+#div1 ul li {width:100px; height:30px; float:left; text-align:center; line-height:30px; color:white; position:relative; top:-30px;}
+#div1 li.box {cursor:pointer; top:0;}
+#div1 li.box div {width:30px; height:4px; background:white; position:absolute; left:50%; top:50%; margin-left:-15px; margin-top:-2px;}
+#div1 li.box div.div1 {margin-top:-10px;}
+#div1 li.box div.div3 {margin-top:6px;}
+#div1 li.box:active .div1 {-webkit-animation:0.3s linear fork1 forwards;}
+#div1 li.box:active .div2 {-webkit-animation:0.3s linear fork2 forwards;}
+#div1:active .div3 {-webkit-animation:0.3s linear fork3 forwards;}
+#div1:active li {-webkit-animation:0.3s linear li_ani forwards;}
+
+#div1:active li.li1 {-webkit-animation-delay:0.1s;}
+#div1:active li.li2 {-webkit-animation-delay:0.3s;}
+#div1:active li.li3 {-webkit-animation-delay:0.5s;}
+#div1:active li.li4 {-webkit-animation-delay:0.2s;}
+#div1:active li.li5 {-webkit-animation-delay:0.3s;}
+#div1:active li.li6 {-webkit-animation-delay:0.1s;}
+
+@-webkit-keyframes fork1
+{
+	to {margin-top:-2px; -webkit-transform:rotate(45deg); background:#09F;}
+}
+@-webkit-keyframes fork2
+{
+	to {opacity:0}
+}
+@-webkit-keyframes fork3
+{
+	to {margin-top:-2px; -webkit-transform:rotate(-45deg); background:#09F;}
+}
+
+@-webkit-keyframes li_ani
+{
+	to {top: 0}
+}
+</style>
+</head>
+
+<body>
+<div id="div1">
+	<ul>
+    	<li class="li1">首页</li>
+    	<li class="li2">作品</li>
+    	<li class="li3">JS课程</li>
+    	<li class="box">
+        	<div class="div1"></div>
+        	<div class="div2"></div>
+        	<div class="div3"></div>
+        </li>
+    	<li class="li4">课程案例</li>
+    	<li class="li5">联系方式</li>
+    	<li class="li6">视频教程</li>
+    </ul>
+</div>
+</body>
+</html>

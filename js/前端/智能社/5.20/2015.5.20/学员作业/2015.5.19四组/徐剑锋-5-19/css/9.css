@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0; text-decoration:none; list-style:none;}
+.head{width:960px;
+      height:50px;
+	  background:#4E9CE9;}
+.center{width:200px;
+      height:500px;
+	  background:#39C;
+	  float:left;}}
+.left{width:480px;
+      height:500px;
+	  background:#E2E2E2;
+	  float:left;}
+.right{width:270px;
+        height:500px;
+		background:#C30;
+		float:left;
+		margin-left:10px;}
+.bottom{width:960px;
+      height:50px;
+	  background:#4E9CE9;
+	  clear:both;}
+

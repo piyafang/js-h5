@@ -1,0 +1,490 @@
+笔记
+=======================
+字符串常用方法：
+charAt 		查找某一位置的字符
+indexOf 		从前往后查找，某一字符的位置，找到了返回位置，没找到返回-1
+lastIndexOf		从后往前查找，某一字符的位置，找到了返回位置，没找到返回-1
+substring 		截取字符串
+	substring(开始，结束)	从开始截取到结束，不包括结束
+	substring(开始位置)	从开始位置截取到最后
+toLowerCase 		转小写
+toUpperCase 		转大写
+split 			分割成数组
+
+
+
+
+
+Math常用方法
+Math.random() 		随机数
+Math.ceil()			向上取整
+Math.floor()			向下取整
+Math.round() 			四舍五入
+Math.abs() 			绝对值
+Math.pow()			n次方
+Math.sqrt()			开方
+Math.max()			最大值
+Math.min() 			最小值
+
+数组
+push() 		后面添加
+pop()			后面删除
+unshift()		前面添加
+shift() 			前面删除
+join()			数组-》字符串
+concat()		数组连接
+sort()			排序
+reverse()		反转
+splice()		删除，插入，替换
+删除	splice(开始位置,长度)
+插入	splice(开始位置,0,要插入的东西)
+替换	splice(开始位置,长度,要插入的东西)
+
+
+清空数组的方法：
+arr.length=0;
+arr = [];
+arr.splice(0,arr.length);
+while(arr.length){
+	arr.pop()/arr.shift();
+}
+
+完美的创建添加一个select选项
+oS
+var oP = new Option(文本,value);
+oS.add(oP);
+
+
+
+
+
+题：sum(2)(3)(4);  -> 9
+题2：show(2).plus(3).minus(4) -> 1
+
+
+
+
+
+
+排序：算法（解决问题的方案，方法）
+	前插，堆排，桶排，冒泡.......
+
+[12,5,32,3,8,100,1,0,23,6]
+//有几个数字，就比较几次。
+每次找到最小的位置，拿最小的位置的值跟当前位置的值交换位置
+1.[0,5,32,3,8,100,1,12,23,6]
+2.[0,1,32,3,8,100,5,12,23,6]
+3.[0,1,3,32,8,100,5,12,23,6]
+4.[0,1,3,5,8,100,32,12,23,6]
+5.[0,1,3,5,6,100,32,12,23,8]
+6.[0,1,3,5,6,8,32,12,23,100]
+7.[0,1,3,5,6,8,12,32,23,100]
+8.[0,1,3,5,6,8,12,23,32,100]
+9.[0,1,3,5,6,8,12,23,32,100]
+10.[0,1,3,5,6,8,12,23,32,100]
+
+系统给的永远都是i最好的。
+不要使用自己写的排序，要用系统给的。
+
+效率，性能。
+
+======================================
+第一部分复习
+======================================
+操作样式：
+.style 		操作行间样式
+.className	修改class
+
+操作属性
+1.	. 	更简单，操作已有的属性
+2.	[]	更灵活，点能做的，方括号都能做。方括号中放的是字符串，方括号可以放变量，点不能。
+
+获取元素的方式
+document.getElementById 	通过ID获取一个元素
+obj.getElementsByTagName	通过标签名获取一组元素
+obj.getElementsByClassName 	通过class获取一组元素
+通过class获取不兼容。不兼容：IE6,7,8
+function findInArr(arr,item){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==item){
+			return true;
+		}
+	}
+	return false;
+}
+function getByClass(obj,sClass){
+	var aResult = [];
+	if(obj.getElementsByClassName){
+		aResult = obj.getElementsByClassName(sClass);
+	}else{
+		var aEle = obj.getElementsByTagName('*');
+		for(var i=0;i<aEle.length;i++){
+			var aClass = aEle[i].className.split(' ');
+			if(findInArr(aClass,sClass)){
+				aResult.push(aEle[i]);
+			}
+		}
+	}
+	return aResult;
+}
+
+
+函数：
+声明	只是告诉浏览器有这个函数，但是不会执行里面的代码
+调用	真正的执行函数里面的代码
+
+流程控制语句
+if		
+if	条件&&语句
+if..else..	条件?语句1:语句2;
+switch
+switch(条件){
+	case '':
+	break;
+	default:
+	break;
+}
+循环
+for		次数固定
+while		次数不固定
+for...in...	json
+
+return		调用函数返回一个值
+特性：
+1.return会阻断后面的程序执行
+2.有return，但是没有值，返回undefined
+3.没有return，返回undefined
+
+return 		只能在函数中使用,跳出这个函数
+break 		循环不在执行
+continue 	跳出本次循环，进行下一次循环。
+
+变量，参数，return。可以放任何东西。
+
+什么时候需要return？
+当你调用函数时，如果需要给你一个结果，你就加return。
+
+检测数据类型：typeof
+数据类型：
+number 		数字
+boolean 		布尔值
+string 			字符串
+undefined 		未定义
+object 			对象
+function 		函数
+
+基本数据类型	string 	undefined	number boolean
+对象	object
+数据类型转换:
+字符串转换成数字：
+parseInt 	转成整数		'12.5px' 	12
+parseFloat	转成小数		'12.5px'	12.5
+Number	转成数字，更严格。 	'12.5px' 	NaN
+
+NaN 		Not A Number
+是number类型
+不等于任何东西，包括自己
+isNaN		如果这个东西是NaN就返回true
+
+隐式转换
+-	*	/	%	==	>	<
+
+运算符
+算术
++-*/%
+比较
+>	<	>=	<=	==	!=	===	!==
+赋值
+=	+=	-=	*=	/=	%=
+逻辑
+&&	||	!
+
+什么是真？
+true	非0数字     非空字符串     非空对象 
+什么是假？
+false 	0  	''  	 null  	undefined	NaN
+
+获取非行间样式：
+function getStyle(obj,sName){
+	return obj.currentStyle?obj.currentStyle[sName]:getComputedStyle(obj,false)[sName];
+}
+
+
+获取随机数
+Math.random()    获取0-1之间的小数，包括0 ，永远不包括1
+
+function rnd(n,m){
+	return parseInt(n+Math.random()*(m-n));
+}
+function findInArr(arr,iNum){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==iNum){
+			return true;
+		}
+	}
+	return false;
+}
+
+定时器:	事件以毫秒为单位
+setInterval(fn,ms) 	连续执行
+clearInterval();
+setTimeout(fn,ms)	执行一次
+clearTimeout();
+
+**先清后开。
+定时器不好的用法:		错的
+setInterval(fn(),ms);
+
+日期对象
+var oDate = new Date();
+获取
+oDate.getFullYear()	获取年
+oDate.getMonth()	获取月，要+1
+oDate.getDate()	获取日
+oDate.getDay()	获取星期，星期日是0
+oDate.getHours()	获取时
+oDate.getMinutes()	获取分
+oDate.getSeconds()	获取秒
+oDate.getTime(0	获取时间戳
+时间戳：
+1970年1月1日 0:0:0:0 	到现在经历过的毫秒数
+设置
+oDate.setFullYear(y,m,d);
+oDate.setFullYear(y,m);
+oDate.setFullYear(y);
+
+oDate.setMonth(m,d);		月份要-1
+oDate.setMonth(m);
+
+oDate.setDate(d);		设置日
+
+oDate.setHours(h,m,s,ms);
+oDate.setHours(h,m,s);
+oDate.setHours(h,m);
+oDate.setHours(h);
+
+oDate.setMinutes(m,s,ms);
+oDate.setMinutes(m,s);
+oDate.setMinutes(m);
+
+oDate.setSeconds(s,ms);
+oDate.setSeconds(s);
+
+日期对象会自己进位
+上个月有多少天。
+var oDate = new Date();
+oDate.setDate(0);
+oDate.getDate();
+
+获取这个月最后一天是星期几
+var oDate = new Date();
+oDate.setMonth(oDate.getMonth()+1,0);
+oDate.getDay();
+
+求今年最后一天是周几
+var oDate =new Date();
+oDate.setMonth(12,0)
+oDate.getDay();
+
+
+
+arguments
+实参参数的数组。
+当参数个数不固定时，使用这个东西。
+
+i的问题
+1.循环中加事件，事件中使用i
+	解决：自定义属性	封闭空间
+2.循环中加定时器，定时器中使用i
+	解决：封闭空间
+
+封闭空间：省了个名字。
+(function(){})();
+
+封闭空间的作用：
+1.解决i的问题。
+2.解决变量名冲突的问题。
+
+
+
+字符串拼接
+var age = 15;
+'我今年'+age+'岁了'
+操作内容
+表单元素
+value
+非标单元素
+innerHTML
+
+
+
+
+
+
+
+批量修改样式
+cssText
+obj.style.cssText
+with
+with(obj.style){
+	样式名=样式值;
+}
+
+eval 		把字符串变成可执行的语句
+evaljson的时候要加括号
+var str = '{a:1,b:2}';
+eval('('+str+')');
+
+json		装东西的
+
+没有length
+下标是名字
+用for...in循环
+
+批量设置样式
+function setStyle(){
+	if(arguments.length==2){
+		for(var name in arguments[1]){
+			arguments[0].style[name]=arguments[1][name];
+		}
+	}else{
+		arugments[0].style[arguments[1]]=arguments[2];
+	}
+}
+
+
+
+
+
+
+
+数组
+var arr = [1,2,3];
+var arr = new Array(1,2,3);
+
+数组的length可以更改
+清空数组:
+arr.length=0;
+arr = [];
+arr.splice(0,arr.length);
+while(arr.length){
+	arr.pop();
+	arr.shift();
+}
+
+字符串常用方法7
+charAt
+indexOf
+lastIndexOf
+substring
+split
+toUpperCase
+toLowerCase
+数组常用方法9
+push
+pop
+unshift
+shift
+splice
+concat
+reverse
+join
+sort
+Math常用方法9
+random
+ceil
+floor
+round
+sqrt
+abs
+pow
+max
+min
+
+获取浏览器信息:
+window.navigator.userAgent
+
+**效果
+换肤
+选项卡
+按钮选项卡
+自动播放选项卡
+延迟选项卡
+无限下拉菜单延迟版
+秒表
+双色球
+数字时钟
+图片时钟
+倒计时
+qq头像
+简易游戏
+联动全选
+星星评分
+**函数
+toDou
+rnd
+getStyle
+setStyle
+getByClass
+findInArr
+url2json
+json2url
+testNumber
+findIndex
+数组去重，统计次数
+排序
+九九乘法表
+
+
+
+
+=================================
+重点======有问题的写会。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

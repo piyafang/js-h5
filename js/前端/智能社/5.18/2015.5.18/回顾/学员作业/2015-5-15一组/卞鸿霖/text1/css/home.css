@@ -1,0 +1,20 @@
+*{margin:0;padding:0;list-style:none;text-decoration:none;}
+body{background:#f2f2f2;}
+.header{margin:0 auto;width:958px;height:726px;border-right:1px solid #ccc;border-left:1px solid #ccc;}
+.div1{width:918px;border-bottom:1px dashed #ccc;margin:0 0 0 20px;padding:10px 0 0 0;float:left;}
+p{float:left;}
+ul{width:846px;overflow:hidden;}
+li a{
+	float:left;
+	height:16px;
+	border-right:1px solid #ccc;
+	padding:0 20px;
+	font-size:14px;
+	color:#333;
+	text-align:center;
+	line-height:16px;
+	margin:0 0 17px 0;
+	}
+li.last a{border-right:none;}
+p a{width:30px;height:28px;background:#e5e5e5;color:#f60;display:block;text-align:center;line-height:28px;}
+

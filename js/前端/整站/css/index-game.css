@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*content*/
+.content li{ display:block; float:left;}
+.content a{ display:block; font-size:12px; color:#999; }
+
+.ct_txt
+.content .ct_dow{ background:url(../images/download.png) no-repeat #f0f0f0;background:#0F0;width:114px;line-height:20px; border:1px solid #333; padding-left:85px; text-align:center; }

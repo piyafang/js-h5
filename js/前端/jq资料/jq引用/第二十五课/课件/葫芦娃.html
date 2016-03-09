@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	div{ width:100px; height:100px; border:1px solid red; float:left; margin:10px;}
+	.huluwa1{ background:red;}
+	.huluwa2{ background:green;}
+	.huluwa3{ background:blue;}
+	.huluwa4{ background:pink;}
+	.huluwa5{ background:yellow;}
+	.huluwa6{ background:black;}
+	.huluwa7{ background:orange;}
+	
+	.h200{ height:200px;}
+</style> 
+<script>
+	window.onload = function(){
+		var aDiv = document.getElementsByTagName('div');
+		for(var i=0; i<aDiv.length; i++ ){
+			aDiv[i].a=i+1;
+			aDiv[i].onclick=function(){
+				this.className ='huluwa'+this.a+' h200';
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+	<div class="huluwa1"></div>
+	<div class="huluwa2"></div>
+	<div class="huluwa3"></div>
+	<div class="huluwa4"></div>
+	<div class="huluwa5"></div>
+	<div class="huluwa6"></div>
+	<div class="huluwa7"></div>
+	
+</body>
+</html>

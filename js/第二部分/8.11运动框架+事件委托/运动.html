@@ -1,0 +1,35 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	#box{ width:100px;height:100px; background:#f90;position:absolute;left:100px;top:0;}
+</style>
+<script>
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var timer=null;
+		var n=0;
+		var start=100;
+		var itarget=500;
+		var dis=itarget-start;
+		var time=1000;
+		var count=Math.floor(time/30);	
+		clearInterval(timer);
+		timer=setInterval(function(){			
+			n++;
+			oBox.style.left=n*dis/count+start+'px';
+			if(n==count){
+				clearInterval(timer);
+			}		
+		},30);
+	};
+</script>
+</head>
+
+<body>
+	<div id="box"></div>
+</body>
+</html>

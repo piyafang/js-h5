@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-7.三列布局</title>
+<style>
+*{
+	margin:0px;padding:0;
+	}
+
+.right{
+	float:right;
+	}
+.left{
+	float:left;	
+}
+.total{
+	margin:10px;
+	width:960px; 
+	height:600px;
+	}
+.top{
+	width:960px; 
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	background:#4e9ce9;
+	}
+.mid{
+	width:960px; 
+	height:500px;
+	}
+.midleft{
+	width:150px; 
+	height:500px;
+	background:#d3e3e6;
+	line-height:500px;
+	text-align:center;
+	}
+.midmid{
+	width:600px; 
+	height:500px;
+	background:#fafafa;
+	line-height:500px;
+	text-align:center;
+	}
+.midright{
+	width:208px; 
+	height:500px;
+	border-left:1px solid #d3e3e6;
+	border-right:1px solid #d3e3e6;
+	background:#fafafa;
+	line-height:500px;
+	text-align:center;
+	}
+</style>
+</head>
+<body>
+	<div class="total">
+		<div class="top"><span>头部</span></div>
+		<div class="mid">
+			<div class="midleft left"><span>侧边导航</span></div>
+			<div class="midmid left"><span>内容区域</span></div>
+			<div class="midright right"><span>工具区域</span></div>
+		</div>
+		<div class="top"><span>页面底部</span></div>
+	</div>
+</body>
+</html>

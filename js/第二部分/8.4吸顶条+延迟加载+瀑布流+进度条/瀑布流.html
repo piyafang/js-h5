@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	#box{ width: 966px;margin: 0 auto; overflow: hidden;} 
+	ul{width: 300px;border: 1px solid #000;float: left; margin: 10px;}
+	#back{ width: 80px;height: 60px;background: #ccc;color: #fff;line-height: 60px; text-align:center; position: fixed;_position:absolute;right: 0;bottom: 0; cursor: pointer;}
+</style>
+<script type="text/javascript">
+	function rnd(n,m){
+		return parseInt(n+Math.random()*(m-n));
+	}
+
+	function createLi(){
+			var oLi=document.createElement('li');
+			oLi.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+			oLi.style.height=rnd(80,200)+'px';
+			return oLi;		
+	}
+	window.onload=function (){
+		function add(){
+			var oBox=document.getElementById('box');
+			var aUl=oBox.getElementsByTagName('ul');
+			for(var i=0;i<20;i++){
+				var oLi=createLi();
+				var arr=[];
+				for(var j=0;j<aUl.length;j++){
+					arr.push(aUl[j]);
+				}
+				arr.sort(function(u1,u2){
+					return u1.scrollHeight-u2.scrollHeight;
+				});
+				arr[0].appendChild(oLi);
+			}
+		}
+		add();
+		
+		window.onscroll=window.onresize=function(){
+				var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+				var clientH=document.documentElement.clientHeight;
+					if(scrollT+clientH>=document.body.scrollHeight){
+						add();
+				}			
+		};
+
+		var timer=null;
+		var bSys=true;
+		var oBack=document.getElementById('back');
+		oBack.onclick=function(){
+			timer=setInterval(function(){
+				var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+				var iSpeed=Math.floor(0-scrollT/8);
+
+				if(scrollT==0){
+					clearInterval(timer);
+				}
+
+				document.body.scrollTop=document.documentElement.scrollTop=scrollT+iSpeed;
+			},30);
+			bSys=true;	   		
+		};
+		// window.onscroll=function(){
+		// 	if(!bSys){
+		// 		clearTimeout(timer);
+		// 	}
+		// 	bSys=false;
+		// };
+
+
+	};
+</script>
+</head>
+<body>
+	<div id="box">
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+	</div>
+	<div id="back">回到顶部</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+ul{width:200px;border:1px solid #000; display:none; position:absolute; top:0; left:0;}
+ul li{width:200px; height:30px; line-height:30px; text-align:center; background:#ccc; border-bottom:1px dashed #000; cursor:pointer;}
+</style>
+<script>
+window.onload=function(){
+	var oMenu=document.getElementById('menu');
+	var aItem = oMenu.children;
+	for(var i=0;i<aItem.length;i++){
+		aItem[i].onmouseover=function(){
+			this.style.background='#f90';
+		};
+		aItem[i].onmouseout=function(){
+			this.style.background='';
+		};
+	}
+	document.oncontextmenu=function(ev){
+		var oEvent = ev||event;
+		oMenu.style.left=oEvent.clientX+'px';
+		oMenu.style.top=oEvent.clientY+'px';
+		oMenu.style.display='block';
+		return false;
+	};
+	document.onclick=function(){
+		oMenu.style.display='none';
+	};
+	aItem[0].onclick=function(){
+		window.open('http://www.baidu.com/','_self');
+	};
+};
+</script>
+</head>
+
+<body>
+<ul id="menu">
+	<li>跳转到百度</li>
+	<li>刷新页面</li>
+	<li>3333</li>
+	<li>44444</li>
+	<li>66565</li>
+	<li>ujgfdlk</li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

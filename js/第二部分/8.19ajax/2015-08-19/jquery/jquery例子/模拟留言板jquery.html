@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script>
+$(function(){
+	$('input[type=button]').click(function(){
+		if($('input[type=text]').val()=='')return;
+		$('<li>'+$('input[type=text]').val()+'<a href="javascript:;">删除</a></li>').appendTo($('ul'));
+		$('input[type=text]').val('');
+	});
+	$('ul').delegate('a','click',function(){
+		$(this).parent().remove();
+	});
+});
+</script>
+</head>
+
+<body>
+<input type="text" /> <input type="button" value="留言" />
+<ul>
+</ul>
+</body>
+</html>
+
+
+
+
+
+

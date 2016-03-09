@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+img{position:absolute; top:0; left:0;}
+</style>
+<script src="move6.js"></script>
+<script>
+window.onload=function(){
+	var aPos = [
+		{left:500,top:0},
+		{left:0,top:500},
+		{left:128,top:300},
+		{left:1000,top:200},
+		{left:500,top:150},
+		{left:25,top:500},
+		{left:0,top:0}
+	];
+	var oImg = document.getElementsByTagName('img')[0];
+	var n = 0;
+	function next(){
+		startMove(oImg,{left:aPos[n].left,top:aPos[n].top},{end:function(){
+			n++;
+			if(n==aPos.length){
+				n=0;
+			}
+			next();
+		}});
+	}
+	oImg.onclick=function(){
+		next();
+	};
+};
+</script>
+</head>
+
+<body>
+<img src="ball.jpg">
+</body>
+</html>
+
+
+
+
+
+
+

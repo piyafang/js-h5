@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* { margin:0; padding:0; }
+.from-box { width:800px; margin:30px auto; }
+.from-box label { margin-right:30px; }
+.from-box input { font-size:16px; outline:none; padding:5px; }
+.box { width:800px; height:500px; margin:10px auto; border:1px solid red;/**/ position:relative; }
+.div1, .div2, .div1-shadow { width:300px; height:300px; line-height:300px; background:green; font-size:50px; color:#fff; text-align:center; }
+.div2 { margin-left:300px; }
+.div1, .div1-shadow { position:absolute; top:0; left:0; background:blue; }
+.div1-shadow { opacity:0.3; font-size:20px; }
+</style>
+</head>
+
+<body>
+	<div class="from-box">
+		<label for="x">left</label><input type="text" id="left" />
+		<label for="top">top</label><input type="text" id="top" />
+		<input type="button" id="btn" value="确定" />
+	</div>
+	<div class="box">
+		<div class="div1-shadow">div1（占据原来的位置）</div>
+		<div class="div1" id="div1">div1<br/>position:relative</div>
+
+		<div class="div2">div2<br/>没有position</div>
+	</div>
+<script>
+	var oDiv = document.getElementById('div1');
+	oDiv.onmousedown = function (ev){
+		var oEvent = ev || event;
+		var disX = oEvent.clientX - oDiv.offsetLeft;
+		var disY = oEvent.clientY - oDiv.offsetTop;
+		
+		oDiv.onmousemove = function (ev){
+			var oEvent = ev || event;
+			
+			oDiv.style.left = oEvent.clientX - disX + 'px';
+			oLeft.value = oEvent.clientX - disX;
+			oDiv.style.top = oEvent.clientY - disY + 'px';
+			oTop.value = oEvent.clientY - disY;
+			
+			return false;
+		};
+		
+		oDiv.onmouseup = function (){
+			oDiv.onmousemove = null;
+			oDiv.onmouseup = null;	
+		};
+		
+		return false;
+	};
+	
+	function getPos(obj)
+	{
+		var left = 0;
+		var top = 0;
+		
+		while (obj.parentNode)
+		{
+			left += obj.offsetLeft;
+			top += obj.offsetTop;
+			
+			obj = obj.parentNode;
+		}
+
+		return {'top':top, 'left':left};
+	}
+	
+	var oBtn = document.getElementById('btn');
+	var oLeft = document.getElementById('left');
+	var oTop = document.getElementById('top');
+	
+	oLeft.focus();
+	
+	oBtn.onclick = setDivPos;
+	
+	window.onkeydown = function (ev){
+		var oEvent = ev || event;
+		
+		if (oEvent.keyCode == 13)
+		{
+			setDivPos();
+		}
+	};
+	
+	function setDivPos (){
+		var nLeft = parseInt(oLeft.value);
+		var nTop = parseInt(oTop.value);
+		
+		oDiv.style.left = nLeft + 'px';
+		oDiv.style.top = nTop + 'px';
+	};
+</script>
+</body>
+</html>

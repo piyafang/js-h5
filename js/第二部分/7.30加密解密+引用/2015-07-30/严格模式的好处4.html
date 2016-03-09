@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+div{width:200px;height:200px; background:red;}
+</style>
+<script>
+'use strict';
+window.onload=function(){
+	var oDiv = document.getElementsByTagName('div')[0];
+	with(oDiv.style){
+		width='400px';
+		height='500px';
+		background='blue';
+	}
+};
+</script>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>

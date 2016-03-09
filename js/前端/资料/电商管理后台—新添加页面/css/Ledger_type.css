@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+*{font-family:"\5FAE\8F6F\96C5\9ED1",微软雅黑,"Microsoft Yahei",雅黑\9,Arial;font-size:12px;}
+*{ text-decoration:none;}
+.left{ float:left;}
+.right{ float:right;}
+ul,li{ margin:0px; list-style:none;}
+.Ledger_content{ width:924px; margin:25px 0px 0px 135px;}
+.Ledger_top{ border-bottom:#355391 3px solid;}
+.Ledger_top_title{ min-width:50px;height:30px; line-height:30px; background:#f4f4f2; border:1px solid #dedede; font-size:14px; color:#355391; cursor:pointer; padding:0px 20px; text-align:center;}
+.Ledger_top_title:hover,.Ledger_top_title_hover{ background:#355391; border:1px solid #355391; color:#fff;}
+.Ledger_plan{ margin:25px 0px;}
+.Ledger_plan span,.Ledger_plan a{ font-size:14px; margin-right:12px; cursor:pointer;}
+.Ledger_plan option{ font-size:12px;}
+.Ledger_plan .cl_666:hover{text-decoration:none;color:#ff9900!important;}
+.Ledger_Sale li{ width:225px; height:148px; border:1px solid #dedede; margin-right:4px; text-align:center; position:relative;}
+.Ledger_Sale .last_sale_li{ margin-right:0px;}
+.Ledger_Sale li h2,.Ledger_Sale li h2 a{ margin-top:33px; line-height:24px; font-size:18px;font-weight:bold; color:#666; }
+.Ledger_Sale li h1,.Ledger_Sale li h1 a{ line-height:45px; font-size:28px; font-weight:bold;color:#ff9900;}
+.Ledger_Sale a:hover{ text-decoration:none; cursor:pointer;}
+.Ledger_Sale li h3 a:hover{ color:#999;}
+.Question_btn{ position:absolute; top:4px; right:2px; width:16px; height:15px; background: url(../images/Ledger_btn.png) -1px -1px no-repeat; cursor:pointer;}
+.Funds_tanchu{ width:100px; line-height:20px; font-size:12px; position:absolute; top:-10px; right:-107px;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#99000000', endColorstr='#99000000');background:rgba(0,0,0,0.6); padding:5px; z-index:10; color:#fff; display:none; text-align:left;}
+.Question_btn:hover .Funds_tanchu{ display:block;}
+/***饼状图***/
+.Ledge_pie{ margin-top:30px; border:1px solid #dedede; border-top:none;}
+.pie_tittle{ height:42px; background:#ddd;} 
+.pie_tittle li{line-height:39px; color:#666; font-size:14px; border-right:1px solid #fff; padding:0px 45px; border-top:3px solid #ddd; text-align:center;
+ cursor:pointer; border-bottom:none; height:39px;}
+.pie_tittle .li_hover,.pie_tittle li:hover{color:#333;border-top:3px solid #355391; background:#fff;}
+.pie_img{ height:290px; overflow:hidden;}
+.pie_img li{ width:922px; display:none;}
+.pie_img .pie_img_show{ display:block;}
+.pie_img_list{ margin:40px 0px 40px 45px;}
+.Result_tip{ margin:20px 0px 7px; position:relative;}
+.Result_tip_tittle{ padding:0px 10px 0px 0px;}
+.Ledge_Export_btn{ position:absolute; right:0px; background:#ff9c00; width:100px; height:26px; border:none; cursor:pointer; color:#fff;}
+.Result_table table{ border-collapse:collapse;}
+.Result_table th,.Result_table td{border:1px solid #dedede; font-size:14px; text-align:center;}
+.Result_table th{ height:30px; color:#333; font-weight:bold; background:#eee; position:relative; padding-right:10px;}
+.Result_table td{ height:45px; color:#666;}
+.Result_table tr:hover{ background:#f4f4f4;}
+.re_table_page{ margin:20px 0px;}
+.Ledge_Ascend{ width:14px; height:8px; position:absolute; top:5px; right:0px;  background: url(../images/Ledger_btn.png) -26px -4px no-repeat; cursor:pointer;}
+.Ledge_Ascend{ width:14px; height:8px; position:absolute; top:8px; right:0px;  background: url(../images/Ledger_btn.png) -26px -4px no-repeat; cursor:pointer;}
+.Ledge_Ascend_1,.Ledge_Ascend:hover{background: url(../images/Ledger_btn.png) -103px -3px no-repeat;}
+.Ledge_Desce{ width:14px; height:8px; position:absolute; top:14px; right:0px;  background: url(../images/Ledger_btn.png) -50px -4px no-repeat; cursor:pointer;}
+.Ledge_Desce_1,.Ledge_Desce:hover{background: url(../images/Ledger_btn.png) -77px -4px no-repeat;}
+.Ledge_Desce_1:hover{ background: url(../images/Ledger_btn.png) -50px -4px no-repeat;}
+.Ledge_Ascend_1:hover{ background: url(../images/Ledger_btn.png) -26px -4px no-repeat;}
+/****第三方*****/
+.third_party li,.Funds_sale li{width:148px; height:102px; margin-bottom:10px;}
+.third_party li h2,.third_party li h2 a,.Funds_sale li h2,.Funds_sale li h2 a{ margin-top:20px; line-height:16px; font-size:14px;font-weight:bold; color:#666; }
+.third_party li h1,.third_party li h1 a,.Funds_sale li h1,.Funds_sale li h1 a{ line-height:28px; font-size:20px; font-weight:bold;}
+.third_pie{border-top:1px solid #dedede; margin-top:8px;}
+.third_table_th{ padding-right:10px; line-height:20px; height:42px;}
+.third_table_th .Ledge_Ascend,.third_table_th .Ledge_Ascend_1,.third_table_th .Ledge_Ascend:hover,.third_table_th .Ledge_Ascend_1:hover{ top:15px; right:3px;}
+.third_table_th .Ledge_Desce,.third_table_th .Ledge_Desce,.third_table_th .Ledge_Desce:hover,.third_table_th .Ledge_Desce_1:hover{ top:21px;right:3px;}
+/******************************/
+.User_sale li{ width:456px;}
+/******资金统计********/
+.Funds_sale li{ margin-bottom:0px;}
+.Funds_sale_h1{ position:relative;}
+.Funds_sale_Rise{ display:inline-block;background:url(../images/Ledger_btn.png) -6px -18px no-repeat; width:5px; height:21px; padding-right:0px; *padding-right:3px;}
+.Funds_sale_Drop{ display:inline-block; background:url(../images/Ledger_btn.png) -29px -18px no-repeat; width:5px; height:21px; }
+
+
+

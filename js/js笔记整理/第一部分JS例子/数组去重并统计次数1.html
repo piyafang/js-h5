@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script type="text/javascript">
+	var str='abhcbbbbbb';
+	var json={};
+	for(var i=0;i<str.length;i++){
+		if(json[str[i]]){
+			json[str[i]]++;
+		}else{
+			json[str[i]]=1;
+		}
+		
+	}
+	var arr=[];
+	for(var i in json){
+		//i为字母;  count为次数
+		arr.push({code:i,count:json[i]});
+	}
+		//从大到小排序
+	arr.sort(function(j1,j2){
+		return j2.count-j1.count;
+	});
+
+document.write('出现次数最多的是'+arr[0].code+'出现了'+arr[0].count+'次')
+	
+</script>
+
+</head>
+
+<body>
+</body>
+</html>

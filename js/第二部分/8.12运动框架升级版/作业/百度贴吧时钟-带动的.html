@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0;padding:0;list-style:none; text-decoration:none;}
+	ul{overflow:hidden;}
+	li{width:24px; height:35px; float:left; background:url(img/num.png) no-repeat; background-position:0 0; margin:10px;}
+</style>
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+}
+window.onload=function(){
+	var oClock=document.getElementById('clock');
+	var oYm=document.getElementById('ym');
+	var aYli=oYm.children;
+	var oTime=document.getElementById('time');
+	var aTli=oTime.children;
+	function tick(){
+	//获取年月日
+		var oDate=new Date();
+		var Y = oDate.getFullYear();
+		var M = oDate.getMonth()+1;
+		var D = oDate.getDate();
+		var h = oDate.getHours();
+		var m = oDate.getMinutes();
+		var s = oDate.getSeconds();
+		var W = oDate.getDay();
+		var str = Y+toDou(M)+toDou(D);
+		var str2 = toDou(h)+toDou(m)+toDou(s);
+		for(var i=0;i<aYli.length;i++){
+			var l=parseInt(str.charAt(i));
+			aYli[i].style.backgroundPosition=0+' -'+l*35+'px';
+		}
+		for(var i=0;i<aTli.length;i++){
+			var l2=parseInt(str2.charAt(i));
+			aTli[i].style.backgroundPosition=0+' -'+l2*35+'px';
+		}
+	}
+tick();
+setInterval(tick,30);
+};
+</script>
+</head>
+
+<body>
+	<div id="clock">
+		<ul id="ym">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>		
+			<li></li>
+			<li></li>
+		</ul>
+		<ul id="time">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>					
+	</div>
+</body>
+</html>

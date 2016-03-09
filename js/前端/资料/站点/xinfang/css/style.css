@@ -1,0 +1,64 @@
+@charset "gb2312";
+
+/* CSS Document */
+
+body { font-family:"Î¢ÈíÑÅºÚ"; margin:0 auto; padding:0; font-size:12px; color:#333; background-color: #FFF; }
+div, form, ul, ol, li, span, p, dl, dt, dd { margin:0; padding:0; border:0; }
+img, a img { border:0; margin:0; padding:0; }
+h1, h2, h3, h4, h5, h6 { margin:0; padding:0; font-size:12px; }
+ul, ol, li { list-style:none }
+table, td, input { font-size:12px; padding:0; font-family:inherit; }
+.bignews { color:#cc0000; }
+.blank8 { height:8px; overflow:hidden; clear:both; }
+.noneBox { display:none; }
+img{ vertical-align: top;}
+
+
+a { outline-style:none; color:#333; text-decoration:none }
+a:hover { color:#c00; text-decoration:underline; }
+
+
+.clearfix:after{ clear:both; content:"\200B"; display:block; height:0;}
+.clearfix{ *zoom:1;}
+.clear{ clear:both; font-size:0; height:0; line-height:0; overflow:hidden;}
+
+
+.n1200{ width:1200px;}
+
+
+.focus { overflow: hidden; }
+.focusL { width: 880px; overflow: hidden; height: 440px; z-index: 10; float: left; position: relative; }
+.focusL .leftBtn ,.focusL .rightBtn{ background: url(../images/focusBtn.png) no-repeat left bottom; display: block; height: 50px; width: 40px; position: absolute; left: 20px; top: 150px; z-index: 900; }
+.focusL .rightBtn { position: absolute; left: 600px; top: 150px; background-position: right bottom; }
+.focusL .number  { height: 9px; position: absolute; bottom: 18px; z-index: 900; display: block; left: 579px;_overflow: hidden; }
+.focusL .number li { float: left; height: 9px; width: 9px; display: block; margin-right: 4px;_background:url(../images/search_icon.gif) no-repeat -11px -256px;-moz-border-radius: 9px;-webkit-border-radius: 9px;border-radius:9px; background-color:#B7B7B7;}
+.focusL .number li.thisone { cursor:pointer; _background:url(../images/search_icon.gif) no-repeat -11px -281px;-moz-border-radius: 9px;-webkit-border-radius: 9px;border-radius:9px; background-color:#EE0000;}
+.focusL dl dt,.focusL dl dd { float: left; display: block; position: relative; }
+.focusL dl dt { height: 440px; width: 660px; overflow: hidden; }
+.focusL dl dd { margin-bottom: 1px; margin-left: 1px; }
+.focusL dl div{position: absolute; height: 50px; width: 100%; left: 0px; bottom: 0px; color:#FFF;}
+.focusL dl dt div{ height:100px; }
+.focusL dl a{ color: #FFF;}
+.focusL dl dt a:hover { text-decoration: none; }
+
+.focusL dl .black{position: absolute;background-color: #000; filter:alpha(opacity=70);-moz-opacity:0.7;opacity:0.7;position: absolute; z-index: 1; }
+.focusL dl .text{ position: absolute; z-index:10; position: absolute; }
+.focusL dt h4, .focusL dt h5, .focusL dt h6 { padding-left: 20px; }
+.focusL dt h4 { font-size: 20px; font-weight: bold; line-height: 30px; display: block; height: 30px; margin-top: 12px; }
+.focusL dl dt h4 span { font-size: 14px; font-weight: normal; margin-left: 10px; }
+.focusL dl dt h5{ line-height: 20px; height: 20px; margin-top: 4px; font-size: 16px; }
+.focusL dl dt h6 { line-height: 16px; height: 16px; margin-top: 4px; }
+.focusL dl dt h6 span { margin-right: 20px; }
+.focusL dl dd .text h4 { margin-top: 7px; }
+.focusL dl dd .text h4 ,.focusL dl dd .text p{ padding-left: 10px; line-height: 18px; height: 18px; display: block; }
+.focusL .text  p { overflow: hidden; }
+.focusL .text p a:hover { text-decoration: underline; }
+.focusL .text p cite { float: left;}
+.focusL .text p span    { float: right; }
+.focusR { width: 298px; border: 1px solid #d2d2d2; height: 439px; float: right; }
+.focusR h1 ,.focusR h3{ padding-left: 16px; font-size: 16px; font-weight: bold; padding-bottom: 7px; padding-top: 16px; }
+.focusR p { border-bottom:1px solid #d2d2d2; padding-left: 16px; color: #333; padding-bottom: 18px; line-height: 28px; }
+.focusR p a.red { font-size: 14px; font-weight: bold; }
+.focusR p cite { margin-right: 12px; }
+.red    { color: #FF0000; }
+.focus .noborder{ border: none; }

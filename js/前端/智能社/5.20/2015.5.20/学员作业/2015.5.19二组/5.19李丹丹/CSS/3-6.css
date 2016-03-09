@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-05-17 16:37:18
+ * @version $Id$
+ */
+
+*{padding:0;margin:0;list-style:none;font-size:16px;color:#000000;}
+.box{
+	width:960px;
+	height:600px;
+	margin:0 auto;
+	border:1px solid #ccc;
+}
+.top{
+	width:960px;
+	height:50px;
+	background:#4e9ce9;
+	text-align:center;
+	line-height:50px;
+}
+.center{
+	width:960px;
+	height:500px;
+	text-align:center;
+	line-height:500px; 
+}
+.clearfix{zoom:1;}
+.clearfix:after{display:block; content="";clear:both;}
+.lc{
+    width:680px;
+    height:500px;
+    background:#e2e2e2;
+    margin-right:10px;
+    float:left;
+   
+}
+.rc{
+    width:270px;
+    height:500px;
+    background:#f7f7f7;
+    float:left;
+
+}
+.bottom{
+	width:960px;
+	height:50px;
+	background:#4e9ce9;
+	text-align:center;
+	line-height:50px; 
+}

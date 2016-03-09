@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>移动端布局</title>
+	<link rel="stylesheet" type="text/css" href="xx.css" media="(min-width:600px) and ( max-width:1000px)" />
+
+	<style type="text/css">
+		*{ margin: 0 ; padding: 0;}
+		li{ list-style: none;}
+		.clearFix:after{ display: block; content: ""; clear: both;}
+		.clearFix{zoom：1;}
+		
+		.box1{ width: 100%; border: 2px solid red; margin: 0 auto; box-sizing:border-box; }
+		p{ float: left; width: 33.3%; border: 1px solid green; box-sizing:border-box; }
+		.last{width: 33.4%;}
+
+		.box2{ width: 200px; height: 200px; background: black;-webkit-flex-flow:row; color: #fff;}
+		
+	</style>
+
+
+</head>
+<body>
+
+	<div class="clearFix box1">
+		<p>111</p>
+		<p>222</p>
+		<p class="last">333</p>
+
+	</div>
+
+	<div class="box2"><div>1</div><div>2</div></div>
+
+</body>
+</html> 

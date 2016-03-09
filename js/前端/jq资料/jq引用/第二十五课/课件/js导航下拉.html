@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ padding:0; margin:0;}
+	ul{ list-style:none;}
+	.clearfix:after{ display:block; content:''; clear:both;}
+	.clearfix{ zoom:1;}
+	.nav{ width:800px; margin:0 auto; border:1px solid red;}
+	.list{ position:relative; text-align:center; float:left; width:120px;}
+	.list h3:hover{ background:red; color:#FFF;}
+	.nav ul{ width:120px; border:1px solid #CCC; position:absolute; top:24px; left:0; display:none;}
+</style>
+<script>
+	window.onload = function(){
+		var aLi = document.getElementsByTagName('li');
+		for(var i=0; i<aLi.length;i++){
+			if(aLi[i].className == 'list'){
+				aLi[i].onmouseover = function(){
+					var oUl = this.getElementsByTagName('ul')[0];
+					oUl.style.display ='block';
+				}
+				aLi[i].onmouseout = function(){
+					var oUl = this.getElementsByTagName('ul')[0];
+					oUl.style.display ='none';
+				}
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+	<ul class="nav clearfix">
+		<li class="list">
+			<h3>首页</h3>
+			<ul>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+			</ul>
+		</li>
+		<li class="list">
+			<h3>首页</h3>
+			<ul>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+			</ul>
+		</li>
+		<li class="list">
+			<h3>首页</h3>
+			<ul>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+			</ul>
+		</li>
+		<li class="list">
+			<h3>首页</h3>
+			<ul>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+			</ul>
+		</li>
+		<li class="list">
+			<h3>首页</h3>
+			<ul>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+				<li>资料</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

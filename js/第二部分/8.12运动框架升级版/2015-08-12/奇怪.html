@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+div{width:50px; height:50px; border-radius:50%; position:absolute;}
+</style>
+<script src="move6.js"></script>
+<script>
+function rnd(n,m){
+	return parseInt(n+Math.random()*(m-n));
+}
+window.onload=function(){
+	//创建一堆div，颜色随机，位置随机
+	for(var i=0;i<50;i++){
+		var oDiv = document.createElement('div');
+		oDiv.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+		oDiv.style.left=Math.random()*(document.documentElement.clientWidth-50)+'px';
+		oDiv.style.top=Math.random()*(document.documentElement.clientHeight-50)+'px';
+		document.body.appendChild(oDiv);
+	}
+	var aDiv = document.body.children;
+	function rndGo(){
+		for(var i=0;i<aDiv.length;i++){
+			startMove(aDiv[i],{left:Math.random()*(document.documentElement.clientWidth-50),top:Math.random()*(document.documentElement.clientHeight-50)},{time:500});
+		}
+	}
+	rndGo();
+	var timer = setInterval(rndGo,500);
+	document.onclick=function(){
+		for(var i=0;i<aDiv.length;i++){
+			clearInterval(timer);
+			startMove(aDiv[i],{left:document.documentElement.clientWidth/2-aDiv[i].offsetWidth/2,top:document.documentElement.clientHeight/2-aDiv[i].offsetHeight/2});
+			//aDiv[i].style.left=document.documentElement.clientWidth/2-aDiv[i].offsetWidth/2+'px';
+			//aDiv[i].style.top=document.documentElement.clientHeight/2-aDiv[i].offsetHeight/2+'px';
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>

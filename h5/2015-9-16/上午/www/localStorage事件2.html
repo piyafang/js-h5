@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+window.onload=function ()
+{
+	var oBtn=document.getElementById('btn1');
+	var oTxt=document.getElementById('txt1');
+	
+	oBtn.onclick=function ()
+	{
+		localStorage.str=oTxt.value;
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" id="txt1" />
+<input type="button" value="存" id="btn1" />
+</body>
+</html>

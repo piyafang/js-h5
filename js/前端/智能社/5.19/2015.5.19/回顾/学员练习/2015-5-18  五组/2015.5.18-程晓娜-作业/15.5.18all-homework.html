@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>2015.5.18程晓娜作业</title>
+<style type="text/css">
+* { margin:0; padding:0; text-decoration: none;list-style: none;}
+h2 span{float: right;font:13px 'microsoft songti';color: #ccc;}
+img{border: none;}
+.nav{width: 858px;padding:20px;margin-top:20px;border: 1px dotted #ccc;text-align: left;display: table;}
+.nav a{
+	font:20px 'microsoft yahei';
+	color: #e3662e;
+	margin-left: 20px;
+	width: 5em;
+	height: 1.5em;
+	overflow: hidden;
+	display: inline-block;
+	zoom:1;*display: inline;}
+.nav .left{
+	width: 60px;
+	color: #000;
+	font-size: 20px;
+	float: left;
+	text-align: middle;
+	line-height: 1.6em;
+	margin-right: 10px;
+	word-wrap:break-word;
+ }
+.nav .right{
+	float: right;
+	border-left:1px #ccc solid;
+	margin-left: 10px;
+	padding: 0 0 0 20px;
+	width: 756px;}
+hr{margin-bottom: 10px;margin-top: 20px;}
+h2{font: 25px 'microsoft yahei';color: red;line-height: 50px;margin-bottom: 5px; }
+.bodyDiv{width: 900px;position:absolute; left: 50%;margin-left: -450px;}
+/*以上为通用*/
+/*百度爱玩*/
+.bdlist{overflow: hidden;width: 710px;}
+.bdlist h2{display: block;width: 143px;height: 33px;background:url(images/bdtit.png) left no-repeat;padding-left: 15px;font-size: 15px;line-height: 33px;color:#fff;margin-bottom: -2px;}
+.bdlist ul{width:680px;padding: 16px 5px 8px 16px;border: 1px solid #d3d3d3;border-top:3px solid #ff7a01;overflow: hidden;}
+.bdlist ul li{float: left;width: 126px;margin:0 10px 10px 0;text-align: center;font-size: 12px;font:12px 'microsoft yahei';}
+.bdlist b{font-weight: normal;color: #ff7a01;}
+.bdlist li span{display: block;background: #7fbf5b;width: 85px;height: 23px;line-height: 23px;margin:0 auto;margin-top:9px;}
+.bdlist li span a{color: #fff;}
+.bdlist img{width:126px;height: 106px;border: 0; }
+/*迅雷首页-娱乐资讯*/
+.ten{width: 830px;overflow: hidden;}
+.ten .tit{width: 100%;overflow: hidden;font-family: microsoft yahei;line-height:22px; }
+.ten h3{font-size: 22px;color: #000;font-weight: normal;width:294px;display: inline-block;zoom:1;*display: inline;}
+.ten h3 span{padding-left: 30px;font-size: 16px;}
+.ten h3 span b{font-weight: normal;color: #fff;background: #249ff1;display: inline-block;zoom:1;*display: inline;width:94px;height: 22px;text-align: center;margin-right: 10px; }
+.ten .tit a{font-style: normal;float: right;font: normal 15px '宋体';color: #000;}
+.ten .left,.ten .right{float: left;margin: 10px 0;}
+.ten .left{width: 320px;}
+.ten .right{width: 510px;}
+.ten .right ul{width: 100%;overflow: hidden;}
+.ten .right ul li{float:left;width: 148px;height:118px;margin-left: 22px;text-align: center;margin-bottom: 10px;}
+.ten .right li a{color: #000;line-height: 24px;}
+/*蘑菇街-达人优店-左右浮动*/
+.bigmogu{padding:15px 18px 5px;overflow: hidden;width:246px;background:#F7F6F6;border: #ddd 1px solid;}
+.bigmogu h3{font:bold 16px '幼圆';margin-bottom: 15px;}
+.bigmogu .mogu{overflow:hidden;width: 246px;height: 84px;background:#fff;border: #ddd solid 1px;margin-bottom: 10px;}
+.bigmogu .mogu p,.mogu div{float: left;}
+.bigmogu .mogu div img{width: 96px;height: 84px;}
+.bigmogu .mogu p{font: 12px 'songti';color: #ddd;text-align: left;width: 128px;padding:16px 0 16px 16px;line-height: 20px;}
+.bigmogu .mogu p b{display: block;color: #000;}
+.bigmogu .mogu p img{display: block;}
+/*百度爱玩-热门单机游戏-固定高*/
+.bdgame{width: 710px;}
+.bdgame .tit{width: 670px;height: 46px;background:url(images/bdtitbg.png) left no-repeat;padding: 0 0 0 40px;font: 17px/46px 'microsoft yahei';border-bottom: #ff7a01 3px solid;overflow: hidden;}
+.bdgame .tit span{float: right;height: 20px;width: 50px;padding-top: 5px;}
+.bdgame ul{width: 100%;padding-top: 10px;overflow: hidden;}
+.bdgame ul li{float: left;width: 118px;padding-right: 30px;margin-bottom: 30px;}
+.bdgame .picbg{padding-right: 0px;}
+.bdgame ul li img{width: 114px;height: 164px;border: 3px solid #e5e5e5;border-left:none;border-bottom: none; margin-bottom: 10px;}
+.bdgame p{text-align: left;font:12px 'microsoft yahei';color: #333;width: 114px;}
+.bdgame p b{display: block;color: #999;font-weight: normal;line-height: 20px;margin-bottom: 6px;}
+.bdgame p a{display: block;margin: 0 auto;width: 112px;height: 22px;border: 1px solid #d3d3d3;background: #f0f0f0 url(images/btnbg.png) 84px no-repeat;text-align: center;color: #333;font:12px 'microsoft yahei';line-height: 22px;}
+/*蘑菇街列表*/
+.box{ overflow:hidden;}
+.box .left{ float:left; margin-right:12px; overflow:hidden;}
+.box .list{ overflow:hidden; line-height:20px;}
+.box .list a{ float:left; color:#666; font-size:12px; }
+.box .list span{ float:right; font-size:9px; color:#fc3c75; }
+.box .list span strong{ font-size:18px; }
+.box .list span .green{ color:#57a000; font-size:11px;}
+.box .right{ width:230px; float:left; }
+</style>
+</head>
+<body>
+<div class="bodyDiv" id="map">
+	<div class="nav">
+		<div class="left">目录</div>
+		<div class="right">
+			<a href="#map1" title="百度爱玩">百度爱玩</a>
+			<a href="#map2" title="迅雷首页-娱乐资讯">迅雷首页-娱乐资讯</a>
+			<a href="#map4" title="蘑菇街-达人优店-左右浮动">蘑菇街-达人优店-左右浮动</a>
+			<a href="#map5" title="百度爱玩-热门单机游戏-固定高">百度爱玩-热门单机游戏-固定高</a>
+			<a href="#map6" title="蘑菇街-主页列表">蘑菇街-主页列表</a>
+		</div>
+
+	</div>
+	<hr>
+	<h2 id="map1"><span><a href="#map">&uarr;回目录</a></span>百度爱玩</h2>
+	<div class="bdlist">
+		<h2>新手卡中心</h2>
+		<ul>
+			<li><a href="javascript:"><img src="images/bdpic_07.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+			<li><a href="javascript:"><img src="images/bdpic_09.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+			<li><a href="javascript:"><img src="images/bdpic_11.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+			<li><a href="javascript:"><img src="images/bdpic_13.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+			<li><a href="javascript:"><img src="images/bdpic_15.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+			<li><a href="javascript:"><img src="images/bdpic_22.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+			<li><a href="javascript:"><img src="images/bdpic_23.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+			<li><a href="javascript:"><img src="images/bdpic_24.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+			<li><a href="javascript:"><img src="images/bdpic_25.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+			<li><a href="javascript:"><img src="images/bdpic_26.png","百度" alt=""></a>《TERA》二测<br/><b>2050</b>人预定<span><a href="javascript:">我要预定</a></span></li>
+		</ul>
+	</div>
+	<hr>
+	<h2 id="map2"><span><a href="#map">&uarr;回目录</a></span>迅雷首页-娱乐资讯</h2>
+	<div class="ten">
+		<div class="tit">
+			<a href="javascript:">更多></a><h3>娱乐资讯 <span><b>娱乐劲爆点</b>明星八卦</span></h3>
+		</div>
+		<div class="left">
+			<a href="javascript:"><img src="images/tenpic1.png"></a>
+		</div>
+		<div class="right">
+			<ul>
+				<li><a href="javascript:"><img src="images/tenpic2.png" alt="">爆张翰与郑爽已分手</img></a></li>
+				<li><a href="javascript:"><img src="images/tenpic2.png" alt="">爆张翰与郑爽已分手</img></a></li>
+				<li><a href="javascript:"><img src="images/tenpic2.png" alt="">爆张翰与郑爽已分手</img></a></li>
+				<li><a href="javascript:"><img src="images/tenpic2.png" alt="">爆张翰与郑爽已分手</img></a></li>
+				<li><a href="javascript:"><img src="images/tenpic2.png" alt="">爆张翰与郑爽已分手</img></a></li>
+				<li><a href="javascript:"><img src="images/tenpic2.png" alt="">爆张翰与郑爽已分手</img></a></li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+	<h2 id="map4"><span><a href="#map">&uarr;回目录</a></span>蘑菇街-达人优店-左右浮动</h2>
+	<div class="bigmogu">
+		<h3>达人优店</h3>
+		<div class="mogu">
+			<p><b>怪大叔</b>我不是小清新<img src="images/ico.gif"></p>
+			<div><img src="images/pic1.jpg"></div>
+		</div>
+		<div class="mogu">
+			<p><b>怪大叔</b>我不是小清新<img src="images/ico.gif"></p>
+			<div><img src="images/pic2.png"></div>
+		</div>
+	</div>
+	<hr>
+	<h2 id="map5"><span><a href="#map">&uarr;回目录</a></span>百度爱玩-热门单机游戏-固定高</h2>
+	<div class="bdgame">
+		<div class="tit">
+			<span><a href="javascript:"><img src="images/more.png"></a></span>热门单机游戏
+		</div>
+		<ul>
+			<li>
+				<a href="javascript:"><img src="images/gpic1.png",alt="gpic1.png" alt=""></a>
+				<p>
+					兰博：游戏版<b>类型：动作游戏</b>
+					<a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+
+			<li>
+				<a href="javascript:"><img src="images/gpic2.png",alt="gpic2.png" alt=""></a>
+				<p>兰博：游戏版<b>类型：动作游戏</b><a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+			<li>
+				<a href="javascript:"><img src="images/gpic3.png",alt="gpic3.png" alt=""></a>
+				<p>兰博：游戏版<b>类型：动作游戏</b><a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+			<li>
+				<a href="javascript:"><img src="images/gpic4.png",alt="gpic4.png" alt=""></a>
+				<p>兰博：游戏版<b>类型：动作游戏</b><a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+			<li class="picbg">
+				<a href="javascript:"><img src="images/gpic5.png",alt="gpic5.png" alt=""></a>
+				<p>兰博：游戏版<b>类型：动作游戏</b><a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+			<li>
+				<a href="javascript:"><img src="images/gpic6.png",alt="gpic6.png" alt=""></a>
+				<p>兰博：游戏版<b>类型：动作游戏</b><a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+			<li>
+				<a href="javascript:"><img src="images/gpic7.png",alt="gpic7.png" alt=""></a>
+				<p>兰博：游戏版<b>类型：动作游戏</b><a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+			<li>
+				<a href="javascript:"><img src="images/gpic8.png",alt="gpic8.png" alt=""></a>
+				<p>兰博：游戏版<b>类型：动作游戏</b><a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+			<li>
+				<a href="javascript:"><img src="images/gpic9.png",alt="gpic9.png" alt=""></a>
+				<p>兰博：游戏版<b>类型：动作游戏</b><a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+			<li class="picbg">
+				<a href="javascript:"><img src="images/gpic10.png",alt="gpic10.png" alt=""></a>
+				<p>兰博：游戏版<b>类型：动作游戏</b><a class="btn" href="javascript:">去下载</a>
+				</p>
+			</li>
+		</ul>
+	</div>
+	<hr>
+	<h2 id="map6"><span><a href="#map">&uarr;回目录</a></span>蘑菇街-主页列表</h2>
+	<div class="box">
+    	<div class="left">
+        	 <a href="#"><img src="images/1.png" alt="" /></a>
+            <div class="list">
+            	<a href="#">solone眼线笔眼</a>
+                <span>&yen;<strong>25</strong></span>
+            </div>
+            <div class="list">
+            	<a href="#">线胶笔眼线膏</a>
+                <span><strong class="green">6.4折</strong></span>
+            </div>
+        </div>
+        <div class="left">
+             <a href="#"><img src="images/2.png" alt="" /></a>
+            <div class="list">
+                <a href="#">创意云朵花盆</a>
+                <span>&yen;<strong>29</strong></span>
+            </div>
+            <div class="list">
+                <span><strong class="green">3.3折</strong></span>
+            </div>
+        </div>
+	</div>
+	<hr>
+</div>
+</body>
+</html>

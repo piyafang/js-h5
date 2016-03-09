@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:300px;height:300px; background:#ccc; margin:100px auto;}
+#box h2{width:100%; height:50px; background:#9c1;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	oBox.onmouseout=function(ev){
+		var oEvent = ev||event;
+		//var oTo = oEvent.toElement;
+		//var oTo = oEvent.relatedTarget;
+		var oTo = oEvent.toElement||oEvent.relatedTarget;
+		alert(oTo);
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<h2></h2>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

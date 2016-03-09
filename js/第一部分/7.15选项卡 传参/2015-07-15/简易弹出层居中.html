@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#shadow{position:fixed; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.4; filter:alpha(opacity:40); display:none;}
+#box{ position:absolute; top:50%; left:50%; margin-left:-155px; margin-top:-155px;width:300px; height:300px; background:#fff; border:5px solid #ccc; border-radius:5px; display:none;}
+</style>
+<script>
+function toShow(){
+	var oShadow = document.getElementById('shadow');
+	var oBox = document.getElementById('box');
+	oShadow.style.display='block';
+	oBox.style.display='block';
+}
+function toHide(){
+	var oShadow = document.getElementById('shadow');
+	var oBox = document.getElementById('box');
+	oShadow.style.display='none';
+	oBox.style.display='none';
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="弹出" onclick="toShow()" />
+<div id="shadow"></div>
+<div id="box">
+	fjdklfjsdl
+    <input type="button" value="隐藏" onclick="toHide()" />
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

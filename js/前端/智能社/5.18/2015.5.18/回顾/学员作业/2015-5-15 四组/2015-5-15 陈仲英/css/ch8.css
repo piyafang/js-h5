@@ -1,0 +1,17 @@
+@charset "utf-8";
+div{ width:298px; height:279px; border:1px solid #eee; background:#f4f4f4;}
+b{ color:#3e3e3f; margin-top:20px; margin-left:15px; float:left; font-size:14px; }
+
+ul{ width:298px; height:245px; float:left; font-size:12px; margin-top:10px; margin-left:16px;}
+a{ width:58px; height:65px; background:url(../images/1.png); margin-right:10px; margin-bottom:10px;  float:left;}
+
+.yi{ margin:10px 20px 6px; float:left;}
+em{ width:58px; float:left;}
+.er{ margin-top:3px; margin-left:26px; }
+i{  color:#9c9c9c; float:left;  margin-left: 16px ; border:1px soli red;}
+i:hover{ color:#f40;}
+
+
+
+
+

@@ -1,0 +1,525 @@
+js：修改样式
+	样式：css
+	.className=''
+	.style.xxx=xx
+
+	.style.cssText="width:100px; height:100px; ...."
+js组成部分：兼容性
+1. ECMA(ECMAscript)	  核心解释器、语法、词法  if for var
+			  str.indexOf
+			  兼容的
+	ES
+	ECMA262
+	ECMA5
+	ECMA6
+
+	**** 基础知识：
+	字符串(正则)：var str='';  var str="";
+		str.indexOf(小字符串);	 判断浏览器
+		str.lastIndexOf(小字符串);
+		str.charAt(位置);	相当于字符串下标
+			图片时钟
+		str.substring(开始位置，结束位置); 
+		str.substring(开始位置); 
+			var str='width';
+			str.substring(1,3)
+			str.substring(2)
+		str.toLowerCase();   
+		str.toUpperCase();
+			首字母大写
+				核心:word.charAt(0).toUpperCase()+word.substring(1)
+		str.split();  切   字符串变成数组
+	
+		str.replace(要，谁);
+		str.replace(正则，谁)
+		str.replace(正则,function(){});
+
+		str.match(正则);  匹配出来结果 arr
+		str.search(正则); 
+	数组：
+		var arr=[12];
+		var arr=new Array(12);  数组length是12个
+
+		alert(arr.length);
+		arr.length=12;
+		arr.length=0;
+
+		arr.push();
+		arr.pop();
+		arr.unshift();
+		arr.shift();
+		
+		arr.splice(开始位置，删除长度，arg1,arg2....);
+
+		删除：
+			arr.splice(开始位置，长度);
+		添加：
+			arr.splice(开始位置,0,arg1,arg2..);
+		替换:
+			arr.splice(开始位置,2,arg1,arg2..);
+
+		arr.concat(arr2,arr3,arr4...);
+
+		arr.join('');   数组练成字符串
+		arr.reverse();   
+		arr.sort();
+		排序数组
+			单词：字典序
+			数字：
+			arr.sort(function(n1,n2){
+				return n1-n2;
+			});
+	json:  var json={名字:值，名字2:值2..};
+
+		arr		json
+	length	有		没有
+	下标	number		名字
+	循环	普通for		for in
+	顺序	有		没有		
+2. DOM	Document Object Model 文档对象模型
+	跟页面打交道(document)
+	基本兼容
+	getByClass();
+
+	DOM树：节点==元素==标签
+		体现各个节点关系
+	关系：
+		obj.children	一层
+		obj.parentNode	结构上父级
+		obj.offsetParent  定位上父级
+		
+		兄弟：
+			下：
+			obj.nextElementSibling || obj.nextSibling
+			上：
+			obj.previousSibling
+		首、尾
+			obj.firstChild
+			obj.lastChild
+	创建、添加、删除：
+		document.createElement('爱啥啥');
+	
+		父级.appendChild(要);
+		父级.insertBefore(要，谁);
+
+		父级.removeChild(要);
+
+	物体信息：
+		obj.offsetWidth
+		obj.offsetHeight
+		obj.offsetLeft	  到有定位父级距离
+		obj.offsetTop
+		obj.scrollHeight
+
+		offsetWidth	getStyle
+	类型	number		string
+	width	盒模型		纯width
+	看不见	0		可以
+
+	getPos(obj);
+
+	可视区宽、高
+		document.body
+		document.documentElement.clientWidth
+		document.documentElement.clientHeight
+	滚动距离：
+		纵：
+		document.documentElement.scrollTop || document.body.scrollTop
+		横：
+		scrollLeft
+
+
+function getStyle(obj,name){
+	
+}
+	
+			
+
+3. BOM	Browser Object Model 浏览器对象模型
+	跟浏览器相关(window)
+	基本不兼容
+
+	UA:window.navigator.userAgent
+	window.location
+		window.location.href
+		window.location.serach
+		window.location.hash
+		window.location.reload();
+
+	window.open();
+	window.close();
+
+	window.onload
+	window.onscroll
+	window.onresize
+	
+	alert();
+	confirm();
+	prompt();
+---------------------------------------------
+事件：用户操作
+	onclick/ondblclick/onmouseover.....
+
+	DOM事件：
+	DOMMouseScroll
+	DOMContentLoaded
+添加事件？
+0). <input onclick="">
+a). obj.onclick
+b). obj.addEventListener()/attachEvent
+
+*** 事件绑定：解决事件冲突， 同一个事件，同一个元素，执行不同的函数
+	obj.addEventListener()/attachEvent
+解绑定：不能解绑匿名函数
+
+事件流：
+	事件冒泡：子元素事件会传递到父级，子元素->父级
+	事件捕获(事件下沉)：跟冒泡相反，父元素->子元素
+事件委托：把子元素的事件委托给父级
+	事件源：发生事件源头
+
+	1. 性能高
+	2. 给未来元素添加事件
+事件对象：描述了事件详细信息
+
+默认事件(默认行为):浏览器自带功能
+	return false，碰见addEventListener失效，oEvent.preventDefault();
+
+	var oEvent=ev || event;
+oEvent.clientX/clientY
+oEvent.pageX/pageY  不兼容
+oEvent.target || oEvent.srcElement
+oEvent.fromElement || oEvent.relatedTarget
+oEvent.toElement || oEvent.relatedTarget
+oEvent.keyCode
+oEvent.ctrlKey/shift/alt
+oEvent.cancelBubble=true;
+oEvent.preventDefault();
+oEvent.wheelDelta  -120 下  onmousewheel
+oEvent.detail	  3	下  DOMMouseScroll
+
+this出事地方;
+1. 定时器
+2. 多包一层函数
+3. 行间函数
+* 4. 绑定事件 attachEvent
+-------------------------------
+命名：强制 英文
+	baidu
+	bd
+-------------------------------
+
+运动：  定时器
+	move(obj,json,options);
+	
+	options:
+	time：/ duration
+	type: / easing
+	end:  / complete
+-------------------------------
+模块化：seajs  requirejs
+seajs	采用规范不一样  CMD  Common Module Define 公共模块定义
+requirejs  AMD	Asynchrounous Module Define  异步模块定义
+
+seajs:
+	define(function(require,exports,module){
+		rquire[]
+		exports.xx
+	});
+	
+html:seajs.use(文件名,function(){});
+--------------------------------
+requirejs:
+	define(function(require,exports,module){
+		rquire[]
+		exports.xx
+	});
+
+	require([文件名],function(){});
+-------------------------------
+cookie: 临时存储东西
+	addCookie();
+	getCookie();
+	removeCookie();
+-------------------------------
+交互：数据
+
+	form:给后台提交数据
+		action
+		name
+		value
+
+	form缺点：
+	1. 会刷新页面
+	2. 没法从后台获取数据
+
+ajax: Asynchournous Javascript And xml 异步javascript和xml
+	无刷新从服务器获取数据
+缓存：cache  浏览器对于同一个地址，它只会访问一次
+
+
+1. 有缓存
+	防止缓存
+	t=Math.random();
+2. 过来都是字符串
+	eval('('+str+')');
+3. 编码
+	所有文件编码要一致
+4. 不关心后缀名
+
+	weibo.php?a=xx&user=xxx&sec=xxx
+
+	ajax({
+		url:
+		data:
+		type:
+		success:function(){}
+		error:function(){}
+	});
+
+www.a.com   www.b.com
+
+ajax缺点：没法跨域取数据
+
+jsonp:  json with padding 
+
+	跨域取数据
+
+原理：
+1. 动态创建script标签  调用一个函数
+2. 定义全局函数，接收数据
+
+	jsonp({
+		url:
+		data:
+		success:
+		cbName:
+	});
+-----------------------------------------------
+jquery:
+
+mvc:三层模式
+	m	model	模型	数据
+	v	view	视图	展示
+	c	controller	控制器
+
+	angularjs
+		ng-app="app"
+
+		var app=angular.module('app',[]);
+
+		app.controller('abc',function($scope){
+			$scope.a=12;
+		});
+	ng-conotrller="abc"
+
+		{{a}}
+设计模式：前辈总结出可以解决一类问题思路
+	java
+
+	23种	GOF
+	工厂模式
+		
+	单例模式(单体)
+	门面模式(外观模式)
+	观察者模式
+	....
+分
+	
+递归：把一个大问题，拆成若干小问题
+	加快处理事情
+
+	斐波那契数列:
+	Fibonacci
+	
+垃圾回收：浏览器自动回收垃圾
+
+	为什么垃圾回收？
+	
+	var a=12;   //内存(资源、空间)
+
+	底层语言：c
+	手动申请空间，存，不用了这个东西，手动释放空间，忘记，长时间忘记释放，内存溢出，内存泄露
+
+	评判垃圾标准：生存周期
+	生存周期：作用域
+
+	作用域：
+	全局变量：在哪里都能使用，生存周期长，直到浏览器关闭，占资源
+	局部变量：只能在函数内部使用，生存周期短，不占资源
+	闭包：子函数可以使用父函数局部变量，如果子函数得不到释放，整条作用域链上局部变量都会保留.
+	
+
+*性能优化：
+	项目：
+	1. 稳定性
+	2. 维护性
+	3. 性能
+
+	网络性能
+	执行性能
+--------------------------------
+面向过程：函数、函数、函数
+面向对象：对象、对象
+
+	只关心用，不关心内部实现    思想
+
+对象：object  一切东西属于对象
+	电视
+	手机
+	人
+程序中对象：
+	var oDate=new Date();
+	oDate.getFullYear();
+
+	var arr=new Array();
+	arr.length  //属性
+	arr.pop();  //方法
+	arr.shift();
+
+	document
+		document.title
+		document.cookie
+		
+		document.write();
+		document.getElementId();
+
+	oDiv
+
+电视机：
+	属性：重量、价格、品牌、颜色
+		
+	方法：播放画面、调台、定时、上网
+
+洗衣机：
+	属性：品牌、价格、颜色、容量
+	方法：洗涤、甩干、定时
+
+人：
+	属性：身高、体重、名字、性别
+	方法：吃喝拉撒睡、说话
+
+
+
+对象组成：
+1. 属性		变量		特征
+	变量是自由的，属性有所属者
+2. 方法		函数		功能(行为)
+	
+
+编写对象：
+
+	准备一个对象：
+	var arr=new Array();
+
+	空白对象：
+	var obj=new Object();
+---------------------------
+this:当前方法属于谁
+
+
+编写人：
+	属性：
+		name,age
+	方法：
+		showName,showAge
+
+var oDate=new Date();
+var arr=new Array();
+
+工厂模式：
+	原料->加工->出厂
+
+	缺点：
+	1. 没有new
+	2. 每个对象拥有自己方法
+
+* 默认情况下，全局属于window
+
+加new？
+
+new到底干啥了？(两件事)
+1. 创建空白对象，并且赋值给this
+2. 自动返回this
+
+	验证？
+	注意？new 后面跟的永远是函数(构造函数)
+
+	构造函数：就是普通函数，因为用途得名
+
+	构造函数首字母大写
+
+class: 类
+---------------------------
+var arr=new Array();
+var p1=new Person();
+类：Array Person  构造函数   没有真正功能，构造对象
+对象(实例)：arr p1   才具备真正的功能
+---------------------------
+原型：prototype	   给一类物体添加东西(属性、方法)
+
+	数组求和    arr,arr2
+	Array.prototype.sum=xxx
+---------------------------
+构造+原型：
+1. 属性  放到构造函数里面
+2. 方法  挂到原型上
+---------------------------
+this: 当前方法属于谁， 只看调用，多包一层失效
+
+this优先级：
+new		高
+定时器		window
+事件
+方法
+其他		低
+---------------------------
+点击按钮div变红？
+
+改写面向对象：
+1. 准备一个构造函数  window.onload=一删
+	起名字、调用
+2. 暂时不能有函数嵌套(功能代码提出去)
+	a). 把函数拎出去，起名字，调用	    不好使
+		xxx is not defined
+	b). 局部变成全局的
+	c). 函数变成方法， 方法挂到原型上 ，调用 this.xxx
+	d). 之前全局变量变成属性   this.xxx
+			不好用
+3. 各种调this
+------------------------------------------------
+小练习：之前例子挑20个用面向对象写一遍
+
+	
+	
+
+	
+
+
+
+	
+	
+	
+
+	
+
+	
+	
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+

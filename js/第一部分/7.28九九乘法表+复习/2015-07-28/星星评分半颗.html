@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+ul{overflow:hidden; width:200px; margin:100px auto;}
+li{float:left; background:url(star.gif) no-repeat; height:27px;}
+li.l{width:14px; background-position:0 0;}
+li.r{width:13px; background-position:-14px 0;}
+li.l_on{width:14px; background-position:0 -29px;}
+li.r_on{width:13px; background-position:-14px -29px;}
+
+</style>
+<script>
+window.onload=function(){
+	var aLi = document.getElementsByTagName('li');
+	for(var i=0;i<aLi.length;i++){
+		(function(index){
+			aLi[i].onmouseover=function(){
+				for(var i=0;i<aLi.length;i++){
+					if(i%2){
+						if(i<=index){
+							aLi[i].className='r_on';
+						}else{
+							aLi[i].className='r';
+						}
+					}else{
+						if(i<=index){
+							aLi[i].className='l_on';
+						}else{
+							aLi[i].className='l';
+						}
+					}
+				}
+			};
+		})(i);
+	}
+};
+</script>
+</head>
+
+<body>
+<ul>
+	<li class="l"></li>
+	<li class="r"></li>
+	<li class="l"></li>
+	<li class="r"></li>
+	<li class="l"></li>
+	<li class="r"></li>
+	<li class="l"></li>
+	<li class="r"></li>
+	<li class="l"></li>
+	<li class="r"></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

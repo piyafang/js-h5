@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		var oDiv2 = document.getElementById('div2');
+		$('#div1').click(function(){
+			this.style.background = 'blue';	
+			
+		})
+		oDiv2.onclick = function(){
+			$(this).css('background','yellow');
+		}
+	})
+</script>
+<style>
+	div{ width:300px; height:300px; border:1px solid red;}
+</style>
+</head>
+
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+.wrap{
+	width:620px;
+	height:105px;
+}
+.top{
+	width:620px;
+	height:60px;
+	background:#0099ff;
+	margin-bottom:10px;
+}
+.bottom{
+	width:620px;
+	height:200px;
+	
+}
+
+.one , .two , .three{
+	width:200px;
+	height:35px;
+	float:left;
+}
+.one{
+	background:#999;
+	margin-right:10px;
+}
+.two{
+	background:#000;
+	margin-right:10px;
+
+}
+.three{
+	background:#999;
+}
+.clearFix:after{ content:""; clear:both; display:block;}

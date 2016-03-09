@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+<style>
+* {margin:0; padding:0; list-style:none;}
+
+#page {width:320px; /*height:?;*/ margin:0 auto; overflow:hidden;}
+#content {width:320px; height:2232px; background:url(a.png) no-repeat; -webkit-transform:translateY(0);}
+</style>
+<script>
+window.onload=function ()
+{
+	var oPage=document.getElementById('page');
+	var oContent=document.getElementById('content');
+	
+	//第一步、添加高
+	oPage.style.height=document.documentElement.clientHeight+'px';
+	
+	//横屏
+	window.onresize=function ()
+	{
+		oPage.style.height=document.documentElement.clientHeight+'px';
+	};
+	
+	//第二步、页面滚动
+	//普通滚动
+	//上下都有“下拉刷新”	【新】
+	//慢慢停下来			【新】
+};
+</script>
+</head>
+
+<body>
+<div id="page">
+	<div id="content">
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

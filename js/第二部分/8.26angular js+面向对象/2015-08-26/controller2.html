@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1{width:200px; height:200px; background:#f90; display:none;}
+</style>
+<script src="angular.js"></script>
+<script>
+//获取app
+app = angular.module('test',[]);
+//controller
+app.controller('aaa',function($scope){
+	$scope.sum=function(){
+		return parseInt($scope.a)+parseInt($scope.b);
+	}
+});
+</script>
+</head>
+
+<body ng-controller="aaa">
+<input type="text" ng-model="a" />
+<input type="text" ng-model="b" />
+{{sum()}}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

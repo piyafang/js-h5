@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+window.onload=function ()
+{
+	var oBtn=document.getElementById('btn1');
+	var oS=document.getElementById('s1');
+	
+	oBtn.onclick=function ()
+	{
+		//var oL=document.createElement('line');
+		//NS=name space
+		var oL=document.createElementNS('http://www.w3.org/2000/svg', 'line');
+		
+		oL.setAttribute('x1', '200');
+		oL.setAttribute('y1', '100');
+		oL.setAttribute('x2', '500');
+		oL.setAttribute('y2', '300');
+		
+		oL.style.stroke='green';
+		
+		oS.appendChild(oL);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮" id="btn1" />
+<svg id="s1">
+	<line x1="100" y1="100" x2="400" y2="300" style="stroke: #ff0000;"></line>
+</svg>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

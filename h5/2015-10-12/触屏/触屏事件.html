@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+<style>
+#div1 {width:300px; height:200px; background:#CCC;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	
+	/*oDiv.onmousedown=function ()
+	{
+		alert('abc');
+	};*/
+	
+	//不好
+	/*oDiv.ontouchstart=function ()
+	{
+		alert('摸了');
+	};*/
+	
+	//绑定
+	oDiv.addEventListener('touchstart', function (){
+		alert('摸了');
+	}, false);
+};
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+

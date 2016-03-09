@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#box select{display:none;}
+</style>
+<script>
+window.onload=function(){
+	var oCity = document.getElementById('city');
+	var oBox = document.getElementById('box');
+	var aS = oBox.getElementsByTagName('select');
+	oCity.onchange=function(){
+		for(var i=0;i<aS.length;i++){
+			aS[i].style.display='none';
+		}
+		aS[this.value].style.display='block';
+	};
+};
+</script>
+</head>
+
+<body>
+<select id="city">
+	<option value="0">北京</option>
+	<option value="1">上海</option>
+	<option value="2">天津</option>
+	<option value="3">重庆</option>
+</select>
+<div id="box">
+	<select style="display:block;">
+    	<option>朝阳</option>
+    	<option>海淀</option>
+    	<option>昌平</option>
+    	<option>延庆</option>
+    </select>
+    <select>
+    	<option>普陀</option>
+    	<option>浦东</option>
+    	<option>黄浦</option>
+    	<option>徐汇</option>
+    	<option>青浦</option>
+    </select>
+    <select>
+    	<option>红桥</option>
+    	<option>北城</option>
+    	<option>塘沽</option>
+    	<option>蓟县</option>
+    </select>
+    <select>
+    	<option>万州</option>
+    	<option>江北</option>
+    	<option>南岸</option>
+    	<option>九龙坡</option>
+    </select>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

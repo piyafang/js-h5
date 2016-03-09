@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0;padding:0; list-style:none; text-decoration:none;}
+	#box{ width:500px;margin:100px auto; height:281px;position:relative;}
+	ul{ position:relative;height:281px;}
+	li{width:500px;position:absolute;left:0;top:0;height:281px;}	
+	img{ width:100%;}
+	p{ position:absolute;left:50%; bottom:10px;overflow:hidden; width:200px;
+	 margin-left:-80px;height:20px;}
+	span{ display:block;width:20px;height:20px; border-radius:50%;
+	background:rgba(200,200,0,.8); float:left;margin-right:10px;}
+	span.on{ background:rgba(200,80,0,.8);}
+	a{ width:40px; height:60px; position:absolute;top:50%;background:rgba(25,25,0,.8);
+	font-size:20px; font-weight:bold; line-height:60px; text-align:center; color:#FFF;
+	margin-top:-30px; display:none;}
+	a.active{background:rgba(200,80,0,.8); }
+	#prev{ left:0;}
+	#next{ right:0;}
+</style>
+<script src="move6.js"></script>
+<script>
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var oUl=oBox.getElementsByTagName('ul')[0];
+		var aLi=oUl.children;
+		var oPrev=document.getElementById('prev');
+		var oNext=document.getElementById('next');
+		
+		var oP=oBox.getElementsByTagName('p')[0];
+		var aBtn=oP.children;
+		var iNow=0;	
+		var timer=null;	
+		oBox.onmouseover=function(){
+			oPrev.style.display='block';
+			oNext.style.display='block';
+			clearInterval(timer);
+		};
+		oBox.onmouseout=function(){
+			oPrev.style.display='none';
+			oNext.style.display='none';
+			timer=setInterval(function(){
+				nextShow();
+			},2000);
+		};
+		oPrev.onmouseover=function(){
+			oPrev.className='active';
+		};
+		oPrev.onmouseout=function(){
+			oPrev.className='';
+		};
+		oPrev.onclick=function(){
+			iNow--;
+			if(iNow<0)iNow=aBtn.length-1;
+			tab();			
+		};
+		oNext.onmouseover=function(){
+			oNext.className='active';
+		};
+		oNext.onmouseout=function(){
+			oNext.className='';
+		};
+		function nextShow(){
+			iNow++;
+			if(iNow>=aBtn.length)iNow=0;
+			tab();			
+		}
+		oNext.onclick=nextShow;
+		function tab(){
+					for(var i=0;i<aBtn.length;i++){
+						aBtn[i].className='';
+						startMove(aLi[i],{'opacity':0});
+						//aLi[i].style.opacity=0;
+					}
+					aBtn[iNow].className='on';
+					startMove(aLi[iNow],{'opacity':1});
+					//aLi[index].style.opacity=1;
+		}
+		
+		for(var i=0;i<aBtn.length;i++){
+			(function(index){
+				aBtn[index].onmouseover=function(){
+					iNow=index;
+					tab();
+				};
+			}) (i);
+		}
+		
+		timer=setInterval(nextShow,2000);
+		
+		
+	};
+</script>
+</head>
+
+<body>
+	<div id="box">
+		<ul>
+			<li><img src="img/1.jpg"/></li>
+			<li><img src="img/2.jpg"/></li>
+			<li><img src="img/3.jpg"/></li>
+			<li><img src="img/4.jpg"/></li>
+			<li><img src="img/5.jpg"/></li>		
+		</ul>
+		<p><span class="on"></span><span></span><span></span><span></span><span></span></p>
+		<a href="javascript:;" id="prev">&lt;</a>
+		<a href="javascript:;" id="next">&gt;</a>
+	</div>
+</body>
+</html>

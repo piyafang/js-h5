@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3-2.基本浮动</title>
+<style>
+	*{ margin:0;
+	padding:0;
+	}
+	.clearFix:after{ content:''; 
+		clear:both; 
+		display:block;
+	}
+	.box{ width:500px; 
+		height:290px;
+		margin:0 auto;
+	}
+	.left{ width:300px; 
+		height:291px; 
+		background:#999;
+		float:left;
+	}
+	.right{ 
+		width:190px; 
+		height:290; 
+		float:left; 
+		padding-left:10px;
+	}
+	.right_top{ 
+		width:190px; 
+		height:140px; 
+		background:#09f; 
+	}
+	.right_bottom{ 
+		width:190px; 
+		height:140px; 
+		background:#9f0; 
+		padding-top:10px;
+	}
+
+</style>
+</head>
+
+<body>
+	<div class="clearFix box">
+		<div class="left"></div>
+		<div class="right">
+			<div class="right_top"></div>
+			<div class="right_bottom"></div>
+		</div>
+	</div>
+	
+</body>
+</html>

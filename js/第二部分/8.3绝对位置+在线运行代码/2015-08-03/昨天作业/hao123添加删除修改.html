@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#fn_box{display:none;}
+</style>
+<script>
+function findInArr(arr,item){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==item){
+			return true;
+		}
+	}
+	return false;
+}
+function getByClass(obj,sClass){
+	var aResult = [];
+	if(obj.getElementsByClassName){
+		aResult = obj.getElementsByClassName(sClass);
+	}else{
+		var aEle = obj.getElementsByTagName('*');
+		for(var i=0;i<aEle.length;i++){
+			var aClass = aEle[i].className.split(' ');
+			if(findInArr(aClass,sClass)){
+				aResult.push(aEle[i]);
+			}
+		}
+	}
+	return aResult;
+}
+window.onload=function(){
+	var oShow = document.getElementById('show_box');
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oFn = document.getElementById('fn_box');
+	var oUl = oFn.getElementsByTagName('ul')[0];
+	var aA = oShow.children;
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var aModify = getByClass(oFn,'modify');
+	var aDel = getByClass(oFn,'delete');
+	oBtn1.onclick=function(){
+		oFn.style.display='block';
+	};
+	addEv();
+	function addEv(){
+		for(var i=0;i<aDel.length;i++){
+			(function(index){
+				
+				aDel[i].onclick=function(){
+					oUl.removeChild(this.parentNode);
+					oShow.removeChild(aA[index]);	
+					addEv();
+				};
+				
+			})(i);
+		}
+	}
+	oBtn2.onclick=function(){
+		var oA = document.createElement('a');
+		oA.innerHTML=oTxt1.value;
+		oA.href=oTxt2.value;
+		oShow.appendChild(oA);
+		var oLi = document.createElement('li');
+		oLi.innerHTML=oTxt1.value+'<a href="javascript:;" class="modify">修改</a><a href="javascript:;" class="delete">删除</a>';
+		oUl.appendChild(oLi);
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<div id="show_box">
+    	<a href="http://www.baidu.com/">百度</a>
+    	<a href="http://www.sina.com.cn/">新浪</a>
+    	<a href="http://www.taobao.com/">淘宝</a>
+    </div>
+        <input type="button" value="添加" id="btn1" />
+    <div id="fn_box">
+    	<ul>
+        	<li>百度<a href="javascript:;" class="modify">修改</a><a href="javascript:;" class="delete">删除</a></li>
+        	<li>新浪<a href="javascript:;" class="modify">修改</a><a href="javascript:;" class="delete">删除</a></li>
+        	<li>淘宝<a href="javascript:;" class="modify">修改</a><a href="javascript:;" class="delete">删除</a></li>
+        </ul>
+    	<input type="text" id="txt1" />
+        <input type="text" id="txt2" />
+        <input type="button" value="ok" id="btn2" />
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

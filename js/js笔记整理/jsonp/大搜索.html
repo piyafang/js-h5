@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+function show(json){
+	alert(json.s);
+}
+function show2(json){
+	alert(json.s);
+}
+function show3(arr){
+	console.log(arr[1]);
+}
+function show4(json){
+	alert(json.sugs);
+}
+window.onload=function(){
+	var oBD = document.getElementById('bd');
+	var oHS = document.getElementById('hs');
+	var oZS = document.getElementById('zs');
+	var oPG = document.getElementById('pg');
+	oBD.onkeyup=function(){
+		var oS = document.createElement('script');
+		oS.src='https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+oBD.value+'&cb=show';
+		var oH = document.getElementsByTagName('head')[0];
+		oH.appendChild(oS);
+	};
+	oHS.onkeyup=function(){
+		var oS = document.createElement('script');
+		oS.src='http://sug.so.360.cn/suggest?callback=show2&word='+oHS.value;
+		var oH = document.getElementsByTagName('head')[0];
+		oH.appendChild(oS);
+	};
+	oZS.onkeyup=function(){
+		var oS = document.createElement('script');
+		oS.src='http://tip.zhongsou.com/ctip?callback=show3&w='+oZS.value;
+		var oH = document.getElementsByTagName('head')[0];
+		oH.appendChild(oS);
+	};
+	oPG.onkeyup=function(){
+		var oS = document.createElement('script');
+		oS.src='http://www.chinaso.com/search/suggest?callback=show4&k='+oPG.value;
+		var oH = document.getElementsByTagName('head')[0];
+		oH.appendChild(oS);
+	};
+};
+</script>
+</head>
+
+<body>
+百度:<input type="text" id="bd" /><br/>
+好搜:<input type="text" id="hs" /><br/>
+中搜:<input type="text" id="zs" /><br/>
+盘古:<input type="text" id="pg" /><br/>
+</body>
+</html>

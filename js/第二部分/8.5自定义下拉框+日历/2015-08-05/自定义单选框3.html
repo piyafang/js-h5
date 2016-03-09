@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+span{display:inline-block;height:15px; background:url(no.gif) no-repeat; padding-left:18px;}
+span.on{background:url(yes.gif) no-repeat;}
+</style>
+<script>
+function myRadio(sName){
+	var aSpan = [];
+	var aSex = document.getElementsByName(sName);
+	for(var i=0;i<aSex.length;i++){
+		var oSpan = document.createElement('span');
+		aSpan.push(oSpan);
+		aSex[0].parentNode.insertBefore(oSpan,aSex[i]);
+		(function(index){
+			oSpan.onclick=function(){
+				for(var i=0;i<aSpan.length;i++){
+					aSpan[i].className='';
+				}
+				this.className='on';
+				aSex[index].checked=true;
+			};
+		})(i);
+	}
+	for(var i=0;i<aSex.length;i++){
+		aSex[i].style.display='none';
+	}
+}
+window.onload=function(){
+	myRadio('sex');
+	myRadio('city');
+};
+</script>
+</head>
+
+<body>
+<form action="http://www.zhinengshe.com">
+    <input type="radio" name="sex" value="boy" />男
+    <input type="radio" name="sex" value="girl" />女<br />
+    <input type="radio" name="city" value="bj" />北京
+    <input type="radio" name="city" value="sh" />上海
+    <input type="radio" name="city" value="nj" />南京
+    <input type="radio" name="city" value="wx" />无锡
+    <input type="submit" />
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

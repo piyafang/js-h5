@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-4</title>
+<style>
+*{ margin:0; padding:0;}
+.clearfix{ width:514px; height:230px; }
+.left{float:left;}
+.left_top{ width:336px; height:60px; background:#0cf;}
+ul{ width:336px; height:160px; list-style:none; margin-top:10px; overflow:hidden;}
+li{width:163px; height:75px; float:left; margin-top:10px;}
+.blue{ background:#06f;}
+.grey{ background:#999;}
+.blue1{ background:#06f; margin-right:10px;}
+.grey1{ background:#999;  margin-right:10px;}
+.right{ width:168px; height:230px; background:#99ff00; float:right;}
+
+.clearfix:after{ display:block; content:''; clear:both;}
+.clearfix{ zoom:1;}
+</style>
+</head>
+
+<body>
+	<div class="clearfix">
+		<div class="left">
+			<div class="left_top"></div>
+			<ul>
+				<li class="blue1"></li>
+				<li class="grey"></li>
+				<li class="grey1"></li>
+				<li class="blue"></li>
+			</ul>
+		</div>
+		<div class="right"></div>
+	</div>
+</body>
+</html>

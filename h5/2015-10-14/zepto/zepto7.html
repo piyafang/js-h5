@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 input {background:#CCC;}
+#div1 input.active {background:yellow;}
+
+#div1 div {width:200px; height:200px; background:#CCC; display:none;}
+</style>
+<script src="zepto.js"></script>
+<script>
+$(function (){
+	$('#div1 input').click(function (){
+		$('#div1 input').removeClass('active');
+		$(this).addClass('active');
+		
+		$('#div1 div').css('display', 'none');
+		$('#div1 div').eq($(this).index()).css('display', 'block');
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<input type="button" value="aaa" class="active" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+    <div style="display:block;">sadfasdf</div>
+    <div>ertert</div>
+    <div>gfhfhjg</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

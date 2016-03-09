@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors liuwendan (you@example.org)
+ * @date    2015-05-16 19:59:27
+ * @version $Id$
+ */
+*{font-size: 16px;font-family: "宋体";color: #000;}
+.head,.body,.foot{width: 960px;text-align: center;}
+.head,.foot{height: 50px;background: #4e9ce9;line-height: 50px;}
+.body{overflow: hidden;}
+.nav,.content,.tools{float: left;height: 500px;line-height: 500px;}
+.nav{width: 150px;border-left: 1px solid #d3e3e6;background: #d3e3e6;}
+.content{width: 600px;border-left: 1px solid #d3e3e6;border-right: 1px solid #d3e3e6;background: #fafafa;}
+.tools{width: 206px;border-right: 1px solid #d3e3e6;background: #fafafa;}background: #fafafa;

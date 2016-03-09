@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:200px; height:200px; background:#CCC; -webkit-transition:1s all ease;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function ()
+	{
+		oDiv.style.width='400px';
+		
+		//1.做法——不太好
+		/*setTimeout(function (){
+			oDiv.style.height='400px';
+		}, 1000);*/
+		
+		//2.做法——推荐
+		function end()
+		{
+			oDiv.removeEventListener('transitionend', end, false);
+			oDiv.style.height='400px';
+		}
+		oDiv.addEventListener('transitionend', end, false);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="走" id="btn1" />
+<div id="div1"></div>
+</body>
+</html>

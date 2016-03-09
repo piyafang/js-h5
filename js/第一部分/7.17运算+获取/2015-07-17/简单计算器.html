@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oTxt1 = document.getElementsByTagName('input')[0];
+	var oTxt2 = document.getElementsByTagName('input')[1];
+	var oBtn = document.getElementsByTagName('input')[2];
+	//点击按钮
+	oBtn.onclick=function(){
+		//获取两个输入框的值
+		var num1 = parseInt(oTxt1.value);
+		var num2 = parseInt(oTxt2.value);
+		//求和（相加）
+		alert(num1+num2);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" />+
+<input type="text" />
+<input type="button" value="=" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

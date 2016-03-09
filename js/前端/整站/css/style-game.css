@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*清除默认样式*/
+body,div,p,h1,h2,h3,h4,h5,h6,span,ul,ol,li,dl,dd,dt,a,i,strong,b,em img{ margin:0; padding:0;}
+li{ list-style-type:none;}
+a{text-decoration:none; }
+.clearFix:after{ clear:both; display:block; content:" ";}
+
+/*header*/
+.header{ width:710px; border-bottom:3px solid #ff7a01; padding-bottom:9px;}
+.header h3{ background:url(../images/game2.png) no-repeat left 11px; float:left; line-height:26px; font-size:17px; color:#000; font-weight:normal; padding-left:35px; padding-top:12px;padding-bottom:9px;}
+.header a{background:url(../images/more.png) no-repeat; float:right; width:49px; line-height:20px; margin-top:14px; font-size:12px;padding-left:12px;}
+
+
+
+

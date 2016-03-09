@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	#box{width:100px;height:100px;background:#f90;position:absolute;left:0;top:0;}
+</style>
+<script src="move-json2.js"></script>
+<script>
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	startMove(oBox,{'height':300,'width':300,'left':300},'ease-out',1000);
+};
+
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

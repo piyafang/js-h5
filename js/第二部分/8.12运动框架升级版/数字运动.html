@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+	window.onload=function(){
+		var oTxt=document.getElementsByTagName('input')[0];
+		var oBtn=document.getElementsByTagName('input')[1];
+		oBtn.onclick=function(){
+			var start=0;
+			var n=0;
+			var iTarget=100;
+			var dis=parseInt(iTarget-start);
+			var time=1000;
+			var count=Math.floor(time/30);
+			clearInterval(oBtn.timer);
+			oBtn.timer=setInterval(function(){
+				n++;
+				oTxt.value=dis*n/count+start;
+				if(n==count){
+					clearInterval(oBtn.timer);
+				}
+			},30);
+			
+		};
+	};
+</script>
+</head>
+
+<body>
+	<input type="text" value="0" />
+	<input type="button" value="走起" />
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+ <style type="text/css">
+ 	#box{width: 80%; height: 300px;  margin: 100px auto;}
+ 	.yes{float: left; height: 100%;}
+	#left{width: 220px; background-color: pink; margin-left:-100%;}
+	#right{width: 250px; background-color:purple; margin-left:-250px;}
+	#middle{width:100%;background-color: #333;}
+	.content{margin: 0 250px 0 220px; height: 100%; background-color:#369;}
+	</style>
+</head>
+<body>
+ 	<div id="box">
+		
+		<div class="yes" id="middle"><!-- 我们必须先写大的，浮动 -->
+ 			<div class="content"></div>
+		</div>  
+		<div class="yes" id="left"></div>
+ 		<div class="yes" id="right"></div>
+</div>
+</body>

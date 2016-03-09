@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+a:hover{ text-decoration:none;}
+.clearfix li{ float:left;}
+.amatioan{ width:100%; margin:0px; position:relative;}
+.amatioanBody{ position:relative; width:100%;}
+.amaListAll{width:1200px; margin:0px auto;}
+.foaltLfet{ position: fixed; width:102px; border:1px solid #c1183e; top:540px; left:0px; z-index:100;}
+.returnHome{ background:#c1183e; line-height:30px; color:#fff; font-size:24px; vertical-align:middle; text-align:center; padding-top:21px; height:81px; cursor:pointer; }
+.dailyRush,.brandModels{ height:104px; position:relative; background:#fff;}
+.dailyRush{border-bottom:1px solid #c1183e;}
+.daily_txt,.brand_txt{text-align:center; font-size:16px; color:#c1183e; height:20px; line-height:20px; width:104px; position:absolute; bottom:20px; left:-8px;}
+.daily,.brand{ position: absolute; width:30px;height:30px; background:url(../images/Automation.png) -65px -420px no-repeat; top:30px; left:28px; }
+.brand{ background:url(../images/Automation.png) 0px -406px no-repeat; width:35px; height:47px; top:14px;}
+.amatioanTop{ height:512px; background:url(../images/top_amatioan.jpg) center #bb1437 no-repeat; margin-bottom:20px;left:25px;}
+.amatioanTopCon{ position:relative; width:1200px; margin:0px auto; height:402px; text-align:center; padding:110px 0px 0px 0px;;}
+.amaLogo{ position:absolute; width:277px; height:50px; left:454px; top:63px; background:url(../images/Automation.png) -3px -148px no-repeat;}
+.amaCollectionBtn{ position:absolute; width:133px; height:134px; border:none; background:url(../images/Automation.png) 0px 0px no-repeat; left:76px; top:100px; cursor:pointer;}
+.amam_Discount{ position:absolute; width:327px;height:72px; left:413px; bottom:114px;background:url(../images/Automation.png) -162px -42px no-repeat;}
+.amaRotation{ position:absolute; top:109px; right:99px;  -webkit-animation: mymove 5s linear infinite;-moz-animation: mymove 5s linear infinite;-ms-animation: mymove 5s linear infinite;animation: mymove 5s linear infinite}
+.amatioanTopCon h1{ color:#fff; font-weight:bold; font-size:72px; line-height:120px; padding-left:40px;}
+.amatioanTopCon h2{ color:#fdfd00; font-weight:bold; font-size:36px; line-height:55px;}
+.topCityNav{ border-bottom:1px solid #333; height:32px; overflow:hidden;}
+.topCity{ float:left; width:1110px; } 
+/*.topCity:hover{ height:64px;} */
+.topCity li{width:90px;  height:30px; margin-bottom:2px;}
+.topCity li a{ cursor:pointer; display:block;line-height:30px; color:#333; font-size:18px; text-align:center;}
+.topCity li a:hover,.topCity li .li_hover{ background:#d64062; color:#fff;}
+.topMore a{line-height:30px; color:#333; font-size:18px; padding-right:30px;background:url(../images/Automation.png) -95px -414px no-repeat; cursor:pointer; }
+.topTittle{ width:100%; height:90px; margin-top:30px;  border-bottom:solid #d64062 4px; overflow:hidden; position:relative;}
+.topTittle p{ font-size:60px; height:90px; line-height:90px; text-align:center; color:#333; font-weight:bold;}
+.topTittle p b{ font-size:30px;font-weight:normal;}
+.topTittle span{ font-size:30px; font-weight:bold;line-height:32px; position:absolute; bottom:15px; left:0;}
+.topContentList li{ border-bottom:1px solid #ccc; padding:30px 0px 30px 24px; }
+.topContentList li:hover{ background:#f4f4f4;}
+.topAdvantage li{border-bottom:none; padding:0px;}
+.topListImg{ position:relative; width:352px; height:234px; border:1px solid #e6e4e1;}
+.topImg img{width:352px; height:234px;}
+.topTxt{ position:absolute; z-index:10; height:85px; width:80px;background:url(../images/Automation.png) 0px -199px no-repeat; top:-1px; left:-1px; color:#fff; font-weight:bold; font-size:16px; line-height:46px; font-family:Arial; padding-left:3px;}
+.topListTxt{ padding:0px 48px 0px 45px; width:390px;}
+.topDiscountTip,.topDiscountTip a{ font-size:24px; font-weight:bold; color:#000; text-align:left; height:46px; border-bottom:1px dashed #ccc; line-height:24px;}
+.topDiscountTip a:hover{ color:#ff3333;}
+.topDescription{ height:46px; border-bottom:1px dashed #ccc; line-height:46px;}
+.topDescription span{ font-size:14px; color:#666;}
+.topDescription i{ font-style:normal; font-size:14px; color:#ff3333; padding-left:5px;}
+.topDescription b{ font-weight:normal; font-size:14px; color:#ff3333; padding-right:22px;}
+.topHotline{height:64px; font-weight:bold;line-height:52px; font-size:16px; color:#333;}
+.Discount,.Subsidies,.checkOut,.Loan,.service,.Discount_1,.Subsidies_1,.checkOut_1,.Loan_1,.service_1{ width:77px; height:27px;}
+.Discount,li .Discount:hover{background:url(../images/Automation.png) -3px -316px no-repeat;}
+.Subsidies,li .Subsidies:hover{height:27px;background:url(../images/Automation.png) -97px -316px no-repeat;}
+.checkOut,li .checkOut:hover{background:url(../images/Automation.png) -192px -316px no-repeat;}
+.Loan,li .Loan:hover{background:url(../images/Automation.png) -280px -316px no-repeat;}
+.service,li .service:hover{background:url(../images/Automation.png) -372px -316px no-repeat;}
+.Discount_1,li .Discount_1:hover{background:url(../images/Automation.png) -3px -356px no-repeat;}
+.Subsidies_1,li .Subsidies_1:hover{height:27px;background:url(../images/Automation.png) -97px -356px no-repeat;}
+.checkOut_1,li .checkOut_1:hover{background:url(../images/Automation.png) -192px -356px no-repeat;}
+.Loan_1,li .Loan_1:hover{background:url(../images/Automation.png) -280px -356px no-repeat;}
+.service_1,li .service_1:hover{background:url(../images/Automation.png) -372px -356px no-repeat;}
+.topPrise{ padding:50px 0px 0px 0px; width:238px;}
+.lowPrise{ color:#000; font-size:22px; font-weight:bold; line-height:46px; height:46px;}
+.lowPrise span{ color:#ff3333; font-size:24px;}
+.oldPrise{ color:#999; font-size:19px; line-height:26px; height:26px; text-decoration:line-through;}
+.Review{ color:#ff3333; font-size:19px; line-height:60px; height:65px; position:relative; margin-top:20px;}
+.Cart{ width:55px; height:55px;background:url(../images/Automation.png) -102px -214px no-repeat; position:absolute; right:0px; top:0px;}
+.soldOut{ position:absolute; width:151px; height:91px;background:url(../images/Automation.png) -191px -194px no-repeat; z-index:15; bottom:30px; right:15px; }
+.bottomListImg{ position:relative;}
+.paste{background:url(../images/Automation.png) -378px -180px no-repeat; height:105px; width:105px; top:5px; left:5px; position:absolute; text-align:center; color:#fff; line-height:102px; font-size:30px;}
+.about_begin{ position:absolute; width:380px; height:192px;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#99000000', endColorstr='#99000000');background:rgba(0,0,0,0.6);color:#fff; top:0px; left:0px; z-index:101; text-align:center; padding-top:60px; line-height:56px; font-size:40px; cursor:pointer; display:none; cursor:pointer; }
+.bottomListImg:hover .about_begin{ display:block;}
+/*.bottomListImg:hover .about_begin{ display:block;}*/
+.bottomListImg img{ width:380px; height:252px;}
+.bottomContentList li{ width:380px; margin:30px 30px 0px 0px;}
+.botttomContent{ margin-bottom:30px;}
+.bottomContentList .last_li{ margin-right:0px;}
+.boTitle,.boTitle a{ color:#000; font-size:18px; font-weight:bold; height:28px; line-height:28px; margin-top:9px;}
+.boAdress,.boAdress a{ color:#666; font-size:14px; line-height:26px; height:26px;}
+.boCheap{line-height:32px;}
+.boCheap b,.boCheap b a{ font-size:18px; color:#ff3333;}
+.boCheap span,.boCheap span a{ font-size:12px; text-decoration:line-through; color:#999; padding-left:15px;}
+/*旋转动画*/
+@keyframes mymove
+{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+
+

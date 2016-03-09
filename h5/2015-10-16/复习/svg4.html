@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+window.onload=function ()
+{
+	var oLine=document.createElementNS('http://www.w3.org/2000/svg', 'line');
+	var oSvg=document.getElementById('svg1');
+	
+	oLine.setAttribute('x1', 100);
+	oLine.setAttribute('y1', 100);
+	oLine.setAttribute('x2', 500);
+	oLine.setAttribute('y2', 300);
+	
+	oLine.style.stroke='red';
+	oLine.style.strokeWidth='20';
+	
+	oSvg.appendChild(oLine);
+};
+</script>
+</head>
+
+<body>
+<svg id="svg1">
+</svg>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

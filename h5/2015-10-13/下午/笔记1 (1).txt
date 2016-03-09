@@ -1,0 +1,64 @@
+touch：
+1.多点：
+	start——处理最后一个
+	move/end——for，用id找
+
+2.方向：
+	start——存初始位置
+	dir——没确定-距离；确定-走
+
+3.灵活布局：
+干掉系统滚动——系统滚动：麻烦、不灵活
+俩div套
+
+---------------------------------------------------------------------------------------
+
+手势：
+1.缩放——
+	大小：
+	手指距离比例=图片比例
+	oldDis/newDis=oldW/newW
+
+	oldDis——已知：start时算
+	newDis——已知：move时算
+	oldW——已知：start时存
+	newW——求
+
+	oldDis/newDis=oldW/newW
+	newW*oldDis/newDis=oldW
+	newW*oldDis=oldW*newDis
+	newW=oldW*newDis/oldDis
+
+	-------------
+
+	位置：
+	newLeft=newPageX-((oldPageX-oldLeft)/oldW)*newW
+
+
+2.旋转——
+
+---------------------------------------------------------------------------------------
+
+总结：
+1.缩放
+*大小——比例：oldDis/oldW=newDis/newW
+*位置——比例不变(图)
+
+2.旋转
+旋转角——newAng-oldAng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

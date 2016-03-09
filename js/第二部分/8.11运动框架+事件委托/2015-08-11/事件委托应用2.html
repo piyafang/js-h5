@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementsByTagName('ul')[0];
+	var aA = document.getElementsByTagName('a');
+	
+	oBtn.onclick=function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML=oTxt.value+'<a href="javascript:;">删除</a>';
+		oUl.appendChild(oLi);
+	};
+	
+	
+	oUl.onclick=function(ev){
+		var oEvent = ev||event;
+		var oSrc = oEvent.srcElement||oEvent.target;
+		if(oSrc.tagName!='A')return;
+		oUl.removeChild(oSrc.parentNode);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" value="你好" id="txt" />
+<input type="button" value="添加" id="btn" />
+<ul>
+	<li>fjrdlskfj<a href="javascript:;">删除</a></li>
+	<li>fjrdlskfj<a href="javascript:;">删除</a></li>
+	<li>fjrdlskfj<a href="javascript:;">删除</a></li>
+	<li>fjrdlskfj<a href="javascript:;">删除</a></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

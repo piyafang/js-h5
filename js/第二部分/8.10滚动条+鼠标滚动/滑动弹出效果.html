@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	body{ background: buttonface;}
+	#box{ width: 1px;height: 1px; overflow: hidden; border: 2px groove #281;cursor: default;-moz-user-select:none; position: absolute;left: 0;top:0;}
+	#t{ width: 480px;height: 20px; line-height: 20px; background: #27c;color: #fff; font-weight: bold; border-bottom: 1px outset blue;text-align: center; overflow: hidden;}
+	#winBody{ width: 480px;height: 248px;overflow-x:hidden;overflow-y:auto;border-top: 1px inset blue;padding: 10px; text-indent: 10px; background-color: #fff;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var i=j=1;
+		var timer=null;
+		timer=setInterval(function(){
+			if(oBox.offsetWidth<=480){
+				oBox.style.width=(482-600/i)+'px';
+				i++;
+
+			}else if(oBox.offsetHeight<=270){
+				oBox.style.height=(272-400/j)+'px';
+				j++;
+			}else{
+				clearInterval(timer);
+			}
+
+		},15);
+
+	};
+</script>
+</head>
+<body>
+	<div id="box">
+		<div id="t">Demo Win - Popup</div>
+		<div id="winBody">明天，你好~</div>
+	</div>
+</body>
+</html>

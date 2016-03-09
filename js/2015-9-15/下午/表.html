@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+.num {width:20px; height:40px; border:1px solid black; position:relative; background:white; font-size:40px;}
+.num .top {position:absolute; left:0; top:0; height:20px; width:20px; overflow:hidden;}
+.num .bottom {position:absolute; left:0; height:20px; width:20px; overflow:hidden; bottom:0;}
+.num .bottom em {font-style:normal; position:absolute; width:20px; height:40px; left:0; top:-20px;}
+.num .page {position:absolute; left:0; top:0; width:20px; height:20px; -webkit-transform-style:preserve-3d; -webkit-transform-origin:bottom; -webkit-transform:perspective(300px) rotateX(0deg); -webkit-transition:1s all ease;}
+.num .page .front {position:absolute; left:0; top:0; width:100%; height:100%; background:#FFF; -webkit-transform:translateZ(1px); overflow:hidden;}
+.num .page .back {position:absolute; left:0; top:0; width:100%; height:100%; background:#FFF; -webkit-transform:translateZ(-1px) scale(1, -1); overflow:hidden;}
+.num .page .back em {position:absolute; left:0; top:0; width:100%; height:40px; top:-20px; font-style:normal;}
+
+.num:active .page {-webkit-transform:perspective(300px) rotateX(-180deg);}
+</style>
+</head>
+
+<body>
+<div class="num">
+	<span class="top">9</span>
+	<span class="bottom">
+    	<em>8</em>
+    </span>
+    <div class="page">
+    	<span class="front">8</span>
+    	<span class="back">
+        	<em>9</em>
+        </span>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

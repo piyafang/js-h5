@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+input.on{background:yellow;}
+div{width:200px; height:200px; background:#ccc; display:none;}
+div.on{display:block;}
+</style>
+<script>
+window.onload=function(){
+	var aBtn = document.getElementsByTagName('input');
+	var aDiv = document.getElementsByTagName('div');
+	for(var i=0;i<aBtn.length;i++){
+		(function(index){
+			aBtn[i].onmouseover=function(){
+				clearTimeout(this.timer);
+				var _this = this;
+				this.timer = setTimeout(function(){
+					for(var i=0;i<aBtn.length;i++){
+						aBtn[i].className='';
+						aDiv[i].className='';
+					}
+					_this.className='on';
+					aDiv[index].className='on';
+				},300);
+			};
+			aBtn[i].onmouseout=function(){
+				clearTimeout(this.timer);
+			};
+		})(i);
+	}
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="aaa" class="on" />
+<input type="button" value="bbb" />
+<input type="button" value="ccc" />
+<div class="on">111</div>
+<div>222</div>
+<div>333</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

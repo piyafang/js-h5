@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	gd.fillStyle='white';
+	gd.fillRect(0, 0, oC.width, oC.height);
+	
+	//诡异
+	var grad=gd.createRadialGradient(200, 200, 100, 380, 200, 200);
+	grad.addColorStop(0, 'red');
+	grad.addColorStop(1, 'green');
+	
+	gd.fillStyle=grad;
+	gd.fillRect(0,0,oC.width,oC.height);
+	
+	//保存
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function ()
+	{
+		var str=oC.toDataURL();
+		
+		var oImg=new Image();
+		
+		oImg.src=str;
+		
+		document.body.appendChild(oImg);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="保存" id="btn1" />
+<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+

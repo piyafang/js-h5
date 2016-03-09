@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	.active{background:#f90;}
+	.box div{ background-color: #ccc; width: 200px; height: 200px; display: none;}
+</style>
+<script type="text/javascript">
+function tab(oEv,id){
+		var oBox=document.getElementById(id);
+		var aBtn=oBox.getElementsByTagName('input');
+		var aDiv=oBox.getElementsByTagName('div');
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].index=i;
+			aBtn[i][oEv]=function(){
+				for(var j=0;j<aBtn.length;j++){
+					aBtn[j].className='';
+					aDiv[j].style.display='none';
+				}
+				this.className='active';
+				aDiv[this.index].style.display='block';
+
+			}
+		}
+}
+	window.onload=function(){
+		tab('onmouseover','box1');
+		tab('onclick','box2');
+		tab('onmouseout','box3');
+	}
+</script>
+
+</head>
+<body>
+<div id="box1" class="box">
+	<input type="button" value="aaa" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+	<div style="display:block">111</div>
+	<div>222</div>
+	<div>333</div>
+</div>
+<div id="box2"  class="box">
+	<input type="button" value="aaa" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+	<div style="display:block">111</div>
+	<div>222</div>
+	<div>333</div>
+</div>
+<div id="box3"  class="box">
+	<input type="button" value="aaa" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+	<div style="display:block">111</div>
+	<div>222</div>
+	<div>333</div>
+</div>
+	
+
+</body>
+</html>

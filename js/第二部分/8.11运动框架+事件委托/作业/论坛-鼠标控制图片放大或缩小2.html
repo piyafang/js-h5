@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+#img{ position:absolute; left:0;top:0;}
+</style>
+<script src="mywheel.js"></script>
+<script>
+	window.onload=function(){
+		var oImg=document.getElementById('img');	
+		addWheel(oImg,function(bDown,ev){
+			var disX = ev.clientX-oImg.offsetLeft;
+			var disY = ev.clientY-oImg.offsetTop;
+			var scaleX = disX/oImg.offsetWidth;
+			var scaleY = disY/oImg.offsetHeight;
+			
+			if(bDown){
+				oImg.style.width=oImg.offsetWidth+10+'px';
+				oImg.style.height=oImg.offsetHeight+10+'px';
+			}else{
+				oImg.style.width=oImg.offsetWidth-10+'px';
+				oImg.style.height=oImg.offsetHeight-10+'px';
+			}
+			oImg.style.left=ev.clientX-scaleX*oImg.offsetWidth+'px';
+			oImg.style.top=ev.clientY-scaleY*oImg.offsetHeight+'px';
+		});		
+	};
+</script>
+</head>
+
+<body>
+	<img src="5.jpg" id="img">
+</body>
+</html>

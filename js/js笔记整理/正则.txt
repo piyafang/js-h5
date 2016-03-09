@@ -1,0 +1,43 @@
+
+
+用户名：
+	uname:/^[\w\d]{6,32}$/,
+年龄：
+	age:/^((1[89])|([2-9]\d)|(100))$/,
+邮箱：
+	email:/^\w+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,6}){1,2}$/
+座机号：
+	 /^(0[1-9]\d{1,2}\-)?[1-9]\d{6,7}$/
+	 
+小说格式整理：
+	oTxt1.value.replace(/^/mg,'    ').replace(/$/mg,'\n')
+	
+敏感词过滤：
+	 /裸|约炮|信用卡|数据|恐慌/g
+	 
+去掉首尾空格：
+	str = str.replace(/^\s+|\s+$/g,'');
+	var arr = str.split(/\s+/g);
+	arr.join(' ');
+	
+中文：
+	/[\u4e00-\u9fa5]/
+
+userAgent：
+		if(window.navigator.userAgent.search(/firefox/i)!=-1){
+			alert('ff');
+		}else if(window.navigator.userAgent.search(/chrome/i)!=-1){
+			alert('chrome');
+		}
+	else if(window.navigator.userAgent.search(/msie 9/i)!=-1)
+	{
+		alert('IE9');
+}
+
+qq号：
+	/[1-9]\d{4,10}/g
+
+
+
+
+

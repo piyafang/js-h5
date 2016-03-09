@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0; padding:0;}
+	li{ text-decoration:none; margin-bottom:10px;}
+	b,.content{ float:left;}
+	p{ padding-left:20px;}
+	.clearFix:after{ clear:both; display:block; content:" "; width:0; height:0;}
+.clearFix{*zoom:1;}
+</style>
+
+</head>
+
+<body>
+	<div>
+		<ul>
+			<li class="clearFix">
+				<b>用户名：</b>
+				<div class="content">
+					<input  name="username"  type="text" />
+					<i>请输入用户名</i>
+					<p>不超过14个字节</p>
+				</div>
+			</li>
+			<li class="clearFix">
+				<b>密码：</b>
+				<div>
+					<input  name="psd"  type="password" />
+					<p>密码长度6-14位</p>
+				</div>
+			</li>
+			<li class="clearFix">
+				<b>性别：</b>
+				<input  name="sex"  type="radio"  value="男" />男
+				<input  name="sex"  type="radio" value="女" />女
+			</li>
+			<li class="clearFix">
+				<input  name="submit"  type="submit"  value="立即注册"/>
+			</li>
+
+		</ul>
+	</div>
+
+</body>
+</html>

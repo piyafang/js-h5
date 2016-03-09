@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	div{ width:80px;height:80px; border-radius:50%;position:absolute;left:0;top:0;}
+</style>
+<script src="move-json4.js"></script>
+<script>
+	function rnd(n,m){
+		return parseInt(n+Math.random()*(m-n));
+	}
+	window.onload=function(){
+		for(var i=0;i<50;i++){
+			var oDiv=document.createElement('div');
+			oDiv.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+			var l=Math.random()*document.documentElement.clientWidth-80;
+			var t=Math.random()*document.documentElement.clientHeight-80;
+			oDiv.style.left=l+'px';
+			oDiv.style.top=t+'px';
+			document.body.appendChild(oDiv);
+			
+		}
+		var aDiv=document.body.children;
+		
+		function ballMove(){
+				for(var i=0;i<aDiv.length;i++){
+					startMove(aDiv[i],{'left':Math.random()*document.documentElement.clientWidth-80,'top':Math.random()*document.documentElement.clientHeight-80},{'type':'ease-out','time':900});
+				}
+		}
+		ballMove();
+		var timer=null;
+		clearInterval(timer);
+		timer=setInterval(ballMove,500);
+		document.onclick=function(){
+			for(var i=0;i<aDiv.length;i++){
+				startMove(aDiv[i],{'left':document.documentElement.clientWidth/2-aDiv[i].offsetWidth/2,'top':document.documentElement.clientHeight/2-aDiv[i].offsetHeight/2},{'type':'ease-out','time':500});
+				clearInterval(timer);
+			}
+		};
+		
+	};
+</script>
+</head>
+
+<body>
+</body>
+</html>

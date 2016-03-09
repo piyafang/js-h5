@@ -1,0 +1,6 @@
+*{margin:0;padding:0}
+.header{margin:10px 0 0 10px;border:1px solid #666;width:960px;}
+.div1{width:960px;height:50px;background:#09F;text-align:center;line-height:50px;}
+p.left{width:680px;height:500px;margin:0 10px 0 0;background:#ccc;float:left;text-align:center;line-height:500px;}
+p.right{width:270px;height:500px;background:#ccc;float:left;text-align:center;line-height:500px;}
+.div3{clear:both;width:960px;height:50px;background:#09F;text-align:center;line-height:50px;}

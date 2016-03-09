@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+.wrapper{
+	width:298px;
+	height:247px;
+	border:1px solid #e3e3e3;
+	background:#f7f6f6;
+}
+/*   标题    */
+h3{
+	padding:17px  25px  8px  25px;
+
+}
+h3 a{
+	color:#2a2a2a;
+	font-size:16px;
+	font-family:"微软雅黑";
+	font-weight:bold;
+}
+h3 span{
+	font-size:10px;
+	font-family:"微软雅黑";
+	color:#999;
+	
+}
+h3 span strong{ 
+	color:#66667c;
+}
+h3 .page{ float:right; margin-top:3px; }
+h3 .page1{
+	display:inline-block;
+	width:12px;
+	height:13px;	
+	background:url(../images/3-7_03.png) no-repeat 0;
+	
+}
+h3 .page2{
+	display:inline-block;
+	width:13px;
+	height:13px;	
+	background:url(../images/3-7_04.png) no-repeat 0;
+}
+.page_count{ padding-right:10px;}
+
+/*     标题结束    */
+.top , .bottom{
+	width:246px;
+	height:84px;
+	border:1px solid #ececec;
+	background:#fff;
+	margin-top:10px;
+	overflow:hidden;
+	
+}
+.left{
+	width:115px;
+	height:68px;
+	float:left;
+	padding:16px 0 0 20px;
+}
+.right{
+	float:left;
+}
+h5{
+	color:#3f3f3f;
+	font-size:12px;
+	font-family:"宋体";
+	font-weight:bold;
+	line-height:20px;
+}
+p{
+	color:#999;
+	font-size:12px;
+	font-family:"宋体";
+	line-height:18px;
+}
+.bottom .left h5{ font-family:"微软雅黑";}

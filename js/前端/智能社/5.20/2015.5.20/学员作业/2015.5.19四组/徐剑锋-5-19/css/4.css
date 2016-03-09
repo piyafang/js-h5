@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+.left{width:300px;
+    height:290px;
+	background:#999999;
+	float:left;
+	margin-right:10px;}
+.right{float:left;}
+.top{width:190px;
+     height:140px;
+	 background:#0099FF;}
+.bottom{width:190px;
+     height:140px;
+	 background:#99FF00;
+	 margin-top:10px;}
+
+

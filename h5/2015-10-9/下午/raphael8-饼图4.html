@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script src="raphael.js"></script>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+window.onload=function ()
+{
+	var p=Raphael(0, 0, 800, 600);
+	
+	var aData=[1260, 600, 300, 800, 100, 900, 180];
+	var aColor=['#4572a7', '#aa4643', '#89a54e', '#4198af', '#db843d'];
+	
+	//
+	var cx=400,cy=300;
+	
+	function pie(start, end, color)
+	{
+		//画角
+		var r=200;
+		
+		var path=p.path();
+		
+		function calc(r)
+		{
+			//第一步、算起点位置
+			var start_x=cx+Math.sin(d2a(start))*r;
+			var start_y=cy-Math.cos(d2a(start))*r;
+			
+			//第二步、算终点位置
+			var end_x=cx+Math.sin(d2a(end))*r;
+			var end_y=cy-Math.cos(d2a(end))*r;
+			
+			//第三步、画
+			path.animate({path: [
+				'M', cx, cy,
+				'L', start_x, start_y,
+				'A', r, r, 0, ((end-start)>180?1:0), 1, end_x, end_y,
+				'Z'
+			].join(' ')}, 300, 'bounce');
+		}
+		
+		//第一次
+		//第一步、算起点位置
+		var start_x=cx+Math.sin(d2a(start))*r;
+		var start_y=cy-Math.cos(d2a(start))*r;
+		
+		//第二步、算终点位置
+		var end_x=cx+Math.sin(d2a(end))*r;
+		var end_y=cy-Math.cos(d2a(end))*r;
+		
+		//第三步、画
+		path.attr('path', [
+			'M', cx, cy,
+			'L', start_x, start_y,
+			'A', r, r, 0, ((end-start)>180?1:0), 1, end_x, end_y,
+			'Z'
+		].join(' '));
+		
+		path.attr('fill', color);
+		path.attr('stroke', 'none');
+		
+		path.calc=calc;
+		
+		return path;
+	}
+	
+	//正式画
+	var sum=0;
+	for(var i=0;i<aData.length;i++)
+	{
+		sum+=aData[i];
+	}
+	
+	var now=0;
+	for(var i=0;i<aData.length;i++)
+	{
+		var ang=360*aData[i]/sum;
+		
+		var path=pie(now, now+ang, aColor[i%aColor.length]);
+		
+		now+=ang;
+		
+		//
+		path.hover(function (){
+			this.calc(230);
+		}, function (){
+			this.calc(200);
+		});
+	}
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+

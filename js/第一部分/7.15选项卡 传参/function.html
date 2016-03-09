@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	#box{ width: 200px; height: 200px;background: #ccc; transition:all .6s;}
+</style>
+
+</head>
+<body>
+	
+	<div id="box"></div>
+<script type="text/javascript">
+	var oBox=document.getElementById('box');
+	oBox.onmouseover=function(){
+		oBox.style.width='400px';
+		oBox.style.height='400px';
+		oBox.style.background='#f90';
+	}
+	oBox.onmouseout=function(){
+		oBox.style.width='200px';
+		oBox.style.height='200px';
+		oBox.style.background='#ccc';
+	}
+</script>
+
+</body>
+</html>

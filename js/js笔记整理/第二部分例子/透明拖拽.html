@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+div{ width:100px;height:100px; background:#99c; position:absolute;}
+#box{left:0;top:0;}
+</style>
+<script>
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		oBox.onmousedown=function(ev){
+			var oEv=ev||event;
+			var oCopyBox=oBox.cloneNode(true);
+			oCopyBox.removeAttribute('id');
+			oCopyBox.style.opacity=0.5;
+		oCopyBox.style.filter='alpha(opacity:50)';
+		document.body.appendChild(oCopyBox);
+			
+			var disX=oEv.clientX-oBox.offsetLeft;
+			var disY=oEv.clientY-oBox.offsetTop;
+			document.onmousemove=function(ev){
+				var oEv=ev||event;
+				var l=oEv.clientX-disX;
+				var t=oEv.clientY-disY;
+
+				if(l<100){
+					l=0;	
+				}else if(l>document.documentElement.clientWidth-oCopyBox.offsetWidth-100){
+					l=document.documentElement.clientWidth-oCopyBox.offsetWidth;
+				}
+				if(t<100){
+					t=0;	
+				}else if(t>document.documentElement.clientHeight-oCopyBox.offsetHeight-100){
+					t=document.documentElement.clientHeight-oCopyBox.offsetHeight;
+				}
+				
+				oCopyBox.style.left=l+'px';
+				oCopyBox.style.top=t+'px';				
+			};
+			document.onmouseup=function(){
+				oBox.style.left=oCopyBox.offsetLeft+'px';
+				oBox.style.top=oCopyBox.offsetTop+'px';
+				oCopyBox.style.display='none';
+				document.onmousemove=null;
+				document.onmouseup=null;
+				oCopyBox.releaseCapture&&oCopyBox.releaseCapture();			
+			};
+			
+			oCopyBox.setCapture&&oCopyBox.setCapture();
+			return false;
+			
+		};		
+	};
+
+</script>
+</head>
+
+<body>
+	<div id="box"></div>
+</body>
+</html>

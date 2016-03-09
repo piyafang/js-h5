@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:700px; height:400px; background:url(img/1.jpg) no-repeat; margin:100px auto; position:relative; -webkit-transform-style:preserve-3d;}
+#div1 span {position:absolute;}
+</style>
+<script>
+function rnd(n, m)
+{
+	return Math.floor(Math.random()*(m-n)+n);
+}
+
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	var R=4;
+	var C=7;
+	
+	for(var r=0;r<R;r++)
+	{
+		for(var c=0;c<C;c++)
+		{
+			var oS=document.createElement('span');
+			
+			oS.style.background='url(img/0.jpg) no-repeat';
+			
+			oS.style.width=oDiv.offsetWidth/C+'px';
+			oS.style.height=oDiv.offsetHeight/R+'px';
+			
+			oDiv.appendChild(oS);
+			
+			oS.style.left=c*oS.offsetWidth+'px';
+			oS.style.top=r*oS.offsetHeight+'px';
+			
+			oS.style.backgroundPosition='-'+oS.offsetLeft+'px -'+oS.offsetTop+'px';
+		}
+	}
+	
+	var now=0;
+	
+	//
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function ()
+	{
+		var aSpan=oDiv.children;
+		
+		//0.加上运动
+		for(var i=0;i<aSpan.length;i++)
+		{
+			aSpan[i].style.WebkitTransition='0.7s all ease';
+		}
+		
+		//1.散开
+		for(var i=0;i<aSpan.length;i++)
+		{
+			(function (i){
+				setTimeout(function (){
+					//距离
+					var disX=(aSpan[i].offsetLeft+aSpan[i].offsetWidth/2)-oDiv.offsetWidth/2;
+					var disY=(aSpan[i].offsetTop+aSpan[i].offsetHeight/2)-oDiv.offsetHeight/2;
+					
+					//距离*2
+					aSpan[i].style.WebkitTransform='perspective(800px) translate('+disX+'px, '+disY+'px) translateZ(700px) rotateX('+rnd(-180, 180)+'deg) rotateY('+rnd(-180, 180)+'deg)';
+					aSpan[i].style.opacity=0;
+				}, rnd(0, 100));
+			})(i);
+		}
+		
+		//走完了——回到原来位置
+		function fnEnd()
+		{
+			now++;
+			//span回到原来位置
+			for(var i=0;i<aSpan.length;i++)
+			{
+				aSpan[i].style.WebkitTransition='none';
+				aSpan[i].style.WebkitTransform='translate(0, 0)';
+				aSpan[i].style.opacity=1;
+				
+				aSpan[i].style.backgroundImage='url(img/'+now%3+'.jpg)';
+				oDiv.style.backgroundImage='url(img/'+(now+1)%3+'.jpg)';
+			}
+			
+			aSpan[0].removeEventListener('transitionend', fnEnd, false);
+		}
+		aSpan[0].addEventListener('transitionend', fnEnd, false);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮" id="btn1" />
+<div id="div1">
+</div>
+</body>
+</html>

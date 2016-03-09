@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>四个块</title>
+<style>
+*{ margin:0; padding:0;}
+.s{ background:#00ccff; width:338px; height:62px;margin-bottom:10px;}
+.clearFix:after{ content:''; clear:both; display:block; }
+.h{ float:left;}
+.a{ width:348px; }
+.b{ background:#0066ff; width:164px; height:75px; float:left;margin-right:10px; margin-bottom:10px;}
+.c{ background:#999; width:164px; height:75px; float:left;margin-right:10px; margin-bottom:10px;}
+.d{ background:#999; width:164px; height:75px; float:left;margin-right:10px; margin-bottom:10px;}
+.e{ background:#0066ff; width:164px; height:75px; float:left;margin-right:10px; margin-bottom:10px;}
+.xx{ background:#99ff00; width:168px; height:230px; float:left;}
+</style>
+
+</head>
+
+
+<body>
+	<div class="box clearFix">
+		<div class="h">
+			<div class="s"></div>
+			<div class="x">
+				<div class="a">
+					<div class="b"></div>
+					<div class="c"></div>
+					<div class="d"></div>
+					<div class="e"></div>
+				</div>
+			</div>
+		</div>
+			
+		<div class="xx"></div>
+	
+	</div>
+</body>
+</html>

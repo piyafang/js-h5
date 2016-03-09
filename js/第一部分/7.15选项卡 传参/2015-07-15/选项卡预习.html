@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+div input{background:#ccc;}
+div input.on{background:red;}
+div div{width:200px; height:200px; background:#ccc; display:none;}
+</style>
+<script>
+function tab(sEv,id){
+	var oBox = document.getElementById(id);
+	var aBtn = oBox.getElementsByTagName('input');
+	var aDiv = oBox.getElementsByTagName('div');
+	//给所有按钮加自定义属性，加事件
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].index=i;
+		aBtn[i][sEv]=function(){
+			//先清除所有的样式
+			for(var i=0;i<aBtn.length;i++){
+				aBtn[i].className='';
+				aDiv[i].style.display='none';
+			}
+			//改变当前的样式
+			this.className='on';
+			aDiv[this.index].style.display='block';
+		};
+	}
+}
+window.onload=function(){
+	tab('onclick','box');
+	tab('onmouseover','box2');
+	tab('onmouseout','box3');
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<input type="button" value="aaa" class="on" />
+    <input type="button" value="bbb" />
+    <input type="button" value="ccc" />
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+<div id="box2">
+	<input type="button" value="aaa" class="on" />
+    <input type="button" value="bbb" />
+    <input type="button" value="ccc" />
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+<div id="box3">
+	<input type="button" value="aaa" class="on" />
+    <input type="button" value="bbb" />
+    <input type="button" value="ccc" />
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

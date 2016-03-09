@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<title>xxxx</title>
+<script type="text/javascript" src="cordova.js"></script>
+<script>
+function findMax(arr, name)
+{
+	var max=-99999999;
+	
+	for(var i=0;i<arr.length;i++)
+	{
+		if(arr[i][name]>max)
+		{
+			max=arr[i][name];
+		}
+	}
+	
+	return max;
+}
+
+function findMin(arr, name)
+{
+	var min=9999999999;
+	
+	for(var i=0;i<arr.length;i++)
+	{
+		if(arr[i][name]<min)
+		{
+			min=arr[i][name];
+		}
+	}
+	
+	return min;
+}
+
+document.addEventListener('deviceready', function (){
+	var arr=[];	//存值
+	
+	navigator.accelerometer.watchAcceleration(function (res){
+		//存8个值
+		arr.push({x: res.x, y: res.y, z: res.z});
+		
+		if(arr.length>8)
+		{
+			arr.shift();
+		}
+		
+		//最大的、最小的
+		//x/y/z
+		var max_x=findMax(arr, 'x'),
+			max_y=findMax(arr, 'y'),
+			max_z=findMax(arr, 'z');
+			
+		var min_x=findMin(arr, 'x'),
+			min_y=findMin(arr, 'y'),
+			min_z=findMin(arr, 'z');
+		
+		//
+		if(max_x-min_x>=15 || max_y-min_y>=15 || max_z-min_z>=15)
+		{
+			alert('摇了');
+		}
+	}, function (){}, {
+		frequency: 50
+	});
+}, false);
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

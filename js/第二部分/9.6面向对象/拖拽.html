@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0;padding:0;}
+ div{ width:100px;height:100px; background:#99c; position:relative; left:0;top:0;}
+</style>
+<script>
+	function Drag(){
+		this.oBox=document.getElementsByTagName('div')[0];
+		var _this=this;
+		this.oBox.onmousedown=function(ev){
+			_this.dragDown(ev);
+		};
+	}
+	
+	Drag.prototype.dragDown=function(ev){
+			var oEv=ev||event;
+			var disX=oEv.clientX-this.oBox.offsetLeft;
+			var disY=oEv.clientY-this.oBox.offsetTop;
+			var _this=this;
+			
+			document.onmousemove=function(ev){
+				_this.dragMove(ev,disX,disY);
+			};
+			document.onmouseup=function(){
+				_this.dragUp();
+			};
+			
+			this.oBox.setCapture&&this.oBox.setCapture();
+			return false;
+	}
+	
+	Drag.prototype.dragMove=function(ev,disX,disY){
+				var oEv=ev||event;
+				var l=oEv.clientX-disX;
+				var t=oEv.clientY-disY;
+				var maxL=document.documentElement.clientWidth-this.oBox.offsetWidth;
+				var maxT=document.documentElement.clientHeight-this.oBox.offsetHeight;
+				if(l<100){
+					l=0;
+				}else if(l>maxL-100){
+					l=maxL;
+				}
+				if(t<100){
+					t=0;
+				}else if(t>maxT-100){
+					t=maxT;
+				}
+				this.oBox.style.left=l+'px';
+				this.oBox.style.top=t+'px';
+	}
+	
+	
+	Drag.prototype.dragUp=function(){
+				document.onmousemove=null;
+				document.onmouseup=null;
+				this.oBox.releaseCapture&&this.oBox.releaseCapture();			
+	}
+	
+	
+	window.onload=function(){
+		new Drag();
+	};
+</script>
+</head>
+
+<body>
+	<div id="box"></div>
+</body>
+</html>

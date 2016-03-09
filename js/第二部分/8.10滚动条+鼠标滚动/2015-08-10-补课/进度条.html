@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:500px; height:30px; background:#ccc; margin:100px auto;}
+#bar{width:0; height:30px; background:#f90;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oBar = document.getElementById('bar');
+	//在网络上加载图片
+	//http://www.zhinengshe.com/works/3525/img/0.jpg
+	var count = 0;
+	for(var i=0;i<77;i++){
+		var oImage = new Image();
+		
+		oImage.onload=function(){
+			count++;
+			//比例：可变的/总数
+			var scale = count/77;
+			//oBar.style.width=scale*100+'%';
+			oBar.style.width=scale*500+'px';
+		};
+		
+		
+		oImage.src='http://www.zhinengshe.com/works/3525/img/'+i+'.jpg';
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<div id="bar"></div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

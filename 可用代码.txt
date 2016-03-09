@@ -1,0 +1,574 @@
+﻿
+http://json.parser.online.fr/
+
+
+1. 渲染转义
+	template && template.config('escape', false);
+
+2.选择器
+	function $(selector) {
+		return document.getElementById(selector);
+	}
+
+	function $$(selector, context) {
+		return (context || document).querySelector(selector);
+	}只返回满足条件的第一个元素
+
+
+3.//解析参数
+
+function paramParse(key) {
+	if (!location.search) return;
+	var paramArr = location.search.slice(1).split('&');
+	var paramPair = {};
+	paramArr.forEach(function(item) {
+		var param = item.split('=');
+		paramPair[param[0]] = param[1];
+	});
+	if (key) return paramPair[key];
+	return paramPair;
+}
+4.JSONP
+/**
+ * JSONP
+ */
+function JSONP(url, callback) {
+	var script = document.createElement('script');
+	script.src = url + '&callback=' + callback;
+	document.body.appendChild(script);
+	//监听是否错误及执行时间
+}
+
+
+调用
+	var ad_Url=decodeURIComponent(paramParse('details_url'));
+	location.href= decodeURIComponent(paramParse('pack_name'));
+	JSONP(ad_Url,renderDetail.name);
+
+
+5. 屏幕高度
+var screenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+6.切换
+
+function toggleLoading(bool) {
+	$('shade').className = bool? 'show': 'hide';
+}
+
+
+7.固定时间段内只触发一次
+
+/**
+ * debounce 事件在固定时间段内只触发一次
+ */
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this,
+			args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+function scrollInit() {
+		// 如果当前tab已加载完, 则取消scroll事件
+		document.addEventListener('scroll', debounce(loadMore, 150));
+	}
+
+
+
+8.foo.call(this, arg1,arg2,arg3) == foo.apply(this, arguments)==this.foo(arg1, arg2, arg3)
+
+function getMax2(arr){
+	return Math.max.apply(null,arr);
+}s
+
+9.Object.keys()
+
+	var arr = ["a", "b", "c"];
+	alert(Object.keys(arr)); // 弹出"0,1,2"
+
+	// 类数组对象
+	var obj = { 0 : "a", 1 : "b", 2 : "c"};
+	alert(Object.keys(obj)); // 弹出"0,1,2"
+
+	// getFoo是个不可枚举的属性
+	var my_obj = Object.create({}, { getFoo : { value : function () { return this.foo } } });
+	my_obj.foo = 1;
+
+	alert(Object.keys(my_obj)); // 只弹出foo
+
+10.artTemplate循环模板
+
+	<script id="test" type="text/html">
+		{{if isAdmin}}
+			<ul>
+			    {{each list as value i}}
+			        <li>索引 {{i + 1}} ：{{value}}</li>
+			    {{/each}}
+			</ul>
+		{{/if}}
+	</script>
+
+	var data = {
+	    title: '数据是data_json',
+	    isAdmin: true,
+	    list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+	};
+	var html = template('test', data);
+	document.getElementById('content').innerHTML = html;
+
+
+11.获取样式
+	function setStyle(eles, attr, value) {
+		if (!eles[0]) return;
+		eles[0].style[attr] = value;
+	}
+
+12.//重定向
+function redirect(path1, path2, param) {
+	location.href = location.href.replace(path1, path2) + (param || '');
+}
+
+//url 参数
+function paramParse(key) {
+	if (!location.search) return;
+	var paramArr = location.search.slice(1).split('&');
+	var paramPair = {};
+	paramArr.forEach(function(item) {
+		var param = item.split('=');
+		paramPair[param[0]] = param[1];
+	});
+	if (key) return paramPair[key];
+	return paramPair;
+}
+
+//iOS版本
+function iOSVersion() {
+	if (/iP(hone|od|ad)|MacIntel/.test(navigator.platform)) {
+		var v = (navigator.userAgent).match(/OS ([0-9]+)_(\d+)_?(\d+)?/);
+		return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3], 10)];
+	}
+}
+
+13.navigator.platform
+
+14.//返回顶部
+function toTop(ele) {
+  ele.on('click', function(e) {
+    document.body.scrollTop = 0;
+    ele.hide();
+  });
+}
+
+//tab切换
+function tabSwitchInit(ele, callback) {
+  ele.delegate('li', 'click', function(e) {
+    var index = $(this).index();
+    ele.find('.on').removeClass('on');
+    $(this).addClass('on');
+    callback && callback(index);
+  });
+}
+
+15.弹窗
+
+//创建toast
+function toast(message) {
+  if ($('.toast')[0]) return;
+  var divEle = document.createElement('div');
+  divEle.className = 'toast';
+  divEle.innerHTML = '<span>' + message + '</span>';
+  document.body.appendChild(divEle);
+  setTimeout(function() {
+    $(divEle).remove();
+  }, 3000);
+}
+
+
+16.全选操作
+
+ //全选操作
+  selectAll.on('click', function(e) {
+    if (this.className == 'not-selected') {
+      $('.not-selected').addClass('selected');
+      selectedIds = [].slice.call(document.querySelectorAll('.cell')).map(function(item) {
+        return item.getAttribute('data-id');
+      });
+    } else {
+      selectedIds = [];
+      $('.selected').removeClass('selected');
+    }
+    hbbCalc(selectedIds, 'shop-cart');
+  });
+
+
+17.补全地址
+var baseLocation = 'http://' + location.host;
+
+
+
+18.jquery trigger:
+
+	$("p").bind("myEvent", function (event, message1, message2) {
+		  alert(message1 + ' ' + message2);
+	});
+	$("p").trigger("myEvent", ["Hello","World!"]);
+
+   jquery live:
+
+	$("a").live({
+ 		 click: function() {
+   		 // do something on click
+ 	 },
+		  mouseover: function() {
+ 		   // do something on mouseover
+ 		 }
+	});
+
+
+19.以下两段代码是等同的:
+	$("table").delegate("td", "hover", function(){
+		 $(this).toggleClass("hover");
+	});
+
+	$("table").each(function(){
+		  $("td", this).live("hover", function(){
+		       $(this).toggleClass("hover");
+		  });
+	});
+
+
+20.序列化方式
+
+jQuery 代码:
+var myObject = {
+  a: {
+    one: 1,
+    two: 2,
+    three: 3
+  },
+  b: [1,2,3]
+};
+var recursiveEncoded = $.param(myObject);
+var recursiveDecoded = decodeURIComponent($.param(myObject));
+
+alert(recursiveEncoded);
+alert(recursiveDecoded);
+//a%5Bone%5D=1&a%5Btwo%5D=2&a%5Bthree%5D=3&b%5B%5D=1&b%5B%5D=2&b%5B%5D=3
+//a[one]=1&a[two]=2&a[three]=3&b[]=1&b[]=2&b[]=3
+
+
+
+21.根据数据加载swipe
+// 首页swipe
+function sliderInit(ele, data, template_html, disableScroll) {
+  ele.html(template(template_html, data));
+  Swipe(ele[0], {
+    auto: 3000,
+    // disableScroll: false,
+    callback: function(index) {
+      var swipeStatus = document.getElementById('swipe-status');
+      swipeStatus.querySelector('.on') && (swipeStatus.querySelector('.on').className = '');
+      var statusChildren = swipeStatus.children;
+      var currentChildren = statusChildren[index] || statusChildren[index - statusChildren.length];
+      currentChildren.className = 'on';
+    }
+  });
+}
+
+
+22.node.js
+
+	单独的js   exports.add=function(){ };
+                   exports.minus=function(){ };
+	打包的js   exports.code=require('./add.js').add;
+		  exports.minus=require('./minus.js').minus;
+
+发布  cmd中     npm init　生成package.json
+		npm adduser
+		npm publish
+
+
+
+
+
+23.sea.js
+
+单个js文件的写法
+
+  define(function(require,exports,module){
+
+	//require		引入一个模块
+	//exports 		导出一个模块
+	//module 		批量导出模块
+
+	var T = require('Tween');
+	var G = require('getStyle');
+
+	exports.changeTab = function (sId){ };
+  });
+
+html引用的写法
+
+	<script src="sea.js"></script>
+	<script>
+		seajs.use('xxk',function(mod){
+			mod.changeTab('box');
+		});
+	</script>
+
+
+批量加载seajs
+
+	html里面
+		<script src="sea.js" data-main="init"></script>
+
+
+24.require.js
+
+单个js文件的写法
+
+  define(function(require,exports,module){
+
+	//require		引入一个模块
+	//exports 		导出一个模块
+	//module 		批量导出模块
+
+	var T = require('Tween');
+	var G = require('getStyle');
+
+	exports.changeTab = function (sId){ };
+  });
+
+html引用的写法
+
+<script src="require.js"></script>
+<script>
+require(['rJS文件名'],function(mod){
+	mod.show();
+});
+</script>
+
+
+25.减少重新绘制
+
+var constructedHTML = "";
+
+for (var i = 0, len = arr.length; i < len; i++) {
+    constructedHTML += "<li>" + arr[i].title + "</li>"; //没有重新布局 - 增加到字符串
+}
+
+document.getElementById("myList").innerHTML = constructedHTML; //在这里重新布局
+
+
+
+
+26.获取当前点击对象
+function tagEvent(e){
+	var container = $$('.container');
+	var ele = e.currentTarget;
+	var currentEle = e.target;
+	if (currentEle.tagName == 'LI') {
+		toggleLoading(true);
+		setTimeout(function(){
+			var tag = currentEle.getAttribute('tag');
+			$$('.on', ele).className = '';
+			$$('.on', container).className = 'list-group';
+			currenttagId = tag;
+			$$('[tag_id="' + tag + '"]').className = 'list-group on';
+			currentEle.className = 'on';
+			tabState(tag);
+			toggleLoading(false);
+		}, 500);
+	}
+}
+
+function tabState() {
+	var tag = arguments[0];
+	var loadMoreEle = $$('.load-more span');
+	if (tagData && tagData[tag].page >= tagData[tag].totalPage) {
+		loadMoreEle.innerText = '已全部加载';
+	} else {
+		loadMoreEle.innerText = '正在加载...';
+	}
+}
+
+*****************************************************************************
+27.#with 指明语句的全局变量
+var obj={name:28};
+with(obj){
+  console.log(name);
+}
+
+
+28.    setInterval(function(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','/clock',true);
+        xhr.onload = function(){
+            if(this.status ==200){
+                document.querySelector("#clock").innerHTML = this.responseText;
+            }
+        }
+        xhr.send();
+    },1000)
+
+
+29./**
+ * 按段切分, 把一个数组按给定长度切分成若干段
+ */
+function couple(arr, length, type) {
+  var arrLen = arr.length;
+  if (arr.lenght < length) return array;
+  if (Array.isArray(arr)) {
+    var fineArr = [];
+    var arrCopy = arr.slice(0);
+    var tailArr = (arrLen % length && arrCopy.splice(0 - arrLen % length));
+    var item;
+    for (var i = 0; i < arrCopy.length / length; i++) {
+      if (type == 'string') {
+        item = arrCopy.slice(i * length, (i + 1) * length).join(',');
+      } else {
+        item = arrCopy.slice(i * length, (i + 1) * length);
+      }
+      fineArr.push(item);
+    }
+    tailArr && (fineArr[fineArr.length] = tailArr);
+    return fineArr;
+  } else {
+    return arr;
+  }
+}
+
+**************************************************************************
+
+30.data格式Url的种种应用举例
+new Buffer().toString('base64')
+
+
+可以在Html的Img对象中使用，例如
+
+<img src="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAF..." />
+可以在Css的background-image属性中使用，例如
+
+div.image {
+
+  width:100px;
+
+  height:100px;
+
+  background-image:url(data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAF...);
+
+}
+可以在Html的Css链接处使用，例如
+
+<link rel="stylesheet" type="text/css"
+
+  href="data:text/css;base64,LyogKioqKiogVGVtcGxhdGUgKioq..." />
+可以在Html的Javascript链接处使用，例如
+
+<script type="text/javascript"
+
+  href="data:text/javascript;base64,dmFyIHNjT2JqMSA9IG5ldyBzY3Jv..."></script
+
+
+32.Object.keys(item.winner)  获取键值对的key
+
+
+33.ajax原生
+
+     		_form.append('data', JSON.stringify(_data));
+
+      for (var i = 0; i < addedImages.length; i++)
+  		  _form.append('files', fileSelectors[i].files[0]);
+
+  		var _xhr = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
+  		_xhr.open('post', '/one_share_order.do');
+  		_xhr.send(_form);
+  		_xhr.onreadystatechange = function() {
+  			if (_xhr.readyState === 4 && _xhr.status >= 200&&_xhr.status<300||_xhr.status=304) {
+          var _response = JSON.parse(_xhr.responseText);
+          switch (_response.errcode) {
+            case 0:
+              if (_response.data.succ) {
+                 alert('晒单成功');
+              }
+              break;
+            case 10054:
+              if (_response.data.rs === 0) {
+                alert('不允许晒单');
+              }
+              break;
+          }
+  			} else if (_xhr.readyState === 4 && _xhr.status !== 200) {
+          alert('晒单失败！');
+  				console.log('上传出错');
+  			}
+  		}
+  		_xhr.onerror = function() {
+  				alert('网络连接失败');
+  		};
+
+
+34.  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+
+35.  filter
+	    this.choosedCitys = this.citys.filter(function(item){
+          return item.ProID == id
+        })
+
+
+36. es6 代码
+  1) function sayHello(age, name='dude'){
+			    console.log(`Hello ${name}`);
+			}
+			sayHello(12);
+
+
+	2) var [name,gender,age]=['wayou','male','secrect'];//数组解构
+console.log('name:'+name+', age:'+age);//输出： name:wayou, age:secrect
+
+	3) var fn= (v=>console.log(v));
+		var fn = function fn(v) {
+		 return console.log(v);
+		};
+
+
+	4) //将所有参数相加的函数
+		function add(...x){
+		    return x.reduce((m,n)=>m+n);
+		}
+		//传递任意个数的参数
+		console.log(add(1,2,3));//输出：6
+		console.log(add(1,2,3,4,5));//输出：15
+
+
+	5) 扩展参数
+	var people=['Wayou','John','Sherlock'];
+	//sayHello函数本来接收三个单独的参数人妖，人二和人三
+	function sayHello(people1,people2,people3){
+		console.log(`Hello ${people1},${people2},${people3}`);
+	}
+	//但是我们将一个数组以拓展参数的形式传递，它能很好地映射到每个单独的参数
+	sayHello(...people);//输出：Hello Wayou,John,Sherlock
+
+	//而在以前，如果需要传递数组当参数，我们需要使用函数的apply方法
+	sayHello.apply(null,people);//输出：Hello Wayou,John,Sherlock
+
+
+	6) for of
+	var someArray = [ "a", "b", "c" ];
+
+	for (v of someArray) {
+		console.log(v);//输出 a,b,c
+	}

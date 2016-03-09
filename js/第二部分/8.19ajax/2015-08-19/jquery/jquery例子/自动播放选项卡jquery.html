@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:200px;height:200px;}
+div input{background:#ccc;}
+div input.on{background:red;}
+div div{width:200px; height:200px; background:#ccc; display:none;}
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script>
+$(function(){
+	var iNow = 0;
+	$('#box input').click(function(){
+		iNow=$(this).index()-1;
+		tab();
+	});
+	function tab(){
+		$('#box input').eq(iNow).addClass('on').siblings('input').removeClass('on');
+		$('#box div').eq(iNow).show().siblings('div').hide();	
+	}
+	$('#prev').click(function(){
+		iNow--;
+		if(iNow<0){
+			iNow=$('#box input').length-1;
+		}
+		tab();
+	});
+	$('#next').click(function(){
+		iNow++;
+		if(iNow>$('#box input').length-1){
+			iNow=0;
+		}
+		tab();
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="box">
+	<a href="javascript:;" id="prev">←</a>
+	<input type="button" value="aaa" class="on" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+	<a href="javascript:;" id="next">→</a>
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

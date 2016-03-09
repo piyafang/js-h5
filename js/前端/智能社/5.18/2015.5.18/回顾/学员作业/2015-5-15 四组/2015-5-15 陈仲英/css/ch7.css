@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ font-size:16px; text-align:center}
+div{ width:960px; height:600px; border:1px solid #ccc; }
+i{ width:960px; height:50px; background:#4e9ce9; float:left; line-height:50px;}
+em{ width:960px; height:500px; float:left;}
+.yi{ width:680px; height:500px; background:#e2e2e2; float:left; margin-right:10px; line-height:500px;}
+.er{ width:270px; height:500px; background:#f7f7f7; float:left; line-height:500px;}
+b{ width:960px; height:50px; background:#4e9ce9; float:left; line-height:50px;}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#ul1 li{background:#ccc;}
+#ul2 li{background:red;}
+</style>
+<script>
+window.onload=function(){
+	var oUl1 = document.getElementById('ul1');
+	var oUl2 = document.getElementById('ul2');
+	var oBtn = document.getElementById('btn1');
+	var oNow = null;
+	var aLi = oUl1.children;
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].onclick=function(){
+			oNow = this;
+		};
+	}
+	oBtn.onclick=function(){
+		oUl2.appendChild(oNow);
+	};
+	
+};
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li>1111</li>
+	<li>2222</li>
+	<li>3333</li>
+	<li>4444</li>
+</ul>
+<input type="button" value="剪切" id="btn1" />
+<ul id="ul2">
+
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

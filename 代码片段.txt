@@ -1,0 +1,275 @@
+﻿
+1.查询器
+
+ document.addEventListener('DOMContentLoaded', function() {
+    function $(selector) {
+      return document.getElementById(selector);
+    }
+
+    function $$(selector) {
+      return document.querySelector(selector);
+    }
+
+    var $code = $('code');
+    if ($code) {
+      var _code = $code.innerHTML;
+        if(!_code == ''){
+          $$('.code-wrap p') && ($$('.code-wrap p').style.display = "block");
+        }
+    }
+ }
+
+
+ 2.js实现jsonp的调用 
+
+  <script type="text/javascript">
+        // 得到航班信息查询结果后的回调函数
+    var flightHandler = function(data){
+        alert('你查询的航班结果是：票价 ' + data.price + ' 元，' + '余票 ' + data.tickets + ' 张。');
+    };
+        // 提供jsonp服务的url地址（不管是什么类型的地址，最终生成的返回值都是一段javascript代码）
+
+    var url = "http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998&callback=flightHandler";
+       // 创建script标签，设置其属性
+    var script = document.createElement('script');
+    script.setAttribute('src', url);
+    // 把script标签加入head，此时调用开始
+    document.getElementsByTagName('head')[0].appendChild(script);
+ </script>
+
+
+3.jquery实现jsonp的调用
+
+ jQuery(document).ready(function(){
+        $.ajax({
+             type: "get",
+             async: false,
+             url: "http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998",
+             dataType: "jsonp",
+             jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+             jsonpCallback:"flightHandler",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+             success: function(json){
+                 alert('您查询到航班信息：票价： ' + json.price + ' 元，余票： ' + json.tickets + ' 张。');
+             },
+             error: function(){
+                 alert('fail');
+             }
+         });
+  });
+
+
+4.原型继承
+
+    // 定义 Human 类
+    function Human () {
+        this.setName = function (fname, lname) {
+            this.fname = fname;
+            this.lname = lname;
+        }
+        this.getFullName = function () {
+            return this.fname + " " + this.lname;
+        }
+    }
+     
+    // 定义 Employee 类
+    function Employee (num) {
+        this.getNum = function () {
+            return num;
+        }
+    };
+    //让 Employee 继承 Human 类
+    Employee.prototype = new Human ();
+     
+    // 实例化 Employee 对象
+    var john = new Employee ("4815162342");
+        john.setName ("John", "Doe");
+    alert (john.getFullName () + "'s employee number is " + john.getNum ());
+
+
+
+
+5.渐变背景蒙板
+
+	background: url(images/p1.jpg) no-repeat;
+	-webkit-mask:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,1)),to(rgba(0,0,0,0)));
+
+  倒影会出现在它的父元素的下面并有5px的间距:
+	-webkit-box-reflect: below 5px;
+
+  倒影会投射到元素的右边，没有间距。然后，一个蒙板将会被应用(url(mask.png)):
+	-webkit-box-reflect: right 0 url(images/p4.png);
+
+  文字边框
+	
+	h2 {-webkit-text-stroke: 1px transparent}
+
+  创建红色镂空字体：
+	h3 {
+		color: transparent;
+		-webkit-text-stroke: 4px red;
+	}
+
+将一张图片伪装成单选按钮：浏览器支持: WebKit, Gecko.
+   a {
+        -webkit-appearance: button;
+	-moz-appearance: button;
+   }
+
+6.-webkit-tap-highlight-color:rgba(255,255,255,0)
+
+	可以同时屏蔽ios和android下点击元素时出现的阴影。备注：transparent的属性值在android下无效。
+
+  -webkit-user-select: none; 禁止用户进行复制.选择。
+  
+  -webkit-appearance:none可以同时屏蔽输入框怪异的内阴影。
+
+  ios5+可以通过scrollTo(0,0)来自动隐藏浏览器地址栏。
+
+   css3动画会影响你的自动聚焦，所以自动聚焦要在动画执行之前来做，或者直接舍弃。
+
+
+7.触屏事件
+
+function handleTouchEvent(event) {
+    //只跟踪一次触摸
+    if (event.touches.length == 1) {
+        var output = document.getElementById("output");
+        switch (event.type) {
+            case "touchstart":
+                output.innerHTML = "Touch started (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")";
+                break;
+            case "touchend":
+                output.innerHTML += "<br>Touch ended (" + event.changedTouches[0].clientX + "," + event.changeTouches[0].clientY + ")";
+                break;
+            case "touchmove":
+                event.preventDefault(); //阻止滚动
+                output.innerHTML += "<br>Touch moved (" + event.changedTouches[0].clientX + "," + event.changedTouches[0].clientY + ")";
+                break;
+        }
+    }
+}
+document.addEventListener("touchstart", handleTouchEvent, false);
+document.addEventListener("touchend", handleTouchEvent, false);
+document.addEventListener("touchmove", handleTouchEvent, false);
+
+
+
+8 .form-mod ::-webkit-input-placeholder {
+    color: #666; }
+
+9 js控制文本溢出
+
+	$(".figcaption").each(function(i){
+    var divH = $(this).height();
+    var $p = $("p", $(this)).eq(0);
+    while ($p.outerHeight() > divH) {
+        $p.text($p.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));
+    };
+
+   css控制文本溢出
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+10. 文本抗锯齿
+	-webkit-text-stroke: 1px transparent;
+    
+    或
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+
+
+
+11. iscroll滚动
+        <script src="iscroll.js"><script>
+
+        <script>
+
+                    var myscroll;
+
+                    function loaded(){
+
+                   setTimeout(function(){
+
+                            myscroll=new iScroll("wrapper");
+
+                     }，100 );
+
+                }
+
+                window.addEventListener("load",loaded,false);
+
+         </script>
+
+/**
+  * 初始化iScroll控件
+  */
+  function loaded() {
+   pullDownEl = document.getElementById('pullDown');
+   pullDownOffset = pullDownEl.offsetHeight;
+   pullUpEl = document.getElementById('pullUp');
+   pullUpOffset = pullUpEl.offsetHeight;
+   myScroll = new iScroll('wrapper', {
+    scrollbarClass: 'myScrollbar', /* 重要样式 */
+    useTransition: false,
+    topOffset: pullDownOffset,
+    onRefresh: function () {
+     if (pullDownEl.className.match('loading')) {
+      pullDownEl.className = '';
+      pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+     } else if (pullUpEl.className.match('loading')) {
+      pullUpEl.className = '';
+      pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+     }
+    },
+    onScrollMove: function () {
+     if (this.y > 5 && !pullDownEl.className.match('flip')) {
+      pullDownEl.className = 'flip';
+      pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
+      this.minScrollY = 0;
+     } else if (this.y < 5 && pullDownEl.className.match('flip')) {
+      pullDownEl.className = '';
+      pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+      this.minScrollY = -pullDownOffset;
+     } else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+      pullUpEl.className = 'flip';
+      pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+      this.maxScrollY = this.maxScrollY;
+     } else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+      pullUpEl.className = '';
+      pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+      this.maxScrollY = pullUpOffset;
+     }
+    },
+    onScrollEnd: function () {
+     if (pullDownEl.className.match('flip')) {
+      pullDownEl.className = 'loading';
+      pullDownEl.querySelector('.pullDownLabel').innerHTML = '加载中...';
+      pullDownAction(); // Execute custom function (ajax call?)
+     } else if (pullUpEl.className.match('flip')) {
+      pullUpEl.className = 'loading';
+      pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';
+      pullUpAction(); // Execute custom function (ajax call?)
+     }
+    }
+   });
+   setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+  }
+  //初始化绑定iScroll控件 
+  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+  document.addEventListener('DOMContentLoaded', loaded, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

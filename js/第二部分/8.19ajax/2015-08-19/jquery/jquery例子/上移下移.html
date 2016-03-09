@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script>
+$(function(){
+	$('.prev').click(function(){
+		$(this).parent().prev().before($(this).parent());
+	});
+	$('.next').click(function(){
+		$(this).parent().next().after($(this).parent());
+	});
+});
+</script>
+</head>
+
+<body>
+<ul>
+	<li>11111<a href="javascript:;" class="prev">上移</a><a href="javascript:;" class="next">下移</a></li>
+	<li>22222<a href="javascript:;" class="prev">上移</a><a href="javascript:;" class="next">下移</a></li>
+	<li>33333<a href="javascript:;" class="prev">上移</a><a href="javascript:;" class="next">下移</a></li>
+	<li>44444<a href="javascript:;" class="prev">上移</a><a href="javascript:;" class="next">下移</a></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+

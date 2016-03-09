@@ -1,0 +1,254 @@
+h
+
+p
+
+div 块
+
+img src="图片路径"
+	alt 图挂了的时候出现
+	border
+	width
+	height
+
+	title
+
+a href="链接地址"
+	target="打开方式"
+		_blank 新窗口打开
+		_new   固定新窗口打开
+		_self  自身窗口（默认）
+		_parent 父级窗口打开
+		_top    顶级窗口打开
+
+锚点
+a href="链接地址#id"
+
+<div id="id"></div>
+
+<br /> 换行
+--------------------------------
+border:1px solid red;
+
+background:red/rgb()/#CCC;
+
+display:block/none/inline/inline-block;
+
+overflow:hidden/auto/scroll;
+
+	清浮动 
+	解决margin拖拽父级bug
+	ie6下子级撑开父级bug
+
+float:left/none/right/;
+	
+	1.它会跟着最高的那个后面！
+	2.文本环绕
+
+	.clearfix:after{
+		content:'';
+		display:block;
+		clear:both;
+	}
+	.clearfix{
+		zoom:1;
+	}
+
+定位：
+	position:
+			relative; 相对
+
+			absolute; 绝对
+			fixed;	  固定
+
+	z-index; z轴层级
+		只与同级元素比较！
+			-1
+				低于所有元素
+					想高 找爷爷去！
+	top
+	left
+	right
+	bottom
+
+绝对居中的块：
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-width/2;
+	margin-top:-height/2;
+
+-------------------------------------
+	margin
+		-负值
+			1.固定宽 元素位置
+			2.不定宽 元素大小
+	padding
+
+	border
+
+--------------------------------------
+color:
+font-size:
+font-family:
+font-weight:
+font-style:
+line-height:height;
+
+text-indent:2em
+text-align:center/left/right
+text-decoration:underline/overline/none/line-through;
+
+vertical-align:middle/top/bottom/;纵向对齐
+	vertical-align:top; img下面的几像素
+	img｛display:block;｝
+
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow:hidden;
+
+
+opacity:0.5;
+filter:alpha(opacity:50)
+------------------------------------
+表单：
+	input  type
+		text  文本输入框
+		file   上传控件
+		button 按钮 
+		submit 提交按钮
+		password 密码输入框
+		radio    单选框
+		checkbox 复选框
+			checked 已选中
+
+			readonly 只读
+
+			disabled 不可用
+
+		email 邮件
+
+		select	 下拉菜单
+			option
+
+		textarea 文本域
+
+<form action="http://www.zhinengshe.com" method="post/get"></form>
+
+	name="数据名"
+	value="数据值"
+--------------------------------------
+表格：
+	table
+		thead
+			tr
+				th
+		tbody
+			tr
+				td
+		tfoot
+			tr
+				td
+
+table{ border-collapse:collapse; width:100%;}
+td,th{ padding:0; border:1px solid red;}
+
+		rowspan 行合并
+
+		colspan 列合并
+
+		align:left/center/right
+
+		valign:top/middle/bottom
+------------------------------------
+框架：
+	iframe src="网页地址"
+		引入广告
+		做后台管理系统
+
+-------------------------------------
+等高布局：
+	两个div放在一行，并且内容高度不相等！
+
+		要求：必须让这2个div等高！
+
+		实现：给div加 
+			padding-bottom:2000px;
+			margin-bottom:-2000px;
+			给div父级加overflow:hidden;
+
+左边固定宽，右边自适应宽
+
+---------------------------------------
+js 调整 css样式的 操作属性
+
+	让div的样式的背景色=红色
+
+------------------------------
+找对象
+
+做什么的时候
+	用户的动作  叫事件！
+
+会发生什么
+
+获取元素方式：
+	1. document.getElementById('div1')
+	   通过id获取元素
+
+	2. 
+	
+定义函数：
+
+function show(){
+	document.getElementById('div1').style.display='block'
+}
+
+
+事件：
+	onclick 点击时
+
+	onmouseover 鼠标移入时
+
+	onmouseout 鼠标移出时
+
+定义变量
+	var oDiv = document.getElementById('div1');
+
+alert(); 弹出
+
+
+-------------------------------------
+修改class 和修改样式 最好不要一起混用！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+

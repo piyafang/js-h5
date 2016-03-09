@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>2015.5.12程晓娜作业</title>
+<style type="text/css">
+* { margin:0; padding:0; }
+html, body { height:100%; }
+h2 span{float: right;font:13px 'microsoft songti';color: #ccc;}
+.nav{width: 858px;padding:20px;margin-top:20px;border: 1px dotted #ccc;text-align: left;}
+.nav a{font:20px 'microsoft yahei';text-decoration: none;color: #e3662e;margin-left: 20px;}
+.nav .left{float: left;height: 80px;width: 30px;border-right: 1px solid #ccc;color: #000;font-size: 20px;text-align:left; }
+hr{margin-bottom: 10px;margin-top: 20px;}
+h2{font: 25px 'microsoft yahei';color: red;line-height: 50px;margin-bottom: 5px; }
+.bodyDiv{width: 900px;position:absolute; left: 50%;margin-left: -450px;}
+/*2-4.天猫会员价 */
+.div1{font:normal 12px 'microsoft yahei';color: #333;padding: 2px;border: 1px solid #F5F5F5;height: 340px;width: 216px;line-height: 22px;-moz-border-radius: 3px;border-radius: 3px;}
+.div #pic1{border: 1px solid #F5F5F5;}
+.div1 .value{width: 120px;height: 30px;font:normal 18px 'Arial';color: red;line-height: 30px;border: 1px solid red;}
+.div1 i{font-style: normal;font-size: 13px;}
+.div1 span i{font-size: 12px;}
+.div1 span{text-decoration: line-through;color: #ccc;font-size: 12px;font-style: normal;}
+.div1 a{color: #ccc;}
+
+/*2-6.淘宝网logo*/
+
+
+/*2-7.zcool页码*/
+.btn{margin: 10px;width: 500px;height:100px;}
+.btn div{
+	float: left;
+	width: 33px;
+	height: 33px;
+	font:bold 12px 'microsoft yahei';
+	color: #c1c1c1;
+	line-height: 33px;
+	text-align: center;
+	background: url(images/btn-bg.png) repeat;
+	border: 1px solid #ccc;
+	margin: 10px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius:3px;
+	}
+.btn #btn1{background: #FFBA00;background-image: none;color: #fff;border: #E2A209 solid 1px;}
+.btn #btn2{border: #7f7f7f solid 1px;}
+/*ie*/
+
+#btn3{background: url(images/btn-bg3.png) no-repeat;color: #fff;border:0;}
+#btn4{background: url(images/btn-bg1.png) no-repeat;border: 0;}
+#btn5{background: url(images/btn-bg2.png) no-repeat;border: 0;}
+
+/*2-8.百度音乐*/
+
+.div3{width: 250px;margin: 10px;font:bold 15px 'microsoft yahei';color:#666; line-height: 18px;}
+.div3 a{text-decoration: none;color: #2D64B3;font:normal 15px '宋体';}
+.div3 b{display:inline-block;width: 5px;font:bold 18px '宋体';color: #D84141;}
+.div3 i{width: 5px;display:inline-block;font: normal normal 12px 'microsoft yahei';}
+
+/*2-9新浪乐库*/
+.div4{width: 240px;height: 162px;border: solid 1px #E3E6ED;border-top: solid 2px #FF8400;}
+.div4 .title{
+	height: 26px;
+	width: 230px;
+	padding-left: 10px;
+	padding-top: 10px;
+	line-height:36px;
+	border-bottom: 1px solid #E3E6ED;
+	color: #000;
+	font: 17px 'microsoft yahei';
+	margin-bottom: 10px;}
+.div4 p{
+	
+	background-image:  url(images/pbg.jpg);
+	background-position: left;
+	background-repeat: no-repeat;
+	line-height: 26px;
+	font: normal 12px '宋体';
+	line-height: 25px;
+	color: #666;
+	width: 235px;
+	padding-left: 5px;
+	width: 220px;
+	margin-left: 10px;
+	margin-right: 5px;}
+/*2.11天猫网上营业厅-菜单*/
+.div5{font:13px '宋体';color: #333;width: 200px;line-height: 22px;}
+.div5 b{font:bold 17px 'microsoft yahei';line-height: 17px;}
+/*2-12.优才网友情链接*/
+
+.div6{height: 84px;width: 900px;font:normal 13px 'microsoft yahei';border-bottom: 1px dashed #ccc;margin-bottom: 20px;}
+.div6 .title{width: 885px;height:20px;font-weight: bold;padding-left: 10px;margin-left: 5px;border-left: solid 5px #F26C4F;margin-left: -1px;margin-bottom: 20px;}
+.div6 a{text-decoration: none;margin-right: 25px;margin-left:  25px;color: #525252;}
+/*2-13新闻列表*/
+
+.div7{width: 186px;height: 304px;padding: 18px;border: 1px #ccc solid;padding-bottom: 0px;padding-top: 10px }
+.div7 p{font:13px '宋体';color: #000;height:66px;padding-bottom: 18px;border-bottom: 1px #ccc dashed;margin-bottom: 18px;}
+.div7  #bdn{border: none;margin: 0;}
+/*2-14.输入框文字*/
+.inpt{font:13px '宋体';color:#999;border:1px #ccc solid;height: 34px;width: 297px;line-height: 34px;padding-left: 5px;}
+/*2-15.淘宝网首页-精选(2个)*/
+.div8{font:13px '宋体';color: #000;line-height: 32px;}
+.div8 img{width: 104px;height: 104px;}
+.div8 a{text-decoration: none;color: #3C3C3C;}
+.div8 .picDiv{width: 340px;height: 146px;border: red solid 1px;padding: 8px;padding-right: 0;padding-left: 5px;margin-bottom: 20px;}
+.div8 .picDiv .pic{float: left;text-align: center;width: 104px;margin-left: 7px;}
+
+.div8  ul{display: block;border: 1px solid red;width: 261px;height: 117px;padding: 5px;padding-top: 0;}
+.div8  ul li{line-height: 30px;list-style: none;margin: 0;}
+.div8  span{float:right;color: #9C9C9C;margin-right: 5px;}
+.div8  i{font:italic 16px 'microsoft yahei';color: red;margin-right: 5px;}
+.div8  em {color: #3C3C3C;font:italic 16px 'microsoft yahei';margin-right: 5px;}
+</style>
+</head>
+<body>
+<div class="bodyDiv" id="map">
+	<div class="nav">
+		<div class="left">目<br><br>录</div>
+		<div>
+			<a href="#map1" title="2-4.天猫会员价">2-4.天猫会员价</a>
+			<a href="#map2" title="2-6.淘宝网logo">2-6.淘宝网logo</a>
+			<a href="#map10" title="2-7.zcool页码">2-7.zcool页码</a>
+			<a href="#map3" title="2-8.百度音乐">2-8.百度音乐</a>
+			<a href="#map4" title="2-9.新浪乐库">2-9.新浪乐库</a><br>
+			<a href="#map5" title="2-11.天猫网上营业厅-菜单">2-11.天猫网上营业厅-菜单</a>
+			<a href="#map6" title="2-12.优才网友情链接">2-12.优才网友情链接</a>
+			<a href="#map7" title="2-13.新闻列表">2-13.新闻列表</a>
+			<a href="#map8" title="2-14.输入框文字">2-14.输入框文字</a><br>
+			<a href="#map9" title="2-15.淘宝网首页-精选(2个)">2-15.淘宝网首页-精选(2个)</a>
+		</div>
+		
+		
+	</div>
+	<hr>
+	<h2 id="map1">2-4.天猫会员价<span><a href="#map">&uarr;回目录</a></span></h2>
+		<div class="div1">
+			<img src="images/1.png">	
+			<img src="images/1-1.png" id="pic1">
+			<p>
+				<div class="value"><i>&nbsp;&yen;&nbsp;</i>66.00&nbsp;&nbsp;<span><i>&yen;</i>168.00</span><br></div>		
+				Kuegou 2014夏装。。。<br>
+				<a href="javascript:">Kuegou旗舰店</a>
+			</p>	
+		</div>
+		
+	<hr>
+	<h2  id="map2">2-6.淘宝网logo<span><a href="#map">&uarr;回目录</a></span></h2>
+		<img src="images/taobao.png">
+	<hr>
+	<h2 id="map10">2-7.zcool页码<span><a href="#map">&uarr;回目录</a></span></h2>
+		<div class="btn">
+			<div id="btn1">1</div><div>2</div><div id="btn2">3</div>
+		</div>
+		<p>ie 版本</p>
+		<div class="btn">
+			<div id="btn3">1</div><div id="btn4" >2</div><div id="btn5">3</div>
+		</div>
+	
+	<hr>
+	<h2 id="map3">2-8.百度音乐<span><a href="#map">&uarr;回目录</a></span></h2>
+	<div class="div3">
+		<p><b>1</b> - <a href="javascript:">时间都去哪&nbsp;&nbsp;王铮亮</a></p>	
+		<p><i>2</i> - <a href="javascript:">时间都去哪&nbsp;&nbsp;王铮亮</a></p>	
+	</div>
+
+	<hr>
+	<h2 id="map4">2-9.新浪乐库<span><a href="#map">&uarr;回目录</a></span></h2>
+	<div class="div4">
+		<div class="title">乐库</div>
+			<p>方大同的《危险世界》吴莫愁-无处不在</p>
+			<p>方大同的《危险世界》吴莫愁-无处不在</p>
+			<p>方大同的《危险世界》吴莫愁-无处不在</p>
+			<p>方大同的《危险世界》<b>吴莫愁</b>-无处不在</p>
+		
+	</div>
+
+	<hr>
+	<h2 id="map5">2-11.天猫网上营业厅-菜单<span><a href="#map">&uarr;回目录</a></span></h2>
+	<div class="div5">
+		<b>合约机</b><br>
+		
+			iphone 三星 htc 小米 华为 诺基亚
+			iphone 三星 htc 小米 华为 诺基亚
+		
+	</div>
+	<hr>
+	<h2 id="map6">2-12.优才网友情链接<span><a href="#map">&uarr;回目录</a></span></h2>
+	<div class="div6">
+		<div class="title">高等院校</div>
+		<a href="javascript:">人民大学</a><a href="javascript:">中关村创新研究学院</a><a href="javascript:">北京科技大学</a>
+	</div>
+	<div class="div6">
+		<div class="title">应用市场</div>
+		<a href="javascript:">人民大学</a><a href="javascript:">中关村创新研究学院</a><a href="javascript:">北京科技大学</a>
+	</div>
+	<hr>
+	<h2 id="map7">2-13.新闻列表<span><a href="#map">&uarr;回目录</a></span></h2>
+	<div class="div7">
+		<p>中国新华社北京什么神 2014年事件为人民中国新华社北京什么神 2014年事件为人民中国新华社北京什么神 2014年事件为人民</p>
+		<p>中国新华社北京什么神 2014年事件为人民中国新华社北京什么神  2014年事件为人民中国新华社</p>
+		<p id="bdn">中国新华社北京什么神 2014年事件为人民中国新华社北</p>
+	</div>
+	<hr>
+	<h2 id="map8">2-14.输入框文字<span><a href="#map">&uarr;回目录</a></span></h2>
+	<div class="inpt">搜索文字</div>
+	<hr>
+	<h2 id="map9">2-15.淘宝网首页-精选(2个)<span><a href="#map">&uarr;回目录</a></span></h2>
+	<div class="div8">
+		<div class="picDiv">
+			<div class="pic">
+				<img src="images/pic1.png">
+				<a href="javascript:">欧根纱露肩衣</a>
+			</div>
+			<div class="pic">
+				<img src="images/pic2.png">
+				<a href="javascript:">明星宝宝同款</a>
+			</div>
+			<div class="pic">
+				<img src="images/pic3.png">
+				<a href="javascript:">一秒扎马尾!</a>
+			</div>
+		</div>
+		<ul>
+			<li><i>1</i><a href="javascript:">55平2室2厅跃层简约小户型<span>jjwwlove</span></a></li>
+			<li><i>2</i><a href="javascript:">55平2室2厅跃层简约小户型<span>jjwwlove</span></a></li>
+			<li><i>3</i><a href="javascript:">55平2室2厅跃层简约小户型<span>jjwwlove</span></a></li>
+			<li><em>4</em><a href="javascript:">55平2室2厅跃层简约小户型<span>jjwwlove</span></a></li>
+		</ul>		
+		
+	</div>
+</div>
+
+
+
+</body>
+</html>

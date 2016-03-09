@@ -1,0 +1,41 @@
+ <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+.box{ width:514px; height:230px;}
+.clearFix: after{ content:''; clear:both; display: block;}
+
+.left{ height:230px; float:left; width:346px;}
+.left_top{ width:336px; height:60px; background:#ccc; margin-bottom:10px; float:left;}
+.left_bottom{width:346px; height:160px;float:left;}
+.left_bottom div{ background:#999; margin-right:10px; margin-bottom:10px; 
+                 width:163px; height:75px;float:left;}
+.left_bottom .li2{background:blue;}
+
+.right{ height:230px; width:168px; background:green;float:right;}
+
+</style>
+
+</head>
+
+<body>
+<div class="box clearFix">
+	<div class="left ">
+		<div class="left_top"></div>
+		<div class="left_bottom clearFix">
+			<div class="li1"></div>
+			<div class="li2"></div>
+			<div class="li2"></div>
+			<div class="li1"></div>
+		</div>
+	</div>
+	<div class="right"></div>
+
+
+
+</div>
+</body>
+</html>

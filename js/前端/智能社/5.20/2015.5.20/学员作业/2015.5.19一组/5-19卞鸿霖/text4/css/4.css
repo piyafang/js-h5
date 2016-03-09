@@ -1,0 +1,13 @@
+*{margin:0;padding:0;list-style:none;}
+.div1{width:336px;height:230px;float:left;}
+.div2{width:168px;height:230px;background:#9f0;float:left;margin:0 0 0 10px;}
+p{width:336px;height:60px;background:#0cf;margin:0 0 10px 0;}
+.oul{margin:0 0 10px 0;}
+.oul li{float:left;width:163px;height:75px;}
+.two,.three{background:#09F;}
+.one,.four{background:#ccc;}
+.one{margin:0 10px 10px 0;}
+.two{margin:0 0 10px 0;}
+.three{margin:0 10px 10px 0;}
+.four{margin:0 0 10px 0;}
+

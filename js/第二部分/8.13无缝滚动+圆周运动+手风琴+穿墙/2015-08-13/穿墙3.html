@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:200px; height:200px; background:#ccc; position:absolute; top:200px; left:300px; font-size:30px; font-weight:bold; color:#000; text-align:center; line-height:200px;}
+#box span{position:absolute; top:0; left:-200px; width:100%; height:100%; background:#093; opacity:0.5; filter:alpha(opacity:50);}
+</style>
+<script>
+function hoverDir(obj,oEvent){
+	var w = obj.offsetWidth/2+obj.offsetLeft;
+	var h = obj.offsetHeight/2+obj.offsetTop;
+	var x = w-oEvent.clientX;
+	var y = h-oEvent.clientY;
+	return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+}
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	oBox.onmouseover=function(ev){
+		var oEvent = ev||event;
+		var dir = hoverDir(oBox,oEvent);
+		switch(dir){
+			case 0:
+				oBox.innerHTML='右边移入';
+				break;
+			case 1:
+				oBox.innerHTML='下边移入';
+				break;
+			case 2:
+				oBox.innerHTML='左边移入';
+				break;
+			case 3:
+				oBox.innerHTML='上边移入';
+				break;
+		}
+	};
+	oBox.onmouseout=function(ev){
+		var oEvent = ev||event;
+		var dir = hoverDir(oBox,oEvent);
+		switch(dir){
+			case 0:
+				oBox.innerHTML='右边移出';
+				break;
+			case 1:
+				oBox.innerHTML='下边移出';
+				break;
+			case 2:
+				oBox.innerHTML='左边移出';
+				break;
+			case 3:
+				oBox.innerHTML='上边移出';
+				break;
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

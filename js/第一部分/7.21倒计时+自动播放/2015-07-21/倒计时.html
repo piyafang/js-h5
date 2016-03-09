@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oSpan = document.getElementsByTagName('span')[0];
+	//目标日期对象
+	var oTarget = new Date();
+	oTarget.setFullYear(2015,9,1);
+	oTarget.setHours(0,0,0,0);
+	//目标时间戳
+	var iTarget = oTarget.getTime();
+	setInterval(function(){
+		var oDate = new Date();
+		var iNow = oDate.getTime();
+		var s = parseInt((iTarget-iNow)/1000);
+		var d = parseInt(s/86400);
+		s%=86400;
+		var h = parseInt(s/3600);
+		s%=3600;
+		var m = parseInt(s/60);
+		s%=60;
+		oSpan.innerHTML=d+'天 '+h+':'+m+':'+s;
+	},1000);
+};
+</script>
+</head>
+
+<body>
+现在距离2015年10月1还剩<span>0天 00:00:00</span>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

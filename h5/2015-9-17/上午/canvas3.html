@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black;}
+#c1 {background:white; width:800px; height:600px;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');	//gd-图形上下文(接口)
+	
+	alert(oC.width+','+oC.height);
+	
+	gd.moveTo(10, 10);
+	gd.lineTo(100, 100);
+	gd.lineTo(10, 100);
+	gd.lineTo(100, 10);
+	gd.closePath();
+	
+	gd.stroke();
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1">
+	你的浏览器不支持canvas，<a href="http://google.com/chrome">点击</a>下载
+</canvas>
+</body>
+</html>
+
+
+
+
+
+

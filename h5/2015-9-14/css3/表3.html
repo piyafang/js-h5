@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:400px; height:400px; border:1px solid black; margin:10px auto; border-radius:50%; position:relative;}
+
+#div1 .hour {width:12px; height:100px; background:black; position:absolute; left:50%; top:50%; margin-left:-6px; margin-top:-100px; -webkit-transform-origin:center bottom;}
+#div1 .min {width:6px; height:140px; background:black; position:absolute; left:50%; top:50%; margin-left:-3px; margin-top:-140px;-webkit-transform-origin:center bottom;}
+#div1 .sec {width:2px; height:160px; background:black; position:absolute; left:50%; top:50%; margin-left:-1px; margin-top:-160px;-webkit-transform-origin:center bottom;}
+
+#div1 span.scaler {width:2px; height:8px; background:black; position:absolute; left:50%; top:0; margin-left:-1px; -webkit-transform-origin:1px 200px;}
+#div1 span.big_scaler {width:4px; height:14px; background:black; position:absolute; left:50%; top:0; margin-left:-2px; -webkit-transform-origin:2px 200px;}
+#div1 span.big_scaler em {font-style:normal; position:absolute; top:16px; width:40px; left:50%; margin-left:-20px; text-align:center;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function (){
+	var oDiv=document.getElementById('div1');
+	var oHour=document.querySelector('#div1 .hour');
+	var oMin=document.querySelector('#div1 .min');
+	var oSec=document.querySelector('#div1 .sec');
+	
+	//生成刻度
+	for(var i=0;i<60;i++)
+	{
+		var oS=document.createElement('span');
+		
+		if(i%5)	//小的
+		{
+			oS.className='scaler';
+		}
+		else
+		{
+			oS.className='big_scaler';
+			if(i==0)
+			{
+				oS.innerHTML='<em>12<\/em>';
+			}
+			else
+			{
+				oS.innerHTML='<em>'+i/5+'<\/em>';
+			}
+			oS.children[0].style.WebkitTransform='rotate('+-6*i+'deg)';
+		}
+		
+		oS.style.WebkitTransform='rotate('+6*i+'deg)';
+		
+		oDiv.appendChild(oS);
+	}
+	
+	//走起来
+	function tick()
+	{
+		var oDate=new Date();
+		
+		oHour.style.WebkitTransform='rotate('+(oDate.getHours()+oDate.getMinutes()/60)*30+'deg)';
+		oMin.style.WebkitTransform='rotate('+(oDate.getMinutes()+oDate.getSeconds()/60)*6+'deg)';
+		oSec.style.WebkitTransform='rotate('+(oDate.getSeconds()+oDate.getMilliseconds()/1000)*6+'deg)';
+	}
+	
+	tick();
+	setInterval(tick, 30);
+}, false);
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<div class="hour"></div>
+	<div class="min"></div>
+	<div class="sec"></div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

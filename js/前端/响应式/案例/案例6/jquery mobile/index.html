@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+	<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.2.min.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+    <style type="text/css">
+	.ui-controlgroup-controls{width: 100%;}
+	.ui-controlgroup-controls a{width: 25%; box-sizing:border-box;}
+	.ui-corner-all{margin:0; height: 55px;}
+
+	.ui-first-child:after{background: url(images/bao.png) 0 0 no-repeat!important;-webkit-background-size: cover!important;
+	background-size: cover!important;}
+	#gao{height: auto!important;}
+	.ui-input-search{height: 40px!important;}
+	.ui-input-clear:after{top:14px!important;}
+    </style>
+</head>
+<body>
+	<div data-role="page" id="page0">
+		<div data-role="header">
+			<h1>美智网</h1>
+		</div>
+		<div data-role="content">
+			
+			<ul data-role="listview" data-inset="true" id="gao" data-filter="true" data-filter-placeholder="请输入...">
+				<li>
+					<a href="#">
+						<img src="images/1.jpg"/>
+						<h3>姓名：刘德华</h3>
+						<p> 生日：1961年9月27日(农历八月十八)<br/>
+
+						简介：刘德华，男，1961年9月生于香港，演员、歌手、词作...  </p>
+				    </a>
+			     </li>
+				<li><a href="#">刘小强</a></li>
+				<li><a href="#">
+					
+					<img src="images/2.jpg"/>
+						<h3>姓名：刘德华</h3>
+						<p> 生日：1961年9月27日(农历八月十八)<br/>
+
+						简介：刘德华，男，1961年9月生于香港，演员、歌手、词作...  </p>
+				</a></li>
+				<li><a href="#">郭富城</a></li>
+				<li><a href="#">黎明</a></li>
+				<li><a href="#">张学友</a></li>
+				<li><a href="#">刘若英</a></li>
+				<li><a href="#">王菲</a></li>
+				<li><a href="#">谢霆锋</a></li>
+				<li><a href="#">张柏芝</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="#page0" data-role="button" data-icon="phone" data-iconpos="top" id="one">美食</a>
+				<a href="#" data-role="button" data-icon="phone" data-iconpos="top">团购</a>
+				<a href="#" data-role="button" data-icon="phone" data-iconpos="top">主页</a>
+				<a href="#list" data-role="button" data-icon="phone" data-iconpos="top" data-transition="flip">订票</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 列表页开始 -->
+		<div data-role="page" id="list">
+		<div data-role="header">
+			<h1>美智网</h1>
+		</div>
+		<div data-role="content">
+			
+			<ul data-role="listview" data-inset="true" id="gao" data-filter="true" data-filter-placeholder="请输入...">
+				<li>
+					<a href="#">
+						<img src="images/4.jpg"/>
+						<h3>姓名：刘德华</h3>
+						<p> 生日：1961年9月27日(农历八月十八)<br/>
+
+						简介：刘德华，男，1961年9月生于香港，演员、歌手、词作...  </p>
+				    </a>
+			     </li>
+				<li><a href="#">刘小强</a></li>
+				<li><a href="#">
+					
+					<img src="images/4.jpg"/>
+						<h3>姓名：刘德华</h3>
+						<p> 生日：1961年9月27日(农历八月十八)<br/>
+
+						简介：刘德华，男，1961年9月生于香港，演员、歌手、词作...  </p>
+				</a></li>
+				<li><a href="#">郭富城</a></li>
+				<li><a href="#">黎明</a></li>
+				<li><a href="#">张学友</a></li>
+				<li><a href="#">刘若英</a></li>
+				<li><a href="#">王菲</a></li>
+				<li><a href="#">谢霆锋</a></li>
+				<li><a href="#">张柏芝</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="#page0" data-role="button" data-icon="phone" data-iconpos="top" data-transition="slidedown">美食</a>
+				<a href="#" data-role="button" data-icon="phone" data-iconpos="top">团购</a>
+				<a href="#" data-role="button" data-icon="phone" data-iconpos="top">主页</a>
+				<a href="#list" data-role="button" data-icon="phone" data-iconpos="top" data-transition="slidedown">订票</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

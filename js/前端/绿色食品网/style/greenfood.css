@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; }
+body { font-size:12px; color:#626262; font-family:Verdana, Microsoft YaHei, Simsun; background:#fff; line-height:24px; background:url(../images/body-bg.jpg) no-repeat center top;}
+fieldset, img { border:0; }
+img{display:block;}
+ol, ul { list-style:none; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+em { font-style:normal; }
+input, button, select, textarea { outline:none; } 
+textarea { resize:none; } 
+a { color: #626262; text-decoration:none; }
+a:hover { color: #f60; text-decoration:none; }
+.clearfix:after,.clearfix:before{ display:table; content:"";}
+.clearfix:after{ clear:both;}
+.clearfix{ zoom:1;}
+.logo{ height:99px; width:975px; margin:0 auto; padding:20px 0 0 5px; }
+.logo a{ width:168px; height:76px; display:block;background:url(../images/logo.jpg) no-repeat;text-indent:-2000em; overflow:hidden;}
+/*nav开始*/
+.nav{ height:63px; width:980px; margin:0 auto; background:url(../images/nav-bottom.gif) no-repeat left bottom;}
+.nav-top{ height:45px; background-color:#F63; background:url(../images/nav-line.gif) repeat-x top;}
+.nav-top ul{ height:45px; background:url(../images/nav-right.gif) no-repeat right top;}
+.nav-top li{float:left; padding:0 23px 0 25px; _padding:0 23px;line-height:45px; background:url(../images/images/nav-bg.gif) no-repeat left top; }
+.nav-top .first{background:url(../images/nav-left.gif) no-repeat left top;}
+.nav-top a{color:#fff; font-weight:bold;font-size:14px;}
+.nav-top a:hover{text-decoration:underline; color:#fff;}
+/*banner开始*/
+.banner{ width:980px; margin:0 auto;}
+/*.footer开始*/
+.subnav{ width:980px; height:36px; background:url(../images/subnav-bg.gif) repeat; margin:0 auto; line-height:36px; text-align:center; color:#fff;}
+.subnav a{padding:0 10px; color:#fff;}
+.subnav a:hover{ color:#fff; text-decoration:underline;}
+.footer{ width:100%; height:91px; background:url(../images/footer-bg.gif) repeat-x; margin-top:2px;}
+.ft{ width:980px; margin:0 auto; padding-top:25px;}
+.footer p{ float:left;}
+.footer span{ float:right;}
+
+

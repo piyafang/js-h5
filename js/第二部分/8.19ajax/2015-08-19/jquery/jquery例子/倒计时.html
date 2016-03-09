@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oDiv = document.getElementById('countDown');
+	var oTarget =new Date();
+	oTarget.setFullYear(2015,9,1);
+	oTarget.setHours(0,0,0,0);
+	var iTarget = oTarget.getTime();
+	function countDown(){
+		var oDate = new Date();
+		var s = parseInt((iTarget-oDate.getTime())/1000);
+		var d = parseInt(s/86400);
+		s%=86400;
+		var h = parseInt(s/3600);
+		s%=3600;
+		var m = parseInt(s/60);
+		s%=60;
+		oDiv.innerHTML=d+'天 '+h+'时'+m+'分'+s+'秒';
+	}
+	countDown();
+	setInterval(countDown,1000);
+};
+</script>
+</head>
+
+<body>
+<div id="countDown">0天 00时00分00秒</div>
+</body>
+</html>
+
+
+
+
+
+
+

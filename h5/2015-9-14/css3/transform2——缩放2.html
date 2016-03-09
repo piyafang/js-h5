@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+div {float:left;}
+#div1 {width:150px; height:150px; background:#CCC; border:1px solid black; -webkit-transition:1s all ease;}
+#div1:hover {-webkit-transform:scale(3, 0.1);}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function (){
+	var oDiv=document.getElementById('div1');
+	
+	setInterval(function (){
+		console.log(oDiv.offsetWidth);
+	}, 10);
+}, false);
+</script>
+</head>
+
+<body>
+<div>zxcvdetert</div>
+<div id="div1">
+	尔特瑞特人感受到分公司的<input type="button" value="aaa" />分工
+    <input type="text" value="aaa" />
+</div>
+<div>zxcvdetert</div>
+</body>
+</html>

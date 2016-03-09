@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+.wrapper{
+	margin-left:200px;
+	margin-top:200px;
+	width:650px;
+	height:169px;
+	border-top:1px solid #0873c0;
+}
+.top{
+	width:650px;
+	height:30px;
+	margin:10px 0 10px 0;
+}
+.t_left , .t_right{
+	width:100px;
+	height:30px;
+	background:#0873c0;
+}
+.t_left{ float:left;}
+.t_right{ float:right;}
+.bottom{
+	width:650px;
+	height:120px;
+}
+.bottom div{
+	width:210px;
+	height:120px;
+	background:#ccc;
+	float:left;
+}
+.one , .two{ margin-right:10px;}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+.clearFix: after{ content:''; clear:both; display: block;}
+.top{ width:650px; height:40px; border-top:1px solid #6daaea; }
+.top div{ width:100px; height:30px; background:#0873c0; margin-top:10px;float:right;}
+.top .li2{ float:left;}
+
+.list{ width:210px; height:120px; background:#ccc; float:left; margin:10px 10px 0 0;}
+
+</style>
+</head>
+
+<body>
+	<div class="clearFix">
+		<div class="top clearFix">
+			<div class="li1"></div>
+			<div class="li2"></div>
+		</div>
+		
+		<div class="clearFix">
+			<div class="list"></div>
+			<div class="list"></div>
+		    <div class="list"></div>
+		</div>
+	</div>
+</body>
+</html>

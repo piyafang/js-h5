@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-6.两列布局</title>
+<style>
+*{
+	margin:0px;padding:0;
+	}
+
+.right{
+	float:right;
+	}
+.left{
+	float:left;	
+}
+.total{
+	margin:10px;
+	width:960px; 
+	height:600px;
+	}
+.top{
+	width:960px; 
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	background:#4e9ce9;
+	}
+.mid{
+	width:960px; 
+	height:500px;
+	}
+.midleft{
+	width:680px; 
+	height:500px;
+	background:#e2e2e2;
+	line-height:500px;
+	text-align:center;
+	}
+.midright{
+	width:270px; 
+	height:500px;
+	background:#f7f7f7;
+	margin-left:10px;
+	line-height:500px;
+	text-align:center;
+	}
+</style>
+</head>
+<body>
+	<div class="total">
+		<div class="top"><span>头部</span></div>
+		<div class="mid">
+			<div class="midleft left"><span>左边的栏目</span></div>
+			<div class="midright right"><span>右边的栏目</span></div>
+		</div>
+		<div class="top"><span>页面底部</span></div>
+	</div>
+</body>
+</html>

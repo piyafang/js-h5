@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+<style>
+#div1 {position:absolute; width:100px; height:100px; background:#CCC; left:0; top:10px;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	
+	oDiv.addEventListener('touchstart', function (ev){
+		var disX=ev.targetTouches[0].pageX-oDiv.offsetLeft;
+		var disY=ev.targetTouches[0].pageY-oDiv.offsetTop;
+		
+		var downX=ev.targetTouches[0].pageX;
+		var downY=ev.targetTouches[0].pageY;
+		
+		var dir='';
+		
+		function move(ev)
+		{
+			var x=ev.targetTouches[0].pageX;
+			var y=ev.targetTouches[0].pageY;
+			
+			if(dir=='')
+			{
+				if(Math.abs(x-downX)>=5)
+				{
+					dir='lr';
+				}
+				else if(Math.abs(y-downY)>=5)
+				{
+					dir='ud';
+				}
+			}
+			else
+			{
+				if(dir=='lr')
+				{
+					oDiv.style.left=x-disX+'px';
+				}
+				else
+				{
+					oDiv.style.top=y-disY+'px';
+				}
+			}
+		}
+		function end()
+		{
+			oDiv.removeEventListener('touchmove', move, false);
+			oDiv.removeEventListener('touchend', end, false);
+		}
+		
+		oDiv.addEventListener('touchmove', move, false);
+		oDiv.addEventListener('touchend', end, false);
+		
+		ev.preventDefault();
+	}, false);
+};
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>3-4</title>
+<style>
+*{ margin:0; padding:0;}
+.clearFix:after{ content:''; clear:both; display:block;}
+.box{ width:514px; margin:0 auto;}
+.left{ float:left;}
+.top{ width:336px; height:60px; background:#0cf;}
+.bottom{ width:346px;}
+.bottom .bottom1{ width:163px; height:75px; background:#06f; margin:10px 10px 0 0; float:left;}
+.bottom .bottom2{ width:163px; height:75px; background:#999; margin:10px 10px 0 0; float:left;}
+.right{ width:168px; height:230px; background:#9f0; float:right;}
+</style>
+</head>
+
+<body>
+	<div class="box clearFix">
+    	<div class="left">
+        	<div class="top"></div>
+        	<div class="bottom clearFix">
+            	<div class="bottom1"></div>
+            	<div class="bottom2"></div>
+            	<div class="bottom2"></div>
+            	<div class="bottom1"></div>
+            </div>
+        </div>
+    	<div class="right"></div>
+    </div>
+</body>
+</html>

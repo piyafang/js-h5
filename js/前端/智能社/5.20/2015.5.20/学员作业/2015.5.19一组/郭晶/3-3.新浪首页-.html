@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0; padding:0; text-decoration:none;}
+.clearFix:after{ content:''; clear:both; display:block;}
+.box{ width:298px; 
+      height:201px; 
+	  border:1px solid #d9e1ee;
+      border-top:3px solid #ff8500; 
+	  margin:100px auto;}
+.hd{ width:284px; 
+     height:44px; 
+	 padding-left:14px; 
+     border-bottom:1px solid #d9e1ee;}
+h3{ fongt-size:19px; 
+    font-weight:normal; 
+    font-family:'Microsoft YaHei'; 
+	line-height:44px;}
+.bd{ width:285px; 
+     height:111px; 
+     border-bottom:1px dashed #c4c4c4;
+	 margin:9px 7px 0;
+	}
+
+.bd .bd_tit{ width:73px; 
+             height:111px; 
+			 float:left; 
+			 margin:0 11px; }
+.bd .bd_tit_img{ width:73px; 
+                 height:72px;margin-bottom:8px;}			
+p{ width:73px;
+        text-align:center;
+		font-size:14px;}
+p a{  color:#666;}
+.footer{ width:298px;
+         height:35px; 
+		 padding:8px 26px 12px 25px;}
+.footer p{width:58px; 
+          float:left;
+		  text-align:left; }
+.footer  .footer_p2{margin:0 36px;}
+a:hover{ text-decoration:underline; 
+         color:#ff8500;}
+</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="hd">
+		    <h3>新浪产品</h3>
+		</div>
+		
+	    <div class="bd clearFix">
+			  <div class="bd_tit">
+				  <img class="bd_tit_img" src="img/1.png" />
+				 <p><a href="#">新浪财经</a></p> 
+			 </div>   
+			 
+			  <div class="bd_tit">
+				  <img class="bd_tit_img" src="img/2.png" />
+				 <p><a href="#">新浪新闻</a></p> 
+			 </div>  
+			
+			  <div class="bd_tit">
+				  <img class="bd_tit_img" src="img/3.png" />
+				 <p><a href="#">新浪体育</a></p> 
+			 </div>    
+		</div>
+			  <div class="footer clearFix">
+				<p><a href="#">新浪阅读</a></p>
+			<p class="footer_p2"><a href="#">新浪秒拍</a></p>
+				<p><a href="#">新浪微博</a></p>	  
+			 </div>
+	</div>
+</body>
+</html>

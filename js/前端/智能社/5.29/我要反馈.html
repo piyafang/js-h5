@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+	<style>
+	/*清除默认样式*/
+		*{ margin:0; padding:0;}
+		.clearFix:after{ clear:both; display:block; content:" "; visibility:hidden; height:0; line-height:0;}
+		.clearFix{*zoom:1;}
+		i{ font-style:normal;}
+		li{ list-style:none;margin-bottom:px;}
+		input{ width:200px; height:40px;padding:0; border:none 0; outline:none; background:none;font-size:12px;}
+		select{ margin:0; padding:0;}
+	/*内容样式*/
+		.bigbox{margin:0 auto; width:740px;}
+		h3{ font-size:20px; color:#4e4e4e; margin-bottom:26px;}
+		form{ padding-left:14px;}
+		i{ display:inline-block;}
+		form i{ width:70px; font-size:14px; text-align:right; margin-right:8px;}
+		.box1{ height:22px; margin-bottom:14px;}
+		.box1 select{ width:150px; margin-right:20px;}
+		.box2 textarea{ width:584px; height:161px; overflow:hidden; resize:none;}
+		.box2 i{ line-height:14px; float:left;}
+		.box2  .box2_r{ float:left;}
+		p span{ float:left;}
+		p input{float:left;}
+	</style>
+</head>
+
+<body>
+<div class="bigbox">
+	<h3>我要反馈</h3>
+	<form>
+		<div class="box1">
+			<i>反馈分类：</i>
+			<select name="kind"><option>一级分类</option></select>
+			<select name="kind"><option>二级分类</option></select>
+		</div>
+		
+		<div class="box2 clearFix">
+			<i>反馈内容：</i>
+			<div class="box2_r">
+				<textarea   placeholder="你好"></textarea>
+				<p>
+					<input type="file" /><span>截图</span>
+				</p>
+			</div>
+		</div>
+		
+		<div class="box3">
+			<i>联系邮箱：</i>
+			<input  type="text" />
+			<p>请留下您的邮箱</p>
+		</div>
+		
+		<div class="box4">
+			<i>手机号码：</i>
+			<input  type="text" />
+			<p>方便紧急联系</p>
+		</div>
+		
+		<div class="box5">
+			<input type="button" value="搜索已有答案" />
+			<input type="submit" value="提交反馈" />
+			<a href="#">成为VIP</a>
+		</div>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,437 @@
+phoneGap——封装
+
+---------------------------------------------------------------------------------------
+
+加速计
+camera
+file
+网络状态
+设备信息
+地理位置
+录音
+
+特点：
+1.navigator
+2.统一
+	xxxx(成功, 失败, 参数)
+
+---------------------------------------------------------------------------------------
+
+File
+
+1.请求文件系统
+2.打开文件
+3.writer、reader
+4.读、写
+
+---------------------------------------------------------------------------------------
+
+测试：
+phoneGap desktop
+
+1.下载、安装：
+http://phonegap.com/blog/2015/03/02/phonegap-app-desktop-0-1-2/
+
+PC端：开发端
+https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.2/PhoneGapSetup.exe
+
+手机端：测试端
+应用市场——搜“phonegap”
+
+2.使用：
+创建工程->填写：local path(本地路径)、name(名字)->点“create project”
+手机上测试——输入地址(PC端phoneGap下面的绿条)
+
+页面修改——同步到手机里：
+1.等着他自动同步	【不推荐】
+2.强制同步——工程右边“绿色箭头”
+
+3.测试：
+页面里(JS)——直接console.log
+
+---------------------------------------------------------------------------------------
+
+打包：
+一、本地打包(公司)：
+1.下载java——j2ee v1.6
+	安装
+2.下载Android SDK——翻墙
+3.配置AVD——Android Visual Device(模拟器)
+	创建虚拟手机——CPU、屏幕、内存、文件、SD卡、版本
+4.下载eclipse——
+	安装Android插件
+5.打包
+
+二、云测试(个人)：
+phoneGap官网
+
+---------------------------------------------------------------------------------------
+
+File Transfer：
+upload(本地地址, 服务器地址, 成功, 失败, 选项)
+选项：
+
+upload('111.jpg', 'http://www.zhinengshe.com/upload.php', function (){}, function (){}, {
+	fileKey: 'file1',
+	fileName: '111.jpg'
+});
+
+-------------
+
+download(服务器地址, 本地地址, 成功, 失败, false, 选项)
+选项：
+headers
+
+download('http://www.zhinengshe.com/1.jpg', 'image/1.jpg', function (){
+	alert('成功了');
+}, function (){}, false);
+
+---------------------------------------------------------------------------------------
+
+HTML5-总结、复习：
+一、基础：
+1.HTML5
+a).新标签——
+	有功能：canvas、video、audio
+	语义化：header、section、article、aside、footer、nav、menu
+
+b).新的JS选择器
+	querySelectorAll
+	querySelector
+
+c).新的自定义属性
+	data-
+	1.向后兼容
+	2.规范
+	3.方便
+	4.可以遍历
+
+2.CSS3
+a).简单：圆角、阴影、渐变、rgba
+	i).border-radius
+		border-radius:xxx;		4角一样
+		border-radius:左上右下 右上左下
+		border-radius:左上 右上左下 右下
+		border-radius:左上 右上 右下 左下
+
+		border-radius:x x x x/y y y y
+		border-radius:x/y y y
+
+	ii).阴影
+		box-shadow:[inset] x y [extend] blur color
+		text-shadow:x y blur color
+
+		box-shadow/text-shadow:阴影1, 阴影2, ...
+
+	iii).渐变
+		-webkit-linear-gradient:color1, color2
+		-webkit-linear-gradient:起点, color1, color2
+		-webkit-linear-gradient:角度, color1, color2
+
+		-webkit-linear-gradient:color1, color2, color3, color4, ...
+
+		-webkit-linear-gradient:color1 位置, color2 位置
+
+		-------------
+
+		-webkit-radial-gradient:color1, color2
+
+		-webkit-radial-gradient:圆心位置, color1, color2
+
+		-webkit-radial-gradient:圆心位置, 大小, color1, color2
+		-webkit-radial-gradient:color1, color2, color3, ...
+		-webkit-radial-gradient:color1 位置, color2 位置
+
+	iiii).rgba——任何用到颜色地方，都能用rgba
+
+b).复杂：transform、mask
+	transform:
+	i).4个——rotate、translate、scale、skew
+	ii).可以用多个——越靠后，先执行
+	iii).圆心/原点——transform-origin
+
+	mask:
+	i).图片蒙版——颜色不重要，有没有就行
+		羽化
+		-webkit-mask:url(1.png);
+
+	ii).渐变蒙版——
+		-webkit-mask:-webkit-linear-gradient(rgba(x,x,x,1), rgba(x,x,x,0));
+
+	iii).文字蒙版——
+		*color:rgba(0,0,0,0);
+
+3.transform-3D
+a).perspective——景深、透视
+	坐标轴——正-顺时针
+	目的：产生3D感觉
+	*大部分：只有父级有perspective
+
+b).transform-style——真3D
+	preserve-3d——让父级释放子级
+
+4.地理信息
+navigator.geolocation.getCurrentPosition(成功, 失败[, 选项])
+
+成功：
+res参数——res.coords
+
+5.本地存储
+localStorage、sessionStorage(没用)
+
+localStorage——5M
+
+localStorage.xxx=12;
+alert(localStorage.xxx);
+delete localStorage.xxx;
+
+6.文件拖拽
+事件：ondragenter/leave、ondragover、ondrop
+对象：FileReader
+
+7.video
+<video src="xxx"></video>
+格式：mp4
+
+8.CSS3运动：animation、transition、CSS3运动和JS配合
+
+XML：
+恶心、没用(淘汰)
+
+XML(爹)——HTML(儿子)
+
+XML的特点：没有固定的标签、属性
+HTML的特点：有固定的标签、有固定的属性
+
+---------------------------------------------------------------------------------------
+
+var json={name: '小明', age: 18, height: 178, weight: 120, 亲戚: [
+	{关系: '父子', name: '老明', age: 45, height: 172},
+	{关系: '母子', name: '老白', age: 43, height: 160}
+]};
+
+<person>
+	<name>小明</name>
+	<age>18</age>
+	<height>178</height>
+	<weight>120</weight>
+	<亲戚>
+		<item>
+			<关系>父子</关系>
+			<name>老明</name>
+			<age>45</age>
+			<height>172</height>
+		</item>
+		<item>
+			<关系>母子</关系>
+			<name>老白</name>
+			<age>43</age>
+			<height>160</height>
+		</item>
+	</亲戚>
+</person>
+
+---------------------------------------------------------------------------------------
+
+二、图形：canvas、SVG、VML
+区别：
+canvas		位图——体积大、放大模糊		性能高、操作不方便
+SVG、VML		矢量图——体积小、放大不失真	性能一般、操作方便
+
+1.canvas
+	i).属性加：width、height
+	ii).路径
+		moveTo/lineTo
+		rect
+		arc
+		*先清空，再用——gd.beginPath()
+	iii).封口——closePath
+	iiii).形状——
+		rect——strokeRect/fillRect/clearRect
+	v).图形不能修改
+		先清除	clearRect
+		再重画	...
+	vi).arc——arc(cx, cy, r, start, end, 逆时针)
+		*角度：从右边，算0度
+	vii).图片
+		drawImage(oImg, x, y)
+		drawImage(
+			oImg,
+			sx, sy, sh, sw,
+			dx, dy, dh, dw
+		)
+	viii).“transform”
+		*跟CSS3一样——反着
+		*rotate(弧度)
+		例子：方块沿中心转——3步
+	viiii).必须加——save/restore
+	x).导出图片——toDataURL
+	xi).像素级操作
+		获取：getImageData(x, y, w, h);
+		设置：putImageData(data, x, y);
+		像素区：
+			大数组
+			4位1个像素——rgba(a-0>255)
+
+2.SVG
+	图形是标签
+	SVG不是HTML，很多操作跟普通元素不一样
+
+	跟JS配合：
+	a).属性——点、[]废了；用setAttribute/getAttribute
+	b).样式——跟HTML一模一样
+	c).事件——跟HTML一模一样
+	d).DOM——创建不一样
+
+3.VML
+	恶心
+	跟JS配合：
+	a).事件——一模一样
+	b).属性——一模一样
+	c).样式——一模一样
+	d).DOM操作——一模一样
+
+4.Raphael
+	创建
+	样式
+	事件
+	运动
+	transform
+
+---------------------------------------------------------------------------------------
+
+三、移动开发：布局、touch、打包(phoneGap)
+1.移动端布局：viewport、rem、box-sizing、flex
+a).viewport——分辨率
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+
+b).rem——相对于HTML的字体
+	除一下
+	*网站所有的单位都是rem、%
+
+c).box-sizing——让border、padding往里挤
+
+d).弹性布局(flex)——
+	好处：随便加东西、随便加padding和border
+
+	父级：display:flex;
+	子级：flex:1;
+
+2.touch：事件名、ev、多点、方向、布局、手势(旋转、缩放)
+a).事件：
+	onmousedown	ontouchstart
+	move		move
+	up		end
+	*必须绑定
+b).ev：
+	ev.targetTouches.length
+	ev.targetTouches[0]
+
+	ev.changedTouches
+c).多点：
+
+d).方向：
+	核心：变量
+	分成：
+	1.方向明确之前
+		判断方向——x、y的距离谁先超出一定的值
+	2.方向定下来
+		拖拽
+
+e).布局：
+	1.系统滚动——麻烦、不灵活
+	2.完全自己弄——两个div一套，overflow
+		灵活：下拉刷新、慢慢停下
+		什么都得自己动手
+
+f).手势：
+
+3.phoneGap：API、测试、打包
+a).API
+相机、重力、定位、指南针、文件、电池
+
+b).测试
+phoneGap desktop
+
+PC端——开发
+手机端——测试
+
+自动同步
+
+c).打包——麻烦
+
+---------------------------------------------------------------------------------------
+
+自由提问：
+1.svn/git
+2.bootstap——没用
+3.backbone
+4.websocket
+5.微信
+6.seajs
+
+---------------------------------------------------------------------------------------
+
+git没啥用——装13
+
+---------------------------------------------------------------------------------------
+
+svn、git——版本控制：
+1.同步代码
+2.找回原来的版本
+
+SVN、GIT——服务端+客户端
+服务端：存储代码
+客户端：上传、下载
+
+---------------------------------------------------------------------------------------
+
+www.github.com
+
+https://github.com/dancingblue/rfseydrty.git
+
+---------------------------------------------------------------------------------------
+
+微信——接口：
+几乎没有前端接口
+99%——后台
+
+前端——空间
+
+---------------------------------------------------------------------------------------
+
+backbone——MVC
+
+angluar——重
+backbone——轻
+
+---------------------------------------------------------------------------------------
+
+ajax('xxx.php', function (){
+	var data=eval(str);
+
+	var newDiv=template(oDivTmp, str);
+
+	oDiv1.appendChild(newDiv);
+});
+
+1.Model对象	数据——json
+2.View对象	表现——
+
+var data=eval(str);
+var MyView=Backbone.View.extend({
+	ele: '#div1',
+	data: data,
+	render: function ()
+	{
+		return template(this._ele, this.data);
+	}
+});
+
+---------------------------------------------------------------------------------------
+
+seajs：
+1.定义模块：
+2.使用模块：
+
+---------------------------------------------------------------------------------------

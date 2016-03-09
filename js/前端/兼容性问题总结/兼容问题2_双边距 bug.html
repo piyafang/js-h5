@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {overflow:hidden; border:1px solid black; position:relative; zoom:1;}
+#div1 div { float:left; margin-left:20px; background:#CCC; width:200px; height:200px; }
+
+#div2 {overflow:hidden; border:1px solid black; position:relative; zoom:1;}
+#div2 div { float:left; margin-left:20px; background:#CCC; width:200px; height:200px;   display:inline;}
+</style>
+</head>
+
+<body>
+双边距bug：
+<div id="div1">
+    <div></div>
+    <div></div>
+</div>
+
+<br>
+<div style="clear:both"></div>
+<br>
+
+解决：display:inline
+<div id="div2">
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>

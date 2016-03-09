@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+/*
+**addEvent 		事件绑定函数
+**obj			给哪个元素加事件
+**sEv 			加什么事件
+**fn 			触发事件之后执行什么函数
+*/
+function addEvent(obj,sEv,fn){
+	if(obj.addEventListener){
+		obj.addEventListener(sEv,fn,false);
+	}else{
+		obj.attachEvent('on'+sEv,fn);
+	}
+}
+/*
+**removeEvent 	解除事件绑定
+**obj			解除哪个元素的事件绑定
+**sEv			解除哪个事件
+**fn			事件的哪个函数
+*/
+function removeEvent(obj,sEv,fn){
+	//判断兼容
+	if(obj.removeEventListener){
+		obj.removeEventListener(sEv,fn,false);
+	}else{
+		obj.detachEvent('on'+sEv,fn);
+	}
+}
+
+window.onload=function(){
+	function show1(){
+		alert(1);
+	}
+	function show2(){
+		alert(2);
+	}
+	addEvent(document,'click',show1);
+	addEvent(document,'click',show2);
+	removeEvent(document,'click',show1);
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

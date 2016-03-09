@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		var wiDth=$(window).width();
+		fun();
+		/*console.log(wiDth);*/
+		$(window).resize(function(event) {
+			fun();
+		});
+		function fun(){
+			wiDth=$(window).width();
+			$("body").html(wiDth);
+			if(wiDth<980)
+			{
+				$("body").css("background","blue");
+			}
+			else if(wiDth<1300)
+			{
+				$("body").css("background","green");
+			}
+			else
+			{
+				$("body").css("background","red");
+
+			}
+		}
+	});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	#ad{ display: none;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		function adHide(){
+				timer=setTimeout(function(){
+					oAd.style.display='none';
+				},1000)
+
+		}
+		var oAd=document.getElementById('ad');
+		var timer=null;
+		setTimeout(function(){
+			oAd.style.display='block';
+			adHide();
+		},1000);
+			
+	oAd.onmouseover=function(){
+		clearTimeout(timer);
+	}	
+	oAd.onmouseout=function(){
+		adHide();
+	}		
+	
+
+
+
+	}
+</script>
+</head>
+<body>
+	<img src="5.jpg" / id="ad">
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+span{display:inline-block;height:15px; background:url(no.gif) no-repeat; padding-left:18px;}
+span.on{background:url(yes.gif) no-repeat;}
+</style>
+<script>
+window.onload=function(){
+	var aSpan = document.getElementsByTagName('span');
+	var aSex = document.getElementsByName('sex');
+	//给每个span加点击事件
+	for(var i=0;i<aSpan.length;i++){
+		(function(index){
+			aSpan[i].onclick=function(){
+				for(var i=0;i<aSpan.length;i++){
+					aSpan[i].className='';
+				}
+				this.className='on';
+				aSex[index].checked=true;
+			};
+		})(i);
+	}
+	//让每个sex隐藏
+	for(var i=0;i<aSex.length;i++){
+		aSex[i].style.display='none';
+	}
+};
+</script>
+</head>
+
+<body>
+<form action="http://www.zhinengshe.com">
+	<span class="on">男</span>
+    <input type="radio" name="sex" value="boy" />
+	<span>女</span>
+    <input type="radio" name="sex" value="girl" />
+    <input type="submit" />
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

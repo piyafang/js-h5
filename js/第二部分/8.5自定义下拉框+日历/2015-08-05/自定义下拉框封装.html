@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+.my_select{width:150px; }
+.my_select h2{width:150px; height:30px; line-height:30px; text-align:center; border:1px solid #000; cursor:pointer;}
+.my_select ul{border:1px solid #000; margin-top:5px; display:none;}
+.my_select ul li{width:150px; height:20px; line-height:20px; text-align:center; border:1px solid #ccc; cursor:pointer;}
+</style>
+<script>
+function mySelect(sName){
+	var obj = document.getElementsByName(sName)[0];
+	var oDiv = document.createElement('div');
+	oDiv.className='my_select';
+	var oH2 = document.createElement('h2');
+	oH2.innerHTML=obj.options[obj.selectedIndex].text;
+	oDiv.appendChild(oH2);
+	var oUl = document.createElement('ul');
+	oH2.onclick=function(){
+		oUl.style.display='block';
+	};
+	for(var i=0;i<obj.options.length;i++){
+		var oLi = document.createElement('li');
+		oLi.innerHTML=obj.options[i].text;
+		oUl.appendChild(oLi);
+		(function(index){
+			oLi.onclick=function(){
+				oH2.innerHTML=this.innerHTML;
+				oUl.style.display='none';
+				obj.selectedIndex=index;
+			};
+		})(i);
+	}
+	oDiv.appendChild(oUl);
+	obj.parentNode.insertBefore(oDiv,obj);
+	obj.style.display='none';
+}
+window.onload=function(){
+	mySelect('age');
+	mySelect('city');
+};
+</script>
+</head>
+
+<body>
+<form action="http://www.zhinengshe.com/">
+    <select name="age">
+    	<option value="18">18以上</option>
+    	<option value="28">28以上</option>
+    	<option value="38">38以上</option>
+    	<option value="48">48以上</option>
+   	</select>
+    <br />
+    <select name="city">
+    	<option value="bj">北京</option>
+    	<option value="sh">上海</option>
+    	<option value="tj">天津</option>
+    	<option value="cq">重庆</option>
+   	</select>
+    <br />
+    <input type="submit" />
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

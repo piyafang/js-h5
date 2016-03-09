@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	span{ display:inline-block; width:16px; height:15px;
+	 background:url(img/no.gif) no-repeat; padding-left:20px; cursor:pointer;}
+	span.on{ background:url(img/yes.gif) no-repeat;}
+	#boy,#girl{  display:none;}
+</style>
+<script>
+	window.onload=function(){
+		var aSpan=document.getElementsByTagName('span');
+		var sexBtn=document.getElementsByName('sex');
+		var subBtn=document.getElementById('sub');
+		for(var i=0;i<aSpan.length;i++){
+			(function(index){
+				aSpan[i].onclick=function(){
+					for(var i=0;i<aSpan.length;i++){
+						aSpan[i].className='';	
+					}
+					this.className='on';
+					sexBtn[index].checked=true;
+				};
+			}) (i);
+		}		
+	};
+</script>
+</head>
+
+<body>
+<form action="">
+	<span>男</span>
+	<span>女</span>
+	<input type="radio" name="sex" id="boy" value="boy" />
+	<input type="radio" name="sex"  id="girl"  value="girl" />
+	<input type="submit" id="sub" />
+</form>
+</body>
+</html>

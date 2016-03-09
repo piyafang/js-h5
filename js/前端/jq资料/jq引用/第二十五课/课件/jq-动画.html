@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	div{ background:red; width:200px; height:0px; position:absolute;}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('input').toggle(function(){
+			$('div').stop().animate({'height':'200px','width':'400px','left':'300px'},600);
+		},function(){
+			$('div').stop().animate({'height':'0px','width':'200px','left':'0px'},600);
+		})
+	})
+</script>
+</head>
+
+<body>
+	<input type="button" value="出来" />
+	<div></div>
+</body>
+</html>

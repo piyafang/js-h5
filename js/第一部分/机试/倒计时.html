@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+</style>
+<script type="text/javascript">
+
+	function toDou(iNum){
+		return iNum<10?'0'+iNum:''+iNum;
+	}
+
+	window.onload=function(){
+		//目标时间戳
+		function tick(){
+			var oTarget=new Date();
+			oTarget.setFullYear(2016,0,1);
+			oTarget.setHours(0,0,0,0);
+			var iTarget=oTarget.getTime();
+
+			var oDate=new Date();
+			var iNow=oDate.getTime();
+
+			var s=parseInt(iTarget-iNow)/1000;
+
+			var d=parseInt(s/86400);
+			s%=86400;
+			var h=parseInt(s/3600);
+			s%=3600; 
+			var m=parseInt(s/60);
+			s%=60;
+
+			var oSpan=document.getElementsByTagName('span')[0];
+			oSpan.innerHTML=toDou(d)+'天'+toDou(h)+':'+toDou(m)+':'+toDou(parseInt(s));
+
+		}
+		tick();
+		setInterval(tick,1000);
+
+
+	}
+</script>
+</head>
+<body>
+	现在距离2016年元旦还有<span>00天00:00:00</span>
+
+
+</body>
+</html>

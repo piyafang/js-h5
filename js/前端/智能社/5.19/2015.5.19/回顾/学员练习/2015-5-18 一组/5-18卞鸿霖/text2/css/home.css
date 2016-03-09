@@ -1,0 +1,10 @@
+*{margin:0;padding:0;text-decoration:none;list-style:none;}
+.box{width:710px;margin:0 auto;background:#fff;}
+.header{border-bottom:3px solid #ff7a01;width:710px;height:42px;margin:4px 0 0 0;}
+h2{background:url(../../../../Documents/Unnamed%20Site%202/bd-1.png) no-repeat left center;
+font-size:17px;
+margin:13px 0 13px 9px;
+float:left;
+}
+p{float:right;margin:10px 0 12px 0;border:1px solid #ccc;width:47px;height:18px;font-size:12px;text-align:center;}
+.one{clear:both;}

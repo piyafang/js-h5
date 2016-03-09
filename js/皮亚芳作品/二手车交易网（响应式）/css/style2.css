@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.showAuto{width: 100%; margin: 0 auto;background: #fff;}
+body{ background: #fcfcfc;color: #4D5153;min-width: 320px;font: 24px "Microsoft YaHei";position: relative;}
+button{ border: none; outline: none;}
+a{ color:#4d5153; }
+img{ vertical-align: middle;}
+
+
+
+/*header*/
+.header{padding: .5em;background-color: #f8f8f8;font-size: 112.5%;position: relative;}
+.header h1{ width: 55%;max-width: 312px;}
+.location{min-width: 4em;position: absolute;top: 1.3em;right:1em;white-space: nowrap;}
+.location span{width: .9em;padding-right: .3em;display: inline-block;}
+
+
+/*banner*/
+.banner{ }
+.banner li{ float: left;width: 100%; margin: 0 auto;}
+.banner li img{ width: 100%; height: 100%; vertical-align: middle;}
+
+
+
+/*search*/
+
+.search{width: 90%;position: absolute;left: 50%;margin-left: -47%;background: #fff;padding: .4em 2%;margin-top: -3.2em;}
+.search input{ width: 75%;margin: 0 auto;  font-size: 1em;}
+.search span{ display: inline-block;max-width: 25px;width: 5%;margin-left: -.5em;}
+.search span img{width: 1em; height: 50%; cursor: pointer;}
+
+
+/*nav*/
+.nav{ border-top: 1px solid #ddd;border-bottom: 1px solid #ddd; margin-bottom: 1em; }
+.nav li{ float: left; box-sizing:border-box;border-right: 1px solid #ddd; 
+	width: 25%;  padding-top: 0.84em; height:6.125em;text-align: center;padding-bottom: 0.7em;}
+.nav li a{ height:100%; background: url(../img/b1.png) no-repeat; background-size: 100%;}
+.nav li h3{line-height: 1.67em;}
+
+
+/*mainlist*/
+.main_list{border-bottom: 1px solid #ddd;border-top: 1px solid #ddd; margin-bottom: 1em;}
+.main_list li{ float: left; width: 50%;height: 50%;box-sizing:border-box; font-size: 1.08em; position: relative;}
+.main_list li:first-child{height: 100%; border-right:1px solid #ddd; }
+.main_list li:nth-child(2){border-bottom:1px solid #ddd;}
+.main_list li h3{line-height: 1.83;position: absolute;top: .83em;left: .83em;}
+.main_list li h3 span{ display: block;font-size: 0.917em; color: #bababa;}
+.main_list li img{ width: 100%; height: auto;text-align: center;}
+
+/*price*/
+.price{border-top: 1px solid #ddd;box-sizing:border-box; }
+.price h2,.price li{box-sizing:border-box; border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd; }
+.price h2{font-size: 1.08em; line-height: 1.5em;padding:1.17em 0;}
+.price h2 a{ display: block;border-left: 0.45em solid #F37E0B; margin-left: 0.6em; padding-left: 0.6em;}
+.price li{float: left; width: 25%;  text-align: center; line-height: 3.8em; }
+
+/*brand*/
+.brand h2 a{ border-left-color:#4881C9; }
+.brand li{ padding: 1.25em;}
+.brand li img{ width: 100%;}
+/*carstyle*/
+.carstyle{ margin-bottom: 0.917em;}
+.carstyle h2 a{border-left-color:#48C242; }
+.carstyle ul li a{ width: 100%;}
+
+/*link*/
+.link{border-bottom: 1px solid #ddd;border-top: 1px solid #ddd; }
+.shop,.join{ float: left; width: 50%;box-sizing:border-box; border-left: 1px solid #ddd;}
+.shop h4,.join h4{ float: left; font-size: 1.125em; padding: 1.917em 0 1.08em 1.58em;}
+.shop a,.join a{ float: right; }
+.shop a{padding:1.208em 8.08% 0 0;}
+.join a{padding:2.17em 5.04% 0 0;}
+.shop p,.join p{ color: #bababa; font-size: 0.917em;  line-height: 2.25em;}
+.shop p i,.join p i{ color: #ED5F12;}
+
+/*ad*/
+.ad a{ display: block; width: 100%;}
+.ad img{ width: 100%;height: auto;}
+
+/*footer*/
+.footer{ padding:.5em 0 ;}
+.footer div{ font-size: 1.167em; line-height: 1.25em;text-align: center; color: #C5C5C8; padding-top: .8em;}
+.footer div a{margin: 0 .8em;}
+.footer p{ text-align: center;padding: .8em 0;} 
+.footer p a{ color: #ED5F12; margin-left: .5em;}
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+var arr=[];
+
+arr.length=10;
+var count=0;	//存了几个
+
+function hash_add(n)
+{
+	if(count==arr.length)
+	{
+		alert('满了');
+		return;
+	}
+	
+	var pos=n%arr.length;
+	
+	if(!arr[pos])
+	{
+		arr[pos]=n;
+		count++;
+	}
+	else
+	{
+		while(arr[pos])
+		{
+			if(arr[pos]==n)return;
+			
+			pos++;
+			if(pos==arr.length)
+			{
+				pos=0;
+			}
+		}
+		
+		arr[pos]=n;
+		count++;
+	}
+}
+
+function hash_find(n)
+{
+	var pos=n%arr.length;
+	
+	if(!arr[pos])
+	{
+		return false;
+	}
+	else
+	{
+		while(arr[pos])
+		{
+			if(arr[pos]==n)
+			{
+				return true;
+			}
+			
+			pos++;
+			if(pos==arr.length)
+			{
+				pos=0;
+			}
+		}
+		
+		return false;
+	}
+}
+
+hash_add(26);
+hash_add(37);
+hash_add(5);
+hash_add(25);
+hash_add(98);
+hash_add(12);
+hash_add(7);
+hash_add(99);
+hash_add(26);
+hash_add(5);
+hash_add(2);
+
+alert(hash_find(3));
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+

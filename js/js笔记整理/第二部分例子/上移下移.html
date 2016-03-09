@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+	window.onload=function(){
+		var oUl=document.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName('li');
+		var aA=oUl.getElementsByTagName('a');		
+		for(var i=0;i<aA.length;i++){
+			(function(index){
+				aA[i].onclick=function(){				
+					var oLi=this.parentNode;				
+					if(index%2){//下移
+						if(oUl.children[oUl.children.length-1]==oLi){
+							alert('这已经是最后一个了');
+							return;	
+						}
+						var oNext=oLi.nextElementSibling||oLi.nextSibling;
+						var next=oNext.nextElementSibling||oNext.nextSibling;
+						oUl.insertBefore(oLi,next);
+						
+					}
+					else{//上移
+						if(oUl.children[0]==oLi){
+							alert('这已经是第一个了');
+							return;
+						}
+						var oPrev=oLi.previousElementSibling||oLi.previousSibling;
+						oUl.insertBefore(oLi,oPrev);
+												
+					}
+				};							
+			}) (i);
+		}			
+	};
+</script>
+</head>
+
+<body>
+	<ul>
+		<li>111<a href="javascript:;">上移</a><a href="javascript:;">下移</a></li>
+		<li>222<a href="javascript:;">上移</a><a href="javascript:;">下移</a></li>
+		<li>333<a href="javascript:;">上移</a><a href="javascript:;">下移</a></li>
+		<li>444<a href="javascript:;">上移</a><a href="javascript:;">下移</a></li>
+		<li>555<a href="javascript:;">上移</a><a href="javascript:;">下移</a></li>
+	</ul>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+div{width:200px; height:200px; background:#ccc; position:absolute; top:200px; left:300px; text-align:center; line-height:200px; font-size:30px; font-weight:bold; overflow:hidden;}
+div span{position:absolute; top:0; left:-200px; background:red; opacity:0.3; filter:alpha(opacity:30); width:100%; height:100%;} 
+</style>
+<script src="move.js"></script>
+<script>
+function hoverDir(obj,oEvent){
+	var x = obj.offsetLeft+obj.offsetWidth/2-oEvent.clientX;
+	var y = obj.offsetTop+obj.offsetHeight/2-oEvent.clientY;
+	return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+}
+window.onload=function(){
+	var oDiv = document.getElementsByTagName('div')[0];
+	var oSpan = oDiv.children[0];
+	oDiv.onmouseover=function(ev){
+		var oEvent = ev||event;
+		var oFrom= oEvent.formElement||oEvent.relatedTarget;
+		if(oDiv.contains(oFrom))return;
+		var dir = hoverDir(oDiv,oEvent);
+		switch(dir){
+			case 0:
+				oSpan.style.top=0;
+				oSpan.style.left='200px';
+				break;
+			case 1:
+				oSpan.style.top='200px';
+				oSpan.style.left=0;
+				break;
+			case 2:
+				oSpan.style.top=0;
+				oSpan.style.left='-200px';
+				break;
+			case 3:
+				oSpan.style.top='-200px';
+				oSpan.style.left=0;
+				break;
+		}
+		startMove(oSpan,{left:0,top:0});
+	};
+	oDiv.onmouseout=function(ev){
+		var oEvent = ev||event;
+		var oTo= oEvent.toElement||oEvent.relatedTarget;
+		if(oDiv.contains(oTo))return;
+		var dir = hoverDir(oDiv,oEvent);
+		switch(dir){
+			case 0:
+				startMove(oSpan,{left:200,top:0});
+				break;
+			case 1:
+				startMove(oSpan,{left:0,top:200});
+				break;
+			case 2:
+				startMove(oSpan,{left:-200,top:0});
+				break;
+			case 3:
+				startMove(oSpan,{left:0,top:-200});
+				break;
+		}
+		
+	};
+};
+</script>
+</head>
+
+<body>
+<div>
+	<span></span>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

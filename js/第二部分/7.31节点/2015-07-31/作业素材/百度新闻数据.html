@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	a{color: red; font-weight:bold;}
+	li{margin-bottom: 10px;}
+	p a{ color: #999;font-size: 14px; display: block; line-height: 18px;}
+	p a:hover{ text-decoration: underline;}
+</style>
+<script type="text/javascript">
+	var aNews = [
+		{title:'习近平亲录视频力挺冬奥：请各位选择北京',
+		href:'http://www.cankaoxiaoxi.com/roll/roll10/2015/0731/873083.shtml',
+		child:[{title:'新疆考察，群众干事有盼头',href:'http://www.cankaoxiaoxi.com/roll/roll10/2015/0731/873083.shtml'},{title:'关心农村公路发展',href:'http://www.cankaoxiaoxi.com/roll/roll10/2015/0731/873083.shtml'}]},
+	
+		{title:'中共中央决定给予郭伯雄开除党籍处分',
+		href:'http://news.xinhuanet.com/legal/2015-07/30/c_1116096002.htm',
+		child:[
+			{title:'党籍什么的算了吧',href:'http://www.cankaoxiaoxi.com/roll/roll10/2015/0731/873083.shtml'},
+			{title:'关心农村公路发展',href:'http://www.cankaoxiaoxi.com/roll/roll10/2015/0731/873083.shtml'}]},
+		{title:'智能社要开h5周末班了，请看官网信息',
+		href:'http://www.zhinengshe.com/',
+		child:[
+			{title:'学无止境啊啊啊',href:'http://www.cankaoxiaoxi.com/roll/roll10/2015/0731/873083.shtml'},
+			{title:'学无止境啊啊啊',href:'http://www.cankaoxiaoxi.com/roll/roll10/2015/0731/873083.shtml'}]}
+	];
+window.onload=function(){
+	var oUl=document.body.children[0];
+	for(var i=0;i<aNews.length;i++){
+		var oLi=document.createElement('li');
+		var oA=document.createElement('a');
+		var oP=document.createElement('p');
+		oA.innerHTML=aNews[i].title;
+		oA.href=aNews[i].href;
+		oA.target='_blank';
+
+		oUl.appendChild(oLi);
+		oLi.appendChild(oA);
+		oA.appendChild(oP);
+
+
+		var arr=aNews[i].child;
+		for(var j=0;j<arr.length;j++){
+			var oPa=document.createElement('a');
+			oPa.innerHTML=arr[j].title;
+			oPa.href=arr[j].href;
+			oPa.target='_blank';
+			oP.appendChild(oPa);
+
+	
+		}
+
+	}
+};
+</script>
+</head>
+<body>
+	
+<ul></ul>
+
+</body>
+</html>
+
+
+

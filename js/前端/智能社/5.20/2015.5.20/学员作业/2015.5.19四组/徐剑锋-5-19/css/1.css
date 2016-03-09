@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0; text-decoration:none; list-style:none; font-family:"Microsoft YaHei";}
+.clearFix:after{content:""; clear:both; display:block;}
+
+.box{width:710px;
+	 margin:0 auto;}
+
+.head{width:695px;
+	  height:30px;
+	  background:url(../img/1-1.png) no-repeat;
+	  border-bottom:#F60 solid 3px;
+	  font-size:14px;
+	  line-height:30px;
+	  padding-left:15px;
+	  color:#FFF;}
+.content{width:692px;
+         height:408px;
+		 border:#999 solid 1px;
+		 border-top:none;
+		 padding:16px 0 0 16px;}
+.module li img{width:125px;
+               height:105px;
+			   margin-bottom:10px;}
+.module li p{font-size:12px;
+			 margin-bottom:8px;}
+.module li div{font-size:12px;
+   			   margin-bottom:10px;}
+.module li div span{color:#F60;}
+.module li{text-align:center;
+           float:left;
+		   margin:0 13px 15px 0;}
+.module li a{display:block;
+             width:85px;
+			 height:23px;
+			 background:#0C6;
+			 color:#FFF;
+			 font-size:12px;
+			 line-height:23px;
+			 text-align:center;
+			 margin-left:20px;}

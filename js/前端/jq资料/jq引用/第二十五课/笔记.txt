@@ -1,0 +1,78 @@
+1.导航js
+
+
+字符串与变量的连接方式
+	var a ='哈哈哈';
+
+	var b = '今天我'+a+'了';
+
+cursor:pointer; css手型
+----------------------------------
+下午：jQuery
+	
+		js是原材料
+
+		jQuery 是成品
+
+	jquery是js写出来的！
+
+--------------------------------
+用来干嘛？
+	 和js一样！
+
+	 写法上 简单 易用 - js框架
+
+jq选择器：
+	
+	$('.box') class获取
+	$('#box') id获取
+	$('div')  标签 - 一组
+	$('div p') 包含选择器
+	
+获取样式：
+	$('.showbox').css('display')
+
+jq修改样式：
+	$(this).css('background','red')
+	多个样式：
+	$('ul').css({'display':'block','width':'500px','height':'500px'});
+
+jq修改属性
+	$(this).attr('class','a1')
+
+jq修改val属性
+	$(this).val('出来');
+
+jq事件
+	$('div').click(function(){});
+	点击事件
+
+	$('.inp1').toggle(function(){})
+	切换点击
+
+
+效果：
+	$('ul').show(); 元素显示
+	$('ul').hide(); 元素隐藏
+
+
+	$('div').removeClass('h200'); 删除className
+	$(this).addClass('h200'); 添加className
+
+	box.slideDown(); 下拉运动展示
+	box.slideUp();	 上拉运动展示
+
+	box.fadeIn()      淡入
+	box.fadeOut()     淡出
+
+jq动画：
+
+$('div').stop().animate({'height':'200px','width':'400px','left':'300px'},600);
+
+
+找到对应索引的div
+$('div').eq($(this).index()).show();
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+#box{width:800px; height:358px; border:1px solid #000; margin: 50px auto; position:relative; top:0; left:0;}
+#box ul{position:absolute; top:90px; left:0;}
+#box ul li{float:left; width:260px; height:179px; position:relative; top:0; left:0; padding:5px;}
+#box ul li img{width:260px; height:179px; position:absolute; top:0; left:0;}
+#box ul li span{position:absolute; top:49px; left:0; width:100%; height:100px; text-align:center; line-height:100px; font-size:50px; font-weight:bold;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oUl = document.getElementById('ul1');
+	var aLi = oUl.getElementsByTagName('li');
+	var aImg = oUl.getElementsByTagName('img');
+	oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+	
+	//此代码跟本程序无关。就是打酱油的。
+	for(var  i=0;i<aLi.length;i++){
+		var oSpan = document.createElement('span');
+		oSpan.innerHTML=i;
+		aLi[i].appendChild(oSpan);
+	}
+	var aS = document.getElementsByTagName('span');
+	
+	var divC = oBox.offsetWidth/2;
+	oUl.onmousedown=function(ev){
+		var oEvent = ev||event;
+		
+		var disX = oEvent.clientX-oUl.offsetLeft;
+		
+		document.onmousemove=function(ev){
+			var oEvent = ev||event;
+			
+			oUl.style.left=oEvent.clientX-disX+'px';
+			for(var i=0;i<aLi.length;i++){
+				var l = divC-(oUl.offsetLeft+aLi[i].offsetLeft+aLi[i].offsetWidth/2);
+				aS[i].innerHTML=l;
+			}
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			oUl.releaseCapture&&oUl.releaseCapture();
+		}
+		oUl.setCapture&&oUl.setCapture();
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul id="ul1">
+    	<li><img src="img/1.jpg" /></li>
+    	<li><img src="img/2.jpg" /></li>
+    	<li><img src="img/3.jpg" /></li>
+    	<li><img src="img/4.jpg" /></li>
+    	<li><img src="img/5.jpg" /></li>
+    	<li><img src="img/6.jpg" /></li>
+    	<li><img src="img/7.jpg" /></li>
+    	<li><img src="img/8.jpg" /></li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

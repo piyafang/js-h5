@@ -1,0 +1,423 @@
+jQueryMobile——没用
+
+zepto——jQuery差不多
+	touch——不好用
+	detect——好用
+
+---------------------------------------------------------------------------------------
+
+phoneGap以外：
+appCan、appCloud——太重了，太不灵活
+
+---------------------------------------------------------------------------------------
+
+phoneGap——
+原理
+
+phoneGap v2.0 -> cordova
+
+hooks——“钩子”
+platforms——“平台”
+plugins——第三方“插件”
+
+www——放网页的
+www/res/screen——开机画面，直接改图
+www/res/icon——app的图标
+
+config.xml——配置文件
+
+---------------------------------------------------------------------------------------
+
+总结：别动项目文件，改www下的东西
+
+---------------------------------------------------------------------------------------
+
+有用的：
+Camera				相机
+Device Info			设备信息——系统、平台
+Device Motion (accelerometer)	加速计——重力感应
+Dialogs (notification)		通知
+File				文件
+File Transfer			文件传输——上传、下载
+Geolocation			地理定位
+Media Capture			媒体捕获——录音
+Network Information		网络信息——上网环境
+
+用处不大：
+Battery Status			电池状态
+Contacts			联系人
+Device Orientation (compass)	指南针
+Globalization			全球化
+InAppBrowser			app内置浏览器
+Splash Screen			欢迎屏幕——改res/screen
+Status Bar			状态栏
+Whitelist			权限——改config.xml
+Vibration			震动
+
+---------------------------------------------------------------------------------------
+
+Camera——
+
+
+
+
+getPicture(cameraSuccess, cameraError, cameraOptions);
+watchAcceleration(accelerometerSuccess, accelerometerError, accelerometerOptions)
+watchHeading(compassSuccess, compassError, compassOptions);
+
+---------------------------------------------------------------------------------------
+
+window.navigator
+
+camera的选项：
+quality			质量		0-100		习惯：50
+destinationType		目标类型		文件||base64
+					1     0
+sourceType		来源类型		照一个||相册
+					1	0
+allowEdit		允许编辑		bool
+encodingType		编码类型		jpg||png
+					0    1
+targetWidth		照片宽
+targetHeight		照片高
+mediaType		类型		图片||视频||用户选择
+					0     1     2
+correctOrientation	照片方向		bool
+saveToPhotoAlbum	顺便保存到相册	bool
+popoverOptions		
+cameraDirection		相机方向
+
+有用的选项：
+quality: 50
+destinationType: 1	base64
+encodingType:1		png
+targetWidth/targetHeight
+mediaType: 0
+
+---------------------------------------------------------------------------------------
+
+Device Info——一堆属性
+device.cordova		phonegap框架的版本【没用】
+device.model		模型：型号(内部名称)		三星
+device.platform		平台：系统名称(ios/andriod)	andriod
+device.uuid
+device.version		版本
+
+uuid——device info唯一有用的东西
+唯一标识符——设备的身份证
+
+应用：游戏的匿名登录——服务器通过uuid区分不同用户
+*非常不安全
+
+---------------------------------------------------------------------------------------
+
+Device Motion (accelerometer)
+
+navigator.accelerometer
+
+getCurrentAcceleration		一次
+watchAcceleration		监视——定时器
+clearWatch			关掉
+
+---------------------------------------------------------------------------------------
+
+竖着放：
+x=0
+y=9.8
+z=0
+
+横着放：
+x=-9.8(左边倒)/9.8(右边倒)
+y=0
+z=0
+
+平着放：
+x=0
+y=0
+z=-9.8(屏幕朝上)/9.8(屏幕朝下)
+
+---------------------------------------------------------------------------------------
+
+应用：
+1.检测横屏、竖屏
+
+2.“摇一摇”
+*x、y、z都好使
+只要在任何一个轴上，短时间剧烈运动，都算数
+
+-------------
+
+条件：
+1.时间短
+2.数值很大
+
+x=[0,0,0,0,0,-3,-5,-8,-10,-6,-3,-1,4,6,9,6,3,1,0,0,0,0,0];
+x=[0,0,0,0,0,-2,-3,-1,0,1,2,3,2,0,0,0,0,0,0];
+
+-------------
+
+条件：
+1.时间短		——400ms内
+2.数值很大	——幅度超过15
+
+---------------------------------------------------------------------------------------
+
+“摇一摇”：
+1.短时间内——400ms
+2.幅度很大——15
+
+50ms取一次值
+
+400ms——一共取了8次值
+
+8次之内，出现了15以上的差值
+
+---------------------------------------------------------------------------------------
+
+8次之内——把最近8次的数值存下来
+
+---------------------------------------------------------------------------------------
+
+8个
+
+---------------------------------------------------------------------------------------
+
+Dialogs(notification)：
+alert
+confirm
+prompt
+beep		——哔、提示音
+
+navigator.notification.alert
+
+---------------------------------------------------------------------------------------
+
+alert(message, alertCallback, [title], [buttonName])
+      文字     回调            标题     按钮文字
+alert('文字文字', function (){}, '标题', 'OK');
+
+confirm(message, confirmCallback, [title], [buttonLabels])
+confirm('文字文字', function (){}, '标题', ['好的', '不好']);
+
+prompt(message, promptCallback, [title], [buttonLabels], [defaultText])
+
+---------------------------------------------------------------------------------------
+
+模态窗口			阻止程序继续执行——窗口没关之前，程序定住
+非模态窗口		不阻止
+
+普通的alert	——模态窗口
+phoneGap的alert	——非模态
+
+---------------------------------------------------------------------------------------
+
+Geolocation
+navigator.geolocation.getCurrentPosition
+navigator.geolocation.watchPosition
+navigator.geolocation.clearWatch
+
+getCurrentPosition(成功, 失败, 参数)
+
+参数：
+enableHighAccuracy	bool		高精度模式(费电、时间更长)
+timeout			毫秒		超时
+maximumAge		缓存时间-毫秒	缓存结果的时间
+
+---------------------------------------------------------------------------------------
+
+人1
+经度	34.6892
+纬度	96.8573
+
+人2
+经度	34.6828
+纬度	96.8593
+
+a=0.0064
+b=0.002
+
+0.0128+0.000004=0.012804
+
+0.11315476127852508*111千米=12.5公里
+
+---------------------------------------------------------------------------------------
+
+成功的参数：
+res.coords.
+latitude		纬度
+longitude		经度
+accuracy		精确度
+
+altitude		高度
+altitudeAccuracy	高度的精确度
+
+heading			朝向-0-359
+speed			速度
+
+---------------------------------------------------------------------------------------
+
+Network Information：
+connection.type——网络类型
+
+Connection.UNKNOWN	未知——除了下面以外所有的情况
+Connection.ETHERNET	以太网-网线
+Connection.WIFI		wifi
+Connection.CELL_2G
+Connection.CELL_3G
+Connection.CELL_4G
+Connection.CELL		移动网
+Connection.NONE		没网
+
+---------------------------------------------------------------------------------------
+
+Media Capture：
+capture.captureAudio
+
+captureAudio(成功, 失败, 参数)
+
+参数：
+limit		限制——音频的个数	一般就是1
+duration	限制——最大时长-秒
+
+---------------------------------------------------------------------------------------
+
+Battery Status：
+事件：
+batterystatus		电量变化的时候——插拔电源、电量变化超过1%
+batterylow		电量低
+batterycritical		电量特别低
+
+---------------------------------------------------------------------------------------
+
+Contacts
+contacts.create({信息})
+
+displayName	显示名字(昵称)
+nickname
+
+name		姓名
+phoneNumbers	['13758472145', '']
+emails
+addresses
+ims
+organizations
+categories	类别
+
+var obj=contacts.find({name: '张三'});
+	obj.remove();
+
+---------------------------------------------------------------------------------------
+
+Device Orientation (compass)：
+navigator.compass.getCurrentHeading
+navigator.compass.watchHeading
+navigator.compass.clearWatch
+
+getCurrentHeading(成功, 失败, 参数)
+
+getCurrentHeading(function (res){
+	res.magneticHeading	磁性朝向		测绘用的
+	res.trueHeading		真的朝向		正常人类用的
+}, function (){
+	alert('失败了');
+});
+
+磁北——地球磁场的北极
+正北——地图上的北极点
+
+---------------------------------------------------------------------------------------
+
+Globalization
+
+方法：
+getPreferredLanguage		->	'zh/cn'
+					'zh/tw'
+getLocaleName			->	'cn'
+
+var oDate=new Date();
+dateToString(oDate)		->	'2015-10-15'
+
+2015-10-15
+10/15/2015
+
+属性：
+isDayLightSavingsTime	true/false
+
+---------------------------------------------------------------------------------------
+
+InAppBrowser：
+cordova.InAppBrowser.open(地址, '_blank')
+
+---------------------------------------------------------------------------------------
+
+Vibration：
+navigator.vibrate(时间)
+
+---------------------------------------------------------------------------------------
+
+File：
+PC的chrome——也支持
+
+chrome——沙箱文件系统
+
+---------------------------------------------------------------------------------------
+
+操作文件：
+1.请求文件系统——权限、空间
+2.打开文件
+3.创建writer/reader——帮你
+4.读/写
+
+---------------------------------------------------------------------------------------
+
+请求文件系统：
+requestFileSystem(类型, 大小, 成功, 失败)
+类型：
+TEMPORARY	——临时的(手机没有空间了，就会被删掉)
+PERSISTENT	——永久的
+
+大小：字节
+
+---------------------------------------------------------------------------------------
+
+文件操作，在www下
+
+---------------------------------------------------------------------------------------
+
+getFile：
+1.打开一个已有的文件
+2.创建一个文件
+
+---------------------------------------------------------------------------------------
+
+getFile的选项：
+1.create	创建
+2.exclucive	专用的
+
+---------------------------------------------------------------------------------------
+
+exclucive——如果文件已经存在了，打开文件失败
+
+---------------------------------------------------------------------------------------
+
+文件：
+1.请求文件系统
+2.打开文件(打开、创建)
+3.writer/reader
+4.读、写
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

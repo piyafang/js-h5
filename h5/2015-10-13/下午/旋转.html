@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+<style>
+* {margin:0; padding:0; list-style:none; position:absolute; left:0; top:0; -webkit-transform:rotate(0);}
+</style>
+<script>
+function a2d(n)
+{
+	return n*180/Math.PI;
+}
+
+window.onload=function ()
+{
+	var oImg=document.getElementById('img1');
+	
+	var nowRotate=0;
+	
+	oImg.addEventListener('touchstart', function (ev){
+		var touches=ev.targetTouches;
+		
+		if(ev.targetTouches.length==2)
+		{
+			//oldAng
+			var a=touches[1].pageX-touches[0].pageX;
+			var b=touches[1].pageY-touches[0].pageY;
+			
+			var oldAng=a2d(Math.atan2(b, a));
+			
+			var oldRotate=nowRotate;
+			
+			function move(ev)
+			{
+				var a=touches[1].pageX-touches[0].pageX;
+				var b=touches[1].pageY-touches[0].pageY;
+				
+				var newAng=a2d(Math.atan2(b, a));
+				
+				var ang=newAng-oldAng;
+				
+				nowRotate=oldRotate+ang;
+				
+				oImg.style.WebkitTransform='rotate('+nowRotate+'deg)';
+			}
+			function end()
+			{
+				oImg.removeEventListener('touchmove', move, false);
+				oImg.removeEventListener('touchend', end, false);
+			}
+			
+			oImg.addEventListener('touchmove', move, false);
+			oImg.addEventListener('touchend', end, false);
+			
+			ev.preventDefault();
+		}
+	}, false);
+};
+</script>
+</head>
+
+<body>
+<img src="1.png" id="img1" />
+</body>
+</html>

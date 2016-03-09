@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>99乘法表</title>
+    <style type="text/css">
+        body, div, ul, li, span {
+            margin: 0;
+            padding: 0;
+            font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        #tab {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -460px;
+            margin-top: -145px;
+            padding: 10px;
+            width: 900px;
+            height: 270px;
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+
+        #tab li {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        #tab li span {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+        }
+
+        .c1 {
+            background: #31b0d5;
+        }
+
+        .c2 {
+            background: #67b168;
+        }
+
+        .c3 {
+            background: #ac2925;
+        }
+    </style>
+</head>
+<body>
+<div id="tab"></div>
+
+<script type="text/javascript">
+    /* var oTab=document.getElementById("tab");
+     var str="";
+     str+="<ul>";
+     for(var i=1;i<=9;i++){//行
+     var val="c1";
+     switch(i%3){
+     case 0:
+     val="c1";
+     break;
+     case 1:
+     val="c2";
+     break;
+     default:
+     val="c3";
+     }
+     str+="<li class='"+val+"'>";
+     for(var j=1;j<=i;j++){//列
+     str+="<span>";
+     str+=""+j+" * "+i+" = "+(j*i)+"";
+     str+="</span>";
+     }
+     str+="</li>";
+     }
+     str+="</ul>";
+     oTab.innerHTML=str;*/
+
+    //innerHTML: 向指定元素中添加内容(可以是文字，也可以是html标签),innerHTML可以识别html标签的
+    //innerText:不能识别html标签
+
+    //oTab.innerHTML="<a href='http://www.zhufengpeixun.com'>珠峰培训视频平台</a>";
+
+
+    //字符拼接的第一条黄金法则：单双不能同时用 外面是""，里面就需要是''，外面是''，里面需要时""
+    //如果一个字符串中需要增加一个变量，看最外面是""还是''，如果是"",那么直接的"+变量+",如果是'',则'+变量+'
+
+
+    var oTab = document.getElementById("tab");
+    var str = "";
+    str += "<ul>";
+    for (var i = 1; i <= 9; i++) {
+        str += "<li>";
+        for (var j = 1; j <= i; j++) {
+            str += "<span>";
+            str += "" + j + " * " + i + " = " + (j * i) + "";
+            str += "</span>";
+        }
+        str += "</li>";
+    }
+    str += "</ul>";
+    oTab.innerHTML = str;
+
+    var oSpans = oTab.getElementsByTagName("span");
+    for (var i = 0; i < oSpans.length; i++) {
+        oSpans[i].className = "c" + (i % 3 + 1);
+    }
+</script>
+</body>
+</html>

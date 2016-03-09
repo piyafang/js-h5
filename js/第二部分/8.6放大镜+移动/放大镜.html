@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	div{ float: left; margin-right: 10px;position: relative;}
+	#small{ width: 300px;height: 225px; margin-left: 20px;}
+	#mask{ position: absolute; left: 0;top: 0;width: 80px; height: 80px; background:rgba(200,25,100,.5); display: none;}
+	#big{ width: 300px; height: 225px; overflow: hidden; display: none;}
+	#oBigimg{ position: relative; left: 0;top: 0;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oSmall=document.getElementById('small');
+		var oBig=document.getElementById('big');
+		var oBigimg=oBig.getElementsByTagName('img')[0];
+		var oMask=document.getElementById('mask');
+
+		oSmall.onmouseover=function(){
+			oBig.style.display='block';
+			oMask.style.display='block';
+		};
+		oSmall.onmousemove=function(ev){
+			var oEvent=ev||event;
+			var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+			var scrollL=document.documentElement.scrollLeft||document.body.scrollLeft;
+			var l=oEvent.clientX-oSmall.offsetLeft-oMask.offsetWidth/2+scrollL;
+			var t=oEvent.clientY-oSmall.offsetTop-oMask.offsetHeight/2+scrollT
+
+			if(l<0){
+				l=0;
+			}else if(l>oSmall.offsetWidth-oMask.offsetWidth){
+				l=oSmall.offsetWidth-oMask.offsetWidth;
+			}
+
+			if(t<0){
+				t=0;
+			}else if(t>oSmall.offsetHeight-oMask.offsetHeight){
+				t=oSmall.offsetHeight-oMask.offsetHeight;
+			}
+
+			oMask.style.left=l+'px';
+			oMask.style.top=t+'px';
+
+			oBigimg.style.left=l/(oSmall.offsetWidth-oMask.offsetWidth)*(oBig.offsetWidth-oBigimg.offsetWidth)+'px';
+			oBigimg.style.top=t/(oSmall.offsetHeight-oMask.offsetHeight)*(oBig.offsetHeight-oBigimg.offsetHeight)+'px';
+			
+		};
+			
+	
+		oSmall.onmouseout=function(){
+			oBig.style.display='none';
+			oMask.style.display='none';
+		};
+	};
+</script>
+</head>
+<body>
+	<div id="small">
+		<img src="scat.jpg" />
+		<span id="mask"></span>
+	</div>
+	<div id="big">
+		<img src="bcat.jpg" id="oBigimg" />
+	</div>
+
+
+</body>
+</html>
+

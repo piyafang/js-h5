@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0; text-decoration:none; list-style:none;}
+.top{width:650px;
+    height:30px;
+	border-top:#0873C0 solid 1px;
+	padding-top:10px;
+	padding-bottom:10px;}
+.box1{width:100px;
+      height:30px;
+	  background:#0873C0;
+	  float:left;}
+.box2{width:100px;
+      height:30px;
+	  background:#0873C0;
+	  float:right;}
+.box3{width:210px;
+      height:120px;
+	  background:#CCCCCC;
+	  float:left;
+	  margin-right:10px;}
+

@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+	.calendar{width:420px; margin:0 auto; border:1px solid #666; position: absolute;left: 0;top:0; display: none;}
+	h2{ text-align:center; line-height:30px; height:30px;}
+	ol,ul{ overflow:hidden; border-top:1px solid #666; border-bottom:1px solid #666;}
+	ol li,ul li{ float:left; width:40px; margin:0 10px;height:30px; text-align:center; line-height:30px; cursor: pointer;}
+	a{position:absolute;  top:0px; text-decoration:none; color:#000; font-size: 24px;color: #f90; font-weight: bold;}
+	.prev{left:5px;}
+	.next{right:5px;}
+	.weekend{ color: red;}
+	.past{color: #999;}
+	.today{ background: #f90;}

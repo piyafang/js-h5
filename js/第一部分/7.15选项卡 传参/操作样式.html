@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	#box{ width: 200px; height: 200px;background: #ccc;}
+</style>
+<script type="text/javascript">
+	function setWidth(){
+		var oBox=document.getElementById('box');
+		oBox.style.width='400px';
+	}
+	function setHeight(){
+		var oBox=document.getElementById('box');
+		oBox.style.height='400px';
+	}
+	function setColor(){
+		var oBox=document.getElementById('box');
+		oBox.style.backgroundColor='#f90';
+	}
+
+</script>
+</head>
+<body>
+	<input type="button" value="变宽" onmouseover="setWidth()" />
+	<input type="button" value="变高" onmouseover="setHeight()" />
+	<input type="button"  value="变色" onmouseover="setColor()" />
+	<div id="box"></div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+</style>
+<script>
+	function toDou(iNum){
+		return iNum<10?'0'+iNum:iNum;
+	}
+
+	window.onload=function(){
+		var oSpan=document.getElementsByTagName('span')[0];
+				
+		var oTarget=new Date();
+		//设置目标日期时间
+		oTarget.setFullYear(2015,9,1);
+		oTarget.setHours(0,0,0,0);
+
+		//目标时间戳
+		var iTarget=oTarget.getTime();
+
+		//倒计时函数
+		function countDown(){
+			//现在时间戳
+			var oDate=new Date();
+			var iNow=oDate.getTime();
+
+			//时间差
+			var s=parseInt((iTarget-iNow)/1000);
+
+			//时间差转换
+			var d=parseInt(s/86400);
+			s%=86400;
+			var h=parseInt(s/3600);
+			s%=3600;
+			var m=parseInt(s/60);
+			s%=60;
+
+			//赋内容给span
+			oSpan.innerHTML=toDou(d)+'天'+toDou(h)+':'+toDou(m)+':'+toDou(s);
+		}
+
+		//提前执行定时器
+		countDown();
+
+		//开启定时器
+		setInterval(countDown,1000);
+	};
+</script>
+</head>
+<body>
+	距离2015年10月1日还有<span>天00:00:00</span>
+
+
+</body>
+</html>

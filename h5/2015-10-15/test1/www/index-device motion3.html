@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<title>xxxx</title>
+<script type="text/javascript" src="cordova.js"></script>
+<script>
+//PhoneGap——deviceready事件
+document.addEventListener('deviceready', function (){
+	var oS=document.getElementById('s1');
+	
+	navigator.accelerometer.watchAcceleration(function (res){
+		if(Math.abs(res.y)>Math.abs(res.x))	//竖着
+		{
+			oS.innerHTML='竖着';
+		}
+		else	//横着
+		{
+			if(res.x<0)
+				oS.innerHTML='横着-左边';
+			else
+				oS.innerHTML='横着-右边';
+		}
+	}, function (){}, {
+		frequency: 50
+	});
+}, false);
+</script>
+</head>
+
+<body>
+<span id="s1"></span>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

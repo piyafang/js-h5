@@ -1,0 +1,28 @@
+@charset "utf-8";
+html,body,ul,li,h3{ margin:0; padding:0; font-family:"Microsoft Yahei","微软雅黑","宋体",System; font-size:12px; list-style:none;}
+html,body{width: 100%;height: 100%;}
+.clearb:after{display:block;font-size:0;content:" ";clear:both;height:0}
+.clearb{zoom:1}
+
+/**tab_all**/
+.tab_all{width: 100%;height: 100%;background: #eee;position: relative;}
+.tab_focus{position: absolute;width:1012px;height:114px;bottom: 20px;left: 50%;margin-left: -506px;/*background: none repeat scroll 0 0 rgba(0, 0, 0, 0.56);*/z-index: 999;}
+.tab_focus1{position: absolute;top: 7px;left: 65px;width: 890px;height:100px;overflow: hidden;}
+.tab_focus ul{width: 20000px;}
+.tab_focus ul li{width: 170px;height: 100px;float: left;margin-right: 8px;}
+.tab_focus ul li a{width: 170px;height: 100px;display: block;}
+.tab_focus1 ul li.cur a{border: 3px solid #CC0000;width: 164px;height: 94px;overflow: hidden;}
+.tab_focus ul a img{width: 170px;height: 100px;opacity: 0.6;}
+.tab_focus1 ul li.cur a img{margin: -3px 0 0 -3px;opacity: 1;}
+.tab_con{width: 100%;height: 100%;position: absolute;left: 0;top:0;}
+.tab_con li{display: none;}
+.tab_con li.cur{display: block;}
+.prev,.next{background: url("../image/banner.png") no-repeat center;width: 59px;height: 100px;position: absolute;top:7px;}
+.prev{background-position: 0 0;left: 0;}
+.next{background-position: -61px 0;right: 0;}
+
+/**tab_fc**/
+#tab_fc{position: fixed;width: 100%;height: 100%;background: #333333;top: 0px;font-size: 28px;z-index: 1000;color: #fff;opacity: 0.8;}
+#tab_m{width: 200px;height:100px;line-height100px;margin: 0 auto;}
+#tab_h{position: absolute;top:50%;left: 50%;margin-left: -200px;}
+#tab_back{cursor: pointer;position: absolute;top:20px;right: 50px;}

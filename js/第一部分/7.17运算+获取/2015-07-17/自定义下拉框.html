@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+#box h2{width:150px; height:30px; border:1px solid #000; line-height:30px; text-align:center;}
+#box ul{width:150px; border:1px solid #ccc; margin-top:5px; display:none;}
+#box ul li{height:25px; line-height:25px; text-align:center; border:1px dashed #ccc;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oH2 = oBox.getElementsByTagName('h2')[0];
+	var oUl = oBox.getElementsByTagName('ul')[0];
+	var aLi = oUl.getElementsByTagName('li');
+	oH2.onclick=function(){
+		oUl.style.display='block';
+	};
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].onmouseover=function(){
+			this.style.background='#f93';
+		};
+		aLi[i].onmouseout=function(){
+			this.style.background='none';
+		};
+		aLi[i].onclick=function(){
+			oH2.innerHTML=this.innerHTML;
+			oUl.style.display='none';
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+    <h2>北京</h2>
+    <ul>
+        <li>北京</li>
+        <li>上海</li>
+        <li>天津</li>
+        <li>重庆</li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

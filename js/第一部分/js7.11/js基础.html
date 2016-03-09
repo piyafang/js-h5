@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>js基础</title>
+	<script type="text/javascript" src="../js/jquery-1.7.2.js" ></script>
+	<style type="text/css">
+	*{margin: 0; padding: 0;}
+	li{ list-style: none;}
+	a{ text-decoration: none;}
+		#box1{ width: 100px; height: 100px;display: none;background:#9f0;}
+		#box2{ width: 100px; height: 100px;background:#9f0;}
+		.box3{ width: 60px; height: 30px; position: relative; margin: 0 auto;text-align: center;}
+		.box3 h3{ line-height: 30px; border: 1px solid #000; }
+		.box3 ul{ position: absolute;right: 0;top:30px; width: 100px; border: 1px solid black; display: none;}
+		.box3 li{ line-height: 28px;}
+	</style>
+	<script type="text/javascript">
+		function toYellow(){
+			document.getElementById('box2').style.backgroundColor='yellow';
+		}
+			function toRed(){
+			document.getElementById('box2').style.backgroundColor='red';
+		}
+		
+		function show(){
+			var obox3=document.getElementById('box3');
+			var oUl=obox3.getElementsByTagName('ul')[0];
+			oUl.style.display='block';
+			// var obox3=document.getElementById('box3');
+			// var ohbtn=document.getElementById('hbtn');
+			// var oBtn=obox3.getElementsByTagName('h3')[0];
+			// var oUl=obox3.getElementsByTagName('ul')[0];
+			// var aLi=oUl.getElementsByTagName('li');
+			// for( var i=0; i<aLi.length;i++){
+			// 	ohbtn.onmouseover=function(){
+			// 		oUl.style.display='block';
+			// 	}	
+			// }
+			
+
+		}
+		function hide(){
+			var obox3=document.getElementById('box3');
+			var oUl=obox3.getElementsByTagName('ul')[0];
+			oUl.style.display='none';
+		}
+
+
+	</script>
+</head>
+<body>
+<!-- 1 -->
+	<input type="button"  value="显示" onclick="box1.style.display='block'" />
+	<div id="box1" onmouseover="this.style.background='#f90'" onmouseout="this.style.background='#9f0'"  ></div>
+
+
+<!-- 2 -->
+	<input type="button" value="变黄" onclick="toYellow()" />
+	<input type="button" value="变红" onclick="toRed()" />
+	
+	<div id="box2"></div>
+
+
+<!-- 下拉菜单 -->
+<div class="box3" id="box3" onmouseover="show()"  onmouseout="hide()" >
+	<h3 id="hbtn">设置</h3>
+	<ul>
+		<li><a href="#">搜索设置</a></li>
+		<li><a href="#">搜索设置</a></li>
+		<li><a href="#">搜索设置</a></li>
+		<li><a href="#">搜索设置</a></li>
+	</ul>
+</div>
+
+	
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oCh1 = document.getElementById('ch1');
+	var oBox = document.getElementById('box');
+	var aCh = oBox.getElementsByTagName('input');
+	oCh1.onclick=function(){
+		if(this.checked==true){
+			for(var i=0;i<aCh.length;i++){
+				aCh[i].checked=true;
+			}
+		}else{
+			for(var i=0;i<aCh.length;i++){
+				aCh[i].checked=false;
+			}
+		}
+	};
+	
+	for(var i=0;i<aCh.length;i++){
+		aCh[i].onclick=function(){
+			//查一查有多少个选中
+			var count = 0;//计数器
+			for(var i=0;i<aCh.length;i++){
+				if(aCh[i].checked==true){
+					count++;
+				}
+			}
+			if(count==aCh.length){
+				oCh1.checked=true;
+			}else{
+				oCh1.checked=false;
+			}
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<span>全选</span><input type="checkbox" id="ch1" />
+<hr />
+<div id="box">
+<input type="checkbox" />
+<input type="checkbox" />
+<input type="checkbox" />
+<input type="checkbox" />
+<input type="checkbox" />
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

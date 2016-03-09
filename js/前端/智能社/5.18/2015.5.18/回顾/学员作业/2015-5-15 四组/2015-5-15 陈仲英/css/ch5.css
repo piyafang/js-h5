@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+*{ margin:0; padding:0;}
+div{ width:650px;  border-top:1px solid #6daaea; overflow:hidden; }
+strong{ width:650px; height:40px; margin-bottom:10px;  float:left;}
+i,em{ width:100px; height:30px; background:#0873c0; float:left; margin-top:10px;}
+em{float:right;}
+b{ width:650px; height:120px; float:left;}
+span{ width:210px; height:120px; background:#ccc; float:left;}
+.mid{ margin:0 10px;}

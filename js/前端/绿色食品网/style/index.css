@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+/*main开始*/
+.main{ width:980px; height:303px; padding-top:10px; margin:10px auto;border-radius:3px 3px 0 0 ; background-color:#fff;}
+.main-hd{ height:91px;}
+.main-hd ul{ margin:10px;}
+.main-hd ul li{width:215px; height:70px; background:url(../images/main-bg.gif) no-repeat; padding:10px; float:left; margin-right:5px;}
+.main-hd p{font-size:12px;font-family:宋体; line-height:20px; margin-left:38px;}
+.main-bd{ height:210px; background:url(../images/main-bd-bg.gif) repeat-x left top; border-top:1px solid #e0e0e0;}
+.line{ background:url(../images/bd-line.gif) no-repeat right top;}
+.main-bd .left{ width:323px; height:210px; float:left;}
+.main-bd .middle{ width:409px; height:210px; float:left;}
+.main-bd .right{ width:248px; height:210px; float:left;}
+.main-bd h3{ height:60px; padding:10px 0 0 10px;}
+.main-bd h3 img{ float:left;}
+.main-bd h3 span{margin:10px 8px 0 0; float:right;}
+.aboutus dl dt{ float:left; border:1px solid #ccc; padding:3px; margin-left:12px;}
+.aboutus dl dd{ width:180px; margin:-5px 0 0 10px; float:left; line-height:20px;}
+.aboutus dl dd a{color:#398D00;}
+.aboutus dl dd a:hover{text-decoration:underline;}
+.product li{ width:120px; float:left; height:115px; margin-left:10px;}
+li .jpg{ height:95px;border:1px solid #ccc; background-color:#fff; }
+li .jpg img{ height:90px;margin:0 auto;}
+.product li p{text-align:center;}
+.contact{width:225px; margin:-10px 0 0 15px;}
+
+

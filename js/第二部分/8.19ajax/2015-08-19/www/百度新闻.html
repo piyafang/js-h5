@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script src="ajax.js"></script>
+<script>
+window.onload=function(){
+	var oUl = document.getElementsByTagName('ul')[0];
+	ajax('news.txt',function(str){
+		var arr = eval('('+str+')');
+		for(var i=0;i<arr.length;i++){
+			var oLi = document.createElement('li');
+			oLi.innerHTML='<h2><a href="'+arr[i].href+'">'+arr[i].title+'</a></h2>';
+			var arr2 = arr[i].child;
+			for(var j=0;j<arr2.length;j++){
+				var oA = document.createElement('a');
+				oA.href=arr2[j].href;
+				oA.innerHTML=arr2[j].title;
+				oLi.appendChild(oA);
+			}
+			oUl.appendChild(oLi);
+		}
+	},function(){
+		alert('!ok');
+	});
+};
+</script>
+</head>
+
+<body>
+<ul></ul>
+</body>
+</html>

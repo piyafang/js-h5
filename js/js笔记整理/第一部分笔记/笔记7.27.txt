@@ -1,0 +1,162 @@
+笔记
+======================================
+字符串常用方法：
+charAt 		查找某一位置的字符
+indexOf 		从前往后找，找某一字符第一次出现的位置，如果找到了返回位置，没找到，返回-1
+lastIndexOf		从后往前找，找某一字符第一次出现的位置，如果找到了返回位置，没找到，返回-1
+substring 		截取字符串
+substring(开始位置,结束位置) 	从开始位置截取到结束位置不包括结束位置
+substring(开始位置)		从开始位置截取到最后
+toLowerCase() 			转小写
+toUpperCase()			转大写
+split 				字符串-》数组
+
+数组的常用方法：
+push			后面添加一个
+pop 			后面删除一个
+unshift 		前面添加一个
+shift 			前面删除一个
+join 			数组-》字符串
+reverse 		反转
+concat 		数组连接
+sort 			排序
+sort(function(n1,n2){
+	return n1-n2;
+})
+splice 			删除，插入，替换
+删除 		splice(开始的位置，长度)
+插入 		splice(开始的位置，0，内容)
+替换 		splice(开始的位置，长度，内容)
+
+function setStyle(){
+	if(arguments.length==2){
+		for(var name in arguments[1]){
+			arguments[0].style[name]=arguments[1][name];
+		}
+	}else{
+		arguments[0].style[arguments[1]]=arguments[2];
+	}
+}
+
+function getStyle(obj,sName){
+	return obj.currentStyle?obj.currentStyle[sName]:getComputedStyle(obj,false)[sName];
+}
+
+json 		 装东西
+{名字:值,名字:值}
+
+var arr = [12,5,7,9,100,23,12,7,9];
+
+
+日期对象
+oDate.setFullYear(y,m,d)	设置年月日
+oDate.setFullYear(y,m)		设置年月
+oDate.setFullYear(y)		设置年
+
+oDate.setMonth(m,d)	 	设置月日
+oDate.setMonth(m)		设置月
+
+oDate.setDate(d)		设置日
+
+oDate.setHours(h,m,s,ms)	设置时分秒毫秒
+oDate.setHours(h,m,s)		设置时分秒
+oDate.setHours(h,m)		设置时分
+oDate.setHours(h)		设置时
+
+oDate.setMinutes(m,s,ms)	设置分秒毫秒
+oDate.setMinutes(m,s)		设置分秒
+oDate.setMinutes(m)		设置分
+
+oDate.setSeconds(s,ms)	设置秒毫秒
+oDate.setSeconds(s)		设置秒
+
+日期对象自己会进位
+
+
+select 				onchange
+获取select下所有的option选项	
+oS.options
+	option有属性
+		value		value值
+		text		文本
+获取选中项的索引
+oS.selectedIndex 		
+
+创建一个新的option选项
+var oP = new Option(文本值,value值);
+添加一个选项
+oS.add(oP);
+
+删除一个选项
+oS.remove(下标);
+删除所有的选项
+没删除一次都要i--一次。
+
+数组的写法：
+var arr = [1,2,3]; 		
+var arr = new Array(1,2,3);
+没有任何区别。第一种比第二种略微的快一点点
+如果new Array(5)	只给了一个值并且还是数字
+代表创建出一个有数字这么长的数组
+
+数组的长度可以设置
+数组的length可以修改，是js的bug
+
+清空数组
+arr.length=0;
+arr = [];
+arr.splice(0,arr.length);
+循环-》pop/shift
+
+删除数组中某一项
+eg:removeItem(arr,'yy');
+
+eval 	把字符串变成可执行的语句.
+*****eval在解析json字符串的时候，要两边加()括号.
+
+Math的常用方法 		
+Math.random() 		获取0-1之间的随机小数不包括1
+Math.ceil()			向上取整
+Math.floor()			向下取整
+Math.round() 			四舍五入
+
+Math.abs() 			绝对值
+Math.sqrt() 			开方
+Math.pow() 			n次方(幂)
+Math.max() 			求最大值
+Math.min() 			求最小值
+
+
+字符串	7个
+数组	9个
+Math	9个
+
+
+
+
+
+
+
+必须要会的效果：
+0. 让物体水平垂直居中在浏览器里面  物体从中心放大
+1. 点击显示隐藏
+2. 换肤
+3. 选项卡
+4. 年历
+3. 隔行换色
+5. 双色球
+6. 简易秒表
+7. 数字表/图片表
+8. 倒计时
+9. QQ长图
+10. 按钮控制选项卡
+11. 自动播放选项卡
+12. 无限下拉菜单 /延迟版
+13. 星星评分
+
+题：sum(2)(3)(4);  -> 9
+题2：show(2).plus(3).minus(4) -> 1
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oTxt = document.body.children[0];
+	var oBtn = document.body.children[1];
+	oBtn.onclick=function(){
+		var start = parseInt(oTxt.value);
+		var dis = 100-start;
+		var count = Math.floor(4000/30);
+		var n = 0;
+		clearInterval(oBtn.timer);
+		oBtn.timer = setInterval(function(){
+			n++;
+			var a = 1-n/count;
+			var cur = start+dis*(1-Math.pow(a,3));
+			oTxt.value=cur;
+			if(n==count){
+				clearInterval(oBtn.timer);
+			}
+		},30);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" value="0" />
+<input type="button" value="走起" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+

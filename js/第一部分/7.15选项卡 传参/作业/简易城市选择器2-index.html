@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	#box select{display:none;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oCity=document.getElementById('city');
+		var aOption=oCity.getElementsByTagName('option');
+		var oBox=document.getElementById('box');
+		var aSelect=oBox.getElementsByTagName('select');
+		for(var i=0;i<aSelect.length;i++){
+			aSelect[i].index=i;
+			aOption[i].oncclick=function(){
+				for(var i=0;i<aSelect.length;i++){					
+					aSelect[i].style.display='none';
+				}
+				aSelect[this.index].style.display='block';
+				alert(aSelect.length);
+			}
+		
+		}
+		
+		
+	}
+</script>
+</head>
+<body>
+	<select id="city">
+		<option value="0">北京</option>
+		<option value="1">上海</option>
+		<option value="2">河北</option>
+	</select>
+	<div id="box">
+		<select style="display:block;">
+	    	<option>朝阳</option>
+	    	<option>海淀</option>
+	    	<option>东城</option>
+	    	<option>西城</option>
+	    </select>
+		<select>
+	    	<option>普陀</option>
+	    	<option>徐汇</option>
+	    	<option>黄埔</option>
+	    	<option>闸北</option>
+	    </select>
+		<select>
+	    	<option>石家庄</option>
+	    	<option>保定</option>
+	    	<option>唐山</option>
+	    	<option>邯郸</option>
+	    </select>
+	</div>
+</body>
+</html>
+
+
+
+

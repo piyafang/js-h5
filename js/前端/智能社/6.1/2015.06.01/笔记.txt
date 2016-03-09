@@ -1,0 +1,78 @@
+====================
+	2015-6-1
+====================
+回顾
+------------------
+表单
+	<form></form> 
+		action="地址" method="get/post"
+
+		<input />
+			type
+				text 文本输入框
+				password 密码输入框
+				radio	单选
+				checkbox 多选
+				submit	提交按钮
+				hidden 隐藏数据
+				image	图片提交
+				button  按钮
+				file	上传文件
+		<select>
+			<option></option>
+		</select>
+		<textarea></textarea>
+		<label for="id"></label>
+
+		修饰
+			outline:none; 取消默认焦点框
+			border:none 0; 取消边框
+			padding:0; 默认padding
+			background:none; 取消背景色
+			resize:none; 取消拖拽
+			overflow:hidden; 取消滚动条
+			checked 单选或多选默认选中
+
+			HTML5属性
+				placeholder="提示文字"（不兼容）
+	表格
+	--------------------------------
+		table
+		thead（可选）
+		tbody
+		tfoot（可选）
+		tr
+		td
+		th(可选)
+
+		表格省略号必须加table-layout:fixed;
+						table限定宽度
+
+	邮件布局
+	-----------------------
+		用XHTML 1.0 Transitional头部文档
+		代码尽量写在行间
+		行间用属性
+		注释已写以后全部删掉
+		能用padding尽量用padding
+		图片尽量放到网络上
+
+
+框架
+---------------------------------
+	iframe 		
+		src="地址"
+		width=""
+		height=""
+		scrolling=""
+			yes no
+		frameborder="0"
+
+
+	a 标签
+		target=""
+			_blank	 	新页面打开
+			_top		最上面的父级打开
+			_self		当前页
+			_parent	父级页面打开
+

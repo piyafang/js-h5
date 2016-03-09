@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#ad{width: 150px; height: 150px; position: absolute; z-index: 111; background-color: red; top:30px; left:30px; display: none;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){  /*点击弹出广告 ，播放取消广告*/
+		var ad=document.getElementById("ad");
+		var shipin=document.getElementById("shipin");
+		shipin.onpause=function(){
+			ad.style.display="block";
+		}
+		shipin.onplay=function(){
+			ad.style.display="none";
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="ad"> 广告</div>
+	<video controls="controls" id="shipin">
+		<source src="movie.ogg"/>
+		<source src="movie.mp4"/>
+		<source src="movie.webm"/>
+	</video>
+</body>
+</html>

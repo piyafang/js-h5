@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#box{width:200px; height:200px; background:#f90; position:absolute; top:50px; left:200px;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var timer =null;
+	function startMove(obj,iTarget,time){
+		var start = obj.offsetLeft;
+		var dis = iTarget-start;
+		var count= Math.floor(time/30);
+		var n = 0;
+		clearInterval(timer);
+		timer = setInterval(function(){
+			n++;
+			obj.style.left=start+dis*n/count+'px';
+			if(n==count){
+				clearInterval(timer);
+			}
+		},30);
+	}
+	oBox.onclick=function(){
+		startMove(this,800,1000);
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

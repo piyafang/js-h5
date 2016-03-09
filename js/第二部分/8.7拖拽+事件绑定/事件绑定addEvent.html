@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+	function addEvent(obj,sEv,fn){
+		if(obj.addEventListener){
+			obj.addEventListener(sEv,fn,false);
+		}else{
+			obj.attachEvent('on'+sEv,fn);
+		}
+		
+	}
+	window.onload=function(){
+		addEvent(document,'click',function(){alert(1)});
+		addEvent(document,'click',function(){alert(2)});		
+	};
+</script>
+</head>
+
+<body>
+</body>
+</html>

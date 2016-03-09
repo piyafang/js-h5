@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#parent {width:400px; height:400px; background:#CCC; margin:100px auto; position:relative; -webkit-transform-style:preserve-3d;}
+#div1 {width:200px; height:300px; background:red; border:1px solid black; position:absolute; left:50%; top:50%; margin-left:-100px; margin-top:-150px;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	var oParent=document.getElementById('parent');
+	
+	//拖拽
+	var x=0;
+	var y=0;
+	document.onmousedown=function (ev)
+	{
+		var disX=ev.clientX-x;
+		var disY=ev.clientY-y;
+		
+		document.onmousemove=function (ev)
+		{
+			x=ev.clientX-disX;
+			y=ev.clientY-disY;
+			
+			//oDiv.style.WebkitTransform='perspective(800px) rotateY('+x/5+'deg) rotateX('+-y/5+'deg)';
+			oParent.style.WebkitTransform='perspective(800px) rotateY('+x/5+'deg)';
+			oDiv.style.WebkitTransform='perspective(800px) rotateX('+-y/5+'deg)';
+		};
+		document.onmouseup=function ()
+		{
+			document.onmousemove=null;
+			document.onmouseup=null;
+		};
+		
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="parent">
+    <div id="div1">
+        dfsdsdfgsdgf
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	textarea{ width: 400px;height: 200px;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oTxt1=document.getElementsByTagName('textarea')[0];
+		var oTxt2=document.getElementsByTagName('textarea')[1];
+		var oBtn1=document.getElementsByTagName('input')[0];
+		var oBtn2=document.getElementsByTagName('input')[1];
+
+		oBtn1.onclick=function(){
+			var str1=oTxt1.value;
+			var str2='';
+			for(var i=0;i<str1.length;i++){
+				str2+=String.fromCharCode(str1.charCodeAt(i)+4);
+			}
+			oTxt2.value=str2;
+		};
+
+		oBtn2.onclick=function(){
+			var str1=oTxt1.value;
+			var str2='';
+			for(var i=0;i<str1.length;i++){
+				str2+=String.fromCharCode(str1.charCodeAt(i)-4);
+			}
+			oTxt2.value=str2;
+		};
+
+		var str=('\u4e00');
+		alert(str);
+	};
+</script>
+</head>
+<body>
+	<textarea></textarea>
+	<input type="button" value="加密" />
+	<input type="button" value="解密" />
+	<textarea></textarea>
+</body>
+</html>
+
+
+
+
+

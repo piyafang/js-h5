@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="index">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script src="angular.js"></script>
+<script>
+//https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&cb=show
+app= angular.module('index',[]);
+app.controller('main',function($scope,$http){
+	$scope.arr = [];
+	$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{params:{wd:'a',cb:'JSON_CALLBACK'}}).success(function(json){
+		$scope.arr = json.s;
+	}).error(function(){});
+});
+</script>
+</head>
+
+<body ng-controller="main">
+<input type="text" ng-model="str" />
+<ul>
+	<li ng-repeat="item in arr">{{item}}</li>
+</ul>
+</body>
+</html>

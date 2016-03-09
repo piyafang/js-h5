@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+var json = {
+	show:function(){
+		alert(arguments[0].name);
+		arguments[0].show2();
+		return arguments[0].age;
+	}
+};
+var person = {name:'css',age:18,show2:function(){alert(1);}};
+alert(json.show(person)+person.age);
+</script>
+</head>
+
+<body>
+</body>
+</html>

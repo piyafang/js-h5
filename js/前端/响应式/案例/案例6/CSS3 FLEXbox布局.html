@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	header{width: 80%; height: 300px; margin:100px auto;
+	 display:-webkit-flex;  /* 我们采取的是flexbox 布局模式 */
+	 -webkit-flex-flow:column ;  /* row我们采取的是横向排列 column 纵向布局 */
+	}
+	section:first-child{
+		height: 100%;
+		background-color: red;
+		-webkit-flex:2;
+	}
+	section:nth-child(2)
+	{
+		height: 100%;
+		background-color: green;
+		-webkit-flex:2;
+	}
+	section:last-child{
+		height: 100%;
+		background-color: blue;
+		/* width: 200px; */
+		-webkit-flex:1;
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<section></section>
+		<section></section>
+		<section></section>
+	</header>
+</body>
+</html>

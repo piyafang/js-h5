@@ -1,0 +1,168 @@
+2015年5月23日 09:31:06
+---------------------------------------------------
+盒模型：
+	width/height padding border margin 
+
+	width/height+padding+border=盒子的大小
+
+浮动：
+	float:left/right/none;
+
+	作用：放在一行
+
+	特点：
+		1.脱离文档流
+		2.把元素变成块
+		3.顶对齐
+		4.不受空格影响
+		5.默认宽度根据内容撑开
+
+	浮动三要素：
+		1.清浮动
+		2.同级浮动，同级所用元素都浮动
+		3.能设置宽度尽量设置
+
+
+	清除浮动三种方式：
+		1. 给浮动元素的父级overflow:hidden;
+		2. 在浮动元素同级最下面加一个空的块加clear:both;
+		3. 给浮动元素父级加clearfix（推荐！）
+		.clearfix:after{ display :block; content:''; clear:both;}
+		.clearfix{ zoom:1;}
+
+	品字形 不建议
+
+		吕字
+
+line-height: 一行文字所占的高度！
+
+----------------------------------------
+
+li当中不写单个class 去除margin
+
+	1.盒子有固定宽高，margin只改变盒子的位置
+	2.盒子没有固定宽高，margin会改变盒子的大小
+
+更多按钮
+
+dl  描述列表
+
+-----------------------------------------
+块 p ul li ol dl div
+	特点：独占一行
+		  可以设置宽高
+		  不受空格影响
+行内 span a b strong em i
+	特点：不独占一行
+		  不可以设置宽高
+		  受空格影响
+
+行内块 img
+
+	特点：不独占一行
+		  可以设置宽高
+		  受空格影响
+*{} 通配符
+
+div{}
+
+.class{}
+
+#id{}
+
+.class div{}包含选择器
+
+.class,#id{}群组选择器
+
+
+    行间 > id > .class > 标签 > *
+    无敌  100  10      1      0.1
+
+.class div{}
+ 10  + 1 = 11
+
+
+清除默认样式：
+	*{ padding:0; margin:0;}
+	body{ font-size:12px; line-height:100%;}
+	a{ text-decoration:none; color:#000;}
+	ul,ol{ list-style:none;}
+	h1,h2,h3,h4,h5,h6{ font-size:100%;
+	line-height:100%;}
+	b,strong{ font-weight:normal;}
+	a img{ border:none;}
+	i,em{ font-style:normal;}
+
+	.clearfix:after{ display :block; content:''; clear:both;}
+	.clearfix{ zoom:1;}
+
+----------------------------------------------
+定位：
+	 相对定位：position:relative;
+	 	参照物：自己
+	 	不脱离文档流
+	 	不改变元素类型
+
+	 绝对定位：position:absolute;
+	 	脱离文档流
+	 	元素变成块
+	 	参照物：默认是body,如果父级有定位，就以父级为参照物！
+
+	定位样式：
+		 top
+		 left
+		 right
+		 bottom
+
+		 z-index:1;   只能在同级比较
+
+		 z-index:-1; 可以让子级低于父级
+		 			 父级不能加z-index
+		 			 比普通元素都低
+		 			 （建议不用负值）	 
+
+	z轴层级
+		子级默认高于父级
+		下面的默认高于上面的
+
+		普通元素 < 浮动元素 < 定位元素（z-index）
+
+
+垂直横向居中的方式：
+		.cen{ 
+			position:absolute; 
+			top:50%; 
+			left:50%; 
+			margin-left:-宽度/2; 
+			margin-top:-高度/2;
+			}
+
+透明度：
+	opacity:0.5;
+	filter:alpha(opacity:50);
+		子级所有内容都透明!
+
+	透明层和内容层必须分开写！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

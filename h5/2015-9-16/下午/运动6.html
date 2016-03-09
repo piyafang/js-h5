@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:200px; height:200px; background:#CCC; margin:100px auto; -webkit-transform:rotate(0deg) scale(1, 1);}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	
+	oDiv.onmouseover=function ()
+	{
+		move(oDiv, {transform: 'rotate(-30deg) scale(0.8, 0.8)'}, {end: function (){
+			move(oDiv, {transform: 'rotate(390deg) scale(1.5, 1.5)'}, {end: function (){
+				move(oDiv, {transform: 'rotate(360deg) scale(1.3, 1.3)'});
+			}});
+		}});
+	};
+	oDiv.onmouseout=function ()
+	{
+		
+	};
+};
+
+//灵活、复杂、性能高
+function move(obj, json, options)
+{
+	options=options||{};
+	options.time=options.time||700;
+	options.type=options.type||'ease-out';
+	
+	obj.style.WebkitTransition=options.time+'ms all '+options.type;
+	
+	for(var name in json)
+	{
+		if(name=='transform')		//CSS3
+		{
+			obj.style.WebkitTransform=json[name];
+			obj.style.MozTransform=json[name];
+			obj.style.msTransform=json[name];
+			obj.style.OTransform=json[name];
+			obj.style.transform=json[name];
+		}
+		else						//CSS2
+		{
+			obj.style[name]=json[name];
+		}
+	}
+	
+	function fnEnd()
+	{
+		obj.removeEventListener('transitionend', fnEnd, false);
+		
+		options.end && options.end();
+	}
+	obj.addEventListener('transitionend', fnEnd, false);
+}
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>

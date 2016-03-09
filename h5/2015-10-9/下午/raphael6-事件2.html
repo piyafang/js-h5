@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script src="raphael.js"></script>
+<script>
+window.onload=function ()
+{
+	//1.画布
+	var p=Raphael(0, 0, 800, 600);
+	
+	//2.形状
+	var rect=p.rect(100, 100, 300, 200);
+	
+	rect.attr('fill', 'yellow');
+	
+	//没有背景点不到
+	function aaa()
+	{
+		rect.attr('fill', 'green');
+	}
+	
+	/*rect.click(aaa);
+	rect.unclick(aaa);*/
+	
+	rect.mouseover(aaa);
+	rect.unmouseover(aaa);
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script src="makeRadio.js"></script>
+<script>
+	window.onload=function(){
+		 makeRadio('sex');
+		 makeRadio('city');			
+	};
+</script>
+</head>
+
+<body>
+<form action="http://www.baidu.com/">
+	<input type="radio" name="sex" value="boy" />男
+	<input type="radio" name="sex" value="girl" />女
+	<input type="radio" name="city" value="bj" />北京
+	<input type="radio" name="city" value="sh" />上海
+	<input type="submit" id="sub" />
+</form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<style>
+            #slider{
+                height: 150px;
+                overflow: hidden;
+            }
+            .banner-img{
+                overflow: hidden;
+            }
+            #index-ads li {
+                width: 100%;
+                position: relative;
+                margin: 0px;
+                float: left;
+            }
+            .search-show {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .search-show form input[type="search"] {
+                border: 1px solid #ddd;
+                padding: 10px;;
+                width: 70%;
+                background: #fff;
+            }
+            .search-auto.show{
+                display: block !important;
+                padding: 0 !important;
+            }
+            .search-show .cancel{
+                display: inline !important;
+                margin: 0 !important;
+            }
+            #search form .close {
+                position: absolute;
+                top: 25px;
+                right: 27%;
+                width: 15px;
+                height: 15px;
+                background: url("http://sta.273.com.cn/app/wap_v2/theme/banner-close.png") no-repeat 0 0;
+                background-size: 15px auto;
+                text-indent: -82982em;
+                text-align: center;
+                color: #999;
+            }
+            #more_brand{
+                position:absolute;
+                top:0px;
+                right 0;
+                -webkit-transition:right 0.5s ease;
+                -moz-transition: right 0.5s ease;
+                transition: right 0.5s ease;
+                background: #fff;
+            }
+            .uptop a{
+                z-index: 1;
+            }
+        </style>

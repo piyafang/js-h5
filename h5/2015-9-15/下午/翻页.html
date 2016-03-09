@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:700px; height:400px; background:url(img/0.jpg); margin:100px auto; position:relative;}
+#div1 em {position:absolute; top:0; right:0; width:350px; background:url(img/1.jpg); height:400px; background-position:-350px 0;}
+
+#div1 .page {width:350px; height:400px; -webkit-transform-style:preserve-3d; position:absolute; left:50%; top:0; -webkit-transform-origin:left; -webkit-transition:1s all ease; -webkit-transform:perspective(800px) rotateY(0deg); z-index:2;}
+#div1 .page span {position:absolute; left:0; top:0; width:100%; height:100%;}
+#div1 .front {-webkit-transform:translateZ(1px); background:url(img/0.jpg); background-position:-350px 0;}
+#div1 .back {-webkit-transform:translateZ(-1px) scale(-1, 1); background:url(img/1.jpg);}
+
+#div1 .shadow {position:absolute; right:0; top:0; width:50%; height:100%; background:black; z-index:1; -webkit-transition:1s all ease;}
+
+#div1:active .page {-webkit-transform:perspective(800px) rotateY(-180deg);}
+#div1:active .shadow {opacity:0;}
+</style>
+</head>
+
+<body>
+<div id="div1">
+	<em></em>
+    <div class="page">
+    	<span class="front"></span>
+    	<span class="back"></span>
+    </div>
+    <div class="shadow"></div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

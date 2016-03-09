@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+img{width:800px; display:none;}
+</style>
+<script>
+window.onload=function(){
+	var oAd = document.getElementById('ad');
+	var timer= null;
+	setTimeout(function(){
+		oAd.style.display='block';
+		adHide();
+	},3000);
+	function adHide(){
+		timer = setTimeout(function(){
+			oAd.style.display='none';
+		},3000);
+	}
+	oAd.onmouseover=function(){
+		clearInterval(timer);
+	};
+	oAd.onmouseout=function(){
+		adHide();
+	};
+};
+</script>
+</head>
+
+<body>
+<img src="ad.jpg" id="ad" />
+</body>
+</html>
+
+
+
+
+
+
+

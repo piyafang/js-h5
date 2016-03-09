@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0; padding:0; list-style:none;}
+	ul{ position:relative; width:502px;height:281px; left:100px; top:50px;
+	background:url(img/2.jpg) no-repeat;background-size:100%;}
+	li{ width:500px;height:281px; position:absolute;right:0;top:0;overflow:hidden;}
+	img{width:500px;height:281px;}	
+</style>
+<script src="move-json5.js"></script>
+<script>
+function rnd(n,m){
+	return 	parseInt(n+Math.random()*(m-n));
+}
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var aLi=oBox.children;
+		for(var i=0;i<aLi.length;i++){
+			(function(index){
+			aLi[i].style.zIndex=i;
+			aLi[i].style.width=50+(5-index)*20+'px';
+			aLi[i].onmouseover=function(){
+				startMove(this,{'width':500})
+			};
+			aLi[i].onmouseout=function(){
+				startMove(this,{'width':50+(5-index)*20})
+			};
+			}) (i);
+		}
+		
+	};
+</script>
+</head>
+
+<body>
+	<ul id="box">
+		<li><img src="img/1.jpg"/></li>
+		<li><img src="img/2.jpg"/></li>
+		<li><img src="img/3.jpg"/></li>
+		<li><img src="img/4.jpg"/></li>
+		<li><img src="img/5.jpg"/></li>		
+	</ul> 
+</html>

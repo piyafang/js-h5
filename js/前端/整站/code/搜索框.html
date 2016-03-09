@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	/*清除默认样式*/
+body,div,p,h1,h2,h3,h4,h5,h6,span,ul,ol,li,dl,dd,dt,a,i,strong,b,em img,form,input{ margin:0; padding:0;}
+ul li,ol li{ list-style-type:none;}
+body{ line-height:100%; /*确保字体大小为设置值，消除不必要的空格*/font-size:12px;}
+h1,h2,h3,h4,h5,h6{ line-height:100%; font-size:100%/*继承父级的字体大小*/;}
+a{text-decoration:none; color:#000;}
+img{ display:block;}
+a img{ border:none;}
+b,strong{ font-weight:normal;}
+i,em{ font-style:normal;}
+
+
+.clearFix:after{ clear:both; display:block; content:" ";}
+.clearFix{*zoom:1;}
+
+
+	.search{ width:460px; height:30px; line-height:30px;border:2px solid #f69;}
+	.search_list{width:69px;border-right:1px solid #e6e6e6; float:left; background:#f5f5f5; text-align:center;margin:2px 0 0 2px;}
+	.search_list li,.search_list h4{width:69px;height:30px; line-height:30px;}
+	.search_list li{ font-size:12px;}
+	.search_list h4 i{ display:inline-block;background:url(../%E7%BE%8E%E4%B8%BD%E8%AF%B4/images/sanjiao.jpg) no-repeat;height:6px; width:5px;}
+	.search_content{width:274px;float:left; background:url(../%E7%BE%8E%E4%B8%BD%E8%AF%B4/images/header_search.png) no-repeat 8px 8px; padding-left:26px;}
+	.search_btn{width:90px; background:#f69;float:left; text-align:center; }
+</style>
+
+</head>
+
+<body>
+	<div class="search clearFix">
+		<div class="search_list">
+			<h4><a href="#">宝贝</a><i></i></h4>
+			<ul>
+				<li><a href="#">衣服</a></li>
+				<li><a href="#">鞋子</a></li>
+				<li><a href="#">包包</a></li>
+				<li><a href="#">装饰</a></li>
+			</ul>
+		</div>
+		<div class="search_content">搜流行商品</div>
+		<div class="search_btn">搜索</div>
+	</div>
+</body>
+</html>

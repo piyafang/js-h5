@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>超酷数码钟表 - 智能社 - www.zhinengshe.com</title>
+<link href="style/zns_style.css" rel="stylesheet" type="text/css" />
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+}
+window.onload=function(){
+	var arr = [
+		'seven',
+		'one',
+		'two',
+		'three',
+		'four',
+		'five',
+		'six'
+	];
+	var oYear = document.getElementById('year');
+	var oTime = document.getElementById('time');
+	var aImg_year = oYear.getElementsByTagName('img');
+	var aImg_time = oTime.getElementsByTagName('img');
+	function tick(){
+		var oDate = new Date();
+		var Y = oDate.getFullYear();
+		var M = oDate.getMonth()+1;
+		var D = oDate.getDate();
+		var h = oDate.getHours();
+		var m = oDate.getMinutes();
+		var s = oDate.getSeconds();
+		var w = oDate.getDay();
+		var sDate = Y+'-'+toDou(M)+'-'+toDou(D);
+		
+		for(var i=0;i<aImg_year.length;i++){
+			if(aImg_year[i].className=='num'){
+				aImg_year[i].src='images/'+sDate.charAt(i)+'.png';
+			}
+		}
+		var sTime = toDou(h)+':'+toDou(m)+':'+toDou(s);
+		for(var i=0;i<aImg_time.length;i++){
+			if(aImg_time[i].className=='num'){
+				aImg_time[i].src='images/'+sTime.charAt(i)+'.png';
+			}
+			if(aImg_time[i].className=='num2'){
+				aImg_time[i].src='images/'+arr[w]+'.png';
+			}
+		}
+	}
+	tick();
+	setInterval(tick,1000);
+};
+</script>
+</head>
+
+<body>
+
+<div id="clock" class="date">
+    <h2><img src="images/title.png" /></h2>
+    <div class="year" id="year">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/year.png" alt="year" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/month.png" alt="month" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/seven.png" alt="seven" />
+    </div>
+    <div class="time" id="time">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="pos2" src="images/week.png" alt="week" />
+        <img class="num2" src="images/one.png" alt="one" />
+    </div>
+    <div class="url" title="智能社-超酷时钟"><a href="http://www.zhinengshe.com/" target="_blank"><img src="images/zns.png" alt="智能社" /></a></div>
+</div>
+
+</body>
+</html>

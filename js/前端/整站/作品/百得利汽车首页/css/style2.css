@@ -1,0 +1,267 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ font-size: 12px; color: #323232; margin-bottom: 300px;}
+.showAuto{ width: 1440px; margin: 0 auto;}
+button{ outline: 0 none; border: none;}
+.w1000Auto{ width: 1000px;margin: 0 auto;}
+
+/*head*/
+
+.head_bg{ height: 120px; background: url(../img/bg_ico.png) repeat-x 0 1px; color: #fff;}
+.head{ position: relative;}
+h1{ position: absolute; left: 222px; top:42px;  width: 183px; height: 42px;}
+h1 a{  display: block; width: 183px; height: 42px;background: url(../img/ico.png) no-repeat; text-indent: -999em;}
+.headr{ position: absolute; right: 0; top: 44px;  }
+.headr a{ color: #fff; font-size: 14px; font-family: "Microsoft Yahei";}
+.loading{ float: left; padding-top: 10px; line-height: 16px;}
+.loading a{ float: left;}
+.loading a .showSpan{ border-bottom: 1px solid #fff;}
+.loading a span{ display:inline-block; margin-right: 11px;padding-top: 1px;}
+
+.loading a:nth-child(2){ padding:0 13px;}
+.loading a:nth-child(3){margin-right: 18px;}
+.loading a:nth-child(4){margin-right: 14px; background: url(../img/ico.png) no-repeat 0 -63px; width: 18px; height:21px; margin-top: -1px;}
+.loading a:nth-child(5){ margin-right: 14px;background: url(../img/ico.png) no-repeat -55px -68px; width: 20px; height: 15px; margin-top: 2px;}
+.shopcar{ float: right; width: 177px; height: 33px; position: relative;}
+.shopcar a{ display: inline-block; width: 99px; height: 23px; border: 1px solid #cecece; background: #fff; color: #6c6c6c;
+ padding-top: 8px;padding-left: 45px; position: relative;}
+.shopcar i{ position: absolute;left: 0;top: 0; background: url(../img/ico.png) no-repeat 0 -101px;width:34px; height: 26px;  }
+.shopcar button{ position: absolute;right: 0; top: 0; background: url(../img/ico.png) no-repeat 0 -501px; width: 31px; height: 33px;}
+
+/*nav*/
+nav{ height: 40px;  background: #4a4b4b; color: #fff; font-size: 14px; font-family:"Microsoft Yahei"; line-height: 40px;}
+nav li{ float: left; position: relative;} 
+/*nav li.active{background: #343434;}*/
+nav li .hli{display: block; color: #fff; padding: 0 15px 0 16px;}
+nav li i{ display: inline-block; width: 0 ;height: 0; border: 5px solid transparent;border-top: 8px solid #fff; position: relative;top:5px;}
+
+
+#sjkind:hover i{border-top: 5px solid transparent;border-bottom: 8px solid #fff; position: relative;top: 0;}
+nav li:first-child .hli{ padding:0 13px 0 15px; width: 172px;}
+nav li:first-child i{ margin-left:106px;}
+
+nav li:nth-child(2) .hli{ padding: 0 28px 0 32px;}
+nav li:nth-child(3) .hli{ padding: 0 18px;}
+nav li:nth-child(4) .hli{ padding: 0 15px 0 28px;}
+
+nav li div{ background:#fafafa; position: absolute; left: 0; top: 40px;width: 178px; border: 1px solid #e2e3e4; border-top-size:2px; 
+	border-bottom: none; padding: 0 10px; display: none;}
+nav li dl{ border-bottom: 1px solid #dadada;overflow: hidden;}
+nav li dt{ color:#323232; font-size: 14px; font-family:"Microsoft Yahei"; line-height: 34px;}
+nav li dd{ text-align: left; width: 206px;word-wrap:break-word;}
+nav li dd a{color: #666; line-height: 22px; font-size: 12px; display: inline-block; margin-right: 25px;}
+nav li dl:first-child{padding: 4px 0 8px 0;}
+nav li dl:nth-child(2){padding: 0 0 13px 0; margin-top: -1px;}
+nav li dl:nth-child(3){padding: 11px 0 8px 0;}
+nav li dl:nth-child(4){padding: 8px 0 14px 0;}
+nav li dl:nth-child(5){padding: 5px 0 11px 0;}
+nav li p{ position: absolute;left: 0; top: 40px; width: 78px; background: #f6f6f6; padding: 0 6px 8px 8px; text-align: center; display: none;}
+nav li p a{ display: block; border-bottom: 1px dashed #b0b1b2; font-size: 12px; font-family: "Arial"; color:#4b4b4b;} 
+nav li p a:last-child{ border-bottom: none;}
+
+/*banner*/
+.banner{ background: url(../img/hcar.png) no-repeat; height: 500px; margin-bottom: 10px;}
+
+
+/*新车品牌专区*/
+.newBrand_main{ border: 1px solid #e7e7e6; }
+.newBrand h2{ font-family:"Microsoft Yahei"; font-size: 16px; font-weight: bold;line-height: 56px; padding-left: 10px; color: #323232; }
+.brandico{ margin-top: -1px;}
+.brandico a{ float: left; border: 1px solid #e7e7e6; margin-left: -1px; width: 142px; height: 61px; text-align: center;padding-top: 14px;}
+.brandico a:last-child{width: 140px; margin-right: -1px;}
+
+.brandico a.aActive{ border-color:#085eac; position: relative;}
+.brandico a.aActive i{ width: 0; height: 0; border: 8px solid transparent; border-top: 7px solid #085eac; position: absolute;left: 50%; margin-left: -4px; bottom:-15px;}
+.brandlist{ padding: 20px 20px 24px; overflow: hidden; display: none;}
+.brandlist img{ width: 210px; height: 140px;}
+.brandlist ul{width: 1040px;}
+.brandlist li{ float: left; margin-right: 40px; color: #323232;font-size: 12px;}
+.brandlist li a{ margin-bottom: 3px;}
+.brandlist h3{ line-height: 32px; }
+.brandlist p{  line-height: 20px;}
+.brandlist em{ color: #c9c9c9; text-decoration: line-through; }
+.brandlist b{ font-size: 14px; color:#e01e27; }
+
+
+/*mod*/
+.mod{ line-height: 42px; font-size: 18px; font-family: "Microsoft Yahei"; color: #323232; margin-left: 3px; 
+border-bottom: 3px solid #2b4d71; padding-left: 15px;}
+
+/*精品商城*/
+.boutique{ overflow: hidden; margin-bottom: 15px; }
+.boutique h2{margin-bottom: 13px;}
+.boutique ul{ width: 1009px;}
+.boutique li{ float: left; width:211px;border: 1px solid #ebebeb; margin-right: 9px;  padding: 14px 14px 13px 16px;text-align: center;}
+.boutique li img{ margin-bottom: 11px;}
+.boutique h3{ text-align: left; font-size: 12px ; font-family: "Microsoft Yahei"; color: #434343; border-bottom: 1px solid #c0bfbf; line-height: 26px;}
+.boutique div{ text-align: left; color: #888; padding-top: 9px; }
+.boutique p{ line-height: 24px; }
+.boutique h4{ color: #f28e51; font-size: 14px;  font-family: "Microsoft Yahei";  padding-top: 10px; line-height: 26px;}
+.boutique h4 a{ display: inline-block;  background: url(../img/ico.png) no-repeat 0 -223px; width: 90px; height: 26px; 
+	margin-left: 14px; padding-left: 8px; color: #fff;}
+
+/*section*/
+ section{ margin-bottom: 8px;}
+  section a{ display: block;}
+
+/*精品推荐*/
+.recommend{ margin-bottom: 11px;}
+
+.rec_main_l{ position: relative; float:left;}
+.rec_main_a{ float: left; width: 247px; height: 380px;}
+.rec_main_l ul{ float: left; width: 154px;border: 1px solid #e7e7e6; border-left: none;}
+.rec_main_l li{ display: none;}
+.rec_main_l li.icoshow{ display: block;}
+.rec_main_l li a{ display: block;border-bottom: 1px solid #e7e7e6; padding-top: 20px; text-align: center;}
+.rec_main_l li a:last-child{ border-bottom: none; height: 100px;}
+.rec_main_l li a:first-child{ height: 66px;}
+.rec_main_l li a:nth-child(2){ height: 64px;}
+.rec_main_l li a:nth-child(3){ height: 65px;}
+.rec_main_lcar{ float: left; width: 371px;}
+.rec_main_lcar a{ float: left; border-bottom: 1px solid #e7e7e6;}
+
+.rec_main_l p{ position: absolute;right:430px; bottom: 21px; }
+.rec_main_l p span{ float: left; width: 6px; height: 6px; background: #b6b6b6; margin-right: 5px;}
+.rec_main_l p span.bgred{ background-color: #be2027;}
+
+.rec_main_r{ float: right; padding-top: 5px;}
+.rec_main_r h3{ line-height: 22px; font-size: 14px;font-family: "Microsoft Yahei"; color: #565353;  }
+.rec_main_r .more{ float: right; font-size: 12px; font-family: "Arial"; color: #757172;}
+.rec_main_r div{}
+.rec_main_r div a{ display: block; color: #909090; height: 25px; border-bottom: 1px dashed #cacaca; width: 203px;
+	font-size: 12px; font-family: "Arial"; padding-top: 14px;  white-space: nowrap;overflow: hidden;text-overflow:ellipsis;}
+.rec_main_r div img{ padding-top: 14px;}
+
+
+
+/*积分商城*/
+.point{ margin-bottom: 6px;}
+.point h2 a,.info h2 a{ float: right; font-size: 12px; color: #777; font-family: "Arial"; line-height: 24px; padding-top:18px; padding-right: 18px; }
+.point ul{ margin-top: 2px; border-left: 1px solid #ededed; }
+.point li{ float: left; border-right: 1px solid #ededed;border-bottom: 1px solid #ededed; width: 250px; text-align: center; padding-bottom: 15px;}
+.point li:first-child{width: 248px;}
+.point li:nth-child(3){box-sizing:border-box;}
+.point li:last-child{width: 248px;}
+
+.point h4{ text-align: left; padding-left: 32px; line-height: 18px;}
+.point p{text-align: left;padding-left: 32px; line-height: 36px; color: #afaeae;}
+.point b{ color: #c31f25;}
+.point .pointdh{text-align: center; display: block; margin-left: 28px;background: url(../img/ico.png) no-repeat 0 -375px; width: 114px;
+	height: 37px; color: #fff; line-height: 33px; font-family: "Microsoft Yahei"; font-size: 16px;}
+
+/*企业信息*/
+
+.info_main_l,.tools{ float: left; width: 249px; border-right:1px solid #eeeeee;}
+.info_main_l h4,.tools h4{ font-size: 14px; font-family: "Microsoft Yahei"; color: #787777; line-height: 42px; padding: 5px 12px 0;}
+.info_main_l .more,.tools .more{ float: right; color: #787777; }
+.info_main_l .aimg{ padding-left: 15px; display: block;}
+.info_main_l ul{ padding: 0 25px 3px 16px;}
+.info_main_l li{ height: 27px; padding-top: 16px; border-bottom: 1px solid #ecedec; padding-left: 10px;}
+.info_main_l li:first-child{ height: 25px;}
+.info_main_l li:nth-child(2){ height: 26px;}
+.info_main_l li a{ color: #909090;}
+
+.tools{ width: 253px;}
+.tools h2{margin-bottom: 7px; }
+.tools h4{line-height: 40px;}
+.tools ul{ overflow: hidden; }
+.tools li{ padding-left: 15px; width:250px;}
+.tools li a{ float: left; margin-right: 21px; padding: 4px 0 9px 0;}
+.tools p{line-height:30px; color: #909090;}
+.tools dl{ padding-left: 18px;}
+.tools dt{ font-size: 14px; color: #787777; line-height: 22px; padding-bottom: 6px;}
+.tools dd{}				
+.tools dd a{ font-size: 12px; color: #90908f; line-height: 28px;}
+
+.cux{ float: left; padding-top: 7px;}
+.cux_list{ padding-left: 8px; width: 244px; padding-bottom: 5px;}
+.cux_list a{ float: left; margin-right: 7px; padding-bottom: 8px;}
+
+.cux dl{ padding: 0 12px;}
+.cux dt{ color: #909090; font-size: 14px; font-weight: bold; line-height: 22px;padding-left: 6px;}
+
+.cux dd a{ display: block; color: #909090; font-size: 12px; height: 38px; border-bottom: 1px solid #ecedec; line-height: 38px; padding-left: 6px;}
+.cux dd:last-child a{ height: 42px; line-height: 42px;}
+
+.info_main_r{ float: right;}
+.info_main_r img{width: 244px;}
+
+/*服务行业*/
+
+.serve{ margin-bottom: 8px;}
+.serve h2,.foucus h2{ border-bottom: 1px dashed #dbdbdb;}
+.serve h2 a,.foucus h2 a{ display: block; line-height: 42px; border-bottom: 1px dashed #dbdbdb; color: #131313; font-size: 18px; font-family: "Microsoft Yahei"; 
+padding-left: 17px; margin-bottom: 3px;}
+.serve_main{}
+.serve_main li{ float: left;}
+.serve_main h3{ padding-top: 10px; line-height: 34px; font-size: 14px; font-family: "Microsoft Yahei"; color: #969695; 
+border-bottom: 1px solid #dbdbdb;  margin:0 14px 14px 11px; }
+.serve_main h3 .more{ float: right; line-height: 30px; padding-top: 4px; font-size: 12px; font-family: "Arial"; color: #969695;}
+.serve_main .contentword a{ float: left; height: 24px; padding-top: 16px; border-bottom: 1px dashed #dbdbdb;}
+
+
+.meal{width: 249px; border-right: 1px solid #ededed;}
+.meal img,.insure img{ margin-left: 11px;}
+.contentword a{ display: block; width: 211px; margin-left: 13px; color: #969695;}
+
+.insure{width: 404px; border-right: 1px solid #ededed;}
+.insure .contentword a{width:174px;margin-right:20px;}
+
+.order{ width: 345px;}
+.order  h3{ width: 330px;}
+.order .aimg{ float: left; padding-left: 12px; padding-right: 2px;}
+.order .contentword{width: 192px; float: left;}
+.order .contentword a{width: 183px; padding-left: 9px;}
+.order .contentword i{ display: inline-block; background: url(../img/ico.png) no-repeat 0 -437px; width: 40px; height: 45px;
+ position: relative;top:18px; margin-right: 14px;}
+.order .contentword p a{ border-bottom: none; font-size: 18px; font-weight: bold; font-family: "Microsoft Yahei"; line-height: 45px; padding-top: 0;}
+
+/*百得利中心*/
+
+.foucus_main{ padding-bottom: 19px;}
+.foucus_main_l{ float: left;}
+.foucus_main_r{ float: right; width: 216px;}
+
+.foucus_main_l ul{ padding-top: 18px; margin-left: -5px; padding-bottom: 10px;}
+.foucus_main_l li{ float: left; border-right: 1px solid #ededed; padding: 0 26px;}
+.foucus_main_l h3{ }
+.foucus_main_l li div{ margin-bottom: 14px; }
+.foucus_main_l h4{background-color:rgba(0,0,0,.5); color: #fff; position: relative; margin-top: -30px; line-height: 30px; padding-left: 10px;}
+.foucus_main_l p{ line-height: 25px; color: #a2a1a1; font-size:14px;}
+
+.foucus_main h3{ height:30px; padding-top: 11px; font-size: 14px; color: #959595;}
+
+.foucus_main_r h3{ padding-left: 26px;}
+.foucus_main_r img{padding-left:24px;}
+
+/*footer*/
+.footer_bg{ background: url(../img/bg_ico.png) repeat-x 0 -135px; height: 205px;}
+
+.footer{ text-align: center;}
+
+.footer h4{ padding-top: 65px; color: #fff;} 
+.footer h4 a{ display: inline-block; color: #fff; font-size: 14px; line-height: 14px; padding:0 10px 0 11px;} 
+.footer p{ color: #fff; font-size: 12px; line-height: 70px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:200px;}
+#box input{background:#ccc;}
+#box input.on{background:yellow;}
+#box div{width:200px; height:200px; background:#ccc; display:none;}
+</style>
+<script src="cookie.js"></script>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oPrev = document.getElementById('prev');
+	var oNext = document.getElementById('next');
+	var aBtn = oBox.getElementsByTagName('input');
+	var aDiv = oBox.getElementsByTagName('div');
+	
+	var iNow = getCookie('iNow')||0;
+	tab();
+	for(var i=0;i<aBtn.length;i++){
+		(function(index){
+			aBtn[i].onclick=function(){
+				iNow=index;
+				tab();
+			};
+		})(i);
+	}
+	function tab(){
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].className='';
+			aDiv[i].style.display='none';
+		}
+		aBtn[iNow].className='on';
+		aDiv[iNow].style.display='block';
+		addCookie('iNow',iNow,10);
+	}
+	oPrev.onclick=function(){
+		iNow--;
+		if(iNow<0){
+			iNow=aBtn.length-1;
+		}
+		tab();
+	};
+	oNext.onclick=function(){
+		iNow++;
+		if(iNow==aBtn.length){
+			iNow=0;
+		}
+		tab();
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<a href="javascript:;" id="prev">←</a>
+	<input type="button" value="aaa" class="on" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+	<a href="javascript:;" id="next">→</a>
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

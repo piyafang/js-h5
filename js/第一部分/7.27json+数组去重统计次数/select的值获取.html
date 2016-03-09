@@ -1,0 +1,31 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oS=document.getElementsByTagName('select')[0];
+		var aOp=oS.options;
+		oS.onchange=function(){
+			alert(aOp[oS.selectedIndex].text);
+		}
+	}
+</script>
+</head>
+<body>
+	<select>
+		<option>文学</option>
+		<option>红楼梦</option>
+		<option>愿有人陪你颠沛流离</option>
+		<option>乖，摸摸头</option>
+		<option>不念过去，不畏将来</option>
+	</select>
+
+
+</body>
+</html>

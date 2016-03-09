@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+
+#div1 {width:150px; height:200px; margin:100px auto; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px) rotateY(0deg); background:#ccc;}
+#ul1 {width:150px; height:200px; position:relative; -webkit-transform-style:preserve-3d; -webkit-transform:rotateX(0deg);}
+
+#ul1 div.x {width:900px; height:20px; top:50%; left:50%; margin-left:-450px; margin-top:-10px; background:red; position:absolute;}
+#ul1 div.y {width:20px; height:900px; top:50%; left:50%; margin-left:-10px; margin-top:-450px; background:blue; position:absolute;}
+
+#ul1 li {width:148px; height:198px; border:1px solid black; background:yellow; position:absolute; left:0; top:0; -webkit-transform:rotateY(0deg) translateZ(0px); -webkit-transition:0.7s all ease-out; text-align:center; line-height:198px; font-size:30px;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	var oUl=document.getElementById('ul1');
+	var aLi=oUl.getElementsByTagName('li');
+	
+	var timer=null;
+	
+	var speedX=0;
+	var speedY=0;
+	
+	var lastX=0;
+	var lastY=0;
+	
+	var i=aLi.length-1;
+	var timer=setInterval(function (){
+		aLi[i].style.WebkitTransform='rotateY('+i*(360/aLi.length)+'deg) translateZ(300px)';
+		
+		i--;
+		
+		if(i==-1)
+		{
+			clearInterval(timer);
+		}
+	}, 200);
+	
+	//拖拽
+	var x=0;
+	var y=0;
+	document.onmousedown=function (ev)
+	{
+		var disX=ev.clientX-x;
+		var disY=ev.clientY-y;
+		
+		clearInterval(timer);
+		
+		document.onmousemove=function (ev)
+		{
+			x=ev.clientX-disX;
+			y=ev.clientY-disY;
+			
+			oDiv.style.WebkitTransform='perspective(800px) rotateX('+-y/5+'deg)';
+			oUl.style.WebkitTransform='rotateY('+x/5+'deg)';
+			
+			//
+			speedX=x-lastX;
+			speedY=y-lastY;
+			
+			lastX=x;
+			lastY=y;
+		};
+		document.onmouseup=function ()
+		{
+			document.onmousemove=null;
+			document.onmouseup=null;
+			
+			clearInterval(timer);
+			timer=setInterval(function (){
+				x+=speedX;
+				y+=speedY;
+				
+				speedX*=0.95;
+				speedY*=0.95;
+				
+				oDiv.style.WebkitTransform='perspective(800px) rotateX('+-y/5+'deg)';
+				oUl.style.WebkitTransform='rotateY('+x/5+'deg)';
+			}, 30);
+		};
+		
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="div1">
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+    </ul>
+</div>
+</body>
+</html>

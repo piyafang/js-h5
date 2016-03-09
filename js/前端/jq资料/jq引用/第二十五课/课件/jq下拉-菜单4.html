@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ padding:0; margin:0; }
+	ul{ list-style:none; border:1px solid red; display:none;}
+	div{ width:300px; margin:0 auto;}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('h3').hover(function(){
+			$('ul').show();
+		},function(){
+			$('ul').hide();
+		})
+	})
+</script>
+</head>
+
+<body>
+	<div>
+		<h3>点我点我</h3>
+		<ul>
+			<li>下拉菜单</li>
+			<li>下拉菜单</li>
+			<li>下拉菜单</li>
+			<li>下拉菜单</li>
+		</ul>
+	</div>
+</body>
+</html>

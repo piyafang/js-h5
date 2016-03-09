@@ -1,0 +1,109 @@
+css3：
+	 css2 你们在 新手村
+
+	 css3 净化 升级！
+
+	 	css3 还是 css
+
+	 	多了几个样式而已！
+
+html5：
+	听说可以做游戏
+		多了几个标签而已！
+
+--------------------------------------
+怪我！
+
+	文档头声明：
+
+	<!DOCTYPE HTML>  document type 文档类型
+						 HTML h5严格型
+
+
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+					4.01 Transitional
+						 html 过渡型
+
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+					strict
+						 xhtml 严格型
+
+如果页面没有文档头 会触发浏览器的怪异模式。
+
+	<head></head> 写网站信息的！
+
+	<title>哈哈哈</title> 网站标题
+
+	charset=utf-8  国际通用编码
+
+	charset=gb2312 中文简体
+
+
+
+video 视频
+	controls 控制
+
+audio 音频
+	controls 控制
+
+变形：
+	transform:rotate(); 旋转
+	transform:translate(); 平移
+	transform:skew(-30deg); 倾斜
+	transform:scale(-30deg); 缩放
+
+过渡：
+	transition:all 1s; 
+
+			all 所有样式
+
+			1s  过渡所需时间
+
+rgba 颜色表示方式
+	a opacity
+
+ background:rgba(0,0,0,0.5);
+
+-----------------------------------------
+响应式布局：维护性
+
+
+媒体查询：
+	@media screen and (max-width:960px){
+		div{ width:600px; background:yellow; margin:0 auto;}
+	}
+
+-------------------------------------------
+
+移动端布局：宽度小点的页面！
+	
+	1. 固定宽布局
+
+	2. 百分比布局
+
+			box-sizing:border-box;
+			改变盒子模型大小：
+
+	3. rem布局
+
+	4. 混合型
+
+--------------------------------------------
+ 1em = 一个字的大小
+ 		自己身上定义的字体大小
+
+ 1rem = 16px;默认
+ 		浏览器默认字体大小 16px
+
+	html{ font-size:0.625rem;}
+	 	        根目录的字体大小
+
+-------------------------------------------
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html ng-app="index">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script src="angular.js"></script>
+<script>
+//百度
+//https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&cb=show
+	app=angular('index',[]);
+	app.controller('main',function($scope,$http){
+		$scope.str='';
+		$scope.arr=[];
+		$scope.$watch('str',function(){
+			$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+				{params:{
+					wd:$scope.str,
+					cb:JSON_CALLBACK	
+				}}).success(function(json){
+					$scope.arr=json.s;	
+					
+				}).error(function(){alert('失败了')});
+		});
+		
+	});
+</script>
+</head>
+
+<body ng-controller="main">
+	<input type="text" ng-model="str" />
+	<ul>
+		<li ng-repeat="item in arr">{{item}}</li>
+	</ul>
+</body>
+</html>

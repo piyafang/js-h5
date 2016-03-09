@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+span {color:red; background:yellow;}
+</style>
+<script>
+window.onload=function ()
+{
+	//var oS=document.createElement('span');
+	var oS=document.createElementNS('http://www.w3.org/TR/html4/strict.dtd', 'span');
+	
+	oS.innerHTML='abc';
+	document.body.appendChild(oS);
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>

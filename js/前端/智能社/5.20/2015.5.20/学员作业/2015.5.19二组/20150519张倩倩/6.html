@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3-7.三列布局.png</title>
+<style>
+*{
+	margin:0; 
+	padding:0;
+	}
+.clearFix:after{ 
+	content:''; 
+	clear:both; 
+	display:block;
+	}
+.box{ 
+	width:960px;
+	height:598px;
+	border:1px solid #ccc;
+	float:left;
+}
+.top{
+	width:960px;
+	height:50px;
+	background:#4e9ce9;
+	float:left;
+	}
+.middle{
+	width:960px;
+	height:500px;
+	float:left;
+	}
+.middle_left{
+	width:151px;
+	height:500px;
+	background:#d3e3e6;
+	float:left;
+	}
+.middle_center{
+	width:600px;
+	height:500px;
+	background:#fafafa;
+	float:left;
+	}
+.middle_right{
+	width:210px;
+	height:500px;
+	background:#f7f7f7;
+	border-left:1px solid #d3e3e6;
+	float:right;
+	}
+.bottom{
+	width:960px;
+	height:50px;
+	background:#4e9ce9;
+	float:left;}
+
+
+
+</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="top">头部</div>
+		<div class="middle  clearFix">
+			<div class="middle_left">侧边导航</div>
+			<div class="middle_center">内容区域</div>
+			<div class="middle_right">工具区域</div>
+		</div>
+		<div class="bottom">页面底部</div>
+	
+	
+	</div>
+	
+</body>
+</html>

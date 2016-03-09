@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script src="cookie.js"></script>
+<script>
+window.onload=function(){
+	var oForm =document.getElementById('form1');
+	var oUname = document.getElementById('login_uname');
+	var oPwd = document.getElementById('login_pwd');
+	var oBtn = document.getElementById('login_btn');
+	var oME = document.getElementById('re_me');
+	var sUname = getCookie('uname');
+	if(sUname){
+		oUname.value=sUname;
+		oME.checked=true;
+	}
+	oForm.onsubmit=function(){
+		if(oME.checked){
+			addCookie('uname',oUname.value,10);
+		}else{
+			removeCookie('uname');
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+<form id="form1" action="?" method="post">
+	用户名:<input type="text" name="uname"  id="login_uname"/><br />
+    密&nbsp;码:<input type="password" name="pwd" id="login_pwd" /><br />
+    <input type="checkbox" id="re_me" />记住用户名?<br/>
+    <input type="submit" value="登录" id="login_btn" />
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

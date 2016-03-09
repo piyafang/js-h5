@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+/*
+节点：{value: xxx, l: 左,r: 右}
+*/
+
+var root=null;
+
+function bst_add(n, node)
+{
+	if(root==null)	//第一次
+	{
+		root={value: n, l: null, r: null};
+	}
+	else
+	{
+		if(node.value==n)		//重复了
+		{
+			return;
+		}
+		else
+		{
+			if(node.value<n)	//右
+			{
+				if(node.r)		//继续
+				{
+					bst_add(n, node.r);
+				}
+				else			//就这儿了
+				{
+					node.r={value: n, l: null, r: null};
+				}
+			}
+			else				//左
+			{
+				if(node.l)
+				{
+					bst_add(n, node.l);
+				}
+				else
+				{
+					node.l={value: n, l: null, r: null};
+				}
+			}
+		}
+	}
+}
+
+function bst_find(n, node)
+{
+	if(root==null)
+	{
+		return false;
+	}
+	else
+	{
+		if(node.value==n)
+		{
+			return true;
+		}
+		else
+		{
+			if(node.value>n)	//左
+			{
+				if(node.l)
+				{
+					return bst_find(n, node.l);
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				if(node.r)
+				{
+					return bst_find(n, node.r);
+				}
+				else
+				{
+					return false;
+				}
+			}
+		}
+	}
+}
+
+bst_add(45, root);
+bst_add(35, root);
+bst_add(98, root);
+bst_add(26, root);
+bst_add(77, root);
+bst_add(35, root);
+bst_add(77, root);
+bst_add(16, root);
+bst_add(28, root);
+
+alert(bst_find(32, root));
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

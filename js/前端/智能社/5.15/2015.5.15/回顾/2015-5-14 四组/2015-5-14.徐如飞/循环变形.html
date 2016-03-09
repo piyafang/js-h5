@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>循环变形</title>
+    <style>
+        div{border-radius:30px;transition: width 0.5s,height 0.5s,transform 0.5s ;width:100px;height:100px;background: darkred;animation: anim 5s infinite alternate;position: relative;-webkit-animation: anim 5s  infinite alternate }
+        div:hover{width: 200px;height: 200px;transform: rotate(360deg)}
+        @keyframes anim {
+            0%{background: orangered;left: 0;top: 0;}
+            25%{background: fuchsia;left: 200px;top: 0;}
+            50%{background: dodgerblue;left: 200px;top: 200px;}
+            75%{background: red;left: 0;top: 200px;}
+            100%{background: brown;left: 0;top: 0;;}
+        }
+        @-webkit-keyframes anim {
+            0%{background: orangered;left: 0;top: 0;}
+            25%{background: fuchsia;left: 200px;top: 0;}
+            50%{background: dodgerblue;left: 200px;top: 200px;}
+            75%{background: red;left: 0;top: 200px;}
+            100%{background: brown;left: 0;top: 0;;}
+        }
+
+    </style>
+
+</head>
+<body>
+    <div></div>
+</body>
+</html>

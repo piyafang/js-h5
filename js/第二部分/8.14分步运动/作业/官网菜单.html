@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0;padding:0; list-style:none; text-decoration:none;}
+	a{width:100px; height:100px; background:#ccc; color:#fff; font-size:28px;
+	line-height:100px; text-align:center;}
+</style>
+<script src="move.js"></script>
+<script>
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var oBtn=oBox.getElementsByTagName('input')[0];
+		var aA=oBox.getElementsByTagName('a');
+		var count=0;
+		var num=9;
+		
+		for(var i=0;i<num;i++){
+			aA[i].style.position='absolute';
+			aA[i].style.left=aA[i].offsetWidth*(i%3)+10*(i%3)+100+'px';
+			aA[i].style.top=aA[i].offsetHeight*parseInt(i/3)+10*parseInt(i/3)+100+'px';
+		}
+		
+		function closeTab(){			
+			startMove(aA[count],{'left':0,'top':0},{'time':300,'end':function(){
+					if(aA[count].offsetLeft==0){startMove(aA[count],{'opacity':0});}
+					count++;
+					if(count==num)return;
+					closeTab();	
+					
+			}});											
+		}
+		function openTab(){		
+			startMove(aA[count],{'left':aA[count].offsetWidth*(count%3)+10*(count%3)+200,
+			'top':aA[count].offsetHeight*parseInt(count/3)+10*parseInt(count/3)+200,
+			'opacity':1},{'time':300,'end':function(){
+					count++;
+					if(count==num)return;
+					openTab();		
+			}});
+										
+		}
+		
+		var bOk=true;
+		oBtn.onclick=function(){
+			if(bOk){
+				closeTab();	
+			}else{
+				openTab();
+			}
+			bOk=!bOk;
+			
+		}
+		
+
+	};
+</script>
+</head>
+
+<body>
+	<div id="box">
+		<input  type="button" value="收起" />
+		<a href="javascript:;">1</a>
+		<a href="javascript:;">2</a>
+		<a href="javascript:;">3</a>
+		<a href="javascript:;">4</a>
+		<a href="javascript:;">5</a>
+		<a href="javascript:;">6</a>
+		<a href="javascript:;">7</a>
+		<a href="javascript:;">8</a>
+		<a href="javascript:;">9</a>	
+	</div>
+</body>
+</html>

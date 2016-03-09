@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+window.onload=function ()
+{
+	var oHour=document.getElementById('hour');
+	
+	var cx=400,cy=300;
+	var r=200;
+	var ang=230;
+	
+	//第一步、算起点(省)
+	
+	//第二步、算终点
+	var x=cx+Math.sin(d2a(ang))*r;
+	var y=cy-Math.cos(d2a(ang))*r;
+	
+	oHour.setAttribute(
+		'd',
+		[
+			'M', cx, cy-r,
+			'A', r, r, 0, (ang>180?1:0), 1, x, y
+		].join(' ')
+	);
+};
+</script>
+</head>
+
+<body>
+<svg width="800" height="600">
+	<path d="" id="hour" style="stroke-width:20; stroke:#32cd33; fill:none;" />
+</svg>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

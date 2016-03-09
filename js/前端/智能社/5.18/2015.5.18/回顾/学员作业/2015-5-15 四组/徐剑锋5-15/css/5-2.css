@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0; text-decoration:none; list-style:none; font-size:12px;}
+.background{width:280px;
+            height:280px;
+	        background:#f4f4f4;
+	        border:1px solid #d8d8d8;
+			padding-left:20px;
+			padding-bottom:10px;
+			padding-right:10px;}
+h2{font-size:21px;
+   font-weight:bold;
+    margin-top:20px;
+	
+	}
+.box1{border:1px solid #d8d8d8;
+      background:#FFF;
+      width:56px;
+	  height:64px;
+	  margin-top:10px;
+	  margin-right:10px;
+	  float:left;}
+.icon{width:24px;
+	  height:24px;
+	  margin-left:16px;
+	  margin-top:10px;
+	  background:url(../img/5-2background.png) no-repeat;
+	  }
+p{text-align:center;
+   margin-top:10px;
+   color:#9b9b9b;}
+

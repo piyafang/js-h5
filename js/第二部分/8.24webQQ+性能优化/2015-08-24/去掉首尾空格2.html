@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+var str = '       adfsf       fdsfds        ';
+//1
+//str = str.replace(/^\s+|\s+$/g,'').replace(/\s+/g,' ');
+//alert('('+str+')');
+//2.
+//alert('('+str.match(/\S+/g).join(' ')+')');
+//3.
+str = str.replace(/^\s+|\s+$/g,'');
+var arr = str.split(/\s+/g);
+alert(arr.join(' '));
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

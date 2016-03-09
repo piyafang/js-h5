@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.showAuto{ min-width: 980px; margin: 0 auto;}
+body{ font-size: 12px; color: #333;}
+.op50{background: #000; opacity: 0.5; filter:alpha(opacity:50);}
+.op30{background: #000; opacity: 0.3; filter:alpha(opacity:30);}
+
+/*head*/
+.head{font-size: 14px; color: #fff;}
+.focus_bg{  background-color:  #010101; height: 410px; width: 100%; }
+.focus{background: url(../img/hqg.jpg) no-repeat;margin: 0 auto; width: 1500px; height: 410px;}
+.focus_content{ position: relative;}
+.f_nav{ position: absolute;right: 0;top:7px;  width: 665px; margin-bottom: 13px;}
+
+.f_nav_l{ float: left; width: 365px; height: 30px;}
+.f_nav_l .search{ float: left; width: 264px; height: 28px; border: 1px solid #878E9C; position: relative; margin-right: 19px; }
+.search input{ line-height: 28px; font-size: 14px; color: #fff; padding-left: 10px; font-weight: bold; width: 228px;height: 28px;}
+.search a{ background: url(../img/search.png) no-repeat; position: absolute;right: -1px ;top: -1px; width: 36px; height: 30px;}
+.f_nav_l .flie{ float: left; background: url(../img/c.png) no-repeat; width: 80px; height: 30px;}
+.f_nav_r{ float: right;}
+.f_nav_r li{ float: left;}
+.f_nav_r li a{ color: #fff; line-height: 30px;}
+.f_nav_r li i{ display: inline-block; width: 0; height:0; border: 5px solid transparent; border-top:5px solid #fff; margin-left: 4px; position: relative;top:3px;}
+.f_nav_r li:hover a{ color: #699f00;}
+.f_nav_r li:hover i{  position: relative;top: -2px;border-top: 5px solid transparent; border-bottom:5px solid #fff; }
+.mr14{ margin-right: 14px;}
+.mr12{ margin-right: 12px;}
+
+.f_list{ position: absolute;right: 0; top: 50px; border:3px solid #ccc;width: 218px; height: 348px;}
+.f_list ul{width: 212px; height: 348px;border:3px solid #000;  padding:0 4px; position: relative;}
+.f_list li{ width:208px;height: 33px; border-bottom: 1px solid #fff; position: relative;}
+.f_list li a{ line-height: 33px;  color: #fff; }
+.f_list ul:hover{ }
+.f_list li:hover{   }
+.greenbox{ width: 212px; height: 34px;background: #699F00; position: absolute;left: 0;top: 0; z-index: 3;}
+.ejnav_bg{ background:#010101; height: 106px; width: 100%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

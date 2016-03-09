@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+window.onload=function ()
+{
+	var oP=document.getElementById('p1');
+	
+	//
+	var cx=300,cy=300;
+	var r=200;
+	var end=120;	//终点角度
+	
+	
+	//第一步、算终点位置
+	var end_x=cx+Math.sin(d2a(end))*r;
+	var end_y=cy-Math.cos(d2a(end))*r;
+	
+	//第二步、放到path里面
+	oP.setAttribute('d',
+	'\
+	M 300 300 \
+	L 300 100 \
+	A 200 200 0 0 1 '+end_x+' '+end_y+'\
+	Z'
+	);
+};
+</script>
+</head>
+
+<body>
+<svg>
+	<path id="p1" d="
+	M 300 300 L 300 100
+	A 200 200 0 0 1 500 300
+	" style="stroke:red; stroke-width:1; fill:none;" />
+</svg>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-4</title>
+<style>
+*{
+	margin:0px;padding:0;
+	}
+
+.right{
+	float:right;
+	}
+.left{
+	float:left;	
+}
+.total{
+	margin:10px;
+	width:515px; 
+	height:230px;
+	margin:0 auto;
+	}
+.divleft{
+	width:336px; 
+	height:230px;
+	margin-right:10px;
+	}
+.lefttop{
+	width:336px; 
+	height:60px;
+	background:#00ccff;
+	}
+.middiv{
+	width:336px; 
+	height:75px;
+	}
+.fourdiv{
+	width:163px; 
+	height:75px;
+	margin-top:10px;
+	}
+.one{
+	background:#0066ff;
+	margin-right:10px;
+	}
+.two{
+	background:#999999;
+	}
+.four{
+	background:#0066ff;
+	margin-left:10px;
+	}
+.divright{
+	width:168px; 
+	height:230px;
+	background:#99ff00;
+	}
+.clearFix:after{content:"";clear:both;display:block;}
+</style>
+</head>
+<body>
+	<div class="total clearFix">
+		<div class="divleft left">
+			<div class="lefttop">
+			</div>
+			<div class="middiv clearFix">
+				<div class="fourdiv one left"></div>
+				<div class="fourdiv two right"></div>
+			</div>
+			<div class="middiv clearFix">
+				<div class="fourdiv two left"></div>
+				<div class="fourdiv four right"></div>
+			</div>
+		</div>
+	
+		<div class="divright right">
+		</div>
+	</div>
+</body>
+</html>

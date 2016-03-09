@@ -1,0 +1,399 @@
+@charset "utf-8";
+	/* CSS Document */
+
+body {
+	background:#fff;
+	color:#666;
+}
+.showAuto {
+	width:1200px;
+	margin:0 auto;
+}
+/*header*/
+.header {
+	height:219px;
+	overflow:hidden;
+	margin-bottom:20px;
+	position:relative;
+}
+.header a {
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.header img {
+	width:100%;
+}
+/*content*/
+.side_l {
+	float:left;
+	padding-left:1px;
+	width:310px;
+}
+.side_r {
+	float:right;
+	width:868px;
+	border:1px solid #D8D8D8;
+	position:relative;
+}
+.quantum{ padding-bottom:0;}
+/*conttent_l*/
+.search {
+	width:310px;
+	height:290px;
+	background:#AFDAFA;
+	color:#fff;
+}
+.search_mod {
+	width:100%;
+	height:20px;
+	padding-top:10px;
+}
+.search_mod h3 {
+	float:left;
+	width:76px;
+	margin-right:3px;
+	text-align:right;
+	font-family:"Microsoft Yahei";
+	line-height:20px;
+}
+.mod_choose {
+	float:left;
+	width:188px;
+	height:18px;
+	border:1px solid #ABADB3;
+	line-height:18px;
+	color:#666;
+	position:relative;
+}
+.mod_choose h4 {
+	line-height:18px;
+	padding-left:4px;
+}
+.mod_choose ul {
+	width:188px;
+	border:1px solid #ABADB3;
+	border-top:none;
+	position:absolute;
+	left:-1px;
+	top:19px;
+	padding:5px 0;
+	background:#fff;
+	display:none;
+	z-index:10;
+}
+.mod_choose li {
+	line-height:22px;
+}
+.mod_choose li a {
+	color:#666;
+	display:block;
+	padding-left:4px;
+}
+.mod_choose li a:hover {
+	color:#fff;
+	background:#AFDAFA;
+}
+.mod_choose span {
+	width:15px;
+	height:16px;
+	background:url(../images/down.png) no-repeat;
+	position:absolute;
+	right:0;
+	top:0;
+	border:1px solid #707070;
+}
+.search p a {
+	float:left;
+	color:#fff;
+	font-family:"Microsoft Yahei";
+	text-decoration:underline;
+	padding:8px 0 5px 0;
+}
+.search_txt_l {
+	width:114px;
+	text-align:right;
+	margin-right:50px;
+}
+.search_txt_r {
+	width:146px;
+	text-align:left;
+}
+.search p span {
+	float:left;
+}
+.search h5 {
+	font-size:14px;
+	text-align:center;
+	line-height:28px;
+}
+.search b {
+	font-weight:bold;
+	margin-right:10px;
+	font-family:"Microsoft Yahei";
+}
+.search input {
+	margin-left:55px;
+	background:#FF9913;
+	width:180px;
+	height:32px;
+	border-radius:10px;
+	text-align:center;
+	line-height:32px;
+	color:#fff;
+	font-size:16px;
+	font-family:"Microsoft Yahei";
+	display:block;
+	cursor:pointer;
+}
+.ad_container {
+	width:310px;
+}
+.ad_ship {
+	width:310px;
+	height:228px;
+	position:relative;
+	margin-top:16px;
+}
+.ad_ship span {
+	width:43px;
+	height:43px;
+	position:absolute;
+	cursor:pointer;
+	left:0;
+	top:0;
+	background:url(../images/sale.png) no-repeat 0 0;
+}
+.showbox {
+	position:relative;
+	margin-top:-32px;
+	height:32px;
+	line-height:32px;
+}
+.showbox p {
+	width:100%;
+	height:100%;
+	background:rgb(0,0,0);
+	opacity:0.5;
+	filter:alpha(opacity:50);
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+.showbox b {
+	color:#fff;
+	font-size:16px;
+	position:relative;
+	z-index:2;
+	padding-left:10px;
+}
+/*conttent_r Quantum*/
+.quantum_brief {
+	width:868px;
+	position:relative;
+}
+.quantum_slides_box {
+	float:left;
+	position:relative;
+}
+.quantum_slides {
+	width:570px;
+	height:358px;
+	padding:20px 18px 43px 20px;
+	display:none;
+	float:left;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.quantum_slides.show {
+	display:block;
+}
+.quantum_slides .showbox {
+	position:relative;
+	margin-top:-46px;
+	height:46px;
+	line-height:46px;
+	display:none;
+}
+.quantum_brief ul {
+	position:relative;
+	float:right;
+	height:358px;
+	padding:24px 20px 0 0;
+}
+.quantum_brief li {
+	margin-bottom:18px;
+	position:relative;
+}
+.quantum_brief li a {
+	width:246px;
+	height:112px;
+	border:1px solid #FF9913;
+	position:absolute;
+	left:-4px;
+	top:-3px;
+}
+.quantum_brief li i {
+	position:absolute;
+	left:-17px;
+	top:46px;
+	width:0;
+	height:0;
+	border:6px solid transparent;
+	border-right:10px solid #FF9913;
+}
+.quantum_brief .quantum_info {
+	float:left;
+	line-height:37px;
+	font-size:14px;
+	text-indent:2em;
+	display:block;
+	padding:0 16px 0 26px;
+}
+/*quantum_main 介绍*/
+.quantum_main {
+	padding:0 20px 134px;
+}
+.quantum_mod {
+	border-bottom:1px solid #34A1E2;
+}
+.quantum_mod h3 {
+	width:350px;
+	margin-left:250px;
+	padding-left:142px;
+	font-size:18px;
+	color:#076AB4;
+	font-weight:bold;
+}
+.quantum_mod ul {
+	height:28px;
+	background:#37A0E2;
+	line-height:26px;
+	margin-top:9px;
+}
+.quantum_mod li {
+	float:left;
+	border:2px solid #37A0E2;
+	border-bottom:none;
+	width:80px;
+	text-align:center;
+	font-size:14px;
+}
+.quantum_mod li a {
+	color:#fff;
+}
+.quantum_mod li.active {
+	background:#fff;
+}
+.quantum_mod li.active a {
+	color:#05a;
+}
+.mod_intro {
+	display:none;
+}
+.mod_intro a {
+	width:230px;
+	height:152px;
+	overflow:hidden;
+	margin:10px 10px 15px;
+	float:left;
+}
+.mod_intro img {
+	}.mod_intro img:hover {
+	transform:scale(1.05);
+	transition:all 1s;
+}
+.mod_intro p {
+	float:right;
+	width:562px;
+	padding:14px 8px 0;
+	line-height:30px;
+	font-size:14px;
+}
+.cabin h3 {
+	background:url(../images/cabin.png) no-repeat;
+	width:350px;
+	margin-top:14px;
+	line-height:18px;
+	padding:13px 0 9px 142px;
+	height:18px;
+}
+.cabin .s_nav {
+	text-align:center;
+	padding-left:318px;
+}
+.s_nav a {
+	float:left;
+	background:#37A0E2;
+	width:58px;
+	height:24px;
+	color:#fff;
+	line-height:24px;
+	text-align:center;
+	padding-left:8px;
+	margin-right:10px;
+}
+.cabin a i {
+	width:14px;
+	height:14px;
+	background:url(../images/ico.png);
+	float:left;
+	margin-top:6px;
+}
+a.mv i {
+	background-position:0 -35px;
+}
+a.strategy i {
+	background-position:-22px -35px;
+}
+a.travels i {
+	background-position:-43px -35px;
+}
+.cabin p {
+	line-height:34px;
+}
+.cabin .orange {
+	line-height:22px;
+	font-size:12px;
+	color:#999;
+	margin-top:28px;
+}
+.cabin p b {
+	color:#FF9913;
+	background:url(../images/ico.png) no-repeat -67px -36px;
+	padding-left:14px;
+}
+.cabin p span {
+	display:block;
+}
+.dining li {
+	width:135px;
+}
+.dining h3,.fun h3 {
+	width:350px;
+	line-height:40px;
+	padding:0 0 10px 142px;
+	margin-top:19px;
+}
+.dining h3 {
+	background:url(../images/dining.png) no-repeat;
+}
+.fun h3 {
+	background:url(../images/fun.png) no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

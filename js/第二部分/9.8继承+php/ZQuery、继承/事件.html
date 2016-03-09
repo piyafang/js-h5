@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+window.onload=function ()
+{
+	var oUl=document.getElementById('ul1');
+	var aLi=oUl.children;
+	
+	for(var i=0;i<aLi.length;i++)
+	{
+		aLi[i].onclick=function ()
+		{
+			alert('abc');
+		};
+	}
+	
+	oUl.innerHTML=oUl.innerHTML;
+};
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li>32423</li>
+	<li>erwe</li>
+	<li>sdg</li>
+	<li>343443</li>
+</ul>
+</body>
+</html>

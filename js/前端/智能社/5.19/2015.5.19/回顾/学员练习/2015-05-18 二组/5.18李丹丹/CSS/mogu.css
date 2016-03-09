@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-05-17 14:36:17
+ * @version $Id$
+ */
+
+*{padding:0;margin:0;list-style:none;}
+html,body{width:100%;height:100%;}
+
+.shop1{
+	width:462px;
+	height:230px;
+	overflow:hidden;
+	padding:16px 0 14px 0;
+	margin:0 auto;
+	
+}
+
+.des1{
+	width:200px;
+	height:260px;
+    float:left;
+    margin-right:10px;
+
+}
+
+.des2{
+	width:200px;
+	height:56px;
+	overflow:hidden;
+	padding-top:10px;  
+
+}
+
+.Des1{
+    width:240px;
+    height:260px;
+    float:left;
+    margin-right:10px;
+
+}
+
+.Des2{
+    width:230px;
+    height:56px;
+    overflow:hidden;
+    padding-top:10px;
+
+}
+
+
+
+.name{
+	width:90px;
+	height:42px;
+    text-decoration:none;
+    font-size:12px;
+    color:#666;
+    float:left;
+
+}
+.sale{
+	float:right;
+}
+.price{
+	height:20px;
+	color:#fc3c75;
+	font-size:20px;
+}
+.discount{
+	height:20px;
+	color:#57a000;
+	font-size:12px;
+}

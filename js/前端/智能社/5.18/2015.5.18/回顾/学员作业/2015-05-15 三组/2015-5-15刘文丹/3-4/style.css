@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors liuwendan (you@example.org)
+ * @date    2015-05-16 19:25:54
+ * @version $Id$
+ */
+.box{overflow: hidden;}
+.left-box,.right{height: 230px;float: left;}
+.left-box{width: 336px;margin-right: 10px;}
+.right{width: 168px;background: #9f0;}
+.top_left{height: 60px;background: #0cf;margin-bottom: 10px;}
+.bottom-box_left{height: 160px;overflow: hidden;}
+.bottom-left-box,.bottom-right-box{width: 162px;float: left;}
+.bottom-left-box{margin-right: 10px;}
+.bottom-left-top,.bottom-right-top{height: 74px;margin-bottom: 10px;}
+.bottom-left-top,.bottom-right-bottom{background: #06f;}
+.bottom-right-top,.bottom-left-bottom{background: #999;}
+.bottom-left-bottom,.bottom-right-bottom{height: 74px;}

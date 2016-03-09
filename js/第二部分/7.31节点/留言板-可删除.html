@@ -1,0 +1,68 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	ul{ width: 400px;border: 1px solid #ccc;}
+	span{ width: 20px;height: 20px; border-radius: 50%;background: #f90; 
+		display:inline-block; margin-right: 10px; line-height: 20px;}
+	a{float: right;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oTxt=document.getElementById('txt');
+		var oBtn=document.getElementById('btn');
+		var oUl=document.getElementsByTagName('ul')[0];
+
+		var aRemove=oUl.getElementsByTagName('a');
+		for(var i=0;i<aRemove.length;i++){
+			aRemove[i].onclick=function(){
+				oUl.removeChild(this.parentNode);
+			};
+
+		}
+
+		oBtn.onclick=function(){
+			if(oTxt.value=='')return;
+			var oLi=document.createElement('li');
+			var oA=document.createElement('a');
+			oA.href='javascript:;';
+			oA.innerHTML='删除';
+
+			oLi.innerHTML='<span></span>'+oTxt.value;
+			oLi.appendChild(oA);
+
+			oA.onclick=function(){
+				oUl.removeChild(this.parentNode);
+			}
+
+			if(oUl.children.length){
+				oUl.insertBefore(oLi,oUl.children[0]);
+			}else{
+				oUl.appendChild(oLi);
+			}
+
+			
+			oTxt.value='';
+
+
+		}
+
+
+	}
+</script>
+</head>
+<body>
+<input type="text" id="txt" style="width:400px;">
+<input type="button" value="留言" id="btn" />
+<ul><li><span></span>留言板<a href="#">删除</a></li></ul>
+
+</body>
+</html>
+
+
+
+

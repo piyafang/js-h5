@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>美团导航</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	<script type="text/javascript" src="../js/jquery-1.7.2.js" ></script>
+	<style type="text/css">
+		ul{border-bottom: 1px solid #dedede;}
+		li{ float: left; position: relative;padding-top: 10px; height: 18px;  width: 100px;  }
+		li .ha{ display: block;color: #636363;  padding: 0 20px;font-size: 12px; line-height: 12px; border-right: 1px solid #dedede;}
+		li i{ display: inline-block; width: 0; height: 0; border: 3px solid transparent;border-top-color: #636363; position: relative; bottom: 0px;left: 6px;}
+		div{ position: absolute;right: -1px;top: 26px; width: 120px; line-height: 30px; font-size: 12px; text-align: center;border: 1px solid #dedede; display: none; z-index: 3;background:#fff;}
+		div a{ display: block; line-height: 30px; color: #636363;}
+		li.active{ border-right: 1px solid #dedede; border-left: 1px solid #dedede; position: relative; margin-left: -1px;}
+		li.active .ha{border-right: none; height: 26px;background:#fff; position: relative;z-index: 4; color: #00BDBD;}
+		li.active i{border: 3px solid transparent;border-bottom-color:#00BDBD; top: -3px;}
+		li.active .shopcar{ height: 80px; line-height: 80px; width: 200px;}
+		li.active div{ display: block;}
+		a:hover{ color: #00BDBD;}
+		
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oUlbox=document.getElementById('ulbox');
+			var aLi=oUlbox.getElementsByTagName('li');
+			for( var i=3;i<aLi.length;i++){
+				aLi[i].onmouseover=function(){
+					for( var j=3;j<aLi.length;j++){
+						aLi[j].className='';
+					}
+					this.className='active';
+				}
+			}
+		}
+		
+	</script>
+	
+</head>
+<body>
+	<ul class="clearFix" id="ulbox">
+		<li><a href="#" class="ha">登录</a></li>
+		<li><a href="#" class="ha">注册</a></li>
+		<li>
+			<a href="javascript:;"  class="ha">我的美团<i></i></a>
+		</li>
+		<li style="width:110px;">
+			<a href="javascript:;"  class="ha">购物车<span style="color:red">0</span>件<i></i></a>
+			<div class="shopcar">
+				您的购物车为空！
+			</div>
+		</li>
+		<li>
+			<a href="javascript:;"  class="ha">我是商家<i></i></a>
+			<div>
+				<a href="#">商家中心</a>
+				<a href="#">商家中心</a>
+				<a href="#">商家中心</a>
+			</div>
+		</li>
+		<li class="active">
+			<a href="javascript:;"  class="ha">客服<i></i></a>
+			<div>
+				<a href="#">申请退款</a>
+				<a href="#">绑定手机</a>
+				<a href="#">美团券</a>
+				<a href="#">绑定手机</a>
+				<a href="#">美团券</a>
+			</div>
+		</li>
+		<li>
+			<a href="javascript:;"  class="ha" style="border-right:none">更多<i></i></a>
+			<div>
+				<a href="#">绑定用户</a>
+				<a href="#">绑定手机</a>
+				<a href="#">团购规则</a>
+			</div>
+		</li>
+	</ul>
+</body>
+</html>

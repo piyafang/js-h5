@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+.wrapper{
+	width:960px;
+	height:730px;
+	border:1px solid #ccc;
+	margin:50px 0 0 50px;
+	padding:20px;
+}
+dl{
+	width:960px;
+	height:70px;
+	border-bottom:1px dotted #ccc;
+	padding-top:10px;
+	
+}
+dt{
+	width:30px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	font-size:14px;
+	font-weight:bold;
+	color:#f60;
+	background:#e5e5e5;
+	float:left;
+	border:1px solid #e5e5e5;
+	margin-left:10px;
+}
+dd{
+	float:left;
+	line-height:16px;
+	height:30px;
+}
+dd a{
+	display:inline-block;
+	padding:0 20px 0  20px;
+	height:16px;
+	margin-top:6px;
+	border-right:1px solid #ccc;
+	text-align:center;
+	color:#333;
+
+}
+strong a{ font-weight:bold;}
+.last{ border-right:0;}
+.active{
+	background:#efefef;
+}
+.active dt{
+	background:#f60;
+	color:#fff;
+}

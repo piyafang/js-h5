@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:700px; height:400px; position:relative; border:1px solid black; margin:10px auto;}
+#div1 div {position:absolute; -webkit-transform-style:preserve-3d;  -webkit-transition:1s all ease; -webkit-transform:perspective(800px) rotateY(0deg);}
+#div1 div span {position:absolute; left:0; top:0; width:100%; height:100%;}
+#div1 div span.front {-webkit-transform:translateZ(1px);}
+#div1 div span.back {-webkit-transform:translateZ(-1px) scale(-1,1);}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	
+	var R=4;
+	var C=7;
+	
+	var now=0;
+	
+	for(var r=0;r<R;r++)
+	{
+		for(var c=0;c<C;c++)
+		{
+			var oNewDiv=document.createElement('div');
+			oNewDiv.innerHTML='<span class="front"></span><span class="back"></span>';
+			
+			oNewDiv.style.width=oDiv.offsetWidth/C+'px';
+			oNewDiv.style.height=oDiv.offsetHeight/R+'px';
+			
+			oDiv.appendChild(oNewDiv);
+			
+			oNewDiv.style.left=c*oNewDiv.offsetWidth+'px';
+			oNewDiv.style.top=r*oNewDiv.offsetHeight+'px';
+			
+			//
+			oNewDiv.children[0].style.background='url(img/0.jpg)';
+			oNewDiv.children[1].style.background='url(img/1.jpg)';
+			
+			oNewDiv.children[0].style.backgroundPosition=oNewDiv.children[1].style.backgroundPosition='-'+oNewDiv.offsetLeft+'px -'+oNewDiv.offsetTop+'px';
+		}
+	}
+	
+	//
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function ()
+	{
+		var aDiv=oDiv.children;
+		
+		/*for(var i=0;i<aDiv.length;i++)
+		{
+			aDiv[i].style.WebkitTransform='perspective(800px) rotateY(180deg)';
+		}*/
+		var i=0;
+		
+		var timer=setInterval(function (){
+			aDiv[i].style.WebkitTransform='perspective(800px) rotateY(180deg)';
+			
+			i++;
+			if(i==aDiv.length)
+			{
+				clearInterval(timer);
+			}
+		}, 100);
+		
+		function fnEnd()
+		{
+			now++;
+			aDiv[aDiv.length-1].removeEventListener('transitionend', fnEnd, false);
+			
+			//翻回来
+			for(var i=0;i<aDiv.length;i++)
+			{
+				aDiv[i].style.WebkitTransition='none';
+				aDiv[i].style.WebkitTransform='perspective(800px) rotateY(0deg)';
+				aDiv[i].children[0].style.backgroundImage='url(img/'+now+'.jpg)';
+				aDiv[i].children[1].style.backgroundImage='url(img/'+(now+1)+'.jpg)';
+			}
+			
+			setTimeout(function (){
+				for(var i=0;i<aDiv.length;i++)
+				{
+					aDiv[i].style.WebkitTransition='1s all ease';
+				}
+			}, 1);
+			
+			//图更新
+		}
+		
+		aDiv[aDiv.length-1].addEventListener('transitionend', fnEnd, false);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮" id="btn1" />
+<div id="div1">
+	<!--<div>
+    	<span class="front"></span>
+    	<span class="back"></span>
+    </div>-->
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

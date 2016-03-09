@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>3-5</title>
+<link type="text/css" rel="stylesheet" href="css/css.css" />
+<style>
+.box{
+	height:170px;
+	width:650px;
+	border-top:1px #069 solid;
+	margin-top:10px;
+}
+.top{
+	width:650px;
+	height:30px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.top:after{ content:''; clear:both; display:block;}
+.floatleft,.floatright{
+	width:100px;
+	height:30px;
+	background:#00f;
+}
+.floatleft{
+	float:left;
+}
+.floatright{
+	float:right;
+}
+.bottom:after{ content:''; clear:both; display:block;}
+.bottom div{
+	width:210px;
+	height:120px;
+	float:left;
+	background:#ccc;
+}
+.center{ margin-left:10px;}
+.right{ margin-left:10px;}
+</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="top">
+			<div class="floatleft"></div>
+			<div class="floatright"></div>
+		</div>
+		<div class="bottom">
+			<div class="left"></div>
+			<div class="center"></div>
+			<div class="right"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+#box{overflow:hidden; width:966px; margin:0 auto;}
+ul{float:left;width:300px; border:1px solid red; margin:0 10px;}
+ul li{width:100%; height:0; margin:10px 0;}
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script>
+function rnd(n,m){
+	return parseInt(n+Math.random()*(m-n));
+}
+$(function(){
+	function create20(){
+		for(var i=0;i<20;i++){
+			var arr = [];
+			$('ul').each(function(index,element){
+				arr.push($(this));
+			});
+			arr.sort(function(u1,u2){
+				return u1.height()-u2.height();
+			});
+			$('<li></li>').css({height:rnd(150,400),background:'rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')'}).appendTo(arr[0]);
+		}
+	}
+	create20();
+	$(window).scroll(function(){
+		var scrollB = $(document).scrollTop()+$(window).height();
+		if(scrollB>=$(document).height()){
+			create20();
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul></ul>
+	<ul></ul>
+	<ul></ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

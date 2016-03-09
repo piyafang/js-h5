@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box input{background:#ccc;}
+#box input.on{background:yellow;}
+#box div{width:200px; height:200px; background:#ccc; display:none;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var aBtn = oBox.getElementsByTagName('input');
+	var aDiv = oBox.getElementsByTagName('div');
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].onclick=function(){
+			//先清空所有的样式
+			for(var i=0;i<aBtn.length;i++){
+				aBtn[i].className='';
+				aDiv[i].style.display='none';
+			}
+			//改变当前的样式
+			this.className='on';
+			aDiv[this.index].style.display='block';
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<input type="button" value="八卦" title="八卦" class="on" index="0" />
+    <input type="button" value="新闻" title="新闻" index="1" />
+    <input type="button" value="优衣库" title="优衣库" index="2" />
+    <div style="display:block;">八卦八卦八卦八卦</div>
+    <div>新闻新闻新闻新闻</div>
+    <div>优衣库优衣库优衣库</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

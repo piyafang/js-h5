@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+function show(){
+	alert(this);
+}
+Array.prototype.show=show;
+
+var arr = [1,2,3];
+document.onclick=arr.show;
+var a = document.onclick;
+setTimeout(function(){
+	new (function(){
+		a();
+	})();
+},100);
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+

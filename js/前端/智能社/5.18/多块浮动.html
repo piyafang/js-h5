@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+	<link type="text/css" rel="stylesheet" href="clearFix.css"/>
+	<style type="text/css">
+		dl,dt,dd,ul,li{ margin:0; padding:0; text-decoration:none; list-style-type:none;}
+		dl{ width:516px; height:232px;}
+		dl dt{width:168px; height:230px; background:#9f0; float:right;}
+		dl .lightblue{width:336px; height:62px; background:#0CF; float:left; margin-bottom:10px;}
+		dl dd ul li{width:163px; height:75px;float:left;}
+		dl dd ul .blue1{ background:#03C; margin:0 10px 10px 0;}
+		dl dd ul .gray1{ background:#999; margin-bottom:10px;}
+		dl dd ul .gray2{ background:#999; margin-right:10px;}
+		dl dd ul .blue2{ background:#03C;}
+	</style>
+</head>
+
+<body>
+	<dl class="clearFix">
+		<dt ></dt>
+		<dd class="lightblue"></dd>
+		<dd>
+			<ul class=" clearFix">
+				<li class="blue1"></li>
+				<li class="gray1"></li>
+				<li class="gray2"></li>
+				<li class="blue2"></li>
+			</ul>
+		</dd>
+	</dl>
+</body>
+</html>

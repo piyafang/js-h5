@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {
+	width:200px; height:300px; background:#CCC; margin:100px auto;
+	-webkit-transform:perspective(800px) rotateY(-30deg) rotateX(30deg);
+	position:relative;
+	-webkit-transform-style:preserve-3d;
+}
+#div1 span {position:absolute; left:0; top:0; width:100%; height:100%; background:green; -webkit-transform:translateZ(0px); -webkit-transition:1s all ease;}
+#div1:active span {-webkit-transform:translateZ(100px);}
+</style>
+</head>
+
+<body>
+<div id="div1">
+	<span></span>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

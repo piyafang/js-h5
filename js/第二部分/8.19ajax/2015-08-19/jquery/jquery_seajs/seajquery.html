@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+div{width:200px; height:200px; background:#ccc;}
+</style>
+<script src="sea.js"></script>
+<script>
+seajs.use('jquery',function(mod){
+	mod.$('div').click(function(){
+		mod.$(this).css('background','red');
+	});
+});
+</script>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>

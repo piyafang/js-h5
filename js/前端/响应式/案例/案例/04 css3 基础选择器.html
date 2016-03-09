@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	/* li>p{color:red;} */
+	/* .one+li{color:red;} */
+	/* .one~li{color:red;} */
+	/* li[qg]{
+		color:red;
+	} */
+	/* li[qg^=qiang]{
+		color:red;
+	} */
+	/* li[qg$=ge]
+	{
+		background: pink;
+	} */
+	li[qg*=an]
+	{
+		background: pink;
+	}
+	</style>
+
+</head>
+<body>
+	<ul>
+		<li>文字内容</li>
+		<li>文字内容
+			<p>儿子</p>
+			<div>
+				<p>孙子</p>
+			</div>
+		</li>
+		<li qg="qiange1">文字内容</li>
+		<li qg="qiange">文字内容</li>
+		<li>文字内容</li>
+		<li>文字内容</li>
+		<li class="one">文字内容</li>
+		<li>文字内容</li>
+		<li qg="gea">文字内容</li>
+		<li>文字内容</li>
+		<a href="#" qg="qiang">百度</a>
+		<a href="#">新浪</a>
+		<a href="#">搜狐</a>
+		<link href="xxx" />
+	</ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>无标题文档</title>
+	<style>
+		*{ margin:0; padding:0;}
+		.clearFix:after{ clear:both; display:block; content:" "; visibility:hidden; height:0; line-height:0;}
+		.clearFix{*zoom:1;}
+		
+		li{ list-style:none;margin-bottom:10px;}
+		input{ width:200px; height:40px;padding:0; border:none 0; outline:none; background:none;font-size:12px;}
+		.text,.psw{text-indent:2em;border:1px solid #999;width:200px; }
+		.sub1{ width:80px; height:40px; background:#96F; color:#fff; text-align:center; margin-right:30px;}
+		.sub2{width:80px; height:40px; background:#9FF; text-align:center;}
+		.checkbox{ width:14px; height:14px;}
+		.loding_txt{ width:200px; height:14px; font-size:12px; color:#999; line-height:12px;}
+		.loding_txt div{ float:left; margin-right:5px;}
+		.loding_txt div input{margin-right:4px;}
+		.loding_txt span{ float:left;display:inline-block; line-height:12px;margin-right:20px;}
+		.loding_txt a{ float:left;}
+	</style>
+
+</head>
+
+<body>
+<form action="#" method="post">
+	<ul>
+		<li>
+			<input   class="text" type="text"  name="text" placeholder=" 姓名/邮箱" />
+		</li>
+		<li>
+			<input   class="psw" type="password"  name="psw"  placeholder=" 密码" />
+		</li>
+		<li class="loding_txt clearFix">
+			<div><input  class="checkbox" type="checkbox"  name="loding" /></div><span>十天内免登录</span><a>忘记密码？</a>
+		</li>
+		<li>
+			<input   class="sub1" type="submit"  name="submit"  value="登录"/>
+			<input   class="sub2" type="submit"  name="submit"  value="注册"/>
+		</li>
+	</ul>	
+</form>
+</body>
+</html>

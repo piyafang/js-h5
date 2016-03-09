@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>任意数求和</title>
+</head>
+<body>
+<script type="text/javascript">
+    function fn(){
+        var sum=0;
+        for(i=0;i<arguments.length;i++){
+            var num=arguments[i];
+            //console.log(arguments[i]);
+            num=Number(num);
+            if(!isNaN(num)) {
+                sum_index += num;
+            }
+        }
+        console.log(sum_index);
+        return sum_index;
+    }
+    fn(3,5);
+    fn(5,2,5,5)
+    //var sum1=fn(2,5,8);
+    //console.log(sum1);
+</script>
+
+</body>
+</html>

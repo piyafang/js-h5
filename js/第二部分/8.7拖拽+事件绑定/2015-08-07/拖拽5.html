@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:200px; height:200px;background:#f90; position:absolute; top:0; left:0;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var disX = 0;
+	var disY = 0;
+	oBox.onmousedown=function(ev){
+		var oEvent = ev||event;
+		disX = oEvent.clientX-oBox.offsetLeft;
+		disY = oEvent.clientY-oBox.offsetTop;
+		
+		document.onmousemove=function(ev){
+			var oEvent = ev||event;
+			var l =oEvent.clientX-disX;
+			var t = oEvent.clientY-disY;
+			if(l<0){
+				l=0;
+			}else if(l>document.documentElement.clientWidth-oBox.offsetWidth){
+				l=document.documentElement.clientWidth-oBox.offsetWidth;
+			}
+			if(t<0){
+				t=0;
+			}else if(t>document.documentElement.clientHeight-oBox.offsetHeight){
+				t=document.documentElement.clientHeight-oBox.offsetHeight;
+			}
+			oBox.style.left=l+'px';
+			oBox.style.top=t+'px';
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			oBox.releaseCapture&&oBox.releaseCapture();
+		};
+		oBox.setCapture&&oBox.setCapture();
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+就废了地税局古拉的勾搭谁拉进来的独角兽
+<div id="box"></div>
+就废了地税局古拉的勾搭谁拉进来的独角兽
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

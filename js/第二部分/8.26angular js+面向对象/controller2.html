@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html ng-app="test">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script src="angular.js"></script>
+<script>
+	app=angular.module('test',[]);
+	app.controller('aaa',function($scope){
+		$scope.alert=function(){
+			alert(parseInt($scope.a)+parseInt($scope.b));	
+		};	
+	});
+</script>
+</head>
+
+<body ng-controller="aaa"> 
+<input  type="text" ng-model="a"/>
+<input  type="text"  ng-model="b" />
+<input  type="button"  ng-click="alert()" />
+</body>
+</html>

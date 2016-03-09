@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>乐订优程</title>
+<link href="css/body.css" rel="stylesheet" type="text/css">
+<link href="css/hotel_style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="head clearFix">
+    <div class="fl">
+      <h1 class="logo"></h1>
+    </div>
+    <div class="fr">
+      <ul class="clearFix">
+        <li class="language"><a href="#">English</a></li>
+        <li>|<a href="#">客服中心</a>|</li>
+        <li class="phone"><span>电话：<i>400-222-222</i></span></li>
+        <li class="login"><a href="#">登录</a>|<a href="#">注册</a>
+            <dl>
+            	<dd><a href="#">我的订单</a></dd>
+                <dd><a href="#">收藏的酒店</a></dd>
+                <dd><a href="#">帮助</a></dd>
+                <dd><a href="#">网站反馈</a></dd>
+            </dl>
+        </li>
+      </ul>
+  </div>
+  </div>
+ <div class="bj"> 
+ <div class="zhuce clearFix">
+ <div class="fl leftZC">
+          <div class="choose">
+          <ul class="clearFix" id="nav">
+            <li class="on">用户注册</li>
+            <li>同行合作注册</li>
+          </ul>
+        </div>
+        <div id="menu_con">
+          <div class="xinxi" style="display:block">
+            <ul>
+              <li><span class="name"><i class="chengse">* </i>用户名：</span><span><input name="" type="text"></span><em class="chengse"><i></i>输入不能为空</em></li>
+              <li><span class="name"><i class="chengse">* </i>手机号：</span><span><input name="" type="text"></span><em class="huangse"><i></i>您输入有误</em></li>
+              <li><span class="name"><i class="chengse">* </i>邮 箱：</span><span><input name="" type="text"></span><em><i></i>请输入6-16为数字或字母</em></li>
+              <li><span class="name"><i class="chengse">* </i>密 码：</span><span><input name="" type="text"></span><em class="lvse"><i></i>符合标准</em></li>
+              <li><span class="name"><i class="chengse">*</i>确认密码：</span><span><input name="" type="text"></span><em class="lvse"><i></i>符合标准</em></li>
+              <li><a href="#" class="loginbtn">提交注册</a></li>
+            </ul>
+         </div>
+         <div class="xinxi" style="display:none;">
+            <ul>
+              <li><span class="name"><i class="chengse">* </i>用户名：</span><span><input name="" type="text"></span><em class="chengse"><i></i>输入不能为空</em></li>
+              <li><span class="name"><i class="chengse">* </i>邮 箱：</span><span><input name="" type="text"></span><em><i></i>请输入6-16为数字或字母</em></li>
+              <li><span class="name"><i class="chengse">* </i>密 码：</span><span><input name="" type="text"></span><em class="lvse"><i></i>符合标准</em></li>
+              <li><span class="name"><i class="chengse">*</i>确认密码：</span><span><input name="" type="text"></span><em class="lvse"><i></i>符合标准</em></li>
+              <li><a href="#" class="loginbtn">提交注册</a></li>
+            </ul>
+         </div>
+      </div> 
+   </div>
+       <div class="fl rightZC">
+       <h4>已有账号？<a href="login.html">直接登录 >></a></h4>
+       <h5><span>全国首家指定服务提供商</span><br /><span>全国最大订购平台</span></h5>
+     </div>
+ </div>
+ 
+   
+  </div> 
+<div class="footer" style="border:0;">
+     <div class="meg"><img src="images/footer.jpg" width="1000" height="266"></div>
+   </div>
+   <script>
+       $('.login').click(function(){
+		   $('.login').children('dl').toggle(200);
+		})
+      </script>
+<script>
+var tabs=function(){
+    function tag(name,elem){
+        return (elem||document).getElementsByTagName(name);
+    }
+    //获得相应ID的元素
+    function id(name){
+        return document.getElementById(name);
+    }
+    function first(elem){
+        elem=elem.firstChild;
+        return elem&&elem.nodeType==1? elem:next(elem);
+    }
+    function next(elem){
+        do{
+            elem=elem.nextSibling;  
+        }while(
+            elem&&elem.nodeType!=1  
+        )
+        return elem;
+    }
+    return {
+        set:function(elemId,tabId){
+            var elem=tag("li",id(elemId));
+            var tabs=tag("div",id(tabId));
+            var listNum=elem.length;
+            var tabNum=tabs.length;
+            for(var i=0;i<listNum;i++){
+                    elem[i].onclick=(function(i){
+                        return function(){
+                            for(var j=0;j<tabNum;j++){
+                                if(i==j){
+                                    tabs[j].style.display="block";
+                                    //alert(elem[j].firstChild);
+                                    elem[j].className="on";
+                                }
+                                else{
+                                    tabs[j].style.display="none";
+                                    elem[j].className="";
+                                }
+                            }
+                        }
+                    })(i)
+            }
+        }
+    }
+}();
+tabs.set("nav","menu_con");//执行
+</script>
+</body>
+</html>

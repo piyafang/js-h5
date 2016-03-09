@@ -1,0 +1,99 @@
+body{ height: 100%;}
+@-webkit-keyframes bounceInLeft{
+	0%{opacity:0;-webkit-transform:translateX(-2000px)}
+	60%{opacity:1;-webkit-transform:translateX(30px)}
+	80%{-webkit-transform:translateX(-10px)}
+	100%{-webkit-transform:translateX(0)}
+}
+
+@-webkit-keyframes bounceInLeft2{
+	0%{opacity:0;-webkit-transform:translateX(-2000px)}
+	100%{-webkit-transform:translateX(0)}
+}
+
+
+
+@-webkit-keyframes bounceInRight{
+	0%{opacity:0;-webkit-transform:translateX(2000px)}
+	60%{opacity:1;-webkit-transform:translateX(-30px)}
+	80%{-webkit-transform:translateX(10px)}
+	100%{-webkit-transform:translateX(0)}
+}
+@-webkit-keyframes bounceInRight2{
+
+	0%{opacity:0;-webkit-transform:translateX(2000px)}
+	100%{opacity:1;-webkit-transform:translateX(0)}
+}
+
+
+
+@-webkit-keyframes fadeInUp{
+	0%{opacity:0;-webkit-transform:translateY(2000px)}
+	100%{opacity:1;-webkit-transform:translateY(0)}
+}
+
+
+@-webkit-keyframes topmove{
+	0%{ top: 10px; }
+	50%{top: 20px; }
+	100%{ top: 10px; }
+}
+
+@-webkit-keyframes btmove{
+	0%{ bottom: 10px; }
+	50%{bottom: 20px; }
+	100%{ bottom: 10px; }
+}
+
+.wrapper{ height: 100%; width:100%; position: relative; overflow: hidden;}
+.wrapper .item{ width: 100%; height: 100.06%; display: none; margin:0 auto; position: relative;}
+.wrapper div{ width:100%;}
+.wrapper .topBtn{ background:url(../images/arrow_01.png) no-repeat 0 0; width:22px; height:13.5px; background-size:22px 13.5px; position: absolute; top:10px; left:50%; z-index: 999;-webkit-animation:topmove 1s infinite; display: none;}
+.wrapper .btBtn{ background:url(../images/arrow_02.png) no-repeat 0 0; width:22px; height:13.5px; background-size:22px 13.5px;position: absolute; bottom:10px;left:50%;z-index: 999;-webkit-animation:btmove 1s infinite;display: none;}
+.cover img{display: block;}
+.borderW { border:17px solid #FFF; }
+.p5list{ margin: -6% 10% 0 10%;position: relative;z-index: 99;background-color: #fff;padding-top: 2%;padding-right: 2%;}
+.p5list li {float: left;width: 46.5%;margin-bottom:2%;margin-left: 3%;}
+.p13{ margin:0;padding-top: 2.5%; padding-right:0;}
+.p13 li{width: 45.5%;margin-bottom: 2%;margin-left: 3%;}
+.p14{ margin:0 4%;background-color:#FFF; position:relative; z-index:99;}
+.p14 li{float: left;width: 44%; margin-left:4%; margin-top:3%;}
+@media screen and (max-device-width: 400px) {.ti img { width: 60%;}}  
+@media screen and (max-device-width: 400px) {.xing img { width: 90%;}} 
+@media screen and (max-device-width: 400px) {.logo img { width: 60%;}} 
+
+.load { overflow:hidden; width: 100%; max-width: 640px; height: 100%; margin: 0 auto;  background: #222; }
+.wraps{  position: absolute; left: 0; top: 50%; margin-top: -24px;  width: 100%; }
+.load .num{ display: block; font-size:16px; text-align:center; width: 48px; height: 48px; margin: 0 auto; overflow: hidden; color: #fff; line-height: 48px;}
+.load .bg { position:absolute;  width: 48px; height: 48px; top:0px; left:50%; margin-left:-24px; -webkit-animation: loadAN 1s infinite linear;  background: url(../images/loading.png) no-repeat; background-size: 100% auto;}
+@-webkit-keyframes loadAN{
+	0%{ -webkit-transform: rotate(0);}
+	100%{ -webkit-transform: rotate(360deg);}
+}
+.pageImg{ position:fixed; z-index: 99999; width:auto; height:90%; top:5%; left:50%; }
+.filter{ position:absolute; top:0px; left:0px; position:absolute; width:100%; height:100%; opacity:0.9; background:#000; z-index: 99998;}
+.pageImg img{ width:100%; height:auto; vertical-align: middle; } 
+.rotates{
+	-moz-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	transform:rotate(90deg); 
+}
+
+
+.animate-logo{animation:nius-animate-logo 1s linear infinite alternate;-webkit-animation:nius-animate-logo 1s linear infinite alternate; opacity:0;}
+@keyframes nius-animate-logo{0%{transform:scale(1,1);opacity:1;}100%{transform:scale(1.08,1.08);opacity:1;}}
+@-webkit-keyframes nius-animate-logo{0%{-webkit-transform:scale(1,1);opacity:1;}100%{-webkit-transform:scale(1.08,1.08);opacity:1;}}
+
+.loadings{ position:fixed; z-index:999999; top:50%; left:50%; width:20px; height:20px; background:url(../images/loading.gif) no-repeat center; background-size:20px 20px; margin:-10px 0 0 -10px; }
+img{ display:block;}
+
+.stars{opacity:1;-webkit-animation:stars 1.4s 1.2s infinite alternate ease-in-out;animation:stars 1.4s 1.2s infinite alternate ease-in-out;}
+@keyframes stars{
+	0%{bottom:0%; }
+	100%{bottom:1%}  
+}
+@-webkit-keyframes stars{
+	0%{bottom:0%; }
+	100%{bottom:1%}     
+}

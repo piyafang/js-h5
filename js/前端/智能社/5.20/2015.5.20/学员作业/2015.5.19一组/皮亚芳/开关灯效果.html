@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>开关灯/title>
+	<script type="text/javascript"></script>
+	<style type="text/css">
+		.off{ background-color:#000;}
+		.hidDiv{ display:none;}
+		.showDiv{ display:block; position:absolute; top:0; left:0; width:500px; height:500px; border:1px solid #000; background-color:gray; z-index: filter:alpha(opacity=70); opacity:0.7;}
+		.divShow{ position:absolute; z-index:100;}		
+	</style>
+	 
+</head>
+
+<body>
+	<input type="text"/>
+	<input type="radio"/>
+	<input type="radio"/>
+	<input type="chexbox"/>
+	<div class="hidDiv" id="shadowDiv"></div>
+	<div id="divShow">
+		<input id="btnOO" type="button" value="开/关灯"/>
+		<img id="imgShow" src="img/pen.png" alt="pen"/>
+	</div>
+</body>
+</html>

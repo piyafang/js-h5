@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0;padding:0;list-style:none;}
+
+</style>
+<script src="checkbox.js"></script>
+<script>
+	window.onload=function(){
+		 myCheckbox('chooseAll');
+	};
+</script>
+</head>
+
+<body>
+	<form action="" name="前端">
+		全选：<input  type="checkbox" id="chooseAll"   /><br/><br/>
+		<input type="checkbox" name="code" value="css和html" />css和html
+		<input type="checkbox" name="code"  value="javascript"/>javascript
+		<input type="checkbox" name="code"  value="html5" />html5
+		<input type="checkbox" name="code" value="css3" />css3
+		<input type="submit" style="display:block" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+function ClassA(){
+	var _this = this;
+	this.a = 66;
+	document.onclick=function(){
+		_this.show();
+	};
+}
+ClassA.prototype.show=function(){
+	//alert(this);
+	alert(this.a);
+};
+var classA = new ClassA();
+</script>
+</head>
+
+<body>
+</body>
+</html>

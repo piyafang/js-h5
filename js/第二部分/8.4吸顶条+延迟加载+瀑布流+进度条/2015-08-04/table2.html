@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+table{width:600px; border-collapse:collapse; margin:0 auto;}
+th{height:50px; background:#666; color:#fff;	}
+td{height:30px; color:#000;}
+td,th{border:1px solid #000; text-align:center;}
+tr.odd{background:#999;}
+tr.eve{background:#ccc;}
+</style>
+<script>
+window.onload=function(){
+	var oTable = document.getElementById('tab');
+	var oTBody = oTable.tBodies[0];
+	var aRow = oTBody.rows;
+	alert(aRow[1].cells[2].innerHTML);
+	for(var i=0;i<aRow.length;i++){
+		if(i%2){
+			aRow[i].className='odd';
+		}else{
+			aRow[i].className='eve';
+		}
+	}
+	for(var i=0;i<aRow.length;i++){
+		aRow[i].onmouseover=function(){
+			this.style.background='#f90';
+		};
+		aRow[i].onmouseout=function(){
+			this.style.background='';
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<table id="tab">
+	<thead>
+    	<tr>
+        	<th>姓名</th>
+        	<th>性别</th>
+        	<th>分数</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr>
+        	<td>唐僧</td>
+            <td>男</td>
+            <td>750</td>
+        </tr>
+    	<tr>
+        	<td>悟空</td>
+            <td>公</td>
+            <td>800</td>
+        </tr>
+    	<tr>
+        	<td>悟能</td>
+            <td>公</td>
+            <td>-10</td>
+        </tr>
+    	<tr>
+        	<td>悟净</td>
+            <td>男</td>
+            <td>500</td>
+        </tr>
+    	<tr>
+        	<td>小白龙</td>
+            <td>公</td>
+            <td>700</td>
+        </tr>
+    	<tr>
+        	<td>葫芦娃</td>
+            <td>男</td>
+            <td>750</td>
+        </tr>
+    	<tr>
+        	<td>蛇精</td>
+            <td>母</td>
+            <td>700</td>
+        </tr>
+    	<tr>
+        	<td>穿山甲</td>
+            <td>公</td>
+            <td>0</td>
+        </tr>
+    	<tr>
+        	<td>哪吒</td>
+            <td>男</td>
+            <td>750</td>
+        </tr>
+    	<tr>
+        	<td>匹诺曹</td>
+            <td>公木头</td>
+            <td>30</td>
+        </tr>
+    	<tr>
+        	<td>张飞</td>
+            <td>男</td>
+            <td>700</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+.dbox{
+	width:300px;
+	heighe:286px;
+	border:1px solid #F90;
+	
+	
+	}
+
+h2{
+	width:60px;
+	height:21px;
+	font-size:14px;
+	line-height:21px;
+	text-align:center;
+	border-top:1px solid #dedede;
+	border-bottom:1px solid #dedede;
+	margin-top:20px;
+	}
+.box{
+	width:262px;
+	height:216px;
+	margin:10px 18px 20px;
+	border:1px solid #CC0;
+	
+	}
+.box_1{
+	width:52px;
+	height:60px;
+	border:1px solid #ccc;
+	font-size:12px;
+	color:#9d9d9d;
+	margin-right:10px;
+	margin-bottom:10px;
+	float:left;
+	}
+img{
+	padding:7px 20px;
+	}
+span{padding:10px  16px  8px}
+
+.box_2{
+	 margin-bottom:20px;
+	}
+

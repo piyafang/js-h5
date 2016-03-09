@@ -1,0 +1,65 @@
+==================
+	2015-5-29
+==================
+
+回顾
+-----------------
+	input
+		text	文本框
+		password 	密码框
+		radio	单选框
+		checkbox	多选框
+		button 	按钮
+		submit	提交
+		image	图片提交
+		hidden	隐藏数据
+
+	label 	for="ID"
+
+	form 	action="地址"
+
+修改表单默认样式
+-------------------------------
+	input 	行内块
+	input text
+		outline:none;  取消光标/焦点
+		默认padding
+		border:none 0;		高版本浏览器
+		input::-ms-clear{ display:none; } IE
+
+		placeholder 提示信息HTML属性5（不兼容）
+
+	method  get post
+
+	textarea
+		 resize:none; 去掉文本域推动框
+		 overflow:hidden;去掉滚动条
+
+表格
+-----------------------
+	table 表格
+	tr 行
+	td 列
+	tbody（必须写）
+	thead 表头  (可选)
+		th（可选）默认文字居中
+	tfoot （可选）
+
+	清除默认样式
+
+	cellspacing=""
+
+	cellspacing=""
+
+	属性 * 标签 class id 行间
+
+	样式
+		 border-collapse:collapse;
+
+	vertical-align:middle;	
+		对齐方式  上 中 下
+
+	横着合并 colspan
+
+	竖着合并 rowspan
+

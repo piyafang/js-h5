@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oTxt1 = document.getElementById('txt1');
+	var oBtn1 = document.getElementById('btn1');
+	var oUl = document.getElementById('ul1');
+	oBtn1.onclick=function(){
+		if(oTxt1.value=='')return;
+		var oLi = document.createElement('li');
+		oLi.innerHTML=oTxt1.value;
+		oUl.insertBefore(oLi,oUl.children[0]);
+		//oUl.appendChild(oLi);
+		oTxt1.value='';
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" id="txt1" />
+<input type="button" value="留言" id="btn1" />
+<ul id="ul1">
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+

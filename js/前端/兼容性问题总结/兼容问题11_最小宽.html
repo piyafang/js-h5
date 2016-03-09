@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1,#div2 {overflow:hidden;zoom:1;}
+div {clear:both;}
+#div1 div {min-width:100px; background:#CCC; float:left; clear:both; margin:4px;}
+#div2 div { min-width:100px; _width:100px; _white-space:nowrap; background:#CCC; float:left; clear:both; margin:4px;}
+</style>
+</head>
+
+<body>
+<div id="div1">
+    IE6下，min-width失效：
+    <br style="clear:both;">
+    <div>一些文字</div>
+    <div>一些文字一些文字</div>
+    <div>一些文字一些文字一些文字</div>
+</div>
+<br>
+<br>
+<div id="div2">
+    解决方法：IE6有个bug，内容能撑开width，这里正好利用这个bug
+    <br style="clear:both;">
+    <div>一些文字</div>
+    <div>一些文字一些文字</div>
+    <div>一些文字一些文字一些文字</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	div{ width: 100px;height: 100px; background: #f90; border-radius: 50%; position:absolute;top: 0; left: 0; cursor:pointer; overflow: hidden; }
+	img{ width: 100%;}
+</style>
+<script type="text/javascript">
+	function rnd(n,m){
+		return parseInt(n+Math.random()*(m-n));
+	}
+
+	window.onload=function(){
+		function movePic(){
+			var aDiv=document.body.getElementsByTagName('div');
+			var i=0;
+
+			document.onmousemove=function(ev){
+				var oEvent=ev||event;
+				var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+				var scrollL=document.documentElement.scrollLeft||document.body.scrollLeft;
+				for(var i=aDiv.length-1;i>0;i--){
+					aDiv[i].style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+					aDiv[i].style.left=aDiv[i-1].style.left;
+					aDiv[i].style.top=aDiv[i-1].style.top;
+				}
+				aDiv[0].style.left=oEvent.clientX-aDiv[i].offsetHeight/2+scrollL+'px';
+				aDiv[0].style.top=oEvent.clientY-aDiv[i].offsetWidth/2+scrollT+'px';
+			};
+		}
+		movePic();
+
+	};
+</script>
+</head>
+<body>
+	<div><img src="scat.jpg" /></div>
+	<div><img src="bcat.jpg" /></div>
+	<div><img src="smalldog.jpg" /></div>
+	<div><img src="bigdog.jpg" /></div>
+	<div><img src="scat.jpg" /></div>
+	<div><img src="bcat.jpg" /></div>
+	<div><img src="smalldog.jpg" /></div>
+	<div><img src="bigdog.jpg" /></div>
+
+
+</body>
+</html>
+

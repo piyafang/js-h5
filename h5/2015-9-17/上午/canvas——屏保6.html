@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black;}
+#c1 {background:white;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	var x=100,y=100;
+	var speedX=6,speedY=8;
+	
+	var aLast=[];	//最多存5个
+	
+	setInterval(function (){
+		x+=speedX;
+		y+=speedY;
+		
+		if(y>=oC.height)
+		{
+			speedY*=-1;
+			y=oC.height;
+		}
+		else if(y<=0)
+		{
+			speedY*=-1;
+			y=0;
+		}
+		
+		if(x>=oC.width)
+		{
+			speedX*=-1;
+			x=oC.width;
+		}
+		else if(x<=0)
+		{
+			speedX*=-1;
+			x=0;
+		}
+		
+		//画出来
+		gd.clearRect(0,0,oC.width,oC.height);
+		
+		for(var i=0;i<aLast.length;i++)
+		{
+			gd.fillStyle='rgba(0,0,0,'+(i+1)/(aLast.length+1)+')';
+			gd.fillRect(aLast[i].x, aLast[i].y, 20, 20);
+		}
+		
+		gd.fillStyle='rgba(0,0,0,1)';
+		gd.fillRect(x, y, 20, 20);
+		
+		aLast.push({x: x, y: y});
+		if(aLast.length>5)
+		{
+			aLast.shift();
+		}
+	}, 30);
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600">
+</canvas>
+</body>
+</html>
+
+
+
+
+
+

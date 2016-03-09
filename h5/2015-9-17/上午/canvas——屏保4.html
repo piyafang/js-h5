@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+body {background:black; overflow:hidden;}
+</style>
+<script>
+function rnd(n, m)
+{
+	return Math.floor(Math.random()*(m-n))+n;
+}
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	oC.width=document.documentElement.clientWidth;
+	oC.height=document.documentElement.clientHeight;
+	window.onresize=function ()
+	{
+		oC.width=document.documentElement.clientWidth;
+		oC.height=document.documentElement.clientHeight;
+	};
+	
+	var aPoint=[];
+	var aLast=[];
+	
+	for(var i=0;i<5;i++)
+	{
+		aPoint[i]={x: rnd(0, oC.width), y: rnd(0, oC.height), speedX: rnd(-5, 5), speedY: rnd(-5, 5)};
+	}
+		
+	setInterval(function (){
+		for(var i=0;i<aPoint.length;i++)
+		{
+			aPoint[i].x+=aPoint[i].speedX;
+			aPoint[i].y+=aPoint[i].speedY;
+			
+			if(aPoint[i].y>=oC.height)
+			{
+				aPoint[i].speedY*=-1;
+				aPoint[i].y=oC.height;
+			}
+			else if(aPoint[i].y<=0)
+			{
+				aPoint[i].speedY*=-1;
+				aPoint[i].y=0;
+			}
+			
+			if(aPoint[i].x>=oC.width)
+			{
+				aPoint[i].speedX*=-1;
+				aPoint[i].x=oC.width;
+			}
+			else if(aPoint[i].x<=0)
+			{
+				aPoint[i].speedX*=-1;
+				aPoint[i].x=0;
+			}
+		}
+		
+		//画出来
+		gd.clearRect(0,0,oC.width,oC.height);
+		
+		//先画影子
+		for(var i=0;i<aLast.length;i++)
+		{
+			var arr=aLast[i];
+			
+			gd.beginPath();
+			gd.moveTo(arr[0].x, arr[0].y);
+			for(var j=1;j<arr.length;j++)
+			{
+				gd.lineTo(arr[j].x, arr[j].y);
+			}
+			gd.closePath();
+			
+			gd.strokeStyle='rgba(255,255,0,'+(i+1)/(aLast.length+1)+')';
+			gd.stroke();
+		}
+		
+		//连线
+		gd.beginPath();
+		gd.moveTo(aPoint[0].x, aPoint[0].y);
+		for(var i=1;i<aPoint.length;i++)
+		{
+			gd.lineTo(aPoint[i].x, aPoint[i].y);
+		}
+		gd.closePath();
+		
+		gd.strokeStyle='yellow';
+		gd.stroke();
+		
+		//装last
+		var arr=[];
+		for(var i=0;i<aPoint.length;i++)
+		{
+			arr.push({x: aPoint[i].x, y: aPoint[i].y});
+		}
+		
+		aLast.push(arr);
+		
+		if(aLast.length>100)
+		{
+			aLast.shift();
+		}
+	}, 30);
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600">
+</canvas>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+ /* 设置图片视频等自适应调整 */
+img {
+max-width： 100%;
+height： auto;
+width： auto\9; /* ie8 */
+}
+.video embed， .video object， .video iframe {
+width： 100%;
+height： auto;
+}
+body{background-image: url(../images/bg2.jpg);}
+.header{width: 100%;}
+.logo{display: none;}
+.site-nav{width: 100%;}
+.nav ul li{width: 11.1111%;padding:0; text-align: center; white-space: nowrap;/* 强制一行内显示文字 */}
+.banner{width: 100%;}
+.banner img{width: 100%;}
+.main{width: 100%; height: auto; overflow: hidden;}
+.main-hd{height: auto; overflow: hidden;}
+.main-hd ul li{width: 49%; box-sizing:border-box; border:1px solid #ccc; border-radius: 10px; height: auto;/* 自适应父盒子高度 */ margin-bottom:10px;
+  background:-webkit-linear-gradient(top,#FFF,#E6E6E6); 
+	/*  background:-webkit-linear-gradient(top,#eee, #ccc 20%,#eee 90%); */
+ }
+ .main-bd{height: auto; overflow: hidden; background: none; padding-top:10px;}
+.aboutus,.productshow,.contactus{width: 100%; border:1px solid #ccc; border-radius:10px; box-sizing:border-box; margin-bottom: 10px;background:-webkit-linear-gradient(top,#FFF,#E6E6E6)!important;font-size:14px;}
+.line{background: none;}
+.aboutus dd{width: 60%;}
+.subnav{width: 100%;}
+.subnav a{padding: 0; width: 10%; text-align: center; display: inline-block;}
+.footer-in{width: 100%;}

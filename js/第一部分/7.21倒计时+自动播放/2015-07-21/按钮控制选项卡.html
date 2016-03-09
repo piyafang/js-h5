@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box input{background:#ccc;}
+#box input.on{background:yellow;}
+#box div{width:200px; height:200px; background:#ccc; display:none;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oPrev =	oBox.getElementsByTagName('a')[0];
+	var oNext =	oBox.getElementsByTagName('a')[1];
+	var aBtn = oBox.getElementsByTagName('input');
+	var aDiv = oBox.getElementsByTagName('div');
+	var iNow = 0;//当前是第几个
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].index=i;
+		aBtn[i].onclick=function(){
+			for(var i=0;i<aBtn.length;i++){
+				aBtn[i].className='';
+				aDiv[i].style.display='none';
+			}
+			this.className='on';
+			aDiv[this.index].style.display='block';
+		};
+	}
+	oNext.onclick=function(){
+		iNow++;
+		document.title=iNow;
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<a href="javascript:;" id="prev">←</a>
+	<input type="button" value="aaa" class="on" />
+    <input type="button" value="bbb" />
+    <input type="button" value="ccc" />
+	<a href="javascript:;" id="next">→</a>
+    <div style="display:block;">1111</div>
+    <div>2222</div>
+    <div>3333</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

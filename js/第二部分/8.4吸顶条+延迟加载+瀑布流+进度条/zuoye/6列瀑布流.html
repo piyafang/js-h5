@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	#box{ width: 980px; margin: 0 auto; overflow: hidden;}
+	ul{ width:150px; border: 1px solid #ccc; float: left; margin-right:10px; }
+</style>
+<script type="text/javascript">
+	function rnd(n,m){
+		return parseInt(n+Math.random()*(m-n));
+	}
+	function createLi(){
+				var oLi=document.createElement('li');
+				oLi.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+
+				oLi.style.height=rnd(100,300)+'px';
+				return oLi;
+	}
+
+	window.onload=function(){
+		function createAdd(){
+			var oBox=document.getElementById('box');
+			var aUl=oBox.getElementsByTagName('ul');
+			for(var i=0;i<20;i++){
+				var oLi=createLi();
+				var arr=[];
+				for(var j=0;j<aUl.length;j++){
+					arr.push(aUl[j]);
+				}
+				arr.sort(function(u1,u2){
+					return u1.scrollHeight-u2.scrollHeight;
+				});
+				arr[0].appendChild(oLi);
+			}
+		}
+		createAdd();
+
+		window.onscroll=window.onresize=function(){
+			var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+			var clientH=document.documentElement.clientHeight;
+			if(document.body.scrollHeight<=(scrollT+clientH)){
+				createAdd();
+			}
+
+		};
+
+	};
+</script>
+</head>
+<body>
+	<div id="box">
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+	</div>
+
+
+</body>
+</html>
+

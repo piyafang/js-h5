@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-05-17 15:50:12
+ * @version $Id$
+ */
+
+
+*{
+	margin:0;
+	padding:0;
+	list-style:none;}
+.box{
+	width:514px;
+	height:230px;
+	margin:0 auto;
+
+}
+.clearfix{zoom:1;}
+.clearfix:after{display:block; content="";clear:both;}
+
+.left{
+	width:336px;
+	height:230px;
+    margin-right:10px;
+    float:left;
+
+}
+.right{
+	width:168px;
+	height:230px;
+	float:left;
+	background:#99ff00;
+
+}
+
+.ltop{
+	width:336px;
+	height:60px;
+	background:#00ccff;
+	margin-bottom:10px;
+}
+.lbottom{
+	width:338px;
+	height:158px;
+	overflow:hidden;
+
+}
+
+
+.lbottom .list1,.list2,.list3,.list4{
+	width:164px;
+	height:74px;
+	float:left;
+}
+.list1{
+	background:#0066ff;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+.list2{
+	background:#999;
+	margin-bottom:10px;
+}
+.list3{
+	background:#999;
+	margin-right:10px;
+}
+.list4{
+	background:#0066ff;
+}
+

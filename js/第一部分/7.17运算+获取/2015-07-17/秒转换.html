@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+
+//求出有多少天多少小时多少分钟多少秒
+//0天 00:00:00
+//1分	60
+//1时 	3600
+//1天	86400
+var s = 1747432;
+var d = parseInt(s/86400);
+s%=86400;
+var h = parseInt(s/3600);
+s%=3600;
+var m = parseInt(s/60);
+s%=60;
+document.write(d+'天 '+h+':'+m+':'+s);
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+

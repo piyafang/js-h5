@@ -1,0 +1,20 @@
+<person>
+	<name>小明</name>
+	<age>18</age>
+	<height>178</height>
+	<weight>120</weight>
+	<亲戚>
+		<item>
+			<关系>父子</关系>
+			<name>老明</name>
+			<age>45</age>
+			<height>172</height>
+		</item>
+		<item>
+			<关系>母子</关系>
+			<name>老白</name>
+			<age>43</age>
+			<height>160</height>
+		</item>
+	</亲戚>
+</person>

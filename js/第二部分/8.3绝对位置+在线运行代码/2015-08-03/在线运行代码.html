@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oTxt = document.getElementById('txt1');
+	var oBtn = document.getElementById('btn1');
+	oBtn.onclick=function(){
+		var oWin = window.open('about:blank');
+		oWin.document.write(oTxt.value);
+	};
+};
+</script>
+</head>
+
+<body>
+<textarea id="txt1"></textarea>
+<input type="button" value="运行代码" id="btn1" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+

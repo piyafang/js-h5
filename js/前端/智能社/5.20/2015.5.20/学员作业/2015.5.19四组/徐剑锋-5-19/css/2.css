@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0; text-decoration:none; list-style:none;}
+.clearFix:after{content:"";clear:both; display:block;}
+.box{width:300px;
+     height:204px;
+	 border:#E3E6ED 1px solid;
+	 margin:0 auto;}
+.head{width:285px;
+      height:44px;
+	  border-top:#FF8500 3px solid;
+	  border-bottom:#E3E6ED 1px solid;
+	  margin-top:-1px;
+	  color:#000;
+	  font-size:20px;
+	  line-height:44px;
+	  padding-left:15px;}
+.content li img{width:72px;
+                height:72px;
+				margin-bottom:13px;}
+.content li{margin-left:16px;
+            margin-top:10px;
+			float:left;
+			width:72px;
+			text-align:center;
+			margin-bottom:12px;
+			margin-right:4px;}
+a{color:#666666;
+  font-size:14px;}
+.content li a:hover{color:#FF8500;
+        text-decoration:underline;}
+.footer{width:285px;
+        height:36px;
+		border-top:1px dashed #999;
+		margin-left:7px;}
+.footer a{display:inline-block;
+           margin-top:10px;
+		   margin-left:18px;
+		   margin-right:18px;}
+.footer a:hover{color:#FF8500;}
+.end{margin-right:0;}
+

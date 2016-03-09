@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	* { padding: 0; margin: 0; }
+	li { list-style: none; }
+	body { background: #333; }
+	#iphone { width: 900px; height: 600px; background: url(images/bg.jpg); position: absolute; top: 50%; left: 50%; margin: -300px 0 0 -450px; }
+	#wrap { width: 238px; height: 360px; position: absolute; top: 121px; left: 326px; overflow:hidden; }
+	#iphone ul { width: 960px; height: 361px; cursor: pointer; position: absolute; top: 0px; left: 0px; }
+	#iphone li { float: left; width:240px; height:360px; overflow:hidden; }
+</style>
+<script src="doMove.js"></script>
+<script>
+	window.onload=function(){
+		var oIphone = document.getElementById('iphone');
+		var oWrap = document.getElementById('wrap');
+		var oUl = oWrap.children[0];
+		var aLi = oUl.children;
+		var iNow = 0;
+		oWrap.onmousedown=function(ev){
+			var oEv=ev||event;
+			var downX=oEv.clientX;
+			var disX=oEv.clientX-oUl.offsetLeft;
+			document.onmousemove=function(ev){
+				var oEv=ev||event;
+				oUl.style.left=oEv.clientX-disX+'px';
+			};
+			document.onmouseup=function(ev){
+				var oEv=ev||event;
+				document.onmousemove=null;
+				document.onmouseup=null;
+				oWrap.releaseCapture&&oWrap.releaseCapture();
+				var x=oEv.clientX-downX;
+				if(Math.abs(x)>20){
+					if(x<0){
+						iNow--;
+						if(iNow<1-aLi.length)iNow=1-aLi.length;
+						
+					}else{
+						iNow++;
+						if(iNow>0)iNow=0;
+					}				
+				}
+				move(oUl,{left:aLi[0].offsetWidth*iNow});
+				
+			};
+			oWrap.setCapture&&oWrap.setCapture();
+			return false;
+			
+		};
+		
+	};
+</script>
+</head>
+
+<body>
+	<div id="iphone">
+		<div id="wrap">
+			<ul>
+				<li style="background:url(images/pic1.png);"></li>
+				<li style="background:url(images/pic2.png);"></li>
+				<li style="background:url(images/pic3.png);"></li>
+				<li style="background:url(images/pic4.png);"></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

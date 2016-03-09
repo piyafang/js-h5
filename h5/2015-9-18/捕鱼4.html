@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black; text-align:center;}
+#c1 {background:url(img/game_bg_2_hd.jpg) no-repeat;}
+</style>
+<script>
+//d-degree	角度
+//a-arc		弧度
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+function a2d(n)
+{
+	return n*180/Math.PI;
+}
+
+function Fish(img, type)
+{
+	var _fish_size=[
+		null,
+		{w: 55, h: 37},
+		{w: 78, h: 64},
+		{w: 72, h: 56},
+		{w: 77, h: 59},
+		{w: 107, h: 122}
+	];
+	
+	this.img=img;
+	
+	this.x=0;
+	this.y=0;
+	this.frame=0;
+	
+	this.w=_fish_size[type].w;
+	this.h=_fish_size[type].h;
+	
+	this.speed=3;
+	this.rotate=0;
+}
+
+Fish.prototype.draw=function (gd)
+{
+	gd.save();
+	
+	gd.translate(this.x+this.w/2, this.y+this.h/2);
+	gd.rotate(d2a(this.rotate));
+	
+	gd.drawImage(
+		this.img,
+		0, this.h*this.frame, this.w, this.h,
+		-this.w/2, -this.h/2, this.w, this.h
+	);
+	
+	gd.restore();
+};
+
+Fish.prototype.move=function ()
+{
+	var speedX=Math.cos(d2a(this.rotate))*this.speed;
+	var speedY=Math.sin(d2a(this.rotate))*this.speed;
+	
+	this.x+=speedX;
+	this.y+=speedY;
+	
+	this.frame++;
+	if(this.frame==4)this.frame=0;
+};
+
+//
+function Cannon(img, type)
+{
+	this._size=[
+		null,
+		{w: 74, h: 74},
+		{w: 74, h: 76},
+		{w: 74, h: 76},
+		{w: 74, h: 83},
+		{w: 74, h: 85},
+		{w: 74, h: 90},
+		{w: 74, h: 94}
+	];
+	
+	this.img=img;
+	this.x=0;
+	this.y=0;
+	
+	this.type=type;
+	
+	this.rotate=0
+	
+	this.w=this._size[type].w;
+	this.h=this._size[type].h;
+}
+
+Cannon.prototype.draw=function (gd)
+{
+	gd.save();
+	
+	gd.translate(this.x+this.w/2, this.y+this.h/2);
+	gd.rotate(d2a(this.rotate));
+	
+	gd.drawImage(
+		this.img,
+		0, 0, this.w, this.h,
+		-this.w/2, -this.h/2, this.w, this.h
+	);
+	
+	gd.restore();
+};
+
+Cannon.prototype.setType=function (img, type)
+{
+	this.type=type;
+	this.img=img;
+	
+	this.w=this._size[type].w;
+	this.h=this._size[type].h;
+};
+
+function Bullet(img, type)
+{
+	var _size=[
+		null,
+		{x:86, y:0, w:24, h:26},
+		{x:61, y:0, w:25, h:29},
+		{x:32, y:35, w:27, h:31},
+		{x:30, y:82, w:29, h:33},
+		{x:0, y:82, w:30, h:34},
+		{x:30, y:0, w:31, h:35},
+		{x:0, y:0, w:30, h:44}
+	];
+	
+	this.img=img;
+	
+	this.x=0;
+	this.y=0;
+	
+	this.rotate=0;
+	
+	this.sx=_size[type].x;
+	this.sy=_size[type].y;
+	this.w=_size[type].w;
+	this.h=_size[type].h;
+	
+	this.speed=5;
+}
+
+Bullet.prototype.draw=function (gd)
+{
+	gd.save();
+	
+	gd.translate(this.x+this.w/2, this.y+this.h/2)
+	gd.rotate(d2a(this.rotate));
+	
+	gd.drawImage(
+		this.img,
+		this.sx, this.sy, this.w, this.h,
+		-this.w/2, -this.h/2, this.w, this.h
+	);
+	
+	gd.restore();
+};
+
+Bullet.prototype.move=function ()
+{
+	//x=sin(ang)*5
+	//y=cos(ang)*5
+	
+	var speedX=Math.sin(d2a(this.rotate))*this.speed;
+	var speedY=Math.cos(d2a(this.rotate))*this.speed;
+	
+	this.x+=speedX;
+	this.y-=speedY;
+};
+
+function Button(img, normal, down)
+{
+	this.img=img;
+	
+	this.x=0;
+	this.y=0;
+	
+	this.status='normal';
+	
+	this.normal=normal;
+	this.down=down;
+}
+
+Button.prototype.draw=function (gd)
+{
+	if(this.status=='normal')
+	{
+		gd.drawImage(
+			this.img,
+			this.normal.sx, this.normal.sy, this.normal.sw, this.normal.sh,
+			this.x, this.y, this.normal.sw, this.normal.sh
+		);
+	}
+	else
+	{
+		gd.drawImage(
+			this.img,
+			this.down.sx, this.down.sy, this.down.sw, this.down.sh,
+			this.x, this.y, this.down.sw, this.down.sh
+		);
+	}
+};
+Button.prototype.isPointIn=function (gd, x, y)
+{
+	gd.beginPath();
+	
+	gd.rect(this.x, this.y, this.normal.sw, this.normal.sh);
+	
+	return gd.isPointInPath(x, y);
+};
+
+function loadImages(json, fn)
+{
+	var total=0;	//所有的
+	var count=0;	//完成的
+	var images={};
+	
+	for(var name in json)
+	{
+		total++;
+		var url=json[name];
+		
+		var oImg=new Image();
+		
+		oImg.src=url;
+		
+		(function (name){
+			oImg.onload=function ()
+			{
+				images[name]=this;
+				count++;
+				
+				if(count==total)
+				{
+					fn(images);
+				}
+			};
+		})(name);
+	}
+}
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	loadImages({
+		fish1:		'img/fish1.png',
+		fish2:		'img/fish2.png',
+		fish3:		'img/fish3.png',
+		fish4:		'img/fish4.png',
+		fish5:		'img/fish5.png',
+		cannon1:	'img/cannon1.png',
+		cannon2:	'img/cannon2.png',
+		cannon3:	'img/cannon3.png',
+		cannon4:	'img/cannon4.png',
+		cannon5:	'img/cannon5.png',
+		cannon6:	'img/cannon6.png',
+		cannon7:	'img/cannon7.png',
+		bottom:		'img/bottom.png',
+		bullet:		'img/bullet.png'
+	}, function (json){
+		var c=new Cannon(json.cannon1, 1);
+		var aBullet=[];
+		var oBtnPlus=new Button(
+			json.bottom,
+			{sx: 47, sy: 75, sw: 36, sh: 28},
+			{sx: 3, sy: 75, sw: 36, sh: 28}
+		);
+		var oBtnMinus=new Button(
+			json.bottom,
+			{sx: 135, sy: 75, sw: 36, sh: 28},
+			{sx: 91, sy: 75, sw: 36, sh: 28}
+		);
+		
+		oBtnPlus.x=472;
+		oBtnPlus.y=570;
+		
+		oBtnMinus.x=372;
+		oBtnMinus.y=570;
+		
+		setInterval(function (){
+			gd.clearRect(0, 0, oC.width, oC.height);
+			
+			//台子
+			gd.drawImage(
+				json.bottom,
+				0, 0, 765, 71,
+				15, 533, 765, 71
+			);
+			
+			//炮弹
+			for(var i=0;i<aBullet.length;i++)
+			{
+				aBullet[i].draw(gd);
+			}
+			for(var i=0;i<aBullet.length;i++)
+			{
+				aBullet[i].move();
+			}
+			
+			//炮
+			c.x=400;
+			c.y=536;
+			c.draw(gd);
+			
+			oBtnPlus.draw(gd);
+			oBtnMinus.draw(gd);
+		}, 20);
+		
+		setInterval(function (){
+			
+		}, 100);
+		
+		//
+		document.onmousemove=function (ev)
+		{
+			var mouseX=ev.pageX-oC.offsetLeft;
+			var mouseY=ev.pageY-oC.offsetTop;
+			
+			var left=c.x+c.w/2;
+			var top=c.y+c.h/2;
+			
+			var a=mouseX-left;
+			var b=mouseY-top;
+			
+			var ang=a2d(Math.atan2(b, a))+90;
+			
+			//document.title=ang;
+			c.rotate=ang;
+		};
+		
+		//点击
+		document.onclick=function (ev)
+		{
+			//创建炮弹
+			var b=new Bullet(json.bullet, c.type);
+			
+			b.x=c.x+(c.w-b.w)/2;
+			b.y=c.y+c.h-b.h-18;
+			
+			b.rotate=c.rotate;
+			
+			aBullet.push(b);
+		};
+		
+		document.onmousedown=function (ev)
+		{
+			//检测按钮
+			var x=ev.pageX-oC.offsetLeft;
+			var y=ev.pageY-oC.offsetTop;
+			
+			if(oBtnPlus.isPointIn(gd, x, y))
+			{
+				oBtnPlus.status='down';
+				
+				var type=c.type+1;
+				if(type>7)type=1;
+				
+				c.setType(json['cannon'+type], type);
+			}
+			
+			if(oBtnMinus.isPointIn(gd, x, y))
+			{
+				oBtnMinus.status='down';
+				
+				var type=c.type-1;
+				if(type<1)type=7;
+				
+				c.setType(json['cannon'+type], type);
+			}
+		};
+		document.onmouseup=function ()
+		{
+			oBtnPlus.status='normal';
+			oBtnMinus.status='normal';
+		};
+	});
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+

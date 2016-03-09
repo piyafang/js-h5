@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+	#box{position: relative;width: 900px; height: 300px; overflow: hidden;}
+	.content{width:4000px;position: absolute; top:0; left: 0 }
+	#left,#right{
+		position: absolute;z-index: 999; top:0; 
+	}
+	#left{right:20px;}
+	#right{right: 0;}
+	</style>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+		var $key=1;
+		$("#left").click(function(event) {
+			$key=1;
+			fun();
+		});
+		$("#right").click(function(event) {
+			$key=0;
+			fun();
+		});
+		var timer=setInterval(fun,2000);
+		function fun(){
+
+			if($key==1)
+			{
+				$(".content").stop().animate({"left":-$key*900},1000);
+				$key=0;
+			}
+			else
+			{
+				$(".content").stop().animate({"left":-$key*900},1000);
+				$key=1;
+			}
+
+		}
+		$("#box").hover(function() {
+			clearInterval(timer);
+		}, function() {
+			clearInterval(timer)
+			timer=setInterval(fun,1000);
+		});
+	});
+	</script>
+</head>
+<body>
+	
+	<div id="box">
+		<a href="javascript:;" id="left"><</a>
+	<a href="javascript:;" id="right">></a>
+		<div class="boxin">
+			<div class="content">
+				<img src="1.jpg"/>
+				<img src="1.jpg"/>
+				<img src="1.jpg"/>
+				<img src="1.jpg"/>
+				<img src="2.jpg"/>
+				<img src="2.jpg"/>
+				<img src="2.jpg"/>
+				<img src="2.jpg"/>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script type="text/javascript">
+</script>
+
+<style>
+	*{ margin:0; padding:0;}
+	a{ text-decoration:none; font-style:normal; color:#333;}
+	div{ width:100px; font-size:16px; color:#333;height:28px; line-height:28px; margin:0 auto;}
+	.title{ display:block; position:relative;}
+	.title i{ width:0; height:0; border:6px solid transparent;  border-top:6px solid #93C; position:absolute; left:70px; top:10px;}
+	li{ display:none; width:100%; }
+	/*div:hover .title{ font-weight:bold;color:#90C;}
+	div:hover #list{display:block; cursor:pointer;}
+	li:hover a{color:#90C;}*/
+</style>
+
+</head>
+
+<body>
+	<div id="btn">
+		<a href="#" class="title">卖家中心<i ></i></a>
+		<ul id="list">
+			<li><a href="#">免费开店</a></li>
+			<li><a href="#">已卖出的宝贝</a></li>
+			<li><a href="#">已售出的宝贝</a></li>
+			<li><a href="#">收藏</a></li>
+		</ul>
+		
+	</div>
+	 <script>
+               var oBtn=document.getElementById('btn')
+			   var oList=document.getElementById('list')
+			   oBtn.onmouseover=function(){
+				   oList.style.display='block'; 
+				 }
+				 oBtn.onmouseout=function(){
+				   oList.style.display='none';
+				 }
+			</script>
+</body>
+</html>

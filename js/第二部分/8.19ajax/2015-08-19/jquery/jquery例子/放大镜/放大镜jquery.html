@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+div{float:left; width:350px; height:350px; margin:50px; position:relative; top:0; left:0;}
+#s #m{position:absolute; top:0; left:0; width:100px; height:100px; background:#99C; opacity:0.5; filter:alpha(opacity:50); display:none;}
+#b{overflow:hidden; display:none;}
+#b img{position:absolute; top:0; left:0;}
+</style>
+<script src="../jquery-1.7.2.js"></script>
+<script>
+$(function(){
+	$('#s').mouseover(function(){
+		$('#m').show();
+		$('#b').show();
+	});
+	$('#s').mouseout(function(){
+		$('#m').hide();
+		$('#b').hide();
+	});
+	$('#s').mousemove(function(ev){
+		var l = ev.clientX-$('#s').offset().left-$('#m').width()/2;
+		var t = ev.clientY-$('#s').offset().top-$('#m').height()/2;
+		if(l<0){
+			l=0;
+		}else if(l>$('#s').width()-$('#m').width()){
+			l=$('#s').width()-$('#m').width();
+		}
+		if(t<0){
+			t=0;
+		}else if(t>$('#s').height()-$('#m').height()){
+			t=$('#s').height()-$('#m').height();
+		}
+		$('#m').css({left:l,top:t});
+		$('img').css({left:-l/($('#s').width()-$('#m').width())*($('#b img').width()-$('#b').width()),top:-t/($('#s').height()-$('#m').height())*($('#b img').height()-$('#b').height())});
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="s">
+	<img src="s.jpg" />
+    <span id="m"></span>
+</div>
+<div id="b">
+	<img src="b.jpg" />
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

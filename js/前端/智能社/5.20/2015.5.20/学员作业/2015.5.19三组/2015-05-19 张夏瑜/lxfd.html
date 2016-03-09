@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; list-style:none; }
+.clearFix:after{ content:''; clear:both; display:block; }
+.box{ width:650px;171 margin:0 auto;}
+.tit{border-bottom:1px solid #6daaea; margin-top:20px;}
+.top{ padding-top:10px;}
+.top div{width:100px; height:30px;background:blue;}
+.top .left{ float:left; }
+.top .right{ float:right;}
+.btm div{width:210px; height:120px;background:#ccc;float:left;margin-top:10px;padding-right:9px;}
+
+</style>
+</head>
+
+<body>
+<div class="box">
+	<div class="tit"></div>
+	<div class="top clearFix">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<div class="btm">
+		<div class="ba"></div>
+		<div class="bb"></div>
+		<div></div>
+	</div>
+</div>
+</body>
+</html>

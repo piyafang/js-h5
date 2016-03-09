@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+
+</style>
+<script type="text/javascript">
+	function toDou(iNum){
+		return iNum<10?iNum='0'+iNum:iNum;
+	}
+	window.onload=function(){
+		var oDate=new Date();
+		document.write(oDate.getFullYear()+'年'+toDou((oDate.getMonth()+1))+'月'+oDate.getDate()+'日星期'+oDate.getDay()+'&nbsp;'+toDou(oDate.getHours())+':'+toDou(oDate.getMinutes())+':'+toDou(oDate.getSeconds()));
+	};
+
+</script>
+</head>
+<body>
+	
+
+
+</body>
+</html>

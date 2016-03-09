@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none; text-decoration:none;}
+#list_box{overflow:hidden; width:510px; height:230px; position:absolute; top:50%; left:50%; margin-left:-255px; margin-top:-115px;}
+#list_box li{float:left; width:150px; height:100px; background:#ccc;margin:10px; font-size:30px; text-align:center; line-height:100px; font-weight:bold; position:relative; top:0; left:0;}
+#list_box li a{color:#fff; position:absolute; top:0; left:0; width:100%; height:100%;}
+#list_box li span{position:absolute; top:0; right:0; cursor:pointer;}
+#shadow{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:none;}
+#add_box{ position:absolute; top:50%; left:50%; width:300px; height:300px; background:#fff; margin-left:-150px; margin-top:-150px; display:none;}
+#add_box #close_btn{position:absolute; top:0; right:0; color:#000; font-size:20px; font-weight:bold;}
+#add_box ul li{float:left; width:100px; height:100px; background:#ccc; text-align:center; line-height:100px; margin:10px; cursor:pointer;}
+</style>
+<script>
+window.onload=function(){
+	var oList_box = document.getElementById('list_box');
+	var aLi = oList_box.children;
+	var aAdd = oList_box.getElementsByTagName('a');
+	var oShadow = document.getElementById('shadow');
+	var oAdd_box = document.getElementById('add_box');
+	var oClose = document.getElementById('close_btn');
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oBtn = document.getElementById('btn1');
+	var aLi2 = oAdd_box.getElementsByTagName('li');
+	var oNow = null;
+	function add_item(){
+		oNow=this.parentNode;
+		oShadow.style.display='block';
+		oAdd_box.style.display='block';
+	}
+	for(var i=0;i<aAdd.length;i++){
+		aAdd[i].onclick=add_item;
+	}
+	oClose.onclick=function(){
+			oShadow.style.display='none';
+			oAdd_box.style.display='none';
+	}
+	oBtn.onclick=function(){
+		oNow.removeChild(oNow.children[0]);
+		var oA = document.createElement('a');
+		oA.innerHTML=oTxt1.value;
+		oA.href=oTxt2.value;
+		oNow.appendChild(oA);
+		var oClear = document.createElement('span');
+		oClear.innerHTML='X';
+		oNow.appendChild(oClear);
+		oClear.onclick=function(){
+			oNow.innerHTML='';
+			var oA = document.createElement('a');
+			oA.href='javascript:;';
+			oA.innerHTML='+';
+			oNow.appendChild(oA);
+			oA.onclick=add_item;
+		};
+		oShadow.style.display='none';
+		oAdd_box.style.display='none';
+		oTxt1.value='';
+		oTxt2.value='';
+	};
+	for(var i=0;i<aLi2.length;i++){
+		aLi2[i].onclick=function(){
+			var oA = this.children[0];
+			var oSpan = this.children[1];
+			oTxt1.value=oSpan.innerHTML;
+			oTxt2.value=oA.href;
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+
+<ul id="list_box">
+	<li><a href="javascript:;" title="add">+</a></li>
+	<li><a href="javascript:;" title="add">+</a></li>
+	<li><a href="javascript:;" title="add">+</a></li>
+	<li><a href="javascript:;" title="add">+</a></li>
+	<li><a href="javascript:;" title="add">+</a></li>
+	<li><a href="javascript:;" title="add">+</a></li>
+</ul>
+<div id="shadow"></div>
+<div id="add_box">
+	<a href="javascript:;" id="close_btn">×</a>
+	标题:<input type="text" id="txt1" /><br />
+    网址:<input type="text" id="txt2" />
+    <input type="button" value="添加" id="btn1" />
+    <ul>
+    	<li><a href="http://www.taobao.com/"></a><span>淘宝</span></li>
+    	<li><a href="http://www.baidu.com/"></a><span>百度</span></li>
+    	<li><a href="http://www.zhinengshe.com/"></a><span>智能社</span></li>
+    	<li><a href="http://www.jd.com/"></a><span>京东</span></li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

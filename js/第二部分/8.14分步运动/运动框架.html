@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+	#box{ width: 200px;height:200px; background: #99c; position: absolute;}
+</style>
+<script src='move-8-14.js'></script>
+<script type="text/javascript">
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		startMove(oBox,{'width':400},{'end':function(){startMove(oBox,{'left':400})}
+		});
+	}
+</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

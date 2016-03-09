@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script src="raphael.js"></script>
+<script>
+window.onload=function ()
+{
+	//1.画布
+	var p=Raphael(0, 0, 800, 600);
+	
+	//2.形状
+	p.path([
+		'M', 300, 300,
+		'L', 300, 100,
+		//   rx ry x旋转 是否大弧 伸展 终点x 终点y
+		'A', 200, 200, 0, 0, 1, 500, 300,
+		'Z'
+	].join(' '));
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+

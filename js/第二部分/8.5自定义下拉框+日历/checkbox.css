@@ -1,0 +1,4 @@
+@charset "utf-8";
+/* CSS Document */
+	a,h2{ width:13px;height:13px; background:url(img/no1.gif) no-repeat; display:inline-block;}
+	a.on,h2.on{ background:url(img/yes1.gif) no-repeat;}

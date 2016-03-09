@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0; padding:0; list-style:none; text-decoration:none;}
+	img{ width:500px; height:300px;}
+	.clearFix:after{ display:block; content:''; clear:both;}
+	.clearFix{zoom:1}
+	#box{ width:500px; height:300px; position:relative; overflow:hidden; margin:50px auto;}
+	#box ul{ position:absolute; left:0;top:0;}
+	#box li{ float:left;}
+	#box p{ position:absolute; left:50%; bottom:10px; width:160px; margin-left:-80px;}
+	#box span{ width:30px; height:30px;border-radius:50%; background:#9f0; cursor:pointer;
+	margin-right:10px; float:left;}
+	#box span.on{ background:#f90;}
+</style>
+<script src="sea.js"></script>
+<script>
+	seajs.use('slides',function(mod){
+		mod.slides('box');
+	})
+</script>
+</head>
+
+<body>
+	<div id="box">
+		<ul class="clearFix">
+			<li><img src="../img/cat1.jpg" /></li>
+			<li><img src="../img/cat2.jpg" /></li>
+			<li><img src="../img/cat3.jpg" /></li>
+			<li><img src="../img/cat4.jpg" /></li>
+		</ul>
+		<p class="clearFix"><span></span><span></span><span></span><span></span></p>
+	</div>
+</body>
+</html>

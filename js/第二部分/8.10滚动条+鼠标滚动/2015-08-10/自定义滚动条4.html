@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:500px; height:20px; background:#ccc; margin:100px auto; position:relative; top:0; left:0;}
+#bar{width:50px; height:20px; background:#f90; position:absolute; top:0; left:0;}
+#div1{width:300px; height:300px; background:red; opacity:0; filter:alpha(opacity:0);}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oBar = document.getElementById('bar');
+	var oDiv = document.getElementById('div1');
+	oBar.onmousedown=function(ev){
+		var oEvent = ev||event;
+		var disX = oEvent.clientX-oBar.offsetLeft;
+		document.onmousemove=function(ev){
+			var oEvent = ev||event;
+			var l =oEvent.clientX-disX;
+			if(l<0){
+				l=0;
+			}else if(l>oBox.offsetWidth-oBar.offsetWidth){
+				l=oBox.offsetWidth-oBar.offsetWidth;
+			}
+			oBar.style.left=l+'px';
+			var scale = l/(oBox.offsetWidth-oBar.offsetWidth);
+			oDiv.style.opacity=scale;
+			oDiv.style.filter='alpha(opacity:'+scale*100+')';
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			oBar.releaseCapture&&oBar.releaseCapture();
+		};
+		oBar.setCapture&&oBar.setCapture();
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<div id="bar"></div>
+</div>
+<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

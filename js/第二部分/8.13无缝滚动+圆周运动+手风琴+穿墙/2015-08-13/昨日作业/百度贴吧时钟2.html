@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+ul{overflow:hidden;}
+li{float:left; margin:10px; height:35px; overflow:hidden; position:relative; top:0; left:0; width:24px;}
+li img{width:24px;position:absolute; top:0; left:0;}
+</style>
+<script src="move.js"></script>
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+}
+window.onload=function(){
+	var aImg = document.getElementsByTagName('img');
+	function tick(){
+		var oDate = new Date();
+		var h = oDate.getHours();
+		var m = oDate.getMinutes();
+		var s = oDate.getSeconds();
+		var str = toDou(h)+toDou(m)+toDou(s);
+		for(var i=0;i<aImg.length;i++){
+			startMove(aImg[i],{top:-str.charAt(i)*35});
+			//aImg[i].style.top=-str.charAt(i)*35+'px';
+		}
+	}
+	tick();
+	setInterval(tick,1000);
+};
+</script>
+</head>
+
+<body>
+<ul>
+	<li><img src="img/num.png" /></li>
+	<li><img src="img/num.png" /></li>
+	<li><img src="img/num.png" /></li>
+	<li><img src="img/num.png" /></li>
+	<li><img src="img/num.png" /></li>
+	<li><img src="img/num.png" /></li>
+</ul>
+</body>
+</html>

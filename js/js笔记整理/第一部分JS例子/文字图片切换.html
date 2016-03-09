@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+	function wpshow(wpid){
+	var oWp=document.getElementById(wpid);
+	var aLi=oWp.getElementsByTagName('Li');
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].onmouseover=function(){
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].className='';
+			}
+			this.className='on';
+		}
+	}
+}
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

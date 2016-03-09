@@ -1,0 +1,80 @@
+
+1. 图片 img 标签，在IE浏览器下会有空白
+	- 解决办法：display:block;
+
+2. IE6 下父级没有宽高，不会触发haslayout。
+	触发原因：子级浮动，父级没有宽高，overflow失效
+	- 父级加 zoom:1;
+
+3. 躲猫猫
+	触发原因：一个元素浮动了，同级的元素未浮动。clear:both; 元素有一个border。
+	- 解决办法：都浮动
+
+4. 双边距
+	触发原因：margin-left float:left
+	触发原因：margin-right float:right
+	- 解决办法：display:inline
+
+5. ie6 子级会撑开父级
+	- 解决办法：父级overflow:hidden
+	2.子级加绝对定位
+
+？？6. ie6 行高失效
+	触发原因：文字后有 inline-block 元素时触发
+	- 解决办法：给 inline-block 元素加上 vertical-align:middle;
+	- 解决办法：给 inline-block 元素加上 margin=(行高-input高)/2
+
+7. margin 负值
+	触发原因：ie6不能超出父级
+	- 解决办法：子级身上加 position:relative;
+
+8. IE6 最小高度 12px
+	- 解决办法：overflow:hidden;
+	- 解决办法：font-size:2px; 不靠谱
+	chrome浏览器支持12PX字体大小
+
+9. IE6 单像素bug
+	- 解决办法：别用奇数
+
+10. IE6 3像素bug
+	触发原因：有一个元素浮动了，另一个元素未浮动
+	- 解决办法：都浮动
+
+11. li 下面默认的间距
+	1.用浮动
+	2.vertacal-align:top;
+
+12. 最小宽度
+	_width
+
+13. ie6 注释bug
+	触发原因：
+		父级
+			width:300px;
+			margin:20px auto;
+			overflow:hidden;
+		子级：
+			width:100%; float:left;
+
+		两个浮动的文本间有注释
+
+	- 解决办法：浮动的元素 background:none;
+	- 解决办法：去掉注释。
+
+
+14. 双浮动bug
+	触发原因：给浮动的元素身上加 绝对定位
+	- 解决办法：1.去掉绝对定位
+	2.加上top/left
+
+
+
+
+
+
+
+
+
+
+
+

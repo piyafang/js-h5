@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; overflow:hidden;}
+	.father{ 
+			 width:650px;
+			 height:169px;
+			 border-top:1px solid #6daaea;
+			 margin:100px auto;}
+	.top{ 
+		  width:650px;
+		  margin:10px 0;}
+	.top p{ 
+			width:100px;
+			height:30px;
+			background:#0873c0;} 
+	.top .tl{ 
+			 float:left;}
+	.top .tr{ 
+			  float:right;}
+	.bottom{ width:650px;
+	         height:120px;
+			 }
+	.bottom span{ 
+	             display:inline-block;
+	             width:210px;
+		         height:120px;
+				 background:#ccc;
+				 float:left;}
+    .bottom .br{
+		         float:right;}
+	.bottom .bc{ margin:0 10px;}

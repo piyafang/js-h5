@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+.header{ width:1596px; height:76px; background:url(../img/znsbg.gif) repeat-x; padding:38px 318px 0;}
+h1{ font-size:14px; color:#fff; font-weight:normal;}
+ul{ list-style:none;}
+span{ font-weight:bold; font-size:40px; padding-right:15px;}
+.bar{ width:1596px; height:49px; background:#010044; padding-left:318px;}
+.b_ul{ overflow:hidden;}
+.b_ul li{ float:left; line-height:49px;  border-right:1px solid #4e9ce9; padding:0 71px;}
+.link{ text-decoration:none; color:#fff; font-size:12px;}
+.last{ border:none;}
+.content{ width:1596px; overflow:hidden;}
+.left{ width:679px; background:#f7f7f7; padding-left:318px; float:left;}
+.right{ float:left;}
+.c_li1{ padding-top:40px; padding-right:60px;}
+h2{ color:#3263b1; font-size:24px; border-bottom:1px solid #e2e2e2; padding-bottom:14px;}
+.description{ width:620px; color:#907878; overflow:hidden; margin:21px 0 26px 0;}
+.time{ display:block; float:left; font-size:12px; font-family:"宋体";}
+.author{ display:block; float:right; font-size:12px; font-family:"宋体";}
+.p1{ font:normal normal 12px/22px "宋体"; text-indent:2em; color:#787878; margin-bottom:19px;}
+a{ text-decoration:none; font-size:12px; color:#4486c7;}
+.link1{ padding-right:10px;}
+.link2{ padding-left:8px;}
+.c_li2{ padding-top:35px; padding-right:60px;}
+.right{ width:280px;}
+.r_t{ width:280px; height:82px; background:#e2e2e2; margin-bottom:26px; overflow:hidden;}
+.text{ margin:32px 0 26px 21px; float:left;}
+.go{ width:50px; height:22px; margin:32px 25px 26px 4px; background:#b9b9b9; float:left; text-align:center; line-height:22px;}
+.r_c{ margin-left:30px; margin-right:35px; margin-bottom:33px; }
+.h3_1{ color:#3263b3; font-size:18px; margin-bottom:22px;}
+.p2{ color:#787878; font-size:12px; line-height:25px;}
+.r_b{ margin-left:30px;}
+.h3_2{ color:#3263b3; font-size:18px;/* margin-bottom:25px;*/}
+.link3{ color:#787878; font-size:12px; line-height:31px;}
+.text li{ border-bottom:1px dashed #ccc;/* padding:9px 30px;*/}
+.footer{ font-size:12px; width:1596px; height:65px; text-align:center; line-height:65px; color:#a0a0a0; background:#ececec; margin-top:31px;}
+

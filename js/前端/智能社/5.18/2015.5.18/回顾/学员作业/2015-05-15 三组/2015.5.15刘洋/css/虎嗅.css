@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+.wrapper{
+	width:630px;
+	height:200px;
+	background:#f5f6f7;
+	margin:100px;
+	font-family:"微软雅黑";
+	color:#333;
+	font-size:12px;
+}
+
+h3{
+	width:610px;
+	height:29px;
+	border-bottom:1px solid #ddd;
+	padding-left:10px;
+}
+h3 span{
+	display:inline-block;
+	border-bottom:2px solid #888;
+	width:138px;
+	line-height:27px;
+	text-align:center;
+	font-size:10px;
+
+}
+ul{
+	padding:10px 0 0 30px;
+}
+ul li{
+	height:30px;
+	line-height:30px;
+	width:400px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+ul li a{
+	color:#333;
+	background:url(../images/huxiu.png) no-repeat 0;
+	padding-left:15px;
+}

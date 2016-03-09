@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:100px; height:100px; background:#f90; position:absolute; top:0; left:0;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	//四个方向的开关。如果是true就让走，false不让走
+	var bUp=false,
+		bDown=false,
+		bLeft=false,
+		bRight=false;
+	
+	var oldMsg = {
+		width:oBox.offsetWidth+'px',
+		height:oBox.offsetHeight+'px',
+		left:oBox.offsetLeft+'px',
+		top:oBox.offsetTop+'px',
+		background:'#f90'
+	};
+	
+	
+	document.onkeydown=function(ev){
+		var oEvent = ev||event;
+		switch(oEvent.keyCode){
+			case 37:
+				bLeft=true;
+				break;
+			case 38:
+				bUp=true;
+				break;
+			case 39:
+				bRight=true;
+				break;
+			case 40:
+				bDown=true;
+				break;
+		}
+		if(oEvent.keyCode==38&&oEvent.ctrlKey){
+			oBox.style.width=oBox.offsetWidth+10+'px';
+			oBox.style.height=oBox.offsetHeight+10+'px';
+			oBox.style.left=oBox.offsetLeft-5+'px';
+			oBox.style.top=oBox.offsetTop-5+'px';
+			bUp=false;
+		}
+		
+		if(oEvent.keyCode==40&&oEvent.ctrlKey){
+			oBox.style.width=oBox.offsetWidth-10+'px';
+			oBox.style.height=oBox.offsetHeight-10+'px';
+			oBox.style.left=oBox.offsetLeft+5+'px';
+			oBox.style.top=oBox.offsetTop+5+'px';
+			bDown=false;
+		}
+		if(oEvent.ctrlKey&&oEvent.keyCode==49){
+			oBox.style.background='red';
+			return false;
+		}
+		if(oEvent.ctrlKey&&oEvent.keyCode==50){
+			oBox.style.background='green';
+			return false;
+		}
+		if(oEvent.keyCode==13&&oEvent.ctrlKey){
+			for(var name in oldMsg){
+				oBox.style[name]=oldMsg[name];
+			}
+		}
+	};
+	document.onkeyup=function(){
+		bUp=false;
+		bDown=false;
+		bLeft=false;
+		bRight=false;
+	};
+	
+	
+	setInterval(function(){
+		if(bUp){
+			oBox.style.top=oBox.offsetTop-10+'px'
+		}
+		if(bDown){
+			oBox.style.top=oBox.offsetTop+10+'px';
+		}
+		if(bLeft){
+			oBox.style.left=oBox.offsetLeft-10+'px';
+		}
+		if(bRight){
+			oBox.style.left=oBox.offsetLeft+10+'px';
+		}
+	},30);
+};
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

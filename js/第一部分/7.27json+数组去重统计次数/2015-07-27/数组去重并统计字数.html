@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+var arr = ['a','b','c','a','a','b','c','d','a'];
+//数组去重并统计出现的次数。
+var json = {};
+//有值，是真的，没有值，是假的。
+for(var i=0;i<arr.length;i++){
+	if(json[arr[i]]){
+		json[arr[i]]++;
+	}else{
+		json[arr[i]]=1;
+	}
+}
+console.log(json);
+</script>
+</head>
+
+<body>
+</body>
+</html>

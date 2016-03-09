@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background:#fff;}
+/*header*/
+.header{height:38px; background:#F5F5F5; border-bottom:1px solid #eee;border-top:1px solid #eee;}
+.column{width:713px; margin:0 auto;padding:10px 0 10px 0;}
+.column ul{ float:right;}
+.column li{ float:left; height:18px; line-height:18px; font-size:12px; border-right:1px dotted #cbcbcb; padding-left:15px; padding-right:16px;}
+
+.column a{ display:block;color:#666;}
+.column .header_weixin{ background:url(../images/header_weixin.png) no-repeat 18px top; padding-left:37px; padding-right:16px;}
+.column .header_qq{ background:url(../images/header_qq.png) no-repeat 19px top; padding-left:37px;padding-right:16px;}
+.column .header_shop{ background:url(../images/header_shop.png) no-repeat 15px top; padding-left:37px;padding-right:41px; position:relative;}
+.column .header_shop span{ display:block;border-radius:4px; text-align:center;width:19px; height:15px; line-height:15px;background:#999; color:#fff; font-size:9px; position:absolute; right:15px; top:1px;}
+.column .header_list{ background:url(../images/header_list.png) no-repeat 15px top; padding-left:37px;padding-right:16px;}
+.column .download{ background:url(../images/header_phone.png) no-repeat 16px top; padding-left:34px;padding-right:15px;}
+.column .service{ padding-right:11px;border-right:none;}

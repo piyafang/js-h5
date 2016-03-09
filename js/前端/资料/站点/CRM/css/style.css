@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+body { background-color: #f1f2f6; }
+
+/* 弹出层 */
+.back { position: fixed; height: 100%; width: 100%; left: 0px; top: 0px; background-color: #000; z-index: 900; filter:alpha(opacity=70); /*IE滤镜，透明度70%*/ -moz-opacity:0.7; /*Firefox私有，透明度70%*/ opacity:0.7;/*其他，透明度70%*/ }
+.tanchu{ position: fixed; height: 428px; width: 522px; left:50%; top:50%; background-color: #fff; z-index: 900; margin-top: -214px; margin-left: -261px; }
+.tanchu .txt { padding-top: 10px; padding-left: 20px; overflow: hidden; padding-bottom: 26px; }
+.txt select { line-height: 28px; height: 28px; width: 120px; }
+.txt input { height: 26px; width: 140px; line-height: 26px; margin-left: 18px; }
+.txt input,.txt select{ border:1px solid #BEBEBE;}
+.txt span { float: left; margin-right: 5px; margin-left: 5px; }
+.txt span a { display: block; height: 28px; width: 76px; color: #FFF; background-color: #fb9936; text-align: center; line-height: 28px; border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ -moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */ -webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */}
+.txt span a:hover { background-color: #E87400; text-decoration: none; }
+.tanchu .biaoge { height: 311px; width: 518px; overflow: hidden; overflow-y:scroll; }
+.biaoge table { width: 450px; margin-right: auto; margin-left: auto; background-color: #797979; }
+.biaoge table tr td { line-height: 30px; text-align: center; background-color: #FFF; }
+.biaoge table tr td a { text-decoration: underline; }
+
+
+/*top*/
+.top{ background:url(../images/topBg.jpg) no-repeat left top; width:1100px;height:86px; margin:0 auto;}
+
+
+/*nav*/
+.content{ width:960px; margin:0 auto;}
+.nav { position: relative; z-index: 800; height: 34px; }
+
+.nav ul li  { float: left; line-height: 34px; height: 34px; width: 90px; background-color: #00B7EE; margin-right: 3px; font-size: 14px; font-weight: bold; color: #FFF; padding-left: 24px;_padding-left: 18px;text-align: center;}
+.nav ul .nopadding { padding: 0px; width: 117px; }
+.nav ul li .fr { background:url(../images/_r1_c1.png) no-repeat -17px -130px; display: block; height: 9px; width: 20px; margin-top: 12px; margin-right: 10px; }
+.nav ul a { color: #FFF; }
+.nav ul a:hover {text-decoration: none; }
+.nav ul .xuanzhong  { background-color: #0a49a6; }
+.nav ul .listBtn { position: relative; height: 34px;}
+.nav ul .listBtn .listFirst { position: absolute; left: 0px; top: 34px; display: block; width: 144px; background-color: #FFF; text-align: left; z-index: 100; border: 1px solid #E0E3F4; }
+.nav ul .listFirst dd a{ color: #3e3f45; font-size: 12px; font-weight: normal; display: block; border-top: 1px solid #E0E3F4; line-height: 30px; padding-left: 4px; }
+.nav ul .listFirst dd .noboder { border: none; }
+.nav ul dl a:hover { color: #333; text-decoration: none; background-color: #FFFFCB; }
+.nav ul .listSecond { position: relative;}
+.nav ul .listSecond span a {background: url(../images/_r1_c1.png)  no-repeat 110px -20px;}
+.nav ul .listSecond .oList  { position: absolute; width: 100px; right: -102px; top: 0px; background-color: #FFF; border: 1px solid #E0E3F4; }
+
+/*快报*/
+.kuaibao { margin-top: 13px; height: 19px; background: url(../images/_r1_c1.png) no-repeat left top; padding-left: 54px; line-height: 19px; }
+.tool { line-height: 38px; height: 38px; }
+.tool p a { color: #ffa51e; }
+
+/*内容*/
+.main { width: 960px; background-color: #FFF; }
+.choose ul { padding-top: 1px; padding-left: 2px; overflow: hidden; }
+.choose ul li { float: left; height: 36px; width: 317px; display: block; text-align: center; font-size: 14px; font-weight: bold; line-height: 36px; background-color: #eaf1f5; margin-right: 2px; }
+.choose ul .current ,.choose ul li:hover{ background-color: #00b7ee; color: #FFF; cursor:pointer;}
+.main dl { padding-left: 20px; display: block; overflow: hidden; width: 900px; padding-top: 12px; }
+.main dl dt { float: left; height: 110px; display: block; width: 40px; padding-top: 10px; }
+.main dl dd { float: left; width: 800px; display: block; padding-top: 10px; }
+.main dl dd a{ line-height: 30px; background-color: #eaf1f5; text-align: center; display: block; height: 30px; width: 94px; float: left; margin-right: 14px; color: #333; position: relative; }
+.main dl dd a.more { display: inline; background-color: #FFF; line-height: 12px; padding-top: 14px; height: 16px; }
+.main dl dd .more:hover { color: #333; background-color: #FFF; text-decoration: underline; }
+
+
+.main dl dd a span { position: absolute; top: -4px; right: -4px; }
+
+.main dl dd a:hover ,.main dl dd .onthis{ background-color: #ff9933; color: #FFF; text-decoration: none; }
+.main dl dd span { }
+.main dl dd span input { height: 26px; width: 112px; border: 1px solid #d2d2d2; text-align: center; line-height: 26px; }
+.main dl .dingwei { position: relative; }
+.main dl .dingwei .sou { background-color: #F93; float: none; position: absolute; top: 8px; right: 44px; display: block; color: #FFF; font-size: 14px; -moz-border-radius: 3px; -webkit-border-radius:3px; border-radius:3px; }
+.main dl .dingwei .sou:hover { background-color: #E87400; }
+.main .bottom { border-top: 1px solid #f1f2f6; margin-top: 22px; overflow: hidden; padding: 20px 0; }
+
+/*数据*/
+.bottom div.fl { width: 116px; padding-left: 20px; }
+.bottom div.fr { width: 797px; }
+.bottom .fl span { display: block; height: 12px; line-height: 12px; }
+.bottom ul  { padding:14px 0 20px 20px;}
+.bottom ul li  { display: block; line-height: 24px; margin-top: 5px; }
+.bottom ul li a  { color: #333; display: block; }
+.bottom em    { margin-right: 4px; }
+
+.bottom ul li a:hover{  text-decoration:none; }
+.bottom ul li div a { background-image:none; padding: 0px; text-align:center; margin-left: 16px; }
+.bottom ul li div a:hover,.bottom ul li div a.thisone{ background-color: #F93; color: #FFF;}
+
+
+.tubiaoTool { height: 25px; border-bottom: 1px solid #f7f7f7; margin-bottom: 10px; margin-right: 20px; position: relative; }
+.tubiaoTool span { border-bottom:2px solid #F93; height: 24px; display: block; width: 60px; margin-bottom: -1px; font-size: 14px; }
+.tubiaoTool .xuan { height: 26px; width: 142px; position: absolute; right: 0px; bottom: 4px; }
+.tubiaoTool .xuan a { line-height: 26px; display: block; height: 26px; width: 70px; background-color: #EAF1F5; text-align: center; color: #333; float: left;}
+.tubiaoTool .xuan a.zuo{border-radius: 5px 0 0 5px; /* 四个半径值分别是左上角、右上角、右下角和左下角 */-moz-border-radius-topleft:5px;-moz-border-radius-bottomleft:5px;-webkit-border-top-left-radius:5px;-webkit-border-bottom-left-radius:5px;}
+.tubiaoTool .xuan a.you{border-radius: 0 5px 5px 0;-moz-border-radius-topright:5px;-moz-border-radius-bottomright:5px;-webkit-border-top-right-radius:5px;-webkit-border-bottom-right-radius:5px;}
+.tubiaoTool .xuan a:hover,.tubiaoTool .xuan a.on { background-color: #F93; color: #FFF; }
+.tubiao { padding-bottom: 40px; }
+.daochu  { background-color: #FFA51E; display: block; float: right; height: 26px; width: 88px; color: #FFF; text-align: center; border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */ -moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */ -webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */ position: absolute; right: 0px; bottom: 2px; line-height: 26px; }
+.daochu:hover{ text-decoration:none; color: #FFF; background-color: #E87400; }
+.tubiaoTool cite { position: absolute; left: 80px; width: 100px; bottom: 0px; line-height: 26px; }
+.tubiaoTool .list { position: absolute; width: 130px; right: 100px; bottom: 2px; height: 26px; }
+.list select { width: 126px; line-height: 26px; height: 26px; }
+.shuju table { background-color: #B1C9ED; margin-right: 20px; }
+.shuju table tr td { text-align: center; line-height: 34px; }
+.shuju .dingwei { position: relative; }
+.shuju table tr td table tr td { padding-bottom: 5px; }
+
+.shuju  .dingwei img{ position: absolute; left: 0px; top: 0px; }
+
+
+/*翻页*/
+.fanye { border-top: 1px solid #f1f2f6; line-height: 60px; height: 60px; }
+.fanye p { text-align: center; }
+.fanye p b { margin:0 2px; }
+.fanye p span { margin:0 8px; }
+.fanye p span a { margin:0 4px; color: #333; }
+
+/*页脚*/
+.footer { text-align: center; color: #FFF; background-color: #666; height: 22px; margin:0 auto; margin-top: 30px; width: 1100px; line-height: 22px; }

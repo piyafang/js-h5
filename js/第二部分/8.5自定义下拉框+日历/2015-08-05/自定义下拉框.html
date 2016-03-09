@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+.my_select{width:150px; }
+.my_select h2{width:150px; height:30px; line-height:30px; text-align:center; border:1px solid #000; cursor:pointer;}
+.my_select ul{border:1px solid #000; margin-top:5px; display:none;}
+.my_select ul li{width:150px; height:20px; line-height:20px; text-align:center; border:1px solid #ccc; cursor:pointer;}
+</style>
+<script>
+window.onload=function(){
+	var oDiv = document.getElementById('div1');
+	var oAge = document.getElementsByName('age')[0];
+	var oH2 = oDiv.children[0];
+	var oUl = oDiv.children[1];
+	var aLi = oUl.children;
+	oH2.onclick=function(){
+		oUl.style.display='block';
+	};
+	for(var i=0;i<aLi.length;i++){
+		(function(index){
+			aLi[i].onclick=function(){
+				oH2.innerHTML=this.innerHTML;
+				oUl.style.display='none';
+				oAge.selectedIndex=index;
+			};
+		})(i);
+	}
+	oAge.style.display='none';
+};
+</script>
+</head>
+
+<body>
+<form action="http://www.zhinengshe.com/">
+	<div id="div1" class="my_select">
+    	<h2>18以上</h2>
+        <ul>
+        	<li>18以上</li>
+        	<li>28以上</li>
+        	<li>38以上</li>
+        	<li>48以上</li>
+        </ul>
+    </div>
+    <select name="age">
+    	<option value="18">18以上</option>
+    	<option value="28">28以上</option>
+    	<option value="38">38以上</option>
+    	<option value="48">48以上</option>
+   	</select>
+    <br />
+    <input type="submit" />
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#box{width:200px;height:200px; background:#f90;position:absolute; top:0; left:0;}
+</style>
+<script>
+window.onload=function(){
+	new Drag('box');
+};
+function Drag(id){
+	var _this =this;
+	this.oBox = document.getElementById(id);
+	this.oBox.onmousedown=function(){
+		_this.down();
+		return false;
+	};
+};
+Drag.prototype.down=function(ev){
+	var _this = this;
+	var oEvent = ev||event;
+	
+	this.disX = oEvent.clientX-this.oBox.offsetLeft;
+	this.disY = oEvent.clientY-this.oBox.offsetTop;
+	
+	document.onmousemove=function(){
+		_this.move();
+	};
+	
+	document.onmouseup=function(){
+		_this.up();
+	};
+	
+	this.oBox.setCapture&&this.oBox.setCapture();
+	
+};
+Drag.prototype.move=function(ev){
+	var oEvent = ev||event;
+	
+	this.oBox.style.left=oEvent.clientX-this.disX+'px';
+	this.oBox.style.top=oEvent.clientY-this.disY+'px';
+};
+Drag.prototype.up=function(){
+	document.onmousemove=null;
+	document.onmouseup=null;
+	
+	this.oBox.releaseCapture&&this.oBox.releaseCapture();
+	
+};
+</script>
+</head>
+
+<body>
+飞机的快速减肥的思考就反垄断
+<div id="box"></div>
+飞机的考虑将法律第三季发大水
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

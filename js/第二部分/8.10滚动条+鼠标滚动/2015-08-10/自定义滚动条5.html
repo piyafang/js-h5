@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:500px; height:20px; background:#ccc; margin:100px auto; position:relative; top:0; left:0;}
+#bar{width:50px; height:20px; background:#f90; position:absolute; top:0; left:0;}
+#div1{width:300px; height:300px; border:1px solid red; position:relative; overflow:hidden;}
+#div2{width:300px; position:absolute; top:0; left:0;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oBar = document.getElementById('bar');
+	var oDiv1 = document.getElementById('div1');
+	var oDiv2 = document.getElementById('div2');
+	oBar.onmousedown=function(ev){
+		var oEvent = ev||event;
+		var disX = oEvent.clientX-oBar.offsetLeft;
+		document.onmousemove=function(ev){
+			var oEvent = ev||event;
+			var l =oEvent.clientX-disX;
+			if(l<0){
+				l=0;
+			}else if(l>oBox.offsetWidth-oBar.offsetWidth){
+				l=oBox.offsetWidth-oBar.offsetWidth;
+			}
+			oBar.style.left=l+'px';
+			var scale = l/(oBox.offsetWidth-oBar.offsetWidth);
+			oDiv2.style.top=-(oDiv2.offsetHeight-oDiv1.offsetHeight)*scale+'px';
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			oBar.releaseCapture&&oBar.releaseCapture();
+		};
+		oBar.setCapture&&oBar.setCapture();
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<div id="bar"></div>
+</div>
+<div id="div1">
+	<div id="div2">
+    	 修身，是指修身养心，努力提高自身的思想道德修养。中国传统文化非常重视修养身心。比如，“诚意、正心、修身、齐家、治国、平天下”的人生理想，“穷则独善其身，达则兼济天下”的精神境界，“为天地立心，为生民立命，为往圣继绝学，为万世开太平”的道义担当，“见贤思齐”“知行合一”“己所不欲，勿施于人”“三省吾身”“君子慎独”的修身之方，“孝悌忠信”“百善孝为先”“家和万事兴”的齐家之略，等等。中华文明之所以能历经磨难而生生不息、朝气蓬勃，就因为有这些执着的精神追求。在新的历史条件下，我们党面临新的执政考验，对领导干部的综合素质提出了新的更高要求。
+　　 习近平非常重视干部的道德修养。2014年5月，习近平在河南考察时强调：“面对纷繁复杂的社会现实，党员干部特别是领导干部务必把加强道德修养作为十分重要的人生必修课，以严格标准加强自律、接受他律，努力以道德的力量去赢得人心、赢得事业成就。”他还把“三严三实”作为干部改进作风的要求，其中摆在首位的就是“严以修身”。他引用 “修其心，治其身，而后可以为政于天下”，“安天下，必须先正其身”等来强调干部修身。
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+/* slide 焦点图*/
+.slide-main{height:440px;position:relative;}
+.slide-main .prev,.slide-main .next{display:block;width:44px;height:44px;position:absolute;z-index:222;top:200px;overflow:hidden;cursor:pointer;opacity:0.6;-moz-opacity:0.6;filter:alpha(opacity=60);_border:1px solid none;}
+.prev{left:240px;}
+.next{right:240px;}
+.prev:hover,.next:hover,.nav-main a:hover,.nav-main a.cur{opacity:1;-moz-opacity:1;filter:alpha(opacity=100);}
+.item{display:block;width:100%;height:5px;position:absolute;z-index:124;top:370px;left:0;text-align:center;}
+.item a{display:inline-block;width:24px;height:5px;margin-right:11px;background:#333;opacity:0.6;-moz-opacity:0.6;filter:alpha(opacity=60);overflow:hidden;}
+.item a.cur{background:#fff;}
+.slide-box,.slide{display:block;width:100%;height:440px;overflow:hidden;}
+.slide-box{position:relative;}
+.slide{display:none;height:440px;background:#ff6900;position:relative;position:absolute;z-index:8;}
+
+.slide a{display:block;width:100%;height:490px;cursor:pointer;}
+.obj-a,.obj-b,.obj-c,.obj-d,.obj-e,.obj-f{position:absolute;z-index:9;left:50%;}
+.obj-a,.obj-b{width:952px;margin-left:-476px;text-align:center;}
+.obj-a{display:block;height:352px;top:100px;}
+.obj-b{top:406px;height:100px;}
+.obj-c{display:block;height:582px;top:0;margin-left:-540px;}
+.obj-d{top: 130px;width: 389px;height: 136px;margin: 0 auto;left: 40%;}
+.obj-d p{display:block;padding-top:20px;font-size:16px;color:#fff;clear:both;}
+.obj-e{width:366px;height:170px;margin-left:-460px;top:223px;z-index:12;}
+.obj-f{width:692px;height:394px;top:158px;margin-left:-180px;}
+.banAnimate .obj-a{display:block;animation-name:baoAni;-webkit-animation:baoAni 0.4s linear 0s normal none;-moz-animation:baoAni 0.4s linear 0s normal none;animation:baoAni 0.4s linear 0s normal none;}
+/* slide 焦点图结束*/
+
+/* 头部Logo信息*/
+.head { width: 1000px; height: 78px; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; }
+.logo { background: url(../images/logo.jpg) no-repeat; height: 41px; width: 397px; margin-top: 18px; }
+.head ul {padding-top:28px;}
+.head ul li { float: left;color:#B2B2B2;}
+.head li a,.head .phone span{ color:#666; margin:0 10px;}
+.head .phone span i{ color:#FF9913;}
+.head .language{ padding-right:8px; background:url(../images/language_icon_english.jpg) no-repeat left center;}
+.head .language a { margin-right: 0px; margin-left:30px;display: block; background: url(../images/icon_up.jpg) no-repeat right center; padding-right:16px; }
+.head .login { height: 24px; color: #FFF; background-color: #FF9913; line-height: 24px; margin-top: -5px; width: 88px; background-image: url(../images/icon_user.jpg); background-repeat: no-repeat; background-position: 8px 5px; padding-left: 30px; position:relative;}
+.head .login a{ color: #FFF; margin-right: 4px; margin-left: 4px; }
+.head .login dl{ position:absolute; left:0; top:23px; padding:2px; margin:0; z-index:300; width:112px; border:#ff9913 1px solid; background:#fff; display:none;}
+.head .login dl a{ color:#666; display:block; line-height:24px; padding-left:4px;}
+.head .login dl a:hover{ color:#fff; background:#ff9913;}
+
+/*页面搜索*/
+.content { width:100%; height:314px; background-color:#F4F4F4;}
+/*国内外酒店选择工具条*/
+.searchBox { width:1032px; height:340px;margin:0 auto;position: relative;background:url(../images/search_body_bg.jpg) no-repeat;}
+.search{ width:960px;height:202px;position: absolute; left: 16px; top: -48px; background-color: #FFF; z-index:200; padding-left:40px;}
+.choose {border-bottom:2px solid #EEEEEE; margin-right:40px;}
+.choose ul{ padding-top:25px;}
+.choose li{ width:110px;font-size:18px; color:#666; padding-bottom:20px; border-bottom:2px solid #EEEEEE; text-align:center; float:left; cursor:pointer; position:relative; margin-bottom:-2px;}
+.choose li.on{border-bottom:2px solid #3EA3FF;color:#3EA3FF;}
+
+/*国内外酒店选择下拉菜单*/
+.chooseCity{ position:absolute; left:0; top:37px; background:#fff; z-index:100;box-shadow: 0 0 2px rgba(0,0,0,.15); padding:10px; width:100%; display:none;}
+.cityTab{border-bottom:2px solid #EEEEEE; padding-top:10px;}
+.cityTab li{ float:left; font-size:16px;border-bottom:2px solid #EEEEEE;color:#666; margin-bottom:-2px; margin-right:24px; padding-bottom:10px; text-align:center; cursor:pointer;}
+.cityTab li.selected{border-bottom:2px solid #3EA3FF;color:#3EA3FF; }
+.chooseCity .tag{ padding-top:20px; color:#666; display:none;}
+.chooseCity .tag span{ color:#666; margin-right:9px; line-height:24px; float:left; display:block;cursor:pointer;}
+.chooseCity .tag span:hover{color:#3EA3FF; }
+
+
+/*表单输入框*/
+.formList dd{  width:240px;height:36px; vertical-align: middle; position:relative;background:#F0F0F0; float:left; margin-right:18px; margin-top:20px;}
+.formList dd em{ position:absolute; top:14px; right:12px;}
+.formList dd i{ position:absolute; top:10px; right:8px;}
+.formList dd em,.formList dd em:after{position: absolute;right: 14px;top: 50%;margin-top: -3px;border: 6px solid transparent;border-top: 6px solid #ccc;z-index: 1;-webkit-transform-origin: 50% 20%;-moz-transform-origin: 50% 20%;-ms-transform-origin: 50% 20%;transform-origin: 50% 20%;}
+.formList dd em:after{border-top-color: #ccc;}
+.formList dd em{border-top-color: #ccc;}
+.formList dd em:after{border-top-color: #ccc;}
+.formList input{ color:#666; width:140px;height:36px; vertical-align: middle; padding-left:10px; overflow:hidden;}
+.formList .people,.formList .people input{width:110px;}
+.formList dl{ position:relative;}
+.formList dt{width: 140px;height: 100px;position: absolute;right: 40px;top: 40px;}
+.formList dt a{ display:block;width: 140px;height:46px;line-height:46px;background:#FF9913;text-align:center;  color:#fff; font-size:16px; border-radius:4px;}
+.formList dt a:hover{background:#FE7C26;}
+
+
+/* 页面广告*/
+.nice_Pic { width:1000px; margin:0 auto;padding-top: 174px;}
+
+/* 页面正文*/
+.hotelList{ width:1000px; margin:0 auto;}
+/* 工具条*/
+.tool_line { line-height: 50px; height: 50px; border-bottom: 1px solid #E6E6E6; padding-top:20px;}
+.tool_line h4{ height:24px; margin-top:12px; font-size:24px;color:#333; padding:0 50px 0 10px;}
+.tool_line.blue h4{border-left:5px #3EA3FF solid;}
+.tool_line.orange h4{border-left:5px #ff9913 solid;}
+.tool_line.green h4{border-left:5px #00CC66 solid;}
+.tool_line.red h4{border-left:5px #FF7553 solid;}
+.tool_line ul li{ float:left; padding-top:12px; margin-right:8px;}
+.tool_line ul li a{height:24px; line-height:24px;padding:0 10px; display:block; color:#666;}
+.tool_line ul li a:hover,.tool_line ul .current a{ color:#fff;  border-radius:3px; background:#3EA3FF;}
+.tool_line.orange ul li a:hover,.tool_line.orange ul .current a{ background:#ff9913;}
+.tool_line .more{ font-size:12px; color:#999; margin-right:8px;}
+.tool_line a.more:hover{ color:#666;}
+
+/* 酒店列表*/
+.list ul li { padding: 2px; padding-bottom:12px; width: 220px; border: 1px solid #E6E6E6;margin:0 12px; margin-top:20px; float:left; overflow:hidden; }
+.list ul li:hover{ border: 2px solid #ff9913; width:220px; padding:1px; padding-bottom:11px;}
+.list ul li img { display: block; }
+.list ul li h5 { color: #666; line-height:34px; padding-left:8px;}
+.list ul li p{ height:18px;line-height:18px; padding:0 8px;}
+.list ul li p strong { font-size: 20px; color: #FF5741; }
+.list ul li p em {color: #999; margin-left: 20px;}
+.list ul li p i{ color:#666;font-size: 12px;}
+
+/*发现栏目*/
+.foundArea ul li{width: 230px;margin:0 10px; margin-top:20px; float:left; overflow:hidden;}
+.foundArea ul li:hover{ background:#f7f7f7;}
+.foundArea ul li:hover h4{ font-weight:bold;}
+.foundArea ul li a:hover{ color:#999;}
+.foundArea ul li h4,.foundArea ul li h5{ padding:0 12px 0 8px;}
+.foundArea ul li h4{ font-size:16px; color:#3EA3FF; line-height:30px;}
+.foundArea ul li h5{ font-size:14px; color:#666; line-height:18px; height:74px;}
+.foundArea ul li p{ overflow:hidden; padding:0 12px 10px 10px;height:15px; line-height:15px;}
+.foundArea ul li p a{ color:#333;}
+.foundArea ul li p strong{ color:#FF5741;font-weight:bold; }
+.foundArea ul li p i{ font-weight:normal; font-size:12px; color:#999; margin-left:15px;}
+
+/*推荐城市栏目*/
+.city ul li{ float:left; margin:0 10px;padding-top:20px;}
+.city ul li.noMarginR{ margin-right:0;}
+/*推荐城市栏目特效*/
+figure.effect-oscar { width:230px;padding:0; margin:0;background: -webkit-linear-gradient(45deg, #000 0%, #666 40%, #fff 100%);background: linear-gradient(45deg, #000 0%,#666 40%,#fff 100%); position:relative;}
+figure.effect-oscar img {opacity: 0.9;-webkit-transition: opacity 0.35s;transition: opacity 0.35s;}
+figure.effect-oscar figcaption {width:230px; height:130px; position:absolute; left:0; top:0;color:#fff;-webkit-transition:background-color 0.35s;transition: background-color 0.35s;}
+figure.effect-oscar figcaption::before {position: absolute;top: 10px;right:10px;bottom:10px;left:10px;content: '';border:1px solid #ccc;padding:8px;}
+figure.effect-oscar h2 {font-size:16px;margin: 20% 0 10px 0;text-align:center;color:#fff;-webkit-transition: -webkit-transform 0.35s;transition: transform 0.35s;-webkit-transform: translate3d(0,100%,0);transform: translate3d(0,100%,0);}
+figure.effect-oscar figcaption::before,
+figure.effect-oscar p {opacity: 0;color:#fff;text-align:center;-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;transition: opacity 0.35s, transform 0.35s;-webkit-transform: scale(0);transform: scale(0);}
+figure.effect-oscar:hover h2 {text-align:center;-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
+figure.effect-oscar:hover figcaption::before,figure.effect-oscar:hover p {opacity: 1;text-align:center;-webkit-transform: scale(1);transform: scale(1);}
+figure.effect-oscar:hover figcaption {background-color:#000;opacity:0.6;}
+figure.effect-oscar:hover img {opacity: 1;}
+
+/*页脚*/
+.footer{ width:100%; border-top:1px solid #E6E6E6; margin-top:40px;}
+
+/*登录页*/
+.loginBox{ height:520px;background:#F6EFDD;}
+.meg{ width:1000px; margin:0 auto;}
+.megRight{ width:350px; height:448px; background:#fff; margin-right:5px; margin-top:30px; padding-left:40px;}
+.megRight .choose ul{ padding-top:20px;}
+.megRight .choose li{padding:0 20px; padding-bottom:6px; width:auto; }
+.tag li{ border:1px #D8D8D8 solid; margin-top:20px; border-radius:4px; position:relative}
+.tag li em{ position:absolute; left:6px; top:10px;}
+.tag li,.tag li input{ width:300px; height:36px;}
+.tag li input{ width:270px; margin-left:30px; color:#ccc;}
+.tag li.yanzheng,.tag li.yanzheng input{ width:180px;}
+.tag li.yanzheng .yanzhengtu{width: 110px;height: 36px;border-radius: 4px;position: absolute;right: -120px;top: 0;overflow:hidden;}
+.loginbtn{ display:block; width:300px; height:42px; line-height:42px; background:#FF9913; color:#fff; font-size:18px; text-align:center; border-radius:3px;}
+a.loginbtn:hover{ background:#FE7C26;}
+.MMpassword{ padding:10px 40px 10px 0; color:#999;}
+.MMpassword input{ margin-right:4px;}
+.tag h5 a,.MMpassword a{ color:#3EA3FF;}
+.tag h5{ color:#999; padding-top:15px;}
+.tag h5 a{ margin-left:10px;}
+
+/*注册*/
+.bj{background:#bee1f5; height:500px; padding-top:20px;}
+.zhuce{width: 1000px; height:480px;margin: 0 auto;background-color: #fff;border-radius: 6px;box-shadow: 0px 2px 3px #98b4c4;-moz-box-shadow: 0px 2px 3px #98b4c4;-webkit-box-shadow: 0px 2px 3px #98b4c4;}
+.zhuce .choose{ margin-left:80px;}
+.zhuce .choose li{ padding:10px 20px; width: auto;}
+.xinxi ul{ padding:30px 0 0 40px;}
+.xinxi ul li { line-height: 36px; height: 36px;  padding-top:20px;}
+.xinxi li input {width:190px;height: 28px;border: 1px solid #d8d8d8;border-radius: 4px; padding-left:10px;}
+
+.xinxi li .name{ display:inline-block; width:80px; text-align:right; color:#666;}
+.xinxi li .chengse { color:#FF8723; }
+.xinxi li .lvse{ color:#8CD232;}
+.xinxi li .huangse{ color:#FFB941;}
+.xinxi li em{ margin-left:14px; color:#999;}
+.xinxi li em i{display:inline-block;width:15px;height:16px; margin-bottom:-2px; margin-right:4px;background:url(../images/ico_warn.png) no-repeat left -200px;}
+.xinxi li em.chengse i{background:url(../images/ico_warn.png) no-repeat left -250px; }
+.xinxi li em.lvse i{background:url(../images/ico_warn.png) no-repeat left top;}
+.xinxi li em.huangse i{background:url(../images/ico_warn.png) no-repeat left -100px;}
+.xinxi .loginbtn{ width:200px; margin-left:80px;}
+.leftZC{ width:520px;}
+.rightZC{ width:440px;margin:80px 0 0 0; border-left:1px solid #f0f0f0; padding-left:30px; height:380px; background:url(../images/00.png) no-repeat right bottom;}
+.rightZC h4{ font-size:16px;}
+.rightZC h4 a{ color:#3EA3FF; margin-left:20px;}
+.rightZC h5{ padding-top:30px;}
+.rightZC h5 span{color:#999;font-size:16px; font-weight:normal; line-height:30px;}

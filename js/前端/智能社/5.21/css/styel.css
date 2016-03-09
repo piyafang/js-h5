@@ -1,0 +1,84 @@
+/*清除默认样式*/
+body, div, p, h1, h2, h3, h4, h5, h6, ul, li, ol, dl, dt, dd, span, strong, i, b, em, img, a{ margin:0; padding:0; }
+li{ list-style:none; }
+a{ text-decoration:none; }
+.clearFix:after{ content:''; clear:both; display:block; }
+/*清除默认样式*/
+
+body{ color:#333; font-size:12px; }
+
+.box{ width:980px; }
+.left{ float:left; width:710px; overflow:hidden; }
+.tit{ background:url(../images/tit_bg.png) no-repeat; border-bottom:3px solid #ff7a01; height:22px; color:#fff; padding:8px 0 0 15px; font-size:14px; }
+.list{ width:735px; }
+.list li{ float:left; margin:12px 25px 0 0; width:332px; height:112px; border:1px solid #d3d3d3; padding:8px 0 0 8px; }
+
+.listLi_left{ float:left; }
+
+.listLi_right{ float:left; padding-left:10px; padding-top:6px; }
+.listLi_right h3{ font-size:15px; line-height:15px; }
+.listLi_right div{ padding-top:11px; line-height:12px; }
+.listLi_right p{ padding:15px 0 11px 0; line-height:12px; width:150px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.listLi_right a{ width:85px; line-height:23px; display:block; text-align:center; color:#fff; background:#5f83ce;  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.right{ float:right; width:250px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

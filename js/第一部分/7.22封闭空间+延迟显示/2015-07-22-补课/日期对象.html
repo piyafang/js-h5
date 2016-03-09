@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+
+window.onload=function(){
+	var oDiv = document.getElementsByTagName('div')[0];
+setInterval(function(){
+var oDate = new Date();
+//获取
+var Y = oDate.getFullYear();
+var M = oDate.getMonth()+1;//月份获取要+1
+var D = oDate.getDate();
+var W = oDate.getDay();
+var h = oDate.getHours();
+var m = oDate.getMinutes();
+var s = oDate.getSeconds();
+var ms = oDate.getMilliseconds();
+var time = oDate.getTime();
+//设置
+oDiv.innerHTML='星期'+W+' '+Y+'-'+M+'-'+D+' '+h+':'+m+':'+s+'.'+ms+'<br />'+time;
+},1);
+};
+</script>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>
+
+
+
+
+
+
+

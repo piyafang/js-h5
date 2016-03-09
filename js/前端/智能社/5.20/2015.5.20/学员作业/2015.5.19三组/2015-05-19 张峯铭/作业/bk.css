@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{ margin:0px; padding:0px; list-style:none;}
+h1{ background:url(../img/tiao.png) repeat-x; width:1280px; height:76px; color:#FFF; font-family:"宋体"; font-size:40px; padding:38px 0 0 320px; font-weight:normal;}
+h1 span{ font-size:14px; padding-left:10px; font-family:'Microsoft YaHei'; }
+.div_1{ width:1600px; height:50px; background:#010044; }
+.div_1 a{ font-size:12px; text-decoration:none; color:#F5FCFF; text-align:center; line-height:50px; width:190px; display:inline-block; border-right:#4d9ce7 1px solid;}
+.div_1 .a1{border-right: none;}
+.div_1 div{ margin-left:320px;}
+.div_left{ width:616px; height:498px; margin:35px 60px 0 320px; float:left;}
+.div_left_1{ margin-bottom:30px;}
+h2{ font-size:24px; color:#31649d; padding:1px 0 10px 1px; font-family:"宋体"; border-bottom:1px solid #e2e2e2;}
+.riqi{ font-size:10px; color:#8d797a; padding:20px 0; overflow:hidden;}
+.riqi span{ float:left;}
+.riqi i{ float:right; font-style:normal;}
+.zhengwen{ font-size:12px; color:#787878; text-indent:2em; line-height:21px; margin-bottom:10px;}
+.div_left div a{color:#4486c7; font-size:12px; text-decoration:none;}
+.div_left a.aa{ border-right:1px #666666 solid; margin-right:3px;}
+.div_right{ width:280px; height:540px; background:#fff; float:left; margin-bottom:24px;}
+.right_tit{ width:280px; height:80px; background:#e2e2e2; overflow:hidden; }
+.sousuokuang{ width:180px; height:22px; background:#FFF; margin:32px 5px 26px 22px; float:left;}
+.right_tit div{ width:50px; height:22px; float:left; background:#b9b9b9; line-height:22px; text-align:center; margin-top:32px; color:#FFF;}
+.right_xia{ padding:23px 30px;}
+.right_xia p{ font-size:18px; color:#3464a6; height:30px; line-height:30px;}
+.right_xia div{ line-height:25px; font-size:12px; color:#777; margin-top:8px;}
+.ceshi2{ margin-top:15px;}
+ul{ margin-top:4px;}
+ul li{ font-size:12px; color:#777; border-bottom:dotted 1px #d1d1d1; line-height:30px;}

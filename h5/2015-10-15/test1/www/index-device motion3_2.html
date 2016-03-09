@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<title>xxxx</title>
+<style>
+#div1 {width:300px; height:300px; background:#CCC; font-size:50px; text-align:center; line-height:300px;}
+</style>
+<script type="text/javascript" src="cordova.js"></script>
+<script>
+//PhoneGap——deviceready事件
+document.addEventListener('deviceready', function (){
+	var oDiv=document.getElementById('div1');
+	
+	navigator.accelerometer.watchAcceleration(function (res){
+		if(Math.abs(res.y)>Math.abs(res.x))	//竖着
+		{
+			oDiv.style.WebkitTransform='rotate(0)';
+		}
+		else	//横着
+		{
+			if(res.x<0)
+				oDiv.style.WebkitTransform='rotate(90deg)';
+			else
+				oDiv.style.WebkitTransform='rotate(-90deg)';
+		}
+	}, function (){}, {
+		frequency: 50
+	});
+}, false);
+</script>
+</head>
+
+<body>
+<div id="div1">啥打法上方的</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

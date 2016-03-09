@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+	<link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.2.min.css">
+	<script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+	*{margin: 0;padding: 0;}
+	ul,ol{list-style: none;}
+	.swipe {
+	overflow: hidden;
+	visibility: hidden;
+	position: relative;
+}
+	.swipe-wrap {
+		overflow: hidden;
+		position: relative;
+	}
+	.swipe-wrap img{
+		width: 100%;  /*让我们的图片宽度是100%*/
+		height: auto;
+	}
+	.swipe-wrap > figure {
+		float: left;
+		width: 100%;
+		position: relative;
+	}
+	#circle{position: absolute; left:0; height: 5px; bottom: 0; width: 100%;}
+	#circle li{width:33.3333%; background-color: #ccc;float: left;  height: 5px;}
+	#circle li.current{background-color:pink;}
+	#one{height:120px;border:2px solid #fff; box-sizing:border-box;}
+	#one div{height: 100%;border:3px solid #fff;border-radius: 10px;  box-sizing:border-box;}
+	#one div:first-child{background-color: pink;}
+	#one div:nth-child(2){
+		background-color: purple;
+	}
+	#one div:last-child{
+		background-color: red;
+	}
+	</style>
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header">
+			<div id="slider" class="swipe">
+	    <div class="swipe-wrap">
+	      <figure>
+	        <div class="wrap">
+	           <img src="images/1.jpg">
+	        </div>
+	      </figure>
+	      <figure>
+	        <div class="wrap">
+	           <img src="images/2.jpg">
+	        </div>
+	      </figure>
+	      <figure>
+	        <div class="wrap">
+	           <img src="images/3.jpg">
+	        </div>
+	      </figure>
+	     	   
+	    </div>
+	    <ol id="circle">
+	    	<li class="current"></li>
+	    	<li></li>
+	    	<li></li>
+	 	</ol>
+  </div>
+   <script type="text/javascript" src="swipe.js"></script>
+  <script type="text/javascript">
+  var slider =
+  Swipe(document.getElementById('slider'), { // 最大盒子的id
+    auto: 3000,// 3秒 自动切换
+    continuous: true,
+    callback: function(pos) {  // 返回值  pos 是返回当前的索引值
+
+    	//console.log(pos);
+    	for(var i=0;i<=circle.length-1;i++)// 遍历数组
+    	{
+    		circle[i].className="";  //  其余的所有li 清除 current类
+    		circle[pos].className="current";// 只留下当前的这个li添加current
+    	}
+
+    
+    }
+  });
+var circle = document.getElementById('circle').getElementsByTagName('li');//获取li 的数组
+
+  </script>
+		</div>
+		<div data-role="content">
+			
+			<div class="ui-grid-b" id="one">
+				<div class="ui-block-a">1</div>
+				<div class="ui-block-b">2</div>
+				<div class="ui-block-c">3</div>
+			</div>
+		</div>
+		<div data-role="footer"></div>
+	</div>
+</body>
+</html>

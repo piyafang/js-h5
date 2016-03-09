@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script src="svg_vml.js"></script>
+<script>
+//画图：
+//1.创建“画布”——svg、div
+
+//2.创建“图形”——方块、圆、线
+/*
+	方块——400*300	100,100		背景:红，边线：绿,5px
+	<rect x="100" y="100" width="400" height="300" style="fill:red; stroke:green; stroke-width:5;">
+	<zns:rect style="left:100px; top:100px; width:400px; height:300px;" fillcolor="red" strokecolor="green" strokeweight="5">
+*/
+
+//3.把图形添加到画布
+
+
+
+
+
+
+
+
+window.onload=function ()
+{
+	//1.创建画布、添进去
+	var page=createPage(800, 600);
+	document.body.appendChild(page);
+	
+	//2.添加形状
+	var rect=createRect(100, 100, 400, 300, 'green', 'red', 10);
+	
+	rect.onclick=function ()
+	{
+		alert('abc');
+	};
+	
+	//3.添加
+	page.appendChild(rect);
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#div1{width:100px; height:100px; background:#f90; position:absolute; top:0; left:0;}
+#div2{width:100px; height:100px; background:red; position:absolute; top:500px;left:500px;}
+</style>
+
+<script>
+window.onload=function(){
+	var oDiv1 = document.getElementById('div1');
+	var oDiv2 = document.getElementById('div2');
+	alert(getDis(oDiv1,oDiv2));
+	
+	function getDis(obj1,obj2){
+		var l1 = obj1.offsetLeft+obj1.offsetWidth/2;
+		var l2 = obj2.offsetLeft+obj2.offsetWidth/2;
+		var t1 = obj1.offsetTop+obj1.offsetHeight/2;
+		var t2 = obj2.offsetTop+obj2.offsetHeight/2;
+		var a = t2-t1;
+		var b = l2-l1;
+		return Math.sqrt(a*a+b*b);
+	}
+};
+</script>
+</head>
+
+<body>
+	<div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>
+
+
+
+
+
+

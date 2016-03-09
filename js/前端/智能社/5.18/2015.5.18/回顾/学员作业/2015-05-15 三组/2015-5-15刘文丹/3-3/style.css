@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors liuwendan (you@example.org)
+ * @date    2015-05-16 19:09:21
+ * @version $Id$
+ */
+.top,.bottom{width:620px;}
+.top{height:60px;background:#39f;margin-bottom: 10px;}
+.bottom{height:34px;background:#fff;}
+.left,.middle,.right{width:200px;height:34px;float: left;}
+.left{background:#999;}
+.middle{background:#000;margin: 0 10px;}
+.right{background:#999;}

@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*header*/
+.header{ width:1220px;}
+.column{ height:38px; width:1220px; background:#F5F5F5; border-bottom:1px solid #eee;border-top:1px solid #eee;}
+.column ul{ float:right; padding:10px 0 10px 0;}
+.column li{ float:left; height:18px; line-height:18px; font-size:12px;}
+.column li a{ display:block; height:18px; background-image:url(../%E7%BE%8E%E4%B8%BD%E8%AF%B4/images/header_weixin.png);}

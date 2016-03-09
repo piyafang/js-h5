@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body, div, span, p {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="w1" id="div1">div1</div>
+<div class="w1" id="div2">div2
+    <!--<div></div>
+    <div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div></div>
+    <div></div>
+    <p></p>
+    <p></p>
+    <span></span>
+    <span></span>
+    <span></span>-->
+</div>
+<div class="w1" id="div3">div3</div>
+<div class="w1" id="div4">div4</div>
+
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript">
+    //console.log($.byId("div2").children);
+    //console.log($.getChildren($.byId("div2")));
+    /* var oDiv5= $.create({
+     tagName:"div",
+     id:"div5",
+     style:{
+     width:"100px",
+     height:"100px",
+     background:"red",
+     margin:"10px"
+     }
+     });*/
+    //$.insertAfter(oDiv5, $.byId("div4"));
+    //$.prepend(oDiv5, $.byId("div2"));
+    //console.log($.html($.byId("div4")));
+
+    var oWs = $.byClass("w1");
+    $.setGroupCss(oWs, {
+        width: "100px",
+        height: "100px",
+        backgroundColor: "red",
+        margin: "10px",
+        float: "left",
+        opacity: "0.5"
+    });
+
+    console.dir(zQuery);
+
+</script>
+</body>
+</html>

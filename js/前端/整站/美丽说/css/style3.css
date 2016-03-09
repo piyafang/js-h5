@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*通用*/
+body{ background:#fff;}
+.wrap{ width:1200px; margin:0 auto;}
+/*通用*/
+
+/*header*/
+.header_top{ height:38px; background:#F5F5F5; border:1px solid #eee;border-left:none;border-right:none;}
+.header_box { float:right; padding-top:10px;}
+.header_box li{ float:left; border-right:1px dotted #eee; padding:0 10px;}
+.header_box li a i{ background:url(../images/header_weixin.png) no-repeat; width:16px; height:16px; display:inline-block;}
+
+.logosearch h1{ background:url(../images/logo_meilishuo.png) no-repeat; margin-top:15px; float:left; width:107px; height:36px; text-indent:-9999em;}
+.logosearch img{ float:left; margin-top:17px;}
+
+
+.nav a{ background:url(../images/group.png) no-repeat #96F; width:200px; height:200px; display:block;}
+

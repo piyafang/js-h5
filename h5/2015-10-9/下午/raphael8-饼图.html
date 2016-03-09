@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script src="raphael.js"></script>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+window.onload=function ()
+{
+	var p=Raphael(0, 0, 800, 600);
+	
+	var aData=[1260, 600, 300, 800, 100, 900, 180];
+	var aColor=['#4572a7', '#aa4643', '#89a54e', '#4198af', '#db843d'];
+	
+	//
+	var cx=400,cy=300;
+	
+	//画角
+	var r=200;
+	var start=30;
+	var end=60;
+	
+	//第一步、算起点位置
+	var start_x=cx+Math.sin(d2a(start))*r;
+	var start_y=cy-Math.cos(d2a(start))*r;
+	
+	//第二步、算终点位置
+	var end_x=cx+Math.sin(d2a(end))*r;
+	var end_y=cy-Math.cos(d2a(end))*r;
+	
+	//第三步、画
+	var path=p.path([
+		'M', cx, cy,
+		'L', start_x, start_y,
+		'A', r, r, 0, ((end-start)>180?1:0), 1, end_x, end_y,
+		'Z'
+	].join(' '));
+	
+	path.attr('fill', '#4572a7');
+	path.attr('stroke', 'none');
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+

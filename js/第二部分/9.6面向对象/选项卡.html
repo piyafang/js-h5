@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	input{ background:#ccc;}
+	input.on{ background:#9f0;}
+	#box div{ width:200px;height:200px; background:#ccc; display:none;}
+</style>
+<script>
+	function Tab(){
+		var oBox=document.getElementById('box');
+		this.aBtn=oBox.getElementsByTagName('input');
+		this.aDiv=oBox.getElementsByTagName('div');
+		
+		var _this=this;
+		for(var i=0;i<this.aBtn.length;i++){
+				this.aBtn[i].index=i;
+				this.aBtn[i].onclick=function(){
+					_this.fnClick(this.index);
+				};
+		}
+	}
+	
+	Tab.prototype.fnClick=function (index){
+		for(var i=0;i<this.aBtn.length;i++){
+			this.aBtn[i].className='';
+			this.aDiv[i].style.display='none';	
+		}
+		this.aBtn[index].className='on';
+		this.aDiv[index].style.display='block';
+	}
+	
+	
+	window.onload=function(){
+		new Tab();
+	};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<input type="button"  value="aaa" class="on" />
+	<input type="button"  value="bbb" />
+	<input type="button"  value="ccc" />
+	<div style="display:block">aaa</div>
+	<div>bbb</div>
+	<div>ccc</div>
+</div>
+</body>
+</html>

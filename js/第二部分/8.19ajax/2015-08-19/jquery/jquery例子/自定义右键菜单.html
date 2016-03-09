@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+ul{width:150px; border:1px solid #000; position:absolute; top:0; left:0; display:none;}
+li{width:150px; height:30px; line-height:30px; text-align:center; background:#ccc; border:1px dashed #000;}
+</style>
+<script>
+window.onload=function(){
+	var oMenu = document.getElementById('menu');
+	var aItem = oMenu.children;
+	document.oncontextmenu=function(ev){
+		var oEvent = ev||event;
+		oMenu.style.left=oEvent.clientX+'px';
+		oMenu.style.top=oEvent.clientY+'px';
+		oMenu.style.display='block';
+		return false;
+	};
+	for(var i=0;i<aItem.length;i++){
+		aItem[i].onmouseover=function(){
+			this.style.background='#f90';
+		};
+		aItem[i].onmouseout=function(){
+			this.style.background='#ccc';
+		};
+	}
+	aItem[0].onclick=function(){
+		window.location.reload();
+	};
+	aItem[1].onclick=function(){
+		window.location='http://www.baidu.com';
+	};
+	aItem[2].onclick=function(){
+		
+		window.location='http://www.taobao.com';
+	};
+	aItem[3].onclick=function(){
+		window.location='http://www.zhinengshe.com';
+	};
+};
+</script>
+</head>
+
+<body>
+<ul id="menu">
+	<li>刷新</li>
+	<li>跳转到百度</li>
+	<li>跳转到淘宝</li>
+	<li>跳转到智能社</li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

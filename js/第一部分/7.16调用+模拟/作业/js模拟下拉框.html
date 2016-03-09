@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin:0; padding: 0; list-style: none;text-decoration: none;}
+	input{ background: no-repeat; border:none; outline: none;}
+
+	.box{ background:#ccc; width: 300px; height: 400px; margin: 0 auto; padding:0 10px 0 24px; }
+	h2{ margin-bottom: 20px;}
+	span{ width: 0; height: 0; border: 5px solid transparent; border-top-color: #fff; display: inline-block; margin-left: 6px;}
+	a{ display: block; position: absolute; right:20px; bottom: 0; height: 32px; width: 32px; border-left: 1px solid #ccc; padding-left: 10px;
+	 background: #0094EF; padding-top: 10px;}
+	
+	.selbox{ position: relative;}
+	.ulbox{ position: relative; padding-left: 16px;}
+	.ulbox ul{position: absolute; left: 0;top: 43px; display: none; background: #fff; z-index: 2; width: 238px;}
+	.ulbox li{border-bottom:1px solid #ccc; padding-left: 16px;} 
+	.ulbox,.search{width: 238px; line-height: 42px; height: 42px; background: #fff; margin-bottom: 16px;}
+	.search{ background: #0094EF; text-align: center; width: 280px; cursor:pointer;}
+	.search input{ color: #fff; font-size: 16px;}
+	div.active span{border-top-color: transparent;border-bottom-color: #fff; bottom: 5px; position: relative;}
+	div.active ul{ display: block;}
+	li.changecolor{background: #0094EF;}
+</style>
+<script type="text/javascript">
+	function tab(id1,id2){
+		var oSelbox=document.getElementById(id1);
+		var oUlbox=document.getElementById(id2);
+		var oBtn=oSelbox.getElementsByTagName('a')[0];
+		var aLi=oUlbox.getElementsByTagName('li');
+			oBtn.onclick=function(){
+				if(oSelbox.className=='selbox active'){
+					oSelbox.className='selbox';
+				}else{
+					oSelbox.className='selbox active';
+				}
+				for(var i=0;i<aLi.length;i++){
+				aLi[i].onclick=function(){
+					oUlbox.innerHTML=this.innerHTML;
+					oSelbox.className='selbox';
+				}
+			}
+				
+			}
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].onmouseover=function(){
+					for(var i=0;i<aLi.length;i++){
+						aLi[i].className='';
+					}
+					this.className='changecolor';
+				}
+				
+			}
+
+			
+			
+
+	}
+		window.onload=function(){
+			tab('selbox1','ulbox1');
+			tab('selbox2','ulbox2');
+		}
+</script>
+</head>
+<body>
+	<div class="box" id="box">
+		<h2>快速搜索消费贷款</h2>
+			<div class="selbox"  id="selbox1">
+				<p>贷款金额：</p>
+				<div class="ulbox" id="ulbox1">
+					<ul>
+						<li>5万元</li>
+						<li>10万元</li>
+						<li>15万元</li>
+						<li>18万元</li>
+						<li>30万元</li>
+					</ul>				
+				</div>
+				<a href="#"><span></span></a>
+			</div>
+
+			<div class="selbox" id="selbox2">
+				<p>贷款期限：</p>
+				<div class="ulbox" id="ulbox2">
+					<ul>
+						<li>5年</li>
+						<li>10年</li>
+						<li>15年</li>
+						<li>18年</li>
+						<li>30年</li>
+					</ul>				
+				</div>
+				<a href="#"><span></span></a>		
+			</div>
+			
+			
+		<div class="search"><input  type="button" value="搜索一下" / ></div>
+		
+	</div>
+</body>
+</html>
+
+
+

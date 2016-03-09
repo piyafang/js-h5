@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none; text-decoration:none;}
+#login_box{width:500px; height:300px; border:1px solid #000; border-radius:5px; position:absolute; top:50%; left:50%; margin-top:-150px; margin-left:-250px; background:#f1f1f1;}
+#userImg{width:90px; height:90px; position:absolute; left:50%; top:-50px; margin-left:-45px;}
+#userImg a{position:absolute; width:20px; height:20px; background:rgba(0,0,0,0.4); top:50%; margin-top:-10px; color:#fff; font-weight:bold; text-align:center; line-height:20px; display:none;}
+#prev{left:0;}
+#next{right:0;}
+#form_box{width:300px; height:200px; border:1px solid #000; position:absolute; top:50%; left:50%; margin-top:-100px; margin-left:-150px; background:#fff;}
+#chat_box{
+	width:600px; height:500px; border:1px solid #000; border-radius:5px; position:absolute; top:50%; left:50%; margin-top:-250px; margin-left:-300px;display:none;
+}
+.clear:after{display:block; content:''; clear:both;}
+.clear{zoom:1;}
+#cl{float:left; height:100%; width:400px; border-right:1px solid #000;}
+#cr{float:right; height:100%; width:199px;}
+#msg_show{height:320px; width:100%; border-bottom:1px solid #000; overflow:hidden; padding-top:30px; position:relative; top:0; left:0;}
+#msg_show ul{position:absolute; bottom:0; left:0;}
+#send_box{width:100%; height:100px;}
+#user_info{width:300px; height:130px; margin-top:-70px; position:absolute; top:0px;left:0px;}
+</style>
+<script src="../jsonp.js"></script>
+<script>
+window.onload=function(){
+	var oLogIn_box=document.getElementById('login_box');
+	var oChat_box = document.getElementById('chat_box');
+	var oUser = document.getElementById('username');
+	var oPass = document.getElementById('password');
+	var oReg = document.getElementById('regist');
+	var oLogin = document.getElementById('login');
+	var oMsg_box = document.getElementById('msg_show');
+	var oUl = oMsg_box.children[0];
+	var oFace = document.getElementById('faceImg');
+	var oFace2 = document.getElementById('faceImg2');
+	var oLog_time = document.getElementById('login_time');
+	var URL = 'http://zhinengshe.com/exercise/im/api.php';
+//?a=reg&user=用户名&pass=密码&face=头像ID&cb=xxx
+//{err: 0, msg: "注册成功"}
+	oReg.onclick=function(){
+		jsonp({
+			url:URL,
+			data:{
+				a:'reg',
+				user:oUser.value,
+				pass:oPass.value,
+				face:oFace.alt
+			},
+			success:function(json){
+				if(json.err){
+					alert(json.msg);
+				}else{
+					alert(json.msg);
+				}
+			}
+		});
+	};
+//?a=lgn&user=用户名&pass=密码&cb=xxx
+//{err: 0, msg: "登录成功", face: 头像ID, login_time: 上次登录时间, token: "token"}
+	oLogin.onclick=function(){
+		jsonp({
+			url:URL,
+			data:{
+				a:'lgn',
+				user:oUser.value,
+				pass:oPass.value
+			},
+			success:function(json){
+				if(json.err){
+					alert(json.msg);
+				}else{
+					alert(json.msg);
+					oLogIn_box.style.display='none';
+					oChat_box.style.display='block';
+					oFace2.src='img/'+json.face+'.jpg';
+					var oDate = new Date();
+					oDate.setTime(json.login_time*1000);
+					
+					oLog_time.innerHTML=oDate.getFullYear()+'年'+(oDate.getMonth()+1)+'月'+oDate.getDate()+'日 '+oDate.getHours()+':'+oDate.getMinutes()+':'+oDate.getSeconds();
+					
+					getAllMsg(json.token);
+				}
+			}
+		});
+	};
+//?a=get_msg&token=&cb=xxx
+//{err: 0, data: [{ID: 消息ID, post_time: 消息时间,content: 消息内容,username: 发言用户},...]}	
+	function getAllMsg(sToken){
+		oUl.innerHTML='';
+		jsonp({
+			url:URL,
+			data:{
+				a:'get_msg',
+				token:sToken
+			},
+			success:function(json){
+				console.log(json);
+				if(json.err){
+					alert(json.msg);
+				}else{
+					var arr = json.data;
+					if(arr.length){
+						for(var i=0;i<arr.length;i++){
+							var oDate = new Date();
+							oDate.setTime(arr[i].post_time*1000);
+							var oLi = document.createElement('li');
+							oLi.innerHTML='<h2><strong>'+arr[i].username+'</strong><span>'+oDate.getFullYear()+'年'+(oDate.getMonth()+1)+'月'+oDate.getDate()+'日 '+oDate.getHours()+':'+oDate.getMinutes()+':'+oDate.getSeconds()+'</span></h2><p>'+arr[i].content+'</p>';
+							oUl.appendChild(oLi);
+						}
+					}
+				}
+			}
+		});
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<div id="login_box">
+    	<div id="userImg">
+        	<img id="faceImg" src="img/1.jpg" alt="1">
+            <a href="javascript:;" id="prev">&lt;</a>
+            <a href="javascript:;" id="next">&gt;</a>
+        </div>
+        <div id="form_box">
+        	<label>用户名:</label><input type="text" id="username" /><br />
+            <label>密&nbsp;码:</label><input type="password" id="password" /><br />
+            <input type="button" value="注册" id="regist" />
+            <input type="button" value="登录" id="login" />
+      	</div>
+    </div>
+    <div id="chat_box" class="clear">
+    	<div id="user_info">
+        	<img id="faceImg2" src="img/1.jpg" />
+            <div id="login_time">0000年00月00日 00:00:00</div>
+        </div>
+    	<div id="cl">
+        	<div id="msg_show">
+            	<ul>
+                	<li>
+                    	<h2><strong>用户名</strong><span>发言时间</span></h2>
+                        <p>
+                        	内容
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <textarea id="send_box"></textarea>
+            <input type="button" value="send" id="send_btn" />
+        </div>
+        <div id="cr">
+        	<div id="user_list"></div>
+        </div>
+   	</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

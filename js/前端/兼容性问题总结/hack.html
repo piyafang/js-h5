@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+span {display:none;}
+
+#ie6 { _display:block; }
+#ie7 {+display:block;}
+
+*+html #ie7_2 {display:block;}
+#ie8 {display:block\0;}
+#ie6_7 {*display:block;}
+#ie6_7_8 {display:block\9;}
+
+:root #ie9 {display:block;}
+
+#ie {-display:block;}
+
+@-moz-document url-prefix() {
+	#ff {display:block;}
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	#chrome {display:block;}
+	
+}
+</style>
+</head>
+
+<body>
+<span id="ie6">_ IE6能看到</span>
+<span id="ie7">+ IE6_7能看到</span>
+<span id="ie7_2">*+html IE7能看到2</span>
+<span id="ie8">\0 IE8+能看到</span>
+<span id="ie6_7">* IE6和IE7能看到</span>
+<span id="ie6_7_8">\9 IE全系列能看到</span>
+<span id="ie9">:root 高级浏览器能看到</span>
+<span id="ie6">- IE6能看到</span>
+<span id="ff">@-moz-document url-prefix() FF能看到</span>
+<span id="chrome">@media screen and (-webkit-min-device-pixel-ratio:0) Chrome能看到</span>
+</body>
+</html>

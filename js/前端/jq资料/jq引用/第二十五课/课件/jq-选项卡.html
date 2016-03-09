@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	div{ width:300px; height:300px; border:1px solid red; font-size:100px; text-align: center; line-height:300px; display:none;}
+	.active{ background:red; color:#FFF;}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('input').click(function(){
+			$('input').removeClass('active')
+			$(this).addClass('active');
+			$('div').hide();
+			$('div').eq($(this).index()).show();
+		})
+	})
+</script>
+</head>
+
+<body>
+	<input type="button" value="按钮" class="active" />
+	<input type="button" value="按钮" />
+	<input type="button" value="按钮" />
+	<div style="display:block;">1</div>
+	<div>2</div>
+	<div>3</div>
+</body>
+</html>

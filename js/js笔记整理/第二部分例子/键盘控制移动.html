@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	img{ width:100px; position:absolute; left:0; top:0;}
+</style>
+<script>
+	window.onload=function(){
+		var oImg=document.getElementsByTagName('img')[0];
+		document.onkeydown=function(ev){
+			var oEvent=ev||event;
+			switch(oEvent.keyCode){
+				case 37:
+					oImg.style.left=oImg.offsetLeft-10+'px';
+				break;
+				case 38:
+					oImg.style.top=oImg.offsetTop-10+'px';
+				break;
+				case 39:
+					oImg.style.left=oImg.offsetLeft+10+'px';
+				break;
+				case 40:
+					oImg.style.top=oImg.offsetTop+10+'px';
+				break;	
+			}
+		};
+		
+	};
+</script>
+</head>
+
+<body>
+	<img src='smalldog.jpg' />
+</body>
+</html>

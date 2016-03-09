@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1{width:200px; height:200px; background:#f90; display:none;}
+</style>
+<script src="angular.js"></script>
+<script>
+//controller 应用
+//获取APP
+app = angular.module('test',[]);
+//model 	模型：数据
+//module 	模块
+//controller
+app.controller('aaa',function($scope){
+	$scope.a=12;
+});
+</script>
+</head>
+
+<body ng-controller="aaa">
+{{a}}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

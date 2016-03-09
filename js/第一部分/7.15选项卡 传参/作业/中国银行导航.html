@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;}
+	.clearFix:after{ display: block;content: ''; clear: both;}
+	.clearFix{zoom:1;}
+	a{ text-decoration: none; display: block; color: #000;}
+
+	.box{ width: 800px; margin: 0 auto;position: relative;}
+	dl{float: left; border-bottom: 1px solid red; }
+	dt{width: 100px; height: 50px; line-height: 50px; position: relative; list-style: none; text-align: center;}
+	dl.active i{ display: block; width: 0; height: 0; border: 6px solid transparent; border-bottom-color: red; position: absolute;left:50%; margin-left:-6px; bottom: 0;}
+	dd{ display: none; position: absolute;left: 0; bottom: -301px; width: 598px; height: 300px;line-height: 100px; border: 1px solid red; border-top: none; text-align: center; font-size: 50px; line-height: 300px;}
+	dl.active dd{ display: block;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var aDl=oBox.getElementsByTagName('dl');
+		for(var i=0; i<aDl.length;i++){
+			aDl[i].onmouseover=function(){
+				for(var j=0; j<aDl.length;j++){
+					aDl[j].className='';
+				}
+				this.className='active';
+			}
+		}
+	}
+
+</script>
+</head>
+<body>
+<div class="box clearFix" id="box">
+	<dl class="active">
+		<dt>
+			<a href="#"><i></i>公司金融</a>
+		</dt>
+		<dd>
+			<a href="#">公司金融</a>
+		</dd>
+	</dl>
+	<dl class="clearFix">
+		<dt class="active">
+			<a href="#"><i></i>个人金融</a>
+		</dt>
+		<dd>
+			<a href="#">个人金融</a>
+		</dd>
+	</dl>
+	<dl class="clearFix">
+		<dt class="active">
+			<a href="#"><i></i>银行卡</a>
+		</dt>
+		<dd>
+			<a href="#">银行卡</a>
+		</dd>
+	</dl>
+	<dl class="clearFix">
+		<dt class="active">
+			<a href="#"><i></i>公司金融</a>
+		</dt>
+		<dd>
+			<a href="#">公司金融</a>
+		</dd>
+	</dl>
+	<dl class="clearFix">
+		<dt class="active">
+			<a href="#"><i></i>个人金融</a>
+		</dt>
+		<dd>
+			<a href="#">个人金融</a>
+		</dd>
+	</dl>
+	<dl class="clearFix">
+		<dt class="active">
+			<a href="#"><i></i>银行卡</a>
+		</dt>
+		<dd>
+			<a href="#">银行卡</a>
+		</dd>
+	</dl>
+
+</div>
+	
+
+</body>
+</html>

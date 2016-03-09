@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script type="text/javascript" src="../js/jquery-1.7.2.js" ></script>
+	<style type="text/css">
+		*{ margin: 0; padding: 0;}
+		input{ background: red; color: #fff; line-height: 30px;width: 40px; text-align: center; border: none; cursor: pointer;}
+		.main{ width: 200px; height: 200px; background: #f90; margin-top: 20px; font-size: 40px;text-align: center; position: relative;}
+	</style>
+	<script type="text/javascript">
+	 window.onload=function(){
+	 	var oMain=document.getElementById('main');
+	 	var oHbox=document.getElementById('hbox');
+	 	var oInp=oHbox.getElementsByTagName('input');
+	 	oInp[0].onclick=function(){
+	 		oMain.style.width='300px';
+	 	}
+	 	oInp[1].onclick=function(){
+	 		oMain.style.height='300px';
+	 	}
+	 	oInp[2].onclick=function(){
+	 		oMain.style.backgroundColor='#9f0';
+	 	}
+	 	oInp[3].onclick=function(){
+	 		oMain.style.display='none';
+	 	}
+	 	oInp[4].onclick=function(){
+	 		oMain.style.display='block';
+	 	}
+	 	oInp[5].onclick=function(){
+	 		oMain.style.right='-200px';
+	 	}
+	 }
+	 
+		
+	</script>
+</head>
+<body>
+	<div id="hbox">
+		<input type="text" value="变宽" />
+		<input type="text" value="变高" />
+		<input type="text" value="变色" />
+		<input type="text" value="隐藏" />
+		<input type="text" value="显示" />
+		<input type="text" value="移动" />
+	</div>
+	<div class="main" id="main">加油!~~</div>
+
+</body>
+</html>

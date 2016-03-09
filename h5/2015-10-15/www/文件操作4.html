@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+//1.请求文件系统
+webkitRequestFileSystem(PERSISTENT, 2*1024*1024, function (fileSystem){
+	//2.打开文件
+	//getFile
+	//fileSystem.getFile	错的
+	//目录.getFile			对的
+	
+	//root——根目录
+	//fileSystem.root.getFile		对
+	
+	//getFile(名字, 选项, 成功, 失败)
+	fileSystem.root.getFile('aaa.txt', {create: true}, function (){
+		alert('成功');
+	}, function (err){
+		alert('打开文件失败：'+err);
+		console.log(err);
+	});
+}, function (){
+	alert('获取文件系统失败');
+});
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,ini-scale=1.0" />
+<style>
+div {width:100px; height:100px; position:absolute; font-size:30px; line-height:100px; text-align:center;}
+
+#div1 {background:#CCC;}
+#div2 {background:red; color:white; left:200px; top:50px;}
+#div3 {background:green; left:100px; top:200px;}
+</style>
+<script>
+window.onload=function ()
+{
+	var aDiv=document.getElementsByTagName('div');
+	
+	for(var i=0;i<aDiv.length;i++)
+	{
+		drag(aDiv[i]);
+	}
+	
+	function drag(obj)
+	{
+		obj.addEventListener('touchstart', function (ev){
+			var oTouch=ev.targetTouches[ev.targetTouches.length-1];
+
+			var disX=oTouch.pageX-obj.offsetLeft;
+			var disY=oTouch.pageY-obj.offsetTop;
+			
+			var id=oTouch.identifier;
+
+			//id=2543619
+			
+			
+			
+			function move(ev)
+			{
+				for(var i=0;i<ev.targetTouches.length;i++)
+				{
+					if(ev.targetTouches[i].identifier==id)
+					{
+						//找到了
+						obj.style.left=ev.targetTouches[i].pageX-disX+'px';
+						obj.style.top=ev.targetTouches[i].pageY-disY+'px';
+					}
+				}
+				/*
+				targetTouches=
+				[
+					{id: 1986753, xxx},
+					{id: 2543619, xxx},
+					{id: 7593621, xxx}
+				]
+				*/
+			}
+			
+			function end(ev)
+			{
+				for(var i=0;i<ev.changedTouches.length;i++)
+				{
+					if(id==ev.changedTouches[i].identifier)
+					{
+						obj.removeEventListener('touchmove', move, false);
+						obj.removeEventListener('touchend', end, false);
+					}
+				}
+				
+				//离开的手指——OK
+				//ev.changedTouches
+				
+				//剩下的手指——不对
+				//ev.targetTouches
+				
+				/*
+				targetTouches=
+				[
+					{id: 5467832, xxx},
+					{id: 2543619, xxx},
+					{id: 9834233, xxx}
+				]
+				*/
+			}
+			
+			obj.addEventListener('touchmove', move, false);
+			obj.addEventListener('touchend', end, false);
+			
+			ev.preventDefault();	//?
+		}, false);
+	}
+
+};
+</script>
+</head>
+
+<body>
+<div id="div1">1</div>
+<div id="div2">2</div>
+<div id="div3">3</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

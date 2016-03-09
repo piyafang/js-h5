@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+.wrapper{
+	width:298px;
+	height:286px;
+	border:1px solid #eee;
+	margin:100px 0 0 100px;
+	padding:20px 18px 20px 18px;
+	background:#f3f3f3;
+}
+h2{
+	color:#3d3d3d;
+	height:21px;
+	line-height:21px;
+	font-family:"宋体";
+	font-size:14px;
+	font-weight:bold;
+}
+ul li{
+	width:64px;
+	height:74px;
+	border:1px solid #ddd;
+	float:left;
+	background:#fff;
+	margin-right:10px;
+	margin-top:10px;
+}
+.margin_none{
+	margin-right:0;
+}
+li a{
+	width:65px;
+	height:45px;
+	text-align:center;
+	line-height:60px;
+	display:inline-block;
+}
+p a{
+	display:inline-block;
+	color:#9c9c9c;
+	font-size:12px;
+	text-align:center;
+	width:65px;
+	height:24px;
+	line-height:24px;
+	
+	
+}

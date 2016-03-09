@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+.list-main{ width:958px; border-radius:3px 3px 0 0; padding:11px; margin:12px auto; background-color:#fff; color:#666;}
+.list-left{ width:214px; float:left;}
+.list-left-tp ul,.list-left-bd p{ margin:0 7px; border-left:1px solid #e0e0e0; border-right:1px solid #e0e0e0; background-color:#F4F4F4;}
+.list-left-tp ul li{ height:32px; line-height:32px; background:url(../images/list-left-li-bg.jpg) no-repeat left bottom;padding-left:12px; }
+.list-left-tp ul li a{ background:url(../images/list-left-arrow.jpg) no-repeat left center; padding-left:12px;}
+.list-left-tp ul li a:hover{ color:#090; background-image:url(../images/list-left-arrow1.jpg);}
+.list-left-tp span,.list-left-bd span{ margin:0 auto; width:200px; display:block;}
+.list-left-bd p{ padding:0 20px 0 12px;}
+.list-right{ width:733px; float:right;}
+.right-tp{ height:50px; background:url(../images/list-right-tp.jpg) no-repeat; padding-top:15px; color:#000;}
+.right-tp .r-tp-l{ float:left; padding-left:50px; font-size:14px; color:#666;}
+.right-tp .r-tp-r{ float:right; padding-right:35px; _padding-right:25px; color:#666;}
+.right-bd{ padding:8px 15px 0;}
+.right-bd li{ background:url(../images/list-r-bd-bg.jpg) repeat-x left bottom; height:36px;  padding-left:5px; padding-top:15px;}
+.right-bd li a{ background:url(../images/list-right-sq.jpg) no-repeat left center; padding-left:5px; float:left;}
+.right-bd li a:hover,.r-tp-r a:hover,.list-right p a:hover{ color:#090;}
+.right-bd li span{ float:right; font-family:Arial, Helvetica, sans-serif;}
+.list-right p{ text-align:center; margin-top:10px;}
+/*article开始*/
+.article{ font-size:14px; padding:0 12px}
+.article h4{ font-size:16px; color:#333; height:40px;padding-top:12px; text-align:center;}
+.article p{ padding:0; text-align:left; text-indent:2em; line-height:25px; margin-top:20px;}
+.come{ height:35px;}

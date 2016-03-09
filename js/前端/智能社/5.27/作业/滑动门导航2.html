@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet"  href="basic_first.css"/>
+<style>
+.box{ border-bottom:2px solid #000; margin-top:100px; margin-left:100px; }
+.box li{ float:left; margin-right:5px;  border-bottom:2px solid #000;margin-bottom:-2px;position:relative;}
+.box a{ display:inline-block;font-size:12px ; font-weight:bold; line-height:34px;background:url(../img/hdm_bg_c.png) repeat-x; height:34px;  padding:0 16px;}
+.box .left{ background:url(../img/hdm_bg_l.png) no-repeat; position:absolute; left:0; top:0; width:16px; height:34px;}
+.box .right{background:url(../img/hdm_bg_r.png) no-repeat; width:16px; height:34px; position:absolute; right:0; top:0;}
+
+
+li:hover{position:relative; z-index:2; background:#fff;border-bottom:none;}
+li:hover a{display:inline-block;background:#fff; border:2px solid #000;border-bottom:none; border-radius:10px;}
+li:hover .left{ background:#fff; border-left:2px solid #000; border-radius:10px; width:16px; height:34px;position:absolute; left:0; top:0; }
+li:hover .right{ background:url(../img/hdm_bg_r_hover.png) no-repeat;display:inline-block; width:16px; height:34px; position:absolute; right:0; top:0;}
+
+
+</style>
+
+</head>
+
+<body>
+    	<ul class="box clearFix">
+        	<li class="on">
+            	<span class="left"></span>
+           		 <a  href="#">Menu Item</a>
+                 <span class="right"></span>
+            </li>
+        	<li>
+            	<span class="left"></span>
+           		 <a  href="#">Menu Item</a>
+                 <span class="right"></span>
+            </li>
+        	<li>
+            	<span class="left"></span>
+           		 <a  href="#">Menu Item</a>
+                 <span class="right"></span>
+            </li>
+        	<li>
+            	<span class="left"></span>
+           		 <a  href="#">Menu Item</a>
+                 <span class="right"></span>
+            </li>
+        </ul>
+
+</body>
+</html>

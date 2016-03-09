@@ -1,0 +1,11 @@
+@charset "utf-8";
+*{ padding:0;  margin:0;}
+div{ width:338px; height:232px; float:left; margin-right:10px;}
+i{ width:168px; height:230px; background:#9f0; float:left; }
+b{ width:338px; height:62px; background:#0CF; float:left; margin-bottom:10px;}
+span{ width:338px; height:162px; float:left;}
+.yi{ width:163px; height:75px; background:#06f; float:left; }
+.san{ margin-right:10px;}
+.si{ margin-bottom:10px;}
+.er{  background:#999; }
+

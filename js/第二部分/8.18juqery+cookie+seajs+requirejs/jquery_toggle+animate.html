@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0; padding:0;}
+	div{ width:100px; height:100px; background:#f90;opacity:0; transform:rotate(0deg); transition-duration:.5s;}
+</style>
+<script src="jq/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('input').toggle(
+			function(){$('#box').stop().animate({'height':'200px','width':'200px',
+			'marginLeft':'200px','transform':'rotate(60deg)','opacity':1},1000)},
+			function(){$('#box').stop().animate({'height':'100px','width':'100px',
+			'marginLeft':0,'opacity':0},'slow')}
+		);
+		$('div').mouseover(function(){
+			$(this).css({transform:'rotate(60deg)'});
+		});
+		
+		
+	});
+</script>
+</head>
+
+<body>
+	<input type="button" value="点我有惊喜" />
+	<div id="box"></div>
+</body>
+</html>

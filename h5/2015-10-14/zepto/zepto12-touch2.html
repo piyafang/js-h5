@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+<style>
+div {width:80px; height:80px; background:#CCC; margin:10px; float:left;}
+</style>
+<script src="zepto.js"></script>
+<script>
+$(function (){
+	var timer=null;
+	
+	$('div').bind('touchstart', function (){
+		var _this=this;
+		
+		clearTimeout(timer);
+		timer=setTimeout(function (){
+			$(_this).css('background', 'red');
+		}, 750);
+		
+		return false;
+	});
+	$('div').bind('touchend', function (){
+		clearTimeout(timer);
+	});
+	
+	/*
+	$('div').bind('longTap', function (){
+		$(this).css('background', 'red');
+	});
+	*/
+});
+</script>
+</head>
+
+<body>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+<div>地方特让他地方特让他地方特让他</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

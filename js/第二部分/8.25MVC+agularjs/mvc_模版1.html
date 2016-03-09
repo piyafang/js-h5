@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+	var str='我的名字是{$name}，今年{$age}';
+	var data={name:'麻子',age:18};
+	str=str.replace(/\{\$\w+\}/g,function(s){
+		s=s.substring(2,s.length-1);
+		return data[s];
+	});
+	document.write(str);
+</script>
+</head>
+
+<body>
+</body>
+</html>

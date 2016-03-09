@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>2015.5.19程晓娜作业</title>
+<style type="text/css">
+* { margin:0; padding:0; text-decoration: none;list-style: none;}
+h2 span{float: right;font:13px 'microsoft songti';color: #ccc;}
+img{border:none;}
+a{text-decoration: none;}
+.nav{width: 858px;padding:20px;margin-top:20px;border: 1px dotted #ccc;text-align: left;display: table;}
+.nav a{
+	font:20px 'microsoft yahei';
+	color: #e3662e;
+	margin-left: 20px;
+	width: 5em;
+	height: 1.5em;
+	overflow: hidden;
+	display: inline-block;
+	zoom:1;*display: inline;}
+.nav .left{
+	width: 30px;
+	color: #000;
+	font-size: 20px;
+	float: left;
+	text-align: middle;
+	line-height: 1.6em;
+	margin-right: 10px;
+	word-wrap:break-word;
+ }
+.nav .right{
+	float: right;
+	border-left:1px #ccc solid;
+	margin-left: 10px;
+	padding: 0 0 0 20px;
+	width: 786px;}
+hr{margin-bottom: 10px;margin-top: 20px;}
+h2{font: 25px 'microsoft yahei';color: red;line-height: 50px;margin-bottom: 5px; }
+.bodyDiv{width: 900px;position:absolute; left: 50%;margin-left: -450px;}
+.clearFix:after{content: '';clear: both;display: block;}
+/*以上为通用*/
+/*基本浮动*/
+.box{width:500px; margin: 0 auto;margin-top: 10px;background: #fff;}
+.box_left{float: left;width: 300px;height: 290px;background:#999;}
+.box_right{float:right;width: 190px;height: 290px;}
+.box_right div{width: 190px;height: 140px;background: #6bbd00;}
+.box_right .tb1{margin-bottom: 10px;background: #09f;}
+/*布局一*/
+.bjbox{width: 620px;margin: 0 auto;}
+.bjbox div{width: 100%;padding-top: 10px;}
+.bjbox .box_top{height: 60px;background: #39f;}
+.bjbox b{display: block;float:left;width: 200px;height:36px;background: #999;}
+.bjbox .box_b{background: #000;margin:0 10px;}
+/*布局二*/
+.bj2box{width: 514px;margin: 0 auto;padding:10px 0;}
+.bj2box .box_l{float: left;width: 336px;}
+.bj2box .box_l div{width: 100%;}
+.bj2box .box_l_t {height: 46px;background: #ccc;}
+.bj2box .box_l i{float:left;height:60px;width: 163px;background: pink;margin-top: 10px;}
+.bj2box .box_l .i_blue{background: blue;margin-right:10px;}
+.bj2box .box_l .i_blue1{background: blue;margin-left:10px;}
+.bj2box .box_r{float: right;background: yellow;width: 168px;height:186px;}
+/*布局三*/
+.bj3box{width: 590px;margin: 0 auto;padding: 10px 0;}
+.bj3box .box3_t{width: 100%;border-top:1px solid blue;padding:10px 0;}
+.bj3box .box3_t i{float: left;height: 30px;width: 100px;background: blue;}
+.bj3box .box3_t .box3_t_r{float: right;}
+.bj3box b{float:left;width: 190px;height: 70px;background: #ccc;}
+.bj3box .box3_c{margin: 0 10px;}
+/*------------------------------------*/
+.bj4box{width: 600px;padding:10px 0;margin: 0 auto;border: 1px solid red;}
+.bj4box .box4_t,.box4_b ,.box4_c{width: 100%;}
+.bj4box .box4_t{background: blue;height: 50px;}
+.bj4box .box4_b{background: #2c2cbb;height: 50px;}
+.bj4box .box4_c{height: 400px;background: #fff;}
+.bj4box .box4_c .box4_c_l{width: 400px;height:100%;background: #ccc;float: left;}
+.bj4box .box4_c .box4_c_r{width: 190px;height:100%;background: #eee;float: right;}
+/*------*/
+.bj4box .box4_c1{height: 600px;background: #fff;}
+.bj4box .box4_c1 div{float: left;height: 100%;}
+.bj4box .box4_c1 .box4_c1_l{background: #6464be;width: 99px;border-right: 1px solid #646464;}
+.bj4box .box4_c1 .box4_c1_c{width: 408px;}
+.bj4box .box4_c1 .box4_c1_r{background: #eee;width: 91px;border-left: 1px solid #ddd;}
+/*------------------------------------*/
+/*新浪首页*/
+.sinabox{width: 285px;border: 1px solid #d9e1ee;border-top: 3px solid #ff8500;padding: 0 8px 12px 5px;}
+.sinabox a{font:14px 'microsoft YaHei';color: #666;}
+.sinabox .sinabox_tit{width: 276px;padding-left: 8px;font: 17px/43px '微软雅黑';color: #000;border-bottom: 1px solid #d9e1ee; }
+.sinabox ul{width: 285px;border-bottom: 1px dotted #dedede;overflow: hidden;}
+.sinabox ul li{float: left;width: 73px;padding:9px 11px 12px; text-align: center;}
+.sinabox ul li img{width: 73px;height: 73px;margin-bottom: 9px;}
+.sinabox ul li a{display: block;line-height: 16px;}
+.sinabox b{color: #ff8500;font-weight:normal;text-decoration: underline;}
+.sinabox .sinabox_a{width: 285px;}
+.sinabox .sinabox_a a{float: left;width: 73px;padding:9px 11px 0; text-align: center;}
+
+</style>
+</head>
+<body>
+<div class="bodyDiv" id="map">
+	<div class="nav">
+		<div class="left">目录</div>
+		<div class="right">
+			<a href="#map1" title="3-2.基本浮动">基本浮动</a>
+			<a href="#map2" title="3-3.新浪首页">新浪首页</a>
+			<a href="#map3" title="3-3布局一">布局一</a>
+			<a href="#map4" title="3-4布局二">布局二</a>
+			<a href="#map5" title="3-5布局三">布局三</a>
+			<a href="#map6" title="3-5.京东首页">京东首页</a>
+			<a href="#map7" title="3-6.两列布局">两列布局</a>
+			<a href="#map8" title="3-7.三列布局">三列布局</a>
+			<a href="#map9" title="博客">博客</a>
+		</div>
+
+	</div>
+	<hr>
+	<h2 id="map1"><span><a href="#map">&uarr;回目录</a></span>基本浮动</h2>
+	<div class="box clearFix">
+		<div class="box_left"></div>
+		<div class="box_right">
+			<div class="tb1"></div>
+			<div></div>
+		</div>
+	</div>
+	<hr>
+	<h2 id="map2"><span><a href="#map">&uarr;回目录</a></span>新浪首页</h2>
+	<div class="sinabox clearFix">
+		<div class="sinabox_tit">新浪产品</div>
+		<div class="sinabox_b clearFix">
+			<ul>
+				<li>
+					<a href="">
+						<img src="images/sinapic1.png",alt="xinlang" alt=""></a>
+					<a href=""><b>新浪财经</b></a>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/sinapic2.png",alt="xinlang" alt=""></a>
+						<a href="">新浪财经</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/sinapic3.png",alt="xinlang" alt=""></a>
+						<a href="">新浪财经</a>
+				</li>
+			</ul>
+			<div class="sinabox_a">
+				<span><a href="">新浪阅读</a></span>
+				<a href="">新浪阅读</a>
+				<a href="">新浪阅读</a>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<h2 id="map3"><span><a href="#map">&uarr;回目录</a></span>布局一</h2>
+	<div class="bjbox clearFix">
+		<div class="box_top"></div>
+		<div>
+			<b></b>
+			<b class="box_b"></b>
+			<b></b>
+		</div>
+	</div>
+	<hr>
+	<h2 id="map4"><span><a href="#map">&uarr;回目录</a></span>布局二</h2>
+	<div class="bj2box clearFix">
+		<div class="box_l clearFix">
+			<div class="box_l_t"></div>
+			<i class="i_blue"></i>
+			<i></i>
+			<i></i>
+			<i class="i_blue1"></i>
+		</div>
+		<div class="box_r"></div>
+	</div>
+	<hr>
+	<h2 id="map5"><span><a href="#map">&uarr;回目录</a></span>布局三</h2>
+	<div class="bj3box clearFix">
+		<div class="box3_t clearFix">
+			<i></i>
+			<i class="box3_t_r"></i>
+		</div>
+		<b></b>
+		<b class="box3_c"></b>
+		<b></b>
+	</div>
+	<hr>
+	<h2 id="map6"><span><a href="#map">&uarr;回目录</a></span>京东首页</h2>
+	<hr>
+	<h2 id="map7"><span><a href="#map">&uarr;回目录</a></span>两列布局</h2>
+	<div class="bj4box clearFix">
+		<div class="box4_t"></div>
+		<div class="box4_c clearFix">
+			<div class="box4_c_l"></div>
+			<div class="box4_c_r"></div>
+		</div>
+		<div class="box4_b"></div>
+	</div>
+	<hr>
+	<h2 id="map8"><span><a href="#map">&uarr;回目录</a></span>三列布局</h2>
+	<div class="bj4box clearFix">
+		<div class="box4_t"></div>
+		<div class="box4_c1 clearFix">
+			<div class="box4_c1_l"></div>
+			<div class="box4_c1_c"></div>
+			<div class="box4_c1_r"></div>
+		</div>
+		<div class="box4_b"></div>
+	</div>
+	<hr>
+	<h2 id="map9"><span><a href="#map">&uarr;回目录</a></span>博客</h2>
+	<hr>
+</div>
+</body>
+</html>

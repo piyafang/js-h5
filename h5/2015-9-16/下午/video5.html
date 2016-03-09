@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+window.onload=function ()
+{
+	var oV=document.getElementById('v1');
+	var oR=document.getElementById('r1');
+	
+	oR.oninput=function ()
+	{
+		oV.volume=this.value;
+	};
+	
+	//mute——静音
+	/*oV.muted=true;
+	alert(oV.muted);*/
+	
+	//alert(oV.volume);
+	
+	//oV.volume=1;
+};
+</script>
+</head>
+
+<body>
+<input type="range" id="r1" min="0" max="1" step="0.01" /><br>
+<video src="aaa.mp4" id="v1" controls></video>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

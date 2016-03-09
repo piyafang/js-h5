@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors liuwendan (you@example.org)
+ * @date    2015-05-16 23:20:38
+ * @version $Id$
+ */
+*{font-size: 12px;font-family: "宋体";color: #666;}
+div{padding-top: 24px;border-left: 1px solid #f1f1f1;}
+ul{overflow: hidden;list-style: none;}
+li{float: left;}
+a{text-decoration: none;border-right:1px solid #956695;padding: 0 10px; }
+.no-right-line{border-right: none;}

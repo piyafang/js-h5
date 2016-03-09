@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0; list-style:none; text-decoration:none;}
+.box{width:300px;
+     height:250px;
+	 background:#F7F6F6;
+	 margin:0 auto;
+	  padding-left:25px;}
+h2{font-size:16px;
+   padding-top:15px;
+   padding-bottom:18px;
+   }
+.content{width:248px;
+ height:84px;
+ background:#fff;
+ margin-bottom:12px;
+ font-size:12px;
+ line-height:18px;
+ }
+ .wenzi{padding-top:16px;
+        padding-left:20px;
+		float:left;
+		color:#999999;}
+span{font-weight:bold;
+     color:#000;}
+.you{float:right;}
+

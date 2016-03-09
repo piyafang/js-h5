@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*清除默认样式*/
+body,div,p,h1,h2,h3,h4,h5,h6,span,ul,ol,li,dl,dd,dt,a,i,strong,b,em img{ margin:0; padding:0;}
+li{ list-style-type:none;}
+a{text-decoration:none; }
+.clearFix:after{ clear:both; display:block; content:" ";}
+
+/*left*/
+.box{ width:980px; font-size:12px;}
+.left{ float:left;}
+.left h3{ width:710px; border-bottom:3px solid #FF7A01; background:url(../images/tit.png) no-repeat; color:#FFF;}
+.left li{float:left; width:332px; height:112px; border:1px solid #999; padding:8px 0 0px 8px;}
+.left img{float:left; margin-right:10px;} 
+
+/*right*/
+.right { float:right;}

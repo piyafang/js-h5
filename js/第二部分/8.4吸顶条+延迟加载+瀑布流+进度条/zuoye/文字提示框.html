@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	input{ height: 40px;line-height:40px; margin-top: 100px;}
+	#txt{ width: 400px;margin-left:200px;}
+	#btn{ width: 40px;background: #9cc;}
+	span{ height: 40px;line-height:40px;  position: absolute;left: 216px;top: 100px; color: #ccc; cursor: pointer;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oTxt=document.getElementById('txt');
+		var oBtn=document.getElementById('btn');
+		var oS = document.getElementsByTagName('span')[0];
+
+		oS.onclick=function(){
+			this.style.display='none';
+			oTxt.focus();
+		}
+		oTxt.onfocus=oS.onclick=function(){
+				oS.style.display='none';			
+		};
+		oTxt.onblur=function(){
+			if(oTxt.value==''){
+				oS.style.display='block';
+			}		
+		};
+	};
+</script>
+</head>
+<body>
+	<input type="text" id="txt" />
+	<span>都是代码</span>
+	<input type="button" value="搜索"  id="btn" />
+</body>
+</html>

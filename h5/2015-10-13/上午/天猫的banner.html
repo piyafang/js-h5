@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+<style>
+* {margin:0; padding:0; list-style:none;}
+
+body {background:url(a.png) no-repeat; height:2232px;}
+
+#div1 {position:absolute; left:50%; top:51px; width:320px; height:134px; overflow:hidden; margin-left:-160px;}
+
+#div1 ul {overflow:hidden; width:1600px; height:134px; -webkit-transform:translateX(0);}
+#div1 ul li {width:320px; height:134px; float:left;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	var oUl=oDiv.children[0];
+	var aLi=oUl.children;
+	
+	
+	var translateX=0;	//translateX
+	
+	oUl.addEventListener('touchstart', function (ev){
+		var downScrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+		
+		var disX=ev.targetTouches[0].pageX-translateX;
+		
+		var downX=ev.targetTouches[0].pageX;
+		var downY=ev.targetTouches[0].pageY;
+		
+		
+		var dir='';
+		
+		function move(ev)
+		{
+			var x=ev.targetTouches[0].pageX;
+			var y=ev.targetTouches[0].pageY;
+			
+			if(dir=='')
+			{
+				//判断性
+				if(Math.abs(x-downX)>=5)
+				{
+					dir='lr';
+				}
+				else if(Math.abs(y-downY)>=5)
+				{
+					dir='ud';
+				}
+			}
+			else
+			{
+				//真的移动
+				if(dir=='lr')	//移动banner
+				{
+					translateX=x-disX;
+					
+					oUl.style.WebkitTransform='translateX('+translateX+'px)';
+				}
+				else			//移动页面
+				{
+					/*
+					y-downY==100		//往下走100
+					downScrollTop-100
+					*/
+					var newScrollTop=downScrollTop-(y-downY);
+					
+					document.documentElement.scrollTop=newScrollTop;
+					document.body.scrollTop=newScrollTop;
+				}
+			}
+		}
+		function end()
+		{
+			oUl.removeEventListener('touchmove', move, false);
+			oUl.removeEventListener('touchend', end, false);
+		}
+		
+		oUl.addEventListener('touchmove', move, false);
+		oUl.addEventListener('touchend', end, false);
+		
+		ev.preventDefault();
+	}, false);
+};
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<ul>
+    	<li style="background:#6F0;"></li>
+    	<li style="background:#F60;"></li>
+    	<li style="background:#06F;"></li>
+    	<li style="background:#FF0;"></li>
+    	<li style="background:#0FF;"></li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

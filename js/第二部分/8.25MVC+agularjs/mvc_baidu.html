@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script src="jsonp.js"></script>
+<script>
+//M
+function readBaidu(json){
+	jsonp({
+		url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+		data:{
+			wd:str,
+			cb:'show'	
+		},
+		success:function(json){
+			var arr=eval('('+json.s+')');
+			fn(arr);
+		}		
+	});
+}
+//V
+function createLi(arr){
+	var oUl = document.getElementById('ul1');
+	if(arr){
+		oUl.innerHTML='';
+		for(var i=0;i<arr.length;i++){
+			var oLi = document.createElement('li');
+			oLi.innerHTML=arr[i];
+			oUl.appendChild(oLi);
+		}
+	}
+}
+//C
+window.onload=function(){
+	var oTxt1 = document.getElementById('txt1');
+	oTxt1.onkeyup=function(){
+		readBaidu(this.value,function(arr){
+			createLi(arr);
+		});
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" />
+<ul id="ul"></ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+.list-main{width:958px;margin:12px auto; background-color:#fff; border-radius:3px 3px 0 0 ;/* 小圆角*/ padding:11px; overflow:hidden; zoom:1;}
+.list-left{width:214px; float:left;}
+.list-right{width:732px; float:right;}
+.list-product ul,.list-contact p{border-left:1px solid #E0E0E0; border-right:1px solid #E0E0E0; margin:0 7px; /*小技巧*/ background-color:#F4F4F4;}
+.list-product ul li{ height:32px; line-height:32px; background:url(../images/list-left-li-bg.jpg) no-repeat left bottom; padding-left:12px;}
+.list-product li a{background:url(../images/arrow-black.jpg) no-repeat left center; padding-left:12px;}
+.list-product li a:hover{color:#004010; background-image:url(../images/arrow-green.jpg);}
+.list-contact p{ background-color:#fff; padding:0 20px 0 12px; line-height:20px;}
+.list-right h3{height:32px; background:url(../images/list-right-top.jpg) no-repeat; padding-top:18px;}
+.l-title{float:left;  font-size: 14px;padding-left: 50px}
+.l-position{float:right; padding-right:7px;}
+.list-right ul{padding:11px 15px 0;}
+.list-right ul li{height:37px; line-height:37px; padding-top:6px; background:url(../images/list-li-bg.jpg) repeat-x bottom;}
+.list-right li a{float:left; padding-left:15px; background:url(../images/square.jpg) no-repeat 5px center;}
+.list-right li span{float:right; color:#0C9;}
+.list-right p{text-align:center; padding:15px 0;}
+/*article页面开始*/
+.article{color:#333; padding:15px 25px;}
+.article p{text-align:left; padding:0; text-indent:2em; line-height:23px; font-size:14px; margin-bottom:20px;}
+.article h4{ font-size:16px; height:38px; text-align:center;}
+.come{height:35px;}
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+span{ display:inline-block; width:16px; height:15px;
+background:url(img/no.gif) no-repeat; padding-left:20px; cursor:pointer;}
+span.on{ background:url(img/yes.gif) no-repeat;}
+</style>
+<script>
+function makeRadio(sName){
+	var aSex=document.getElementsByName(sName);
+	var aSpan=[];
+	for(var i=0;i<aSex.length;i++){
+		var oSpan=document.createElement('span');
+		aSpan.push(oSpan);
+		aSex[0].parentNode.insertBefore(oSpan,aSex[i]);
+		(function(index){
+			aSpan[i].onclick=function(){
+			for(var i=0;i<aSex.length;i++){
+				aSpan[i].className='';
+			}
+			this.className='on';
+			aSex[index].checked=true;
+		};
+		}) (i);
+	}
+	for(var i=0;i<aSex.length;i++){
+		aSex[i].style.display='none';
+	}
+}
+window.onload=function(){
+	makeRadio('sex');
+};
+</script>
+</head>
+
+<body>
+<form action="">
+<input type="radio" name="sex" value="boy" />男
+<input type="radio" name="sex" value="girl" />女
+<input type="submit" id="sub" />
+</form>
+</body>
+
+</html>

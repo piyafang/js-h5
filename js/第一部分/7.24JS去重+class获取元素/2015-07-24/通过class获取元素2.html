@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+li{height:30px; line-height:30px; background:#ccc;margin:5px;}
+</style>
+<script>
+function getByClass(obj,sClass){
+	var aResult = [];
+	var aEle = obj.getElementsByTagName('*');
+	for(var i=0;i<aEle.length;i++){
+		if(aEle[i].className==sClass){
+			aResult.push(aEle[i]);
+		}
+	}
+	return aResult;
+}
+window.onload=function(){
+	var oUl = document.getElementById('ul1');
+	var aRed = getByClass(oUl,'red');
+	for(var i=0;i<aRed.length;i++){
+		aRed[i].style.background='red';
+	}
+};
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li class="red">111</li>
+	<li class="red">222</li>
+	<li>33</li>
+	<li class="red">444</li>
+	<li class="red">55555</li>
+	<li>666</li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

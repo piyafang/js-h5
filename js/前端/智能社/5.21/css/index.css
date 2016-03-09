@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+/*内容*/
+.main{ width:960px; margin:0 auto; }
+.main_left{ float:left; width:620px; padding-top:5px; }
+
+.main_left_text{ padding-top:30px;}
+.main_left_text h2{ color:#336298; font-size:25px; padding-bottom:10px; border-bottom:1px solid #e2e2e2; }
+.time{ padding:20px 0; }
+.time_left{ float:left; }
+.time_right{ float:right; }
+.main_left_text p{ padding-bottom:10px; line-height:21px; text-indent:2em; }
+.main_bottom{ padding-top:10px; color:#000; }
+.main_bottom a{ color:#4587c4; }
+.main_bottom_l{ margin-right:10px; }
+.main_bottom_r{ margin-left:8px; }
+
+
+
+
+
+
+.main_right{ float:right; width:280px; }
+.search{ height:48px; background:#e2e2e2; padding-top:32px; padding-left:21px; }
+.search_left{ float:left; width:177px; height:22px; background:#fff; margin-right:4px; }
+.search_right{ float:left; width:50px; height:22px; background:#b9b9b9; text-align:center; line-height:22px; color:#fff;}
+
+.R_list_tit{ padding-top:20px; padding-left:30px; }
+.R_list_tit h2{ color:#34639b; font-size:18px; line-height:30px; }
+.R_list_tit p{ line-height:25px; width:215px; }
+
+.main_right dl{ padding-top:20px; padding-left:30px; }
+.main_right dl dt{ line-height:30px; color:#34639b; font-size:18px; }
+.main_right dl dd{ line-height:30px; border-bottom:1px dotted #d1d1d1; width:220px; }
+
+
+.footer{ height:63px; background:#ececec; color:#a0a0a0; line-height:63px; text-align:center; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

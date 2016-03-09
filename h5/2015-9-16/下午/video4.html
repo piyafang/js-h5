@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+window.onload=function ()
+{
+	var oV=document.getElementById('v1');
+	var oBtn1=document.getElementById('btn1');
+	var oBtn2=document.getElementById('btn2');
+	var oBtn3=document.getElementById('btn3');
+	
+	//播放
+	oBtn1.onclick=function ()
+	{
+		oV.play();
+	};
+	
+	//停止——停下+回到头
+	oBtn2.onclick=function ()
+	{
+		//自己模拟
+		oV.pause();
+		oV.currentTime=0;
+	};
+	
+	//暂停
+	oBtn3.onclick=function ()
+	{
+		oV.pause();
+	};
+	
+	//播放时间是不是变了	ontimeupdate
+	//总时长				oV.duration
+	oV.ontimeupdate=function ()
+	{
+		var oSpan=document.querySelector('#div1 span');
+		
+		//console.log(oV.currentTime, oV.duration);
+		var scale=oV.currentTime/oV.duration;
+		
+		oSpan.style.width=scale*100+'%';
+	};
+};
+</script>
+<style>
+#div1 {width:600px; height:20px; background:#CCC;}
+#div1 span {display:block; height:20px; width:0px; background:#09F;}
+</style>
+</head>
+
+<body>
+<input type="button" value="播放" id="btn1" />
+<input type="button" value="停止" id="btn2" />
+<input type="button" value="暂停" id="btn3" />
+<div id="div1">
+	<span></span>
+</div>
+<video src="aaa.mp4" id="v1"></video>
+
+</body>
+</html>
+
+
+
+
+
+

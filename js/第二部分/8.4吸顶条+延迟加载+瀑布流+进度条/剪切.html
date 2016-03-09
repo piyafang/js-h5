@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	ul{width:500px;marin:100px auto;}
+	ul li{ cursor:pointer;}
+	#ul2 li{background:#f90;}
+
+</style>
+<script>
+	window.onload=function(){
+		var oUl1=document.getElementById('ul1');
+		var aLi1=oUl1.getElementsByTagName('li');
+		var oUl2=document.getElementById('ul2');
+		var oCut=document.getElementById('cut');
+		
+		var iNow=null;
+		for(var i=0;i<aLi1.length;i++){
+			aLi1[i].onclick=function(){
+				iNow=this;	
+			};			
+		}
+		oCut.onclick=function(){
+			oUl2.appendChild(iNow);
+		};	
+	};
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li>111</li>
+	<li>222</li>
+	<li>333</li>
+	<li>444</li>
+</ul>
+<input type="button" value="剪切" id="cut" />
+<ul id="ul2"></ul>
+</body>
+</html>

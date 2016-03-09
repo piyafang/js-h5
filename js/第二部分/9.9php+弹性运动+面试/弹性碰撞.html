@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+div{ width:100px; height:100px; background:#99c; position:absolute;left:0; top:0;}
+</style>
+<script>
+ window.onload=function(){
+	var oBox=document.getElementById('box');
+	var iSpeed=0;
+	clearInterval(oBox.timer);
+	oBox.timer=setInterval(function(){
+		iSpeed+=(300-oBox.offsetLeft)/5
+		iSpeed*=0.7;
+		oBox.style.left=oBox.offsetLeft+iSpeed+'px';	
+		
+	},30); 
+ };
+
+</script>
+</head>
+
+<body>
+	<div id="box"></div>
+</body>
+</html>

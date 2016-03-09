@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+var aNews = [
+	{title:'习近平亲录视频力挺冬奥：请各位选择北京',href:'http://www.cankaoxiaoxi.com/roll/roll10/2015/0731/873083.shtml'},
+	{title:'中共中央决定给予郭伯雄开除党籍处分',href:'http://news.xinhuanet.com/legal/2015-07/30/c_1116096002.htm'},
+	{title:'智能社要开h5周末班了，请看官网信息',href:'http://www.zhinengshe.com/'}
+];
+window.onload=function(){
+	var oUl = document.body.children[0];
+	for(var i=0;i<aNews.length;i++){
+		var oA = document.createElement('a');
+		oA.innerHTML=aNews[i].title;
+		oA.href=aNews[i].href;
+		oA.target='_blank';
+		var oLi = document.createElement('li');
+		oLi.appendChild(oA);
+		oUl.appendChild(oLi);
+	}
+};
+</script>
+</head>
+
+<body>
+<ul>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+

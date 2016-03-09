@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+/*	div{width: 100px; height: 100px; background: red;(ie6专用 hack)_background: pink;}*/
+/* IE7专用：+*html,div {width: 100px; height: 100px; background: red;}*/
+/*火狐  @-moz-document url-prefix(){ 
+	div{ width: 200px; height: 200px; background:pink;}}*/
+
+/*谷歌专用：@media screen and ( -webkit-min-device-pixel-ratio:0){div{ width: 200px; height: 200px; background:pink;}}*/
+/*条件注释语句：<!--[if IE 6]>.....<![endif]-->*/
+/*非IE注释语句：<!--[if !IE]-->....<!--[!endif]-->*/
+@media screen and ( -webkit-min-device-pixel-ratio:0){div{ width: 200px; height: 200px; background:green;}}
+div{ width: 200px; height: 200px; background:pink;}
+</style>
+</head>
+
+<body>
+	<div></div>
+</body>
+</html>

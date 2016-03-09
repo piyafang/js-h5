@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+.active{width:960px; margin:0 auto;}
+body{ background:#f7f7f7;}
+
+/*头部*/
+.title{background:url(../img/blog_bg.png) repeat-x; height: 109px;   border-top: 4px solid #030035; width: 100%;}
+.title h2{font-size:39px; color:#fff; line-height:109px; font-style:normal; }
+.head span{ font-size:14px; line-height:16px; margin-left:9px; }
+.nav{ background:#010044;}
+.nav ul{ height:49px; width:954px; font-size:12px; padding-right:6px;}
+.nav li{ float:left; width:190px; border-right:1px solid #4D9CE7; line-height:49px; text-align:center;}
+.nav li a{ color:#fff;}
+
+/*内容*/
+.content{ height:566px; font-size:12px; color:#787878;}
+.cont_l{ width:620px;float:left; padding-top:5px; padding-bottom:30px;}
+.cont_l_list{ padding-top:30px;}
+.cont_l_list h3{ font-size:25px; padding-bottom:13px; border-bottom:1px solid #e2e2e2; font-family:"微软雅黑";}
+.cont_l_list h3 a{ color:#316398;}
+.news h4{ line-height:17px; padding-bottom:22px; padding-top:21px;}
+.news h4 i { float:left;}
+.news h4 span{ float:right; color:#787878;}
+.news p{ line-height:21px; text-indent:2em;padding-bottom:10px;}
+.news .link{ line-height:14px; padding-top:10px;}
+.news a{ color:#4584C7;}
+.news span{ line-height:12px; font-size:12px; color:#000; margin-left:9px; margin-right:7px;}
+
+
+.cont_r{ width:280px;float:right; background:#fff; height:545px;}
+.search{ background:#e2e2e2; width:260px; height:48px; padding-top:32px; padding-left:20px;}
+.search .txt{ background:#fff; width:180px; height:22px; text-indent:1em;}
+.search .btn{ background:#b9b9b9;width:50px; height:22px; font-size:10px; line-height:22px; color:#000;}
+
+.search_content{ padding:0 28px 27px 30px;}
+ .search_news h3,.search_title h3{ font-size:18px; line-height:32px; color:#31629C; padding-top:20px; padding-bottom:10px;}
+.search_news{}
+.search_news p{ line-height:25px;}
+.search_title{}
+.search_title ul{}
+.search_title li{ line-height:30px; border-bottom:1px dashed #d1d1d1;}
+.search_title li a{ color:#777;}
+
+/*尾部*/
+.footer{ background:#ececec; height:62px; border-bottom:1px solid #f7f7f7;}
+.footer p{ font-size:12px; color:#7f7f7f; line-height:62px; text-align:center;}

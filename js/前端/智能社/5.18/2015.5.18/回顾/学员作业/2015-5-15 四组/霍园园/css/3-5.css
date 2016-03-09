@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+
+.top{
+	
+	width:655px;
+	height:43px;
+	border-top:1px solid blue;
+	}
+.t1,.t2{margin-top:9px;}
+
+.top div{
+		width:100px;
+		height:32px;
+		background:#0873c0;
+		border:1px solid red;
+	
+	}
+.t1{float:left;}
+.t2{float:right;}
+.bottom{
+	margin-top:8px;
+	}
+.bottom div{
+	width:210px;
+	height:118px;
+	background:#ccc;
+	float:left;
+	
+	
+	}
+.b2{
+	margin-right:8px;
+	margin-left:8px;
+	
+	
+	}
+

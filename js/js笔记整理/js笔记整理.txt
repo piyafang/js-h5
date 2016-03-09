@@ -1,0 +1,1443 @@
+						    
+						    第一部分
+
+一、网页执行三步：
+	1.把html，js，css拿过来
+	2.解析 		(把w3c里没有的过滤了。只过滤一次。)
+	3.执行js代码
+	自定义属性：低版本浏览器好使，高级浏览器不好使。用js加自定义属性
+
+二、操作css样式？
+	.style 			操作行间样式
+	.className 		修改class
+	getStyle()     function getStyle(obj,sName){
+						return ((obj.currentStyle)||(getComputed(obj,false)))[sName];
+					}
+		（false的作用：以前获取伪类样式用的、兼容低版本火狐）
+		
+三、操作属性：
+	. 	     比较简单，操作已有的属性
+	[]	     比较灵活，点能做的方括号都能做，方括号中放的是字符串。方括号里面能放变量，点不能。
+	DOM方式   获取：.getAtrribute('属性名/标签')——可获取自定义属性
+			 设置：.setAtrribute('属性名','value值')
+			 删除：.removeAttribute('属性名')
+
+	jquery中操作属性：$('标签名').attr('sName','sValue');
+	
+四、循环：
+	1. while——次数不固定时使用
+	      while(条件){语句}
+	2. for
+		  for(初始值;条件;自增){语句}
+		  
+五、流程控制（判断）：
+	1. if   条件&&语句
+	   if else 条件？语句1：语句2；————return必须写在最前面
+	   if else if  else
+
+	   for(var i in json){
+			i		//i====json中的名字 
+			json[i]		//i====json中的值
+		}
+	2. switch
+		switch(参数){
+			case '参数值1':
+			break;
+			case '参数值2':
+			break;
+			default:
+			break;
+		}
+
+六、获取元素
+	document.getElementById 	通过ID获取一个元素
+	document.getElementsByName  通过name获取一组元素
+	obj.getElementsByTagName	通过标签名获取一组元素
+	obj.getElementsByClassName 	通过class获取一组元素
+
+	function findInArr(arr,sClass){
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]==sClass){return true;}————另：返回 i的话，即可得到索引
+		}
+		return false;
+	}
+	function getByClass(obj,sClass){
+		var aResult=[];
+		if(obj.getElementsByClassName){
+			aResult=obj.getElementsByClassName(sClass);
+		}else{
+			var aEle=obj.getElementsByTagName(*);
+			for(var i=0;i<aEle.length;i++){
+				var aClass=aEle[i].className.split(' ');
+				if(findInArr(aClass,sClass)){
+					aResult.push(aEle[i]);
+				}
+			}
+		}
+		return aResult;————最后得到的是一个数组
+	}
+
+	jquery中根据属性获取元素：
+		$('标签名/Id/class[属性名=属性值]')
+
+七、获取元素内容
+	1.表单元素：元素.value值——————通过value得到的是字符串
+	  非表单元素：元素.innerHTML
+	  jquery中：$(this).text();
+
+	2.jquery中操作内容：
+		表单元素：.val('内容');
+		非表单元素：.html('内容')；
+
+八、数据类型：（检测：typeof)
+	string 		字符串
+	number 	    数字
+	boolean	    布尔值
+	undefined 	未定义(变量声明未赋值、访问一个不存在的属性、参数没有值)
+	object 		对象
+	function 	函数
+
+————变量本无数据类型，其类型由赋值决定的。
+
+	1.基本数据类型：string,number,boolean,undefined
+	2.object对象：  arr[],元素,日期，json
+
+	真：true 、非0数字、非空字符串、非空对象
+	假：false、0、空字符串、空对象null、undefined、NaN
+
+九、数据类型转换：
+	1、（1）字符串转数字：
+			parseInt  					转整数（遇非数字停止）
+			parseFloat  				转小数
+			parseInt  					转数字，更严格
+
+		NaN————不是数字，但本身是number类型
+		   ————代表无意义；不等于任何东西，包括自己；不能作判断
+
+		检测是否为NaN:
+				isNaN();————返回true/false;
+		
+		（2）隐式转换：（可读性不好，效率低）
+					- * / == >  <  ++
+	2、数字转字符串：
+					加个空字符串
+			eg. num=''+12;		
+
+***字符串转数组：str.split('特定字符')
+	数组转字符串：arr.join('特定字符')
+
+十、闭包：
+	子函数可以使用父函数的变量
+
+
+十一、1、return返回值：
+			作用：（1）可阻断后面程序执行
+				  （2）没有return，返回undefined
+				  （3）有return，没有值，也返回undefined
+				  （4）封装函数
+	  2、break;  跳出循环
+	  3、continue; 跳出本次循环，进行下一次循环。
+
+十二、i的问题：
+	（1）循环中加事件，事件中不能使用i
+		解决办法：
+				  添加自定义属性index/data-index(index有向后兼容的问题)
+				  调用时传值：封闭空间。
+	（2）循环中加定时器，定时器内不能使用i
+			————定时器不稳定，数值越小越不稳定；
+				定时器中不能使用this，此时代表window
+		解决办法：
+				封闭空间
+				(function(index){
+					setInterval(function(){},300);
+				}) (i)
+
+十三、封闭空间
+	(function(index){语句1；}) (i)————也可不传参，形成局部空间
+
+	作用：1、解决变量名冲突的问题
+		  2、解决i的问题，调用时传参
+
+十四、日期对象
+	var oDate=new Date();
+
+	1、获取时间：
+		年：oDate.getFullYear();
+		月：oDate.getMonth()+1；
+		日：oDate.getDate();
+		星期：oDate.getDay();——————星期日为0，可将‘一’、‘二’...放入数组内替换
+		小时：oDate.getHours();
+		分钟：oDate.getMinutes();
+		秒数：oDate.getSeconds();
+
+	2、设置日期时间
+		年月日：
+			oDate.setFullYear(y,m-1,d)
+			oDate.setMonth(m,d)
+			oDate.setDate(d)————0,代表上月最后一天
+		时间：
+			oDate.setHours(h,m,s,ms)
+
+	3、时间戳
+		oDate.getTime();————毫秒
+		格林威治时间戳：从1970年1月1日0点0分0秒0毫秒一直到现在所经历的毫秒数。
+
+	4、倒计时
+		时间差（ms）=目标时间戳-当前时间戳;
+		时间差（s）=parseInt(时间差/1000);
+		
+		var oTarget=new Date();
+		var iTarget=oTarget.getTime();
+
+		时间差转换：秒转天：var d=parseInt(s/86400);
+							s%=86400;
+					秒转时：var h=parseInt(s/3600);
+							s%=3600;
+					秒转分：var m=parseInt(s/60);
+					秒：	s%=60;
+					
+
+
+十五、arguments     实参对象，当参数个数不固定时使用(不用传参，调用时不用写数组符号)
+					.length表示元素个数
+
+	  json	        var json={名字：值，名字：值，...}
+	  				{}相当于把一堆变量打了个包。
+					json无长度
+
+十六、批量修改样式：
+	1、obj.style.cssTest='sName:sValue';   会清空其他样式
+	2、with(obj.style){sName=sValue};      不会覆盖，只会显示不同
+	3、用json批量修改样式：
+		function setStyle(obj,json){
+			for(var i in json){
+				obj.style[name]=json[name];
+			}
+		}
+	4、参数不固定时修改样式：
+		function setStyle(){
+			if(arguments.length==2){
+				for(var name in arguments[1]){
+					arguments[0].style[name]=arguments[1][name];
+				}
+			}else{
+				arguments[0].style[arguments[1]]=arguments[2];
+			}
+		}
+
+十七、字符串常用方法（函数）：
+	1、str.charAt(下标)				    		获取某一位置的元素
+	2、str.indexOf('字符')						获取某一字符所在的位置（第一次出现，未找到返回-1）
+	3、str.lastIndexOf('字符')					获取某一字符最后一次出现的位置
+	4、str.substring(开始位置，结束位置)		截取字符串（不包括结束位置）
+	   str.substring（开始位置）				从开始到最后
+
+		eg.截取文件后缀名：
+			str.substring(str.lastIndexOf('.')+1);
+
+	5、str.toLowerCase();						转小写
+	6、str.toUpperCase();						转大写
+	7、str.split('字符')						字符串分割成数组（str.split()不分割）
+
+		eg.首字母变大写：
+			str=str.charAt(0).toUpperCase()+str.substring(1);
+
+十八、数组：
+	1、arr.push();								在数组内后面添加
+				eg.arr.push(i+'='+json[i]);
+	   arr.pop();								数组后面删除（默认删除最后一个）
+	   			————返回的值为删除后的新数组。
+	2、arr.unshift();							在前面添加
+	   arr.shift();							    在前面删除
+
+	3、arr.join('字符');						数组拼接成字符串
+	4、arr.splice(开始位置，长度)				删除
+	   arr.splice(开始位置，0，要插入的内容)	插入（多个内容用逗号隔开）
+	   arr.splice(开始位置，长度，替换的新内容)	替换
+
+	5、arr.concat(arr2,...);					数组连接（连接的数组内的元素）	
+	6、arr.reverse();							数组反转
+	7、arr.sort();							    排序
+
+	例：
+		数字排序(从小到大）：
+			arr.sort(function(num1,num2){
+				return num1-num2;————————num2-num1;(从大到小排序)
+			})
+		随机排序：
+			arr.sort(function(){
+				return Math.random()-0.5;
+			})
+
+	清空数组的方法：
+		（1）arr.length=0;
+		（2）arr=[];		
+		（3）arr.splice(0,arr.length)
+		（4）for(var i=0;i<arr.length;i++){
+				arr.shift();或pop
+				i--;
+			}
+		（5）while(arr.length){
+				arr.pop();或shift
+			}
+
+十九、Math的常用方法：
+	Math.random()		    随机数
+	Math.pow();				n次方
+	Math.abs();				绝对值
+	Math.round(); 			四舍五入
+	Math.floor(); 			向下取整
+	Math.sqrt(); 			开方
+	Math.ceil(); 			向上取整
+	Math.max(); 			最大值
+	Math.min();				最小值
+	Math.sin();			
+	Math.cos(); 			
+	Math.atan2(y,x);
+
+二十、eval
+	  eval解析json里的字符串时，两边要加括号(调用时或声明时加)
+		eval('('+str+')');
+
+
+二十一、select——————onchange事件
+	1、select的选项：
+	（1）select下的所有Option：
+			var aOp=oS.options;
+	（2）选中项的文字：
+			aOp[i].text
+	（3）选中项的索引：
+			oS.selectedIndex
+
+	获取选中项的内容：oS.options[oS.selectedIndex].text;
+
+
+	2、select添加选项：
+		var oP = new Option('文本值','value值');
+		oS.add(oP);
+
+	3、select删除选项：
+		oS.remove(下标)；
+
+		全部删除：
+			for(var i=0;i<oS.options.length;i++){
+				oS.remove(0);
+				i--;
+			}
+
+二十二、前插排序：
+	1、排序：算法（前插、快排、堆排、桶排、冒泡....）
+	2、前插排序的原理：
+		（1）每次找最小的，拿最小的与当前的进行位置交换
+		（2）多少个数字比较几次
+
+	3、前插排序：
+		（1）找最小对应的索引：
+			function findMin(arr,index){
+				var iMin=arr[index];
+				var iMinIndex=index;
+				for(var i=index;i<arr.length;i++){
+					if(arr[i]<iMin){
+						iMin=arr[i];
+						iMinIndex=i;
+					}
+				}
+				return iMinIndex;
+			}
+		（2）交换值
+			for(var i=0;i<arr.length;i++){
+				var index=findMin(arr,i);
+				var temp;
+				temp=arr[index];
+				arr[index]=arr[i];
+				arr[i]=temp;
+			}
+
+二十三、测试是否为数字：
+	1、function testNumber(){
+			for(var i=0;i<arguments.length;i++){
+				if(typeof(arguments[i]!='number')){
+					return false;
+				}
+			}
+			return false;
+		}
+	2、str.match(/\d+/g)
+
+	3、只能输入数字：
+		oInp.onkeydown=function(ev){
+			var oEvent=ev||event;
+			if((oEvent.keyCode<48||oEvent.keyCode>57)&&oEvent.keyCode!=8){
+				return false;
+			}
+		};
+
+
+							第二部分
+
+js作者：布兰登.艾克（Brendan Eich）
+
+一、预解析：
+	1、js会把所有代码的声明提到最顶部，但不会突破作用域（仅仅是变量的声明，不包括赋值）
+	2、执行步骤：
+		读取一个script——预解析——执行代码——读取下一个script
+	3、（1）报错：调用了未定义
+	   （2）undefined: 定义/声明了未赋值
+
+	   应用：
+	   		用了一个不存在的变量：报错              eg. a
+	   		用了一个不存在的属性：undefined         eg. window.a
+	4、函数：也有预解析，所有声明的函数均会提到作用域顶部
+				（但，当函数以变量的形式声明，会按变量声明预解析）
+
+	5、if...else, for, while ....无预解析
+
+二、编码
+	1、获取字符编码
+	 （1）charCodeAt(下标);				获取某一位置字符的编码
+	 （2）String.fromCharCode(编码)       通过编码获取字符
+
+			例.		a:97,   A:65,   0:48
+					中文： 19968-40869  （十进制）
+						   4e00-9fa5    （十六进制）————js中表达十六进制需在前面加ox
+						   eg.  '\u4e00'  会输出一
+			表示汉字：str.charCodeAt(i)>=19968&&str.charCodeAt(i)<=40869  一个字3个字节
+			只能输入字母的输入框：
+					obj.onkeydown=function(ev){
+						var oEv=ev||event;
+						if(oEv.keyCode<65||oEv.keyCode>90&&oEv.keyCode!=8){
+							return false;
+						}
+					};
+					
+
+	 2、获取键盘编码		oEv.keyCode	
+
+		 	左  37；				上  38； 		右  39；			下  40；
+		 	Backspace:8; 			enter:13;		shift:16;			ctrl:17;
+		 	Alt:18;					space:32;		delete:46;			1:49;
+		 	a:65;					s:83;
+
+	 					
+
+三、线上bug:     try....catch
+		try{
+			正常执行的代码
+		}
+		catch(e){		————e包含着错误信息，但不影响声明变量
+			补救的代码
+		}
+		后面的代码正常执行
+
+四、关于变量声明：尽量不要连等
+	eg.  var a=3,b=4,c=5;
+		 var a,b,c;	只声明不赋值
+	1、当变量声明时，未加Var，则会变成全局的（全局变量影响性能）
+	2、逗号表达式:
+		(1)逗号表达式优先级低，用括号包住能提高优先级。eg.  var a=(12,5);
+		(2)逗号表达式听后面的
+		(3) alert是函数
+
+五、严格模式————IE9-不兼容
+	'use strict';————放在所有代码之前，其前面不能有代码；有作用域
+	（1）解决了局部函数中，this是window的bug
+	（2）解决了不加var 声明变量的bug
+	（3）避免了在if , switch , while , for...in里面定义函数
+	（4）去掉了with设置样式的功能
+
+六、jacscript构成：
+	(1) ECMAScript    核心解释器（基本）     		全兼容
+	(2) DOM     	  文档对象模型（操作页面）      大部分兼容
+		document  object model
+	(3) BOM    		  浏览器对象模型（操作浏览器）  不兼容
+		browse object model  
+
+七、DOM结构
+
+	标签=元素=节点
+
+	1、获取节点
+		（1）obj.tagName       获取节点的名称（所有字母大写）
+		（2）获取父节点			parentNode 	offsetParent
+								结构父级 	parentNode 		document
+								定位父级	offsetParent	body
+			固定定位fixed下，定位父级：null——chrome下；body——firfox下
+
+		（3）获取子节点			obj.childNodes		包括标签节点和文本节点
+			获取子标签节点 		obj.children		只包括第一层
+
+			检测节点类型：		.nodeType			3——文本节点
+													1——标签节点
+													9——document
+		（4）获取上一个兄弟节点
+			var oPrev = obj.previousElementSiling||obj.previousSibling;(不兼容则为文本节点)
+			
+			获取下一个兄弟节点
+			var oNext = obj.nextElementSiling||obj.nextSibling;
+
+		（5）获取首子节点	obj.children[0]						  
+										obj.firstElementChild||obj.firstChild;   
+			 获取尾子节点	obj.children[obj.children.length-1]	  
+			 							obj.lastElementChild||obj.lastChild;
+	2、创建DOM元素
+		obj.createElement('标签名')
+
+	3、插入元素
+		obj.appendChild('标签名')						从后追加
+		obj.insertBefore('要插入的元素','原有元素')		插入
+
+	4、删除元素
+		removeChild('元素')
+
+	5、克隆元素
+		obj.cloneNode(true);————true,代表深度克隆，包括元素内的内容及id名
+		obj.removeAttribute('id');或obj.id='';
+
+	6、物体信息：
+	 （1）obj.offsetWidth/offsetHeight	 盒子模型（width/height、padding、borer）——number
+	 （2）obj.offsetLeft/offsetTop	 	 元素距定位父级的左边距（left和margin-left）
+
+八、BOM
+	1、打开：
+		window.open('页面地址')；————打开新页面
+		window.open('地址'，'打开方式')；
+		不兼容：
+				chrome    拦截
+				firfox    阻止
+				IE    	  直接打开
+		用户操作是兼容的
+
+		打开空白页：window.open('about:blank');
+
+	2、关闭
+		window.close();
+		不兼容：
+				chrome    直接关闭
+				firfox    没反应（脚本不得关闭非脚本打开的窗口）
+				IE    	  询问是否关闭
+
+	3、网站地址————可获取，可设置
+		window.location;				————网站地址，json
+					http://www.a.com/s/a?ie=utf-8&abc=123#1d
+		window.location.host;			————获取域名
+					www.a.com
+		window.location.href;			————整个地址
+					http://www.a.com/s/a?ie=utf-8&abc=123#abc
+		window.location.search;			————搜索的参数，？后面
+					?ie=utf-8&abc=123
+		window.location.protocol;		————协议，http://
+		window.location.pathName;		————路径/s/a
+		window.location.hash;			————锚点 #abc
+
+		window.location.reload();
+		window.navigator.userAgent
+
+	4、(1)跳转页面：window.location.href='';
+	   (2)刷新页面：window.location.reload();
+	   				window.location.href=window.location.href;
+
+	5、系统对话框：
+		（1）警告框：alert('内容')					——————无返回值
+		（2）选择框：confirm('提问的内容')			——————返回boolean
+		（3）输入框：prompt()						——————返回字符串或null
+
+九、页面及滚动距离
+	1、html的表示方法：
+		var oHtml=document.body.parentNode;或document.documentElement;
+
+	2、滚动距离：
+		scrollTop:(兼容则为0)
+			var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+		scrollLeft:
+			var scrollL=document.documentElement.scrollLeft||document.body.scrollLeft;
+
+	3、可视区宽高：
+		document.documentElement.clientHeight/clientWidth;
+
+	4、内容高度：
+		obj.scrollHeight;————不包括border,内容未超过height时，值为height
+
+	5、事件：
+		window.onload
+		window.onscroll
+		window.onresize
+
+	6、绝对位置：元素距离页面边缘的距离，并非可视区
+		（1）function getPos(obj){
+				var l = 0;
+				var t = 0;
+				while(obj){
+					l+=obj.offsetLeft;
+					t+=obj.offsetTop;
+					obj=obj.offsetParent;————body的offsetParent为null，跳出循环
+				}
+				return {left:l,top:t};
+			}
+
+		（2）obj.getBoundingClientRect();	获取绝对位置;
+				.left		左边距离页面左边的距离
+				.top 		上边距离页面上边的距离
+				.right 		右边距离页面左边的距离
+				.bottom 	下边距离页面上边的距离
+			————不推荐使用，IE6下会多几像素
+
+	7、缓慢回到顶部：开定时器
+		var iSpeed=Math.floor(0-scrooT/8);
+		document.documentElement.scrollTop=document.body.scrollTop=scrollT+iSpeed;
+
+十、距离比较
+	1、内容在可视区域（图片延迟加载）
+		obj.offsetTop<scrollT+document.documentElement.clientHeight
+
+	2、内容到底
+		scrollT+clientH>=document.body.scrollHeight-500px;
+
+	3、放大镜
+		l/(oS.offsetWidth-oM.offsetWidth)=-l2/(oImg.offsetWidth-oB.offsetWidth);
+
+	4、拖拽磁性吸附
+		if(l<100){
+			l=0;
+		}else if(l>document.documentElement.clientWidth-oBox.offsetWidth-100){
+			l=document.documentElement.clientWidth-oBox.offsetWidth;
+		}
+	5、碰撞
+		未碰到：r1<r2||b1<t2||l1>r2||t1>b2		(拖拽时获取，抬起时检测)
+
+	6、苹果菜单
+	  （1）判断鼠标距每个图的距离
+	  		var c=Math.sqrt(a*a+b*b);
+	  		var a=aImg[i].offsetWidth/2+aImg[i].offsetLeft+oBox.offsetLeft-oEv.clientX;
+	  （2）感应距离
+	  		var scale=1-c/500;
+	  		if(scale<0.5) scale=0.5;
+	  		aImg[i].style.width=scale*128+'px';
+
+
+十一、系统获取的组元素
+	children
+	getElementsByTagName
+	getElementsByClassName
+
+	——————系统获取的并非真正意义上的数组，解决办法：
+		var arr=[];
+		for(var i=0;i<aLi.length;i++){
+			arr.push(aLi[i]);
+		}
+
+十二、图片预加载
+	（1）创建图片对象   var oImg = new Image();
+	（2）oImg.onload	当图片加载成功时触发事件（200）
+		oImg.onerror	当图片加载失败时触发事件（404）
+
+	————toFixed(数字)；保留几位小数
+
+十三、获取tbody表格
+	var oTable = document.getElementById('tab');
+	var oTbody = oTable.tBodies[0];
+	var aRow = oTbody.rows;				行
+	var aCol = oTbody.cells;			列
+	aRow[1].cells[2].innerHTML          获取表格内容
+
+十四、事件：
+	1、event事件:	var oEv=ev||event;
+	   oEv.clientX					鼠标在可视区X轴坐标
+	   oEv.clientY					鼠标在可视区Y轴坐标
+	   oEv.pageX					鼠标在页面X轴坐标（兼容IE9+）
+	   oEv.pageY					鼠标在页面Y轴坐标
+	   oEv.cancelBubble				阻止冒泡
+	   oEv.keyCode					获取键盘编码(js中不能使用组合按键的编码)
+	   		oEv.ctrlKey				当ctrl按下时为true	
+	   		oEv.shiftKey			当shift按下时为true	
+	   		oEv.altKey				当alt按下时为true
+	   oEv.srcElement||oEv.target    事件委托
+	   oEvent.fromElement||oEvent.relatedTarget;		移入
+	   oEvent.toElement||oEvent.relatedTarget;			移出
+	   oEvent.readState		domready   					当前状态 
+	   oEvent.wheelDelta 		oEvent.detail			鼠标滚轮的方向
+
+
+	2、对象事件：(事件不用处理兼容，连等即可)
+		obj.ondbclick				双击
+		obj.onmousemove				移动（拖拽给document）
+		obj.onmousedown				鼠标按下
+		obj.onmouseup				鼠标抬起
+		obj.onkeydown				键盘按下
+		obj.onkeyup					键盘抬起
+		obj.oncontextmenu			右键菜单事件
+		oForm.onsubmit				数据提交事件
+		obj.onpropertychange=obj.oninput=function(){}		属性改变事件
+		obj.addEventListener        事件绑定（IE9+）
+			obj.removeEventListener		解除绑定
+		obj.attachEvent        		事件绑定（IE10及以下）
+			obj.detachEvent             解除绑定
+		obj.onmouseenter/obj.onmouseover  移入
+		obj.onmouseleave/obj.onmouseout   移出
+
+		DOMContentLoaded（高）   onreadystatechange	（低）   DOMReady事件加载事件
+
+
+	3、阻止默认事件
+		return false;——————遇到事件绑定失效
+		遇事件绑定时，阻止默认事件
+			oEvent.preventDefault&&oEvent.preventDefault();		兼容IE9+浏览器
+			return false;
+
+	4、事件捕获		obj.setCapture&&obj.setCapture();
+					return false;
+					————将浏览器所有默认事件抓住，只执行此事件
+	   释放捕获		obj.releaseCapture&&obj.releaseCapture();
+	   				————将浏览器所有默认事件释放
+
+	5、（1）事件绑定:给同一元素加同一事件加多次
+			obj.addEventListener(sEv,fn,false);			兼容IE9+
+			obj.attachEvent('on'+sEv,function(){});		兼容IE10及以下
+
+		*****事件绑定兼容写法：（可写多次）
+			function addEvent(obj,sEv,fn){
+				if(obj.addEventListener){
+						obj.addEventListener(sEv,fn,false);
+				}else{
+						obj.attachEvent('on'+sEv,fn);
+				}
+			}
+				
+
+				说明：sEv无on
+					  IE8以下执行顺序会从后往前
+					  addEventListener————false	  冒泡阶段   从下往上找
+					 				  ————true	  捕获阶段   从上往下找
+		（2）解除事件绑定：
+			function removeEvent(obj,sEv,fn){
+				if(obj.removeEventListener){
+					obj.removeEventListener(sEv,fn,false);
+				}else{
+					obj.detachEvent('on'+sEv,fn);
+				}
+			}
+
+	6、事件委托：
+			——————提高性能，给未来元素加事件
+			obj.onclick=function(){
+				var oSrc=oEv.srcElement||oEv.target;	oSrc代表父级obj的所有子元素
+						 兼容ie,chrom     兼容ff,ie8+
+				if(oSrc.tagName!='LI') return;			子元素的标签名必须全大写
+			}
+
+
+	7、（1）滚轮事件：
+						onmousewheel			兼容：chrome，IE
+						DOMMouseScroll			兼容：Firefox
+							(DOM事件：以DOM开头，只能用事件绑定操作)
+							addEvent(document,'DOMMouseScroll',fn);
+
+		（2）鼠标滚轮的方向：		
+						oEvent.wheelDelta		兼容：chrome，IE
+															下		-120
+															上		120
+						oEvent.detail 			兼容：FF
+															下		3
+															上		-3		
+	8、onmouseover和onmouseout的bug
+		（1）移入：或onmouseenter
+					var oFrom = oEvent.fromElement||oEvent.relatedTarget;
+					if(oS.contains(oFrom))return;
+		（2）移出：或onmouseleave
+					var oTo = oEvent.toElement||oEvent.relatedTarget;
+					if(oS.contains(oTo))return;
+		例：放大镜：
+			oS.onmouseover=function(ev){
+				var oEvent = ev||event;
+			******var oFrom = oEvent.fromElement||oEvent.relatedTarget;
+				if(oS.contains(oFrom))return;
+				oB.style.display='block';
+				oM.style.display='block';
+			};
+			oS.onmouseout=function(ev){
+				var oEvent = ev||event;
+			******var oTo = oEvent.toElement||oEvent.relatedTarget;
+				if(oS.contains(oTo))return;
+				oB.style.display='none';
+				oM.style.display='none';
+			};
+
+		(3)检测是否为子级或子元素
+			obj.contains(obj2);————obj是否包含obj2，包含则为true
+			function isChild(oParent,obj){			oParent 为需检测的元素
+				while(obj){
+					if(obj==oParent){return true;}
+					obj=obj.parentNode;
+				}
+				return false;
+			}
+
+			调用：if(isChild(oBox,oTo))return;	
+
+	9、页面加载完成事件 html,css,js————DOMReady
+
+		function $_$(fn){
+			if(document.addEventListener){		高版本浏览器
+				document.addEventListener('DOMContentLoaded',function(){
+					fn&&fn();
+				},false);
+			}else{								低版本浏览器
+				document.attachEvent('onreadystatechange',function(){
+					if(document.readyState=='complete'){
+						fn&&fn();
+					}
+				});
+			}
+		}
+
+		获取状态：obj.readyState————'interactive'		互动过程
+									'complete'			完成
+
+	10、鼠标按下清除定时器：
+			clearInterval(obj.timer);————————防抖
+
+十五、this的错误用法————此时代表window
+	（1）定时器中不能使用this
+	（2）事件中套了一层函数，函数内不能使用this
+	（3）行间事件套了一层
+	（4）attachEvent中不能使用this（addEventListener中能行）
+
+
+十六、jiaThis	分享到————加border后，offset(盒子模型)会有问题
+
+
+
+******************************** 运动 *****************************
+
+十七、运动
+
+	1、运动核心：
+		dis = iTarget-start;
+		count = Math.floor(time/30);
+		var n =0;
+
+	2、匀速			start+dis*n/count;
+
+	   加速			var a = n/count;
+					start+dis*Math.pow(a,3);	当前走的距离
+
+	   减速			var a = 1-n/count;
+					start+dis*(1-Math.pow(a,3));
+
+
+十八、无缝滚动	<marquee> </marquee>标签
+
+十九、圆周运动
+	1、弧度转角度		a*180/π		π在Js中用Math.PI
+	   角度转弧度		a*π/180		
+
+	2、x=R+sina()*R     sina在js中用Math.sin(a)
+	   y=R+cosa()*R     cosa在js中用Math.cos(a)
+
+二十、穿墙
+	1、判断方向
+		function hoverDir(obj,oEvent){
+			var w = obj.offsetWidth/2+obj.offsetLeft;
+			var h = obj.offsetHeight/2+obj.offsetTop;
+			var x = w-oEvent.clientX;
+			var y = h-oEvent.clientY;
+			return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+		}
+	2、移动
+		var dir = hoverDir(oBox,oEvent);
+		switch(dir){
+			case 0:			右
+				break;
+			case 1:			下
+				break;
+			case 2:			左
+				break;
+			case 3:			上
+				break;
+		}
+
+二十一、无限运动：
+		end:fn中执行自己的函数即可
+
+二十二、布局转换：布局用浮动，Js定位（必须写两个for循环）
+	var aPos=[];
+
+	第一次for循环：
+			for(var i=0;i<aLi.length;i++){
+				aPos.push({'left':aLi[i].offsetLeft,'top':aLi[i].offsetTop});			
+			}
+	第二次for循环：	
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].style.position='absolute';
+				aLi[i].style.left=aPos[i].left+'px';
+				aLi[i].style.top=aPos[i].top+'px';
+				aLi[i].style.margin=0;			
+			}
+
+二十三、3D图片轮换
+	1、交换位置：
+		右：arr.unshift(arr.pop());
+		左：arr.push(arr.shift());
+
+	2、onclick事件可被当作属性保存
+		aPos.push({
+				aEv:aA[i].onclick
+		});
+		aA[i].onclick=aPos[i].aEv;
+
+二十四、弹性运动
+	弹性：  var iSpeed=0;
+			setInterval(function(){
+				iSpeed+=(300-oDiv.offsetLeft)/50;  ——————offsetLeft最开始为0
+				oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';
+			},30);
+	弹性+摩擦：
+			setInterval(function(){
+				iSpeed+=(300-oDiv.offsetLeft)/5;  
+				iSpeed*=0.7;
+				oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';
+			},30);
+			——————offsetLeft最开始为0,会停在300的位置
+
+
+
+******************************** 数据交互 *****************************
+
+一、服务器
+  1、手动配置服务器			apache
+  2、集成环境				wamp		手动开启	windows
+  							webserv		自动开启	windows
+  							mamp		 			mac苹果
+  							xmapp		 			windows、linuxus
+  	wamp:存储地址不能加中文
+
+二、cookies
+		————储存在用户本地终端上的数据
+
+	1、特性：
+		（1）只能通过域名方式访问/使用
+		（2）名字和值成对出现 name=value
+		（3）cookie不安全，所以不会存储一些保密的东西
+		（4）容量小，4KB左右
+		（5）本身有生命周期————expires,默认是session（会话），从打开网址到关闭浏览器结束
+		（6）不能跨浏览器
+
+	2、创建cookie
+		//iDay存的是数字，天数————什么时候过期
+		function addCookie(sName,sValue,iDay){
+			if(iDay){
+				var oDate = new Date();
+				oDate.setDate(oDate.getDate()+iDay);
+				document.cookie=sName+'='+sValue+'; PATH=/; EXPIRES='+oDate.toGMTString();
+			}else{
+				document.cookie=sName+'='+sValue+'; PATH=/';
+			}
+		}
+
+	3、获取cookie——————字符串，；封号和空格分隔多个cookie
+		function getCookie(sName){
+			var arr = document.cookie.split('; ');
+			for(var i=0;i<arr.length;i++){
+				var arr2 = arr[i].split('=');
+				if(arr2[0]==sName){
+					return arr2[1];
+				}
+			}
+		}
+
+	4、删除cookie——————cookie的name不能重复，会替换/覆盖
+		function removeCookie(sName){
+			addCookie(sName,1,-1);
+		}
+
+	5、日期格式：GMT格式
+				 UTC格式（年在最后）  IE8及以下
+		.toGMTString()   把日期格式变成GMT格式
+
+
+三、seajs.org 模块化	(类似的 requirejs.org)
+			  ——————一个js文件即为一个模块
+	1、定义模块
+		define(function(require,exports,module){
+			exports.show=function(){};	导出函数
+			var M=require('show');		导入函数/js
+		});
+
+		require     导入
+		exports		导出
+		module		批量导出
+
+	****批量导出：
+			（1）init.js中：		seajs.config({
+									alias:{
+										'w':'sum.js'
+									}
+								});
+								seajs.use('w',function(mod){
+									mod.sum();
+								});	
+
+				使用（页面中）：<script src="sea.js" data-main="init"></script>
+
+			（2）define(function(require,export,module){
+					module.exports={
+						sum:function(){},
+						show:function(){},
+						....
+					};
+				})
+
+	2、使用：
+		seajs.use('文件名.js',function(mod){
+			mod.show();
+		})								文件名的后缀可省
+
+		多个使用：seajs.use(['文件1','文件2'],function(mod1,mod2){});
+
+四、requirejs
+		与seajs只有引用时有差别
+		四、requirejs.use(['r'],function(mod){
+			mod.show();
+		})	
+
+五、ajax		Asynchronous Javascript And XML
+				(异步javascript和XML)
+				无刷新从服务器取数据————————先获取数据，再做功能（创建元素....）
+		注意事项：
+			（1）缓存cache——————解决：地址加后缀
+					http://www.a.com?t=Math.random();
+					http://www.a.com?t=new Date().getTime();
+			（2）ajax取回的都是字符串string——————解决：eval
+					var str=eval('('+json+')');
+			（3）乱码——————解决：文件编码统一（UTF-8）
+			（4）不关心后缀名。
+					http://www.baidu.com/s?....后面为参数，s只是一个无后缀名的文件名
+			（5）不能跨域
+
+	1、创建对象
+		if(window.XMLHttpRequest){		兼容为函数，不兼容为undefined
+			var oAjax=new XMLHttpRequest();
+		}else{
+			var oAjax=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+		用一个不存在的变量： 报错		eg.  a
+		用一个不存在的属性：undefined   eg.  window.a
+
+		
+	2.连接服务器（打开和服务器的连接）
+		oAjax.open('GET', url, true);
+		
+	3.发送
+		oAjax.send();
+		
+	4.接收
+		oAjax.onreadystatechange=function ()
+		{
+			if(oAjax.readyState==4)
+			{
+				if(oAjax.status>=200&&oAjax.status<300||oAjax.status=304)
+				{
+					//alert('成功了：'+oAjax.responseText);
+					fnSucc&&fnSucc(oAjax.responseText);
+				}
+				else
+				{
+					//alert('失败了');
+					if(fnFaild)
+					{
+						fnFaild();
+					}
+				}
+			}
+		};
+	5、ajax调用
+		ajax({
+			url:'baidu_news.php',
+			data:{
+				a:'get'
+			},
+			success:function(str){
+				var arr = eval('('+str+')');
+			},
+			error:function(s){
+				alert('错误:'+s);
+			}
+		});
+
+	6、状态值
+	 （1）.readyState属性：（完成与否）
+	 	  0：准备成功（未发送）
+	 	  1：发送请求（载入）
+	 	  2：接收数据源（载入完成）
+	 	  3：解析编译完成
+	 	  4：成功——响应内容解析完成，可在客户端调用
+	 （2）.status属性：（请求结果成功与否）
+	 	  200多：成功
+	 	  300多：重定向
+	 	  400多：文件未找到
+	 	  500多：服务器错误
+	 （3）.responseText 返回值读取
+
+六. jsonp跨域
+		————改变script的src，调用cb的函数名即可
+		wb: 搜索的内容 word/k
+		cb:callback回调函数
+	****jsonp中的函数必须为全局的
+
+	function jsonp(json){
+		json = json||{}
+		if(!json.url)return;
+		json.data=json.data||{};
+		json.cbName=json.cbName||'cb';
+		json.data[json.cbName] = 'show'+Math.random();
+		json.data[json.cbName] = json.data[json.cbName].replace('.','');
+		var arr = [];
+		for(var i in json.data){
+			arr.push(i+'='+encodeURIComponent(json.data[i]));
+		}
+		var sDate = arr.join('&');
+		var oS = document.createElement('script');
+		window[json.data[json.cbName]] = function (json2){
+			json.success&&json.success(json2);
+			oH.removeChild(oS);
+		}
+		oS.src=json.url+'?'+sDate;
+		var oH = document.getElementsByTagName('head')[0];
+		oH.appendChild(oS);	
+	}
+
+	jsonp调用：
+		jsonp({
+			url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+			data:{
+				wd:'aaa'
+			},
+			success:function(json){
+				alert(json.s);
+			}
+		});
+
+七、接口
+	1、封闭空间前，先加封号
+		;(function(){}) ();
+
+	2、接口：   普通       a.txt
+				PHP        user.php?act=.....
+
+	3、浏览器不适合处理中文：转码：unicode编码
+		encodeURIComponent(str);	转码
+		decodeURIComponent(str);	解码
+
+八、语言基础
+	1、c语言申请内存： arr=malloc(1024);
+						....
+						free();
+	2、递归：斐波那契
+		var arr=[];
+		if(arr[n]){
+			return arr[n];
+		}else{
+			arr[n]=fn(n-1)+fn(n-2);
+			return arr[n];
+		}
+
+	3、网络性能
+		（1）f12——network——timeline（时间ms,s）
+				DNS Lookup		       域名解析
+				initial  content       连接
+				request  sent          发送
+				waiting(TTFB)		   等待
+				Content Download	   接收
+
+		（2）YSLOW工具（yahoo雅虎开发）
+			YSLOW按住，拖至标签栏即可使用————打开页面，点击标签
+										 —————RunTest——Grade 评分等级
+	4、性能优化
+		（1）网络性能：
+			a.减少http请求
+			b.雪碧图
+			c.代码压缩
+			d.图片懒加载
+			e.文件合并（css,js）
+			f.CDN加速服务
+			g.script尽量放到body最下面，css放上面（渲染）（阻滞加载）
+
+		（2）执行性能
+			a.尽量不要用全局变量
+			b.尽量不要属性，用变量（用属性慢）
+			c.循环（for in慢）
+			d.尽量用系统给的
+			e.尽量用正则
+			f.尽量减少DOM操作（eg.运动，看不到的停掉）
+			g.尽量不要用图片（eg.ico-font，图片不要缩放，背景图平铺尺寸略大一些，大小整数）
+
+九、MVC————代码分离
+	1、后台
+		M     model     	模型：数据（建模）   	 eg.后台的代码
+		V     view     	    视图：用户能看到的东西   eg.前端的代码
+		C     controller     控制：中介，牵线  		 eg.控制层次
+
+	2、前端————组织代码的方式
+		M     model     	数据（ajax,jsonp....）————交互
+		V     view     	    视图（创建元素，运动....）
+		C     controller    中介：流程控制
+
+	3、模版：不是后台也不是前端代码
+		优点：干净舒服，减少耦合度（越低越好）
+		eg：
+			var str='我的名字是{$name}，今年{$age}';
+			var data={name:'麻子',age:18};
+			str=str.replace(/\{\$\w+\}/g,function(s){
+				s=s.substring(2,s.length-1);
+				return data[s];
+			});
+
+十、库：帮助开发，程序员主导，灵活		jquery
+	框架：限制你做事，框架主导，不灵活（方便统一） angular js
+
+十一、angular js框架————不兼容低版本IE
+	1、MVC
+		M     model     	数据源（用户输入的，ajax,jsonp）	ng-model
+		V     view     	    数据去哪							ng-bind  {{}}
+		C     controller    									ng-app 		范围
+
+		eg.   ng-model="aaa"	style/class/id="{{aaa}}"
+
+	2、（1）ng-click			点击
+	   （2）ng-init="  "		初始化		eg.<body ng-init="name='葫芦娃'；age=19;"></body>
+	   （3）ng-repeat			循环        ng-repeat="item in arr"
+	   （4）ng-show='a'			显示隐藏	a即代表show函数
+
+	   eg.<body ng-init="arr[{name:'葫芦娃',age:18},{}....]">
+	   			<ul>
+	   				<li ng-repeat="item in arr">
+	   					我叫{{item.name}}，今年{{item.age}}
+	   				</li>
+	   			</ul>
+	   	  </body>
+
+	 3、controller
+		 作用：
+			(1).把init放到外面。
+			(2).js和ng打通
+			(3).ajax,jsonp
+
+		应用：
+		（1）parseInt
+			<html ng-app="test">
+			<script>
+				app=angular.module('test',[]);
+				app.controller('aaa',function($scope){
+					$scope.parInt=function(){
+						parseInt($scope.a);
+					};
+					
+				});
+			</script>
+			<body ng-controller="aaa"> 
+				<input  type="text" ng-model="a" />
+				<input  type="text"  />
+				{{a}}
+			</body>
+
+		(2)alert
+			<html ng-app="test">
+			<script>
+				app=angular.module('test',[]);
+				app.controller('aaa',function($scope){
+					$scope.alert=function(){
+						alert(parseInt($scope.a)+parseInt($scope.b));	
+					};	
+				});
+			</script>
+			</head>
+			<body ng-controller="aaa"> 
+				<input  type="text" ng-model="a"/>
+				<input  type="text"  ng-model="b" />
+				<input  type="button"  ng-click="alert()" />
+			</body>
+
+		(3)get交互     $http.get(url,params).success(fn).error(fn);
+			<html ng-app="test">
+			<script>
+				app=angular.module('test',[]);
+				app.controller('aaa',function($scope,$http){
+					$scope.arr=[];
+					$scope.show=function(){
+						$http.get('1.txt',{}).success(function(arr){
+								$scope.arr=arr;
+							}).error(function(){
+							
+								alert('失败了');	
+						});
+						
+					};	
+				});
+			</script>
+			</head>
+			<body ng-controller="aaa">
+				<input type="button"  value="按钮" ng-click="show()" />
+				<ul>
+					<li ng-repeat="item in arr">{{item}}</li>
+				</ul>
+			</body>
+
+		（4）jsonp交互:
+			【监控		$scope.$watch('str',function(){});】 
+						————————————ng-model="str"数据源，str改变即触发事件
+			【$http.jsonp('url',{{params:{wd:wd:$scope.str,cb:JSON_CALLBACK}}}.sucess(fn).error(fn));】
+
+			注意：jsonp中的回调函数必须用'JSON_CALLBACK'
+
+
+			<script>
+			//百度
+			//https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&cb=show
+				app=angular('index',[]);
+				app.controller('main',function($scope,$http){
+					$scope.str='';
+					$scope.arr=[];
+					$scope.$watch('str',function(){
+						$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+							{params:{
+								wd:$scope.str,
+								cb:JSON_CALLBACK	
+							}}).success(function(json){
+								$scope.arr=json.s;	
+								
+							}).error(function(){alert('失败了')});
+					});
+					
+				});
+			</script>
+			</head>
+			<body ng-controller="main">
+				<input type="text" ng-model="str" />
+				<ul>
+					<li ng-repeat="item in arr">{{item}}</li>
+				</ul>
+			</body>
+
+
+
+十二、正则
+------------------------------------------------------------------
+1、创建：var re=new RegExp('规则','选项');
+	简写：  /规则/选项;				eg.var re=new RegExp('\\b'+sName+'\\b');
+-----------------------------------------------------------------
+2、选项	img
+		i 		Ignore 	忽略大小写
+		m 		muti-line 	多行模式
+		g 		global 		全局匹配
+3、量词
+		{n}		n个
+		{n,m}		最少n个，最多m个
+		{n,} 		最少n个，最多不限
+		{1,} 		最少一个，最多不限
+		{0,1}		最少没有，最多一个，出现一次或不出现
+		{0,} 		最少没有，最多不限
+		? 		{0,1} 	最少没有，最多一个
+		+		{1,} 	最少一个，最多不限	
+		* 		{0,}	最少没有，最多不限	【不推荐】
+
+4、修饰符
+		^ 		行首
+		$		行尾
+
+5、方括号
+	（1）.或
+	[1234]		1或2或3或4
+	[1,2,3,4]	1或2或3或4或,
+	a[abc]c 
+	aac 	abc	acc
+
+	（2）.范围
+	[0-9]		0-9
+	[a-z]		a-z
+	[A-Z]		A-Z
+	[a-zA-Z0-9]	所有字母和所有数字
+	[16-89]		1或6-8或9
+
+	（3）.排除
+	[^a-z]		排除a-z
+
+6、转义
+	\d		所有数字
+	\w		所有字母和数字_
+	\s 		所有空白
+	\D 		除了数字
+	\W		除了字母数字_
+	\S 		除了空白
+	.		匹配所有
+	\b      单词边界
+
+	如果想在页面输出一个\
+	\\
+
+7、str.search(re);		查找
+	str.match(re);		匹配
+	re.test(str); 		校验
+	test在使用时必须加上^$		/^  $/
+
+	str.replace(字符串|正则,字符串|函数)
+
+8、例子
+		用户名：
+			uname:/^[\w\d]{6,32}$/,
+		年龄：
+			age:/^((1[89])|([2-9]\d)|(100))$/,
+		邮箱：
+			email:/^\w+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,6}){1,2}$/
+		座机号：
+			 /^(0[1-9]\d{1,2}\-)?[1-9]\d{6,7}$/
+			 
+		小说格式整理：
+			oTxt1.value.replace(/^/mg,'    ').replace(/$/mg,'\n')
+			
+		敏感词过滤：
+			 /裸|约炮|信用卡|数据|恐慌/g
+			 
+		去掉首尾空格：
+			str = str.replace(/^\s+|\s+$/g,'');
+			var arr = str.split(/\s+/g);
+			arr.join(' ');
+			
+		中文：
+			/[\u4e00-\u9fa5]/
+
+		userAgent：
+				if(window.navigator.userAgent.search(/firefox/i)!=-1){
+					alert('ff');
+				}else if(window.navigator.userAgent.search(/chrome/i)!=-1){
+					alert('chrome');
+				}
+			else if(window.navigator.userAgent.search(/msie 9/i)!=-1)
+			{
+				alert('IE9');
+		}
+
+		qq号：
+			/[1-9]\d{4,10}/g
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

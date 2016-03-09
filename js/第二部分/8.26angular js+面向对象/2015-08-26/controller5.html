@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script src="ajax.js"></script>
+<script src="angular.js"></script>
+<script>
+//获取app
+app=angular.module('test',[]);
+app.controller('aaa',function($scope){
+	$scope.arr = [];
+	$scope.show=function(){
+		ajax('a.txt',function(str){
+			$scope.arr = eval('('+str+')');
+			//alert($scope.arr);
+		},function(){});
+	}
+});
+</script>
+</head>
+
+<body ng-controller="aaa">
+<input type="button" value="按钮" ng-click="show()" />
+<ul>
+	<li ng-repeat="item in arr">{{item}}</li>
+</ul>
+</body>
+</html>

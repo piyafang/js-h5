@@ -1,0 +1,17 @@
+@charset "utf-8";
+*{ margin:0; padding:0;}
+div{ width:830px; height:280px; margin:0 auto;  overflow:hidden; } 
+.yi{ width:830px; height:25px; overflow:hidden; margin-bottom:12px;  float:left; }
+h2{ font-size:23px; font-weight:normal; float:left; margin-right:30px; float:left;}
+ .yi a{ font-size:16px; color:#333; width:96px; height:24px;  float:left;  text-decoration:none; line-height:24px; text-align:center; margin-right:9px;}
+.yi a:hover{ background:#249ff1; color:#fff; }
+.yi .er{ float:right;   margin-right:0;}
+.san{ width:830px; overflow:hidden; margin-right:20px; float:left; }
+.wu{ float:left; margin-right:20px;}
+ul{ float:left; width:490px; list-style:none; overflow:hidden;}
+li{  width:150px; float:left;  margin-right:20px; margin-bottom:19px;   overflow:hidden;  }
+li a{ float:left;}
+li span{ font-size:14px; color:#333; float:left; margin-top:8px;  }
+.si{ margin-right:0;}
+
+

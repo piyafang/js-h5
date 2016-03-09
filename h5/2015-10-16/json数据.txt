@@ -1,0 +1,4 @@
+var json={name: '小明', age: 18, height: 178, weight: 120, 亲戚: [
+	{关系: '父子', name: '老明', age: 45, height: 172},
+	{关系: '母子', name: '老白', age: 43, height: 160}
+]};

@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+body {background:black; text-align:center;}
+#c1 {background:url(img/game_bg_2_hd.jpg);}
+</style>
+<script>
+/*********************************/
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+function a2d(n)
+{
+	return n*180/Math.PI;
+}
+/*********************************/
+
+function Sprite(img)		//?
+{
+	this.img=img;
+	
+	this.x=0;
+	this.y=0;
+	
+	this.rotate=0;
+	
+	this.sx=0;
+	this.sy=0;
+	
+	this.w=0;
+	this.h=0;
+}
+
+Sprite.prototype.draw=function (gd)
+{
+	gd.save();		//保存：状态(颜色、角度、xxx)
+	
+	gd.translate(this.x+this.w/2, this.y+this.h/2);
+	gd.rotate(d2a(this.rotate));
+	
+	gd.drawImage(
+		this.img,
+		//sx, sy, sw, sh
+		this.sx, this.sy, this.w, this.h,
+		//dx, dy, dw, dh
+		-this.w/2, -this.h/2, this.w, this.h
+	);
+	
+	gd.restore();
+};
+
+/**************************************/
+function loadImages(json, fn)
+{
+	var count=0;	//加载完了几个
+	var total=0;	//总共几个
+	
+	var res={};
+	
+	for(var name in json)
+	{
+		total++;
+		
+		var oImg=new Image();
+		
+		(function (name){
+			oImg.onload=function ()
+			{
+				res[name]=this;
+				
+				count++;
+				
+				if(count==total)	//完事儿
+				{
+					fn(res);
+				}
+			};
+		})(name);
+		
+		oImg.src=json[name];
+	}
+}
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	loadImages({
+		fish1:		'img/fish1.png',
+		fish2:		'img/fish2.png',
+		fish3:		'img/fish3.png',
+		fish4:		'img/fish4.png',
+		fish5:		'img/fish5.png',
+		cannon1:	'img/cannon1.png',
+		cannon2:	'img/cannon2.png',
+		cannon3:	'img/cannon3.png',
+		cannon4:	'img/cannon4.png',
+		cannon5:	'img/cannon5.png',
+		cannon6:	'img/cannon6.png',
+		cannon7:	'img/cannon7.png',
+		bottom:		'img/bottom.png',
+		bullet:		'img/bullet.png'
+	}, function (json){
+		//实验
+		var s=new Sprite(json.bullet);
+		
+		s.x=100;
+		s.y=200;
+		s.sx=86;
+		s.sy=0;
+		s.w=24;
+		s.h=26;
+		
+		s.rotate=180;
+		
+		s.draw(gd);
+	});
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

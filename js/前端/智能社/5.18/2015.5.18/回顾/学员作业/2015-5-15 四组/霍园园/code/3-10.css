@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+dl dt{
+	width:30px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	background:#ccc;}

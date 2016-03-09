@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet"  href="basic_first.css"/>
+<style>
+.box{margin-top:100px; margin-left:100px; }
+.box li{ float:left; margin-right:5px;}
+.box a{ display:inline-block;font-size:12px ; font-weight:bold; line-height:34px;background:url(../img/hdm_bg_c.png) repeat-x; height:34px;  padding:0 16px; position:relative;}
+.box .left{ background:url(../img/hdm_bg_l.png) no-repeat; position:absolute; left:0; top:0; width:16px; height:34px;}
+.box .right{background:url(../img/hdm_bg_r.png) no-repeat; width:16px; height:34px; position:absolute; right:0; top:0;}
+.bottom{ border-top:2px solid #000; position:relative; z-index:2;}
+
+
+a:hover {position:relative; background:url(../img/hdm_bg_c_hover.png) repeat-x; }
+.box:hover .bottom{ z-index:3;}
+a:hover .left{ background:url(../img/hdm_bg_l_hover.png) no-repeat;}
+a:hover .right{ background:url(../img/hdm_bg_r_hover.png) no-repeat;}
+
+
+
+</style>
+
+</head>
+
+<body>
+    	<ul class="box clearFix">
+        	<li>
+           		 <a  href="#">Menu Item
+				 	<i class="left"></i>
+					<i class="right"></i>
+				 </a>
+                
+            </li>
+			        	<li>
+           		 <a  href="#">Menu Item
+				 	<i class="left"></i>
+					<i class="right"></i>
+				 </a>
+                
+            </li>
+
+        	<li>
+           		 <a  href="#">Menu Item
+				 	<i class="left"></i>
+					<i class="right"></i>
+				 </a>
+                
+            </li>
+
+        	<li>
+           		 <a  href="#">Menu Item
+				 	<i class="left"></i>
+					<i class="right"></i>
+				 </a>
+                
+            </li>
+
+        </ul>
+		<div class="bottom"></div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-05-20 01:10:39
+ * @version $Id$
+ */
+
+*{margin:0;padding:0;list-style:none;}
+html,body{width:100%;height:100%;}
+
+.box{
+	width:310px;
+	height:154px;
+	margin:0 auto;
+}
+.top{
+	width:310px;
+	height:30px;
+	line-height:30px;
+
+}
+.name{
+	font-size:14px;
+	color:#666666;
+	float:left;
+
+}
+.more{
+	font-size:14px;
+	color:#005ea7;
+	text-decoration:none;
+	float:right;
+}
+.news{
+	width:308px;
+	height:100px;
+	border:1px solid #eeeeee;
+	border-top:2px solid #aaaaaa;
+	padding:4px 0;    	
+}
+.news1{
+	width:153px;
+	height:100px;
+	float:left;
+
+}
+.news2{
+	width:154px;
+	height:100px;
+	float:left;  	
+}
+.list{
+    width:143px;
+    height:25px;
+    line-height:25px;
+    border-right:1px solid #eeeeee;
+    float:left;
+    padding-left:10px;
+}
+.list2{
+    width:143px;
+    height:25px;
+    line-height:25px;
+    float:left;
+    padding-left:10px;    	
+}
+.link{
+	font-size:12px;
+	color:#666666;
+	text-decoration:none;
+
+}
+.clearfix{zoom:1;}
+.clearfix{
+	display:block;
+	content:"";
+	clear:both;
+}

@@ -1,0 +1,38 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+</style>
+<script type="text/javascript">
+	var str='123i20sdnfkzsd简单加油下雨天';
+	function codeLength(str){
+		var count=0;
+		for(var i=0;i<str.length;i++){
+			if(str.charCodeAt(i)>=19968&&str.charCodeAt(i)<=40869){
+				count+=3;
+			}else{
+				count+=1;
+			}
+		}
+		return count;
+	}
+
+	var aReslut=codeLength(str);
+	document.write(aReslut);
+	
+
+</script>
+</head>
+<body>
+	
+
+
+</body>
+</html>
+
+
+

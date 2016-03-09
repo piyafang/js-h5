@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+li{height:30px; line-height:30px; background:#ccc;margin:5px;}
+</style>
+<script>
+function findInArr(arr,sClass){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==sClass){
+			return true;
+		}
+	}
+	return false;
+}
+function getByClass(obj,sClass){
+	var aResult = [];
+	if(obj.getElementsByClassName){
+		aResult = obj.getElementsByClassName(sClass);
+	}else{
+		var aEle = obj.getElementsByTagName('*');
+		for(var i=0;i<aEle.length;i++){
+			var aClass = aEle[i].className.split(' ');
+			if(findInArr(aClass,sClass)){
+				aResult.push(aEle[i]);
+			}
+		}
+	}
+	return aResult;
+}
+window.onload=function(){
+	var oUl = document.getElementById('ul1');
+	var aRed = getByClass(oUl,'red');
+	for(var i=0;i<aRed.length;i++){
+		aRed[i].style.background='red';
+	}
+};
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li class="red365">111</li>
+	<li class="red on">222</li>
+	<li>33</li>
+	<li class="red2">444</li>
+	<li class="red active font5 on">55555</li>
+	<li>666</li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>3-2.基本浮动</title>
+<style>
+*{ margin:0; padding:0;}
+.clearFix:after{ content:''; clear:both; display:block; }
+.box{ width:500px; margin:0 auto;}
+.left{ width:300px; height:290px; background:#999; float:left;}
+.right{ float:right;}
+.right .right_top{ width:190px; height:140px; background:#09f; margin-bottom:10px;}
+.right .right_bottom{ width:190px; height:140px; background:#9f0;}
+</style>
+</head>
+
+<body>
+	<div class="box clearFix">
+    	<div class="left"></div>
+    	<div class="right">
+        	<div class="right_top"></div>
+        	<div class="right_bottom"></div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0;padding:0;list-style:none;}
+	.clearFix:after{ display:block;content:''; clear:both;}
+	.clearFix{zoom:1;}
+	#box{ width:500px; height:281px; position:relative; margin:100px auto;overflow:hidden;}
+	ul{ position:absolute;left:0;top:0;}
+	ul li{ float:left; width:500px; height:281px;}
+	ul img{ width:100%;}
+	ol{ position:absolute; left:50%; bottom:6px; width:300px;height:20px; margin-left:-150px;}
+	ol li{float:left; width:50px;height:10px; background:#ccc; margin-right:10px;}
+	ol p{ width:0;height:10px; background:#9FC; }
+</style>
+<script src="move.js"></script>
+<script>
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var oUl=oBox.getElementsByTagName('ul')[0];
+		var aLi=oUl.children;
+		var oOl=oBox.getElementsByTagName('ol')[0];
+		var aBtn=oOl.getElementsByTagName('p');
+		oUl.innerHTML+=oUl.innerHTML;
+		oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+		
+		var b=0;
+		for(var i=0;i<aBtn.length;i++){
+				clearInterval(aBtn[i].timer);
+				aBtn[i].timer=setInterval(function(){					
+					startMove(aBtn[b%aBtn.length],{'width':50},{'end':function(){						
+						startMove(oUl,{'left':-aLi[0].offsetWidth*(b+1)});
+						
+					}});b++;
+					alert(b);
+				},1000);
+		}
+		
+	};
+
+</script>
+</head>
+
+<body>
+	<div id="box">
+    	<ul class="clearFix">
+        	<li><img src="img/1.jpg"/></li>
+            <li><img src="img/2.jpg"/></li>
+            <li><img src="img/3.jpg"/></li>
+            <li><img src="img/4.jpg"/></li>
+            <li><img src="img/5.jpg"/></li>
+        </ul>
+        <ol class="clearFix">
+        	<li><p></p></li>
+            <li><p></p></li>
+            <li><p></p></li>
+            <li><p></p></li>
+            <li><p></p></li>       
+        </ol>
+    </div>
+</body>
+</html>

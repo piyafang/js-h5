@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+textarea{width:500px; height:200px;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oBtn=document.getElementsByTagName('input')[0];
+		var oTxt=document.getElementsByTagName('textarea')[0];
+		var oResult=document.getElementsByTagName('textarea')[1];
+
+		oBtn.onclick=function(){
+			var str1=oTxt.value;
+			var arr1=str1.split(' ');
+			var json={};
+
+			for(var i=0;i<arr1.length;i++){
+				if(json[arr1[i]]){
+					json[arr1[i]]++;
+				}else{
+					json[arr1[i]]=1;
+				}
+			}
+			
+
+			var arr2=[];
+			for(var i in json){
+				var str2=i.substring(0,i.indexOf('-'));
+				arr2.push({code:str2,count:json[i]});
+			}
+			
+			arr2.sort(function(j1,j2){
+				return j2.count-j1.count;
+			});
+			console.log(arr2);
+
+			var arr3=[];
+
+			for(var i in arr2){
+				arr3.push(arr2[i].code+' '+arr2[i].count);
+			}
+
+			oResult.value=arr3.join(' \n');	
+
+		
+
+
+		};
+	};
+</script>	
+</head>
+<body>
+	<!--去重统计出现次数-->
+	<textarea>冰红茶-3.5 百事可乐-4 红牛-5.5 怡宝-4 百岁山-3.5 红牛-5.5 怡宝-4 百岁山-3.5 红牛-5.5 怡宝-4 百岁山-3.5 冰红茶-3.5</textarea><br />
+	<input type="button" value="去重" /><br />
+	<textarea></textarea>
+</body>
+</html>

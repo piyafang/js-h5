@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+ul{overflow:hidden; width:966px; margin:0 auto;}
+ul li{float:left; width:300px; margin:0 10px; height:300px; border:1px solid #ccc;}
+ul li img{width:100%;}
+</style>
+<script>
+window.onload=window.onscroll=function(){
+	var aImg = document.getElementsByTagName('img');
+	var scrollT = document.documentElement.scrollTop||document.body.scrollTop;
+	var clientH = document.documentElement.clientHeight;
+	var scrollB =scrollT+clientH;
+	for(var i=0;i<aImg.length;i++){
+		if(aImg[i].offsetTop<scrollB){
+			aImg[i].setAttribute('src',aImg[i].getAttribute('_src'));
+		}
+	}
+};
+</script>
+</head>
+
+<body>
+<ul>
+	<li><img _src="img/b1.jpg" /></li>
+	<li><img _src="img/b2.jpg" /></li>
+	<li><img _src="img/b3.jpg" /></li>
+	<li><img _src="img/b4.jpg" /></li>
+	<li><img _src="img/b5.jpg" /></li>
+	<li><img _src="img/b6.jpg" /></li>
+	<li><img _src="img/b7.jpg" /></li>
+	<li><img _src="img/b8.jpg" /></li>
+	<li><img _src="img/b9.jpg" /></li>
+	<li><img _src="img/b10.jpg" /></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+

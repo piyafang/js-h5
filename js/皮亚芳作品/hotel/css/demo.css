@@ -1,0 +1,37 @@
+.flat,.flat div,.flat li,.flat div::after,.flat .carat,.flat .carat:after,.flat .selected::after,.flat:after{-webkit-transition: all 150ms ease-in-out;-moz-transition: all 150ms ease-in-out;-ms-transition: all 150ms ease-in-out;transition: all 150ms ease-in-out;}
+.flat .selected::after,.flat.scrollable div::after{-webkit-pointer-events: none;-moz-pointer-events: none;-ms-pointer-events: none;pointer-events: none;}
+.flat{position: relative;width:110px;height:36px;line-height:36px;cursor: pointer;background: #f0f0f0;color:#666;-webkit-user-select: none;-moz-user-select: none;user-select: none;}
+.long .flat{ width:240px;}
+.flat.open{z-index: 2;}
+.flat:hover,.flat.focus{background: #f0f0f0;}
+.flat .carat,.flat .carat:after{position: absolute;right: 14px;top: 50%;margin-top: -3px;border: 6px solid transparent;border-top: 6px solid #ccc;z-index: 1;-webkit-transform-origin: 50% 20%;-moz-transform-origin: 50% 20%;-ms-transform-origin: 50% 20%;transform-origin: 50% 20%;}
+.flat:hover .carat:after{border-top-color: #ccc;}
+.flat.focus .carat{border-top-color: #ccc;}
+.flat.focus .carat:after{border-top-color: #ccc;}
+.flat.open .carat{-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg);}
+.flat .old{position: absolute;left: 0;top: 0;height: 0;width: 0;overflow: hidden;}
+.flat select{position: absolute;left: 0px;top: 0px;}
+.flat.touch select{left: 0;top: 0;width: 100%;height: 100%;opacity: 0;}
+.flat .selected {color: #666;}
+.flat .selected,.flat li{display: block;font-size: 14px;color:#666;text-transform: uppercase;line-height:36px;padding-left:8px;overflow: hidden;white-space: nowrap;}
+.flat .selected::after{content: '';position: absolute;right: 0;top: 0;bottom: 0;width: 60px;}
+.flat:hover .selected::after,.flat.focus .selected::after{box-shadow: inset -55px 0 25px -20px #f0f0f0;}
+.flat div{position: absolute;left: 0;right: 0;top: 100%;margin-top: 1px;background: #fff;overflow: hidden;opacity: 0;color: #04724E;}
+.flat:hover div{background: #fff;box-shadow: 0 0 2px rgba(0,0,0,.15);}
+.flat.open div{opacity: 1;z-index: 2;}
+.flat.scrollable div::after{content: '';position: absolute;left: 0;right: 0;bottom: 0;height: 50px;box-shadow: inset 0 -50px 30px -35px #fff;}
+.flat.scrollable:hover div::after{box-shadow: inset 0 -50px 30px -35px #f0f0f0;}
+.flat.scrollable.bottom div::after{opacity: 0;}
+.flat ul{position: absolute;left: 0;top: 0;height: 100%;width: 100%;list-style: none;overflow: hidden;}
+.flat.scrollable.open ul{overflow-y: auto;}
+.flat li{color:#666;list-style: none;}
+.flat li:hover{background: #f0f0f0;position: relative;z-index: 3;color: #666;}
+.flat li.active{background: #f0f0f0;color: #666;}
+
+/* tabcon */
+.tabcon{position:relative;/*必要元素*/min-height:120px;overflow:hidden;}
+.tabcon .subbox{position:absolute;/*必要元素*/left:0;top:0;}
+.tabcon .sublist{padding:5px 10px;height:170px;}
+/* leftcon */
+#leftcon .subbox{width:9999em;}
+#leftcon .subbox .sublist{float:left;width:300px;}

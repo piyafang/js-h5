@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:200px; height:200px; background:#CCC; margin:0 auto;}
+#div2 {width:100px; height:100px; background:red; margin-left:-25px;}
+
+#div3 {width:200px; height:200px; background:#CCC; margin:0 auto;}
+#div4 {width:100px; height:100px; background:red; margin-left:-25px; position:relative;}
+</style>
+</head>
+
+<body>
+ie6下，负margin的部分被隐藏：
+<div id="div1">
+	<div id="div2"></div>
+</div>
+<br>
+<br>
+解决方法：子元素加relative
+<div id="div3">
+	<div id="div4"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* { margin: 0; padding: 0; list-style: none; }
+h2 { margin-top: 50px; line-height: 30px; font-size: 30px; text-align: center; }
+.box { width: 540px; overflow: hidden; margin: 50px auto; border: 2px solid red; position: relative; }
+.box div { width: 200px; height: 200px; background: #99cbfe; font-size: 50px; text-align: center; line-height: 200px; border: 2px solid #0698cb; color:#fff; }
+.float { float: left; }
+.des { position: absolute; right: 10px; top: 20px; width: 220px; padding-left: 90px; height: 147px; line-height: 147px; background: url(test.png) no-repeat -20px 0; color: #000; font-size: 16px; font-weight: bold; }
+</style>
+</head>
+
+<body>
+	<h2>浮动后，脱离文档流，其他元素当浮动的元素不存在！会占据浮动元素的位置。</h2>
+	<div class="box">
+		<div class="float">1左浮动</div>
+		<div></div>
+		<div>3没浮动</div>
+		<span class="des">第二块隐藏在第一块的下面!</span>
+	</div>
+</body>
+</html>

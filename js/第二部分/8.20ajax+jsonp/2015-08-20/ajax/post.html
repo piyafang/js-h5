@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oBtn = document.getElementById('btn1');
+	oBtn.onclick=function(){
+		if(window.XMLHttpRequest){
+			var oAjax = new XMLHttpRequest();
+		}else{
+			var oAjax = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		/*
+		oAjax.open('GET','get.php?a=12&b=5',true);
+		oAjax.send();
+		*/
+		oAjax.open('POST','post.php',true);
+		oAjax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		oAjax.send('a=12&b=5');
+		oAjax.onreadystatechange=function(){
+			if(oAjax.readyState==4){
+				if(oAjax.status>=200&&oAjax.status<300||oAjax.status==304){
+					alert(oAjax.responseText);
+				}else{
+					alert('失败');
+				}
+			}
+		};
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮" id="btn1" />
+</body>
+</html>

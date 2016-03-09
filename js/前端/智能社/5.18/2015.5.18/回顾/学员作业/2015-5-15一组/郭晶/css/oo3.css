@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+*{ 
+    margin:0;
+	passing:0; 
+	}
+.father{ 
+         width:514px; 
+		 height:230px; 
+		 margin:100px auto;
+		 overflow:hidden;}
+.left{ 
+         width:338px; 
+		 height:230px; 
+		 float:left;}
+.right{ 
+         width:170px; 
+		 height:230px; 
+		 background:#9f0; 
+		 float:right;}
+.left .top{ 
+            width:338px;
+			height:60px;
+			background:#0cf;}
+.left .center{
+	 width:338px;
+	 height:76px;
+	margin:10px 0;}
+.left .bottom{ 
+    width:338px;
+	 height:76px;
+	 background:;}
+p{ width:162px;
+ height:76px;}
+.cl, .br{ background:#06f; float:left;}
+.cr, .bl{ background:#999; float:right;}
+.br{ float:right;}
+.bl{ float:left;}

@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+
+	span{ display:inline-block; width:16px; height:15px;
+	 background:url(img/no.gif) no-repeat; padding-left:20px; cursor:pointer;}
+	span.on{ background:url(img/yes.gif) no-repeat;}

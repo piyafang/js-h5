@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors liuwendan (you@example.org)
+ * @date    2015-05-16 21:57:30
+ * @version $Id$
+ */
+.left{float: left;}
+.right{float: right;}
+.box{width: 650px;border-top: 1px solid #6daaea;}
+.top{margin: 10px 0;overflow: hidden;}
+.left-top,.right-top{width: 100px;height: 30px;background: #0873c0;}
+.bottom{overflow: hidden;}
+.left-bottom,.right-bottom,.middle-bottom{width: 210px;height: 120px;background: #ccc;}
+.middle-bottom{margin: 0 10px;}

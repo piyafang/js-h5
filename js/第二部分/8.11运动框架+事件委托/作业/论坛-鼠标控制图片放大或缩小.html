@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+#img{ position:absolute; left:0;top:0;}
+</style>
+<script src="mywheel.js"></script>
+<script>
+	window.onload=function(){
+		var oImg=document.getElementById('img');
+		var aSize=[];
+		var scale=100;
+		var timer=null;
+		var oldW=oImg.style.width;
+		var oldH=oImg.style.height;			
+		document.onmouseover=function(ev){
+			var oEv=ev||event;
+			addWheel(oImg,function(bDown){
+				if(bDown){
+					scale-=1;
+				}else{
+					scale+=1;			
+				}
+				aSize.push({w:oImg.offsetWidth*scale/100,h:oImg.offsetHeight*scale/100,l:oImg.offsetLeft,t:oImg.offsetTop});
+				var nSize=aSize.pop();
+				var oSize=aSize[aSize.length-2];		
+				oImg.style.width=nSize.w+'px';
+				oImg.style.height=nSize.h+'px';
+				oImg.style.left=oEv.clientX-(oEv.clientX-parseInt(nSize.l))*parseInt(nSize.w)/parseInt(oldW)+'px';
+				oImg.style.top=oEv.clientY-(oEv.clientY-parseInt(nSize.t))*parseInt(nSize.h)/parseInt(oldH)+'px';
+			});			
+			
+		};
+	};
+</script>
+</head>
+
+<body>
+	<img src="5.jpg" id="img" style="width:440px;height:440px;">
+</body>
+</html>

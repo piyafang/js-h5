@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/tab_index.css"/>
+</head>
+
+<body>
+<div class="tab_all">
+    <div style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0.56);width: 100%;height: 160px;position: absolute;bottom: 0;left: 0;z-index: 999;">
+    <div class="tab_focus" id="tab_focus">
+        <a class="prev" id="prev" href="javascript:void(0)"></a>
+        <div class="tab_focus1">
+            <ul class="clearb" style="margin-left: 0px;">
+                <li class="cur"><a href="javascript:void(0)"><img src="../static/image/temp/temp00.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp01.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp02.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp03.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp04.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp05.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp06.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp07.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp08.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp09.jpg" alt=""/></a></li>
+                <li><a href="javascript:void(0)"><img src="../static/image/temp/temp10.jpg" alt=""/></a></li>
+            </ul>
+        </div>
+        <a class="next" id="next" href="javascript:void(0)"></a>
+    </div>
+    </div>
+    <ul class="tab_con" id="tab_con">
+        <li class="cur"><a href="#"><img style="height: 0px" src="../static/image/temp/temp00.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp01.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp02.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp03.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp04.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp05.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp06.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp07.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp08.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp09.jpg" alt=""/></a></li>
+        <li><a href="#"><img style="height: 0px" src="../static/image/temp/temp10.jpg" alt=""/></a></li>
+    </ul>
+</div>
+<div id="tab_fc" style="display: none;">
+    <div id="tab_m">
+        <div id="tab_h">您好！这已经是最后一张了</div>
+        <div id="tab_back">返回</div>
+    </div>
+</div>
+<script type="text/javascript">
+    var oTabs=document.getElementById("tab_con");
+    var oImg=oTabs.getElementsByTagName("img");
+    var oBodywth=document.body.clientWidth;
+    var oBodyhet=document.body.clientHeight - 21;
+    for(i=0;i<oImg.length;i++){
+        /*if(oImg[i].style.width < oBodywth){
+            oImg[i].style.width=oBodywth + "px";
+        }*/
+        oImg[i].style.height=oBodyhet + "px";
+        //oImg[i].style.marginLeft=- oBodyhet / 2 + "px";
+    }
+</script>
+<script type="text/javascript">
+    var oTab=document.getElementById("tab_focus");
+    var oLis=oTab.getElementsByTagName("li");
+    var oTabs=document.getElementById("tab_con");
+    var oList=oTabs.getElementsByTagName("li");
+    function tabChang() {
+        for(i=0;i<oLis.length;i++){
+            var oLiss=oLis[i];
+            oLiss.index=i;
+            oLiss.onmousemove=function() {
+                for(j=0;j<oLis.length;j++) {
+                    oLis[j].className = "";
+                    oList[j].className = "";
+                }
+                this.className="cur";
+                oList[this.index].className="cur";
+            }
+        }
+    }
+    tabChang();
+</script>
+<script type="text/javascript">
+    var oTab=document.getElementById("tab_focus");
+    var oUl=oTab.getElementsByTagName("ul");
+    var oPrev=document.getElementById("prev");
+    var oNext=document.getElementById("next");
+    var oLis=oTab.getElementsByTagName("li");
+    var oFc=document.getElementById("tab_fc");
+    var oBack=document.getElementById("tab_back");
+    var i=0;
+    function chang(){
+        var liwth=i*178;
+        oUl[0].style.marginLeft = -liwth + "px";
+    }
+    oPrev.onclick = function () {
+        var it = oLis.length - 5;
+        if (i < it) {
+            i++;
+            chang();
+        }
+        else{
+            oFc.style.display="block";
+        }
+    };
+    oNext.onclick = function () {
+        var its=oUl[0].style.marginLeft;
+        var itss=parseInt(its);
+        if(itss<0){
+            i--;
+            chang();
+        }
+        else{
+            oFc.style.display="block";
+        }
+    };
+    oBack.onclick=function(){
+        oFc.style.display="none";
+    }
+</script>
+</body>
+</html>

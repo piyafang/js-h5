@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oOk = document.getElementById('ok_btn');
+	var oNo = document.getElementById('no_btn');
+	var oRev = document.getElementById('rev_btn');
+	var oBox = document.getElementById('box');
+	var aCh = oBox.getElementsByTagName('input');
+	oOk.onclick=function(){
+		for(var i=0;i<aCh.length;i++){
+			aCh[i].checked=true;
+		}
+	};
+	oNo.onclick=function(){
+		for(var i=0;i<aCh.length;i++){
+			aCh[i].checked=false;
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="全选" id="ok_btn" />
+<input type="button" value="不选" id="no_btn" />
+<input type="button" value="反选" id="rev_btn" />
+<hr />
+<div id="box">
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="checkbox" />
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

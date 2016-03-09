@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0;}
+/*3个浮动*/
+.box{ overflow:hidden; }
+  .zuo{ width:300px; height:290px; background:#999;  float:left; margin-right:10px;}
+  .you{ float:left; }
+  .you1{width:190px; height:140px; background:#09f; margin-bottom:10px;  }
+  .you2{width:190px; height:140px; background:#9f0; }
+/*7个浮动*/
+ .7clearFix{ width:514px; height:230px;}
+  .7left{ width:336px; height:230px; float:left; }
+  .7left_top{width:336px; height:60px;  background:#0cf; margin-bottom:10px; }
+  .7left_bottom{ width:336px; height:160px; overflow:hidden;  }
+  .7lbx{ width:163px; height:74px; background:#06f; float:left; margin-right:10px; margin-bottom:10px;}
+  .7lbx2{ width:163px; height:74px; background:#999; float:left; margin-right:0;  }
+  .7right{width:168px; height:230px; background:#9f0; float:left; margin-left:10px; }
+  .7clearFix:after{ content:""; clear:both; display:block;}
+  /* 4个块 */
+.topd{width:620px; height:60px; background:#39f;float:none;}
+.bottomd{width:620px; height:46px; float:none; margin-top:10px;}
+p{width:200px; height:40px; background:#999; margin-right:10px; float:left;}
+.p1{background:#000;}
+.p2{ margin:0;}
+/*两列布局*/
+.ltd{width:960px; height:48px; text-align:center; line-height:48px; background:#4e9ce9;}
+.lzd1{width:682px; height:500px; text-align:center; line-height:500px; background:#e2e2e2; 
+     margin-right:10px; float:left;}
+.lzd2{width:268px; height:500px; text-align:center; line-height:500px; background:#f7f7f7; float:left;}
+.lzd {overflow:hidden;}
+.rd{width:960px; height:50px;text-align:center; line-height:50px; background:#4e9ce9;}
+/*三列布局*/
+.sltd{width:960px; height:48px; text-align:center; line-height:48px; background:#4e9ce9;}
+.slzd1{width:150px; height:500px; text-align:center; line-height:500px; background:#e2e2e2; float:left;}
+.slzd2{width:602px; height:500px; text-align:center; line-height:500px; background:#fafafa; float:left;}
+.slzd3{width:206px; height:500px; text-align:center; line-height:500px; background:#fafafa; float:left; 
+border:1px solid #d3e3e6;}
+.slzd {overflow:hidden;}
+.srd{width:960px; height:50px;text-align:center; line-height:50px; background:#4e9ce9;}
+/* 3-5*/
+.s3{width:650px; height:40px; border-top:1px solid #6daaea; }
+.s3 p{width:100px; height:30px; background:#0873c0; margin:10px 0px;}
+.s3 .px3{margin-left:450px;}
+.dx3{width:650px; height:120px; float:left;}
+.dx3 div{width:210px; height:120px; background:#ccc; margin-right:10px; float:left;}
+.dx3 .qbk3{margin-right:0;}
+/*新浪首页*/
+.bos{ width:298px; height:200px; border:1px solid #d9e1ee; border-top:3px solid #ff8500; margin:0 auto;}
+.bos h2{ width:282px; height:19px; border-bottom:1px solid #d9e1ee; padding-top:14px; padding-bottom:11px; padding-left:16px; font-size:19px; color:#000; }
+.bos ul{ list-style:none; padding:9px 6px 0; overflow:hidden;}
+.bos ul li{ width:95px; float:left; }
+.bos ul li p{ text-align:center; margin-bottom:12px;}
+.bos ul li p a{ text-decoration:none; font-size:14px; color:#666;}
+.bos ul li p a:hover{ text-decoration:underline; color:#fe8400;}
+.bos ul  .li_zh{ margin-right:0;}
+.xian{border-top:1px dashed #d9e1ee; margin:-35px 7px 0;}
+/*京东*/
+.jd_top{ width:310px; height:30px; clear:both;  }
+   .jd_top h2{ float:left;  color:#666; padding:9px 0; font-size:12px; }
+   .jd_top a{ float:right; padding:9px 0; text-decoration:none; font-size:12px; color:#005ea7;}
+   .jd_bottom{ width:308px; height:108px; border:1px solid #f1f1f1; border-top:2px solid #aaa; overflow:hidden;}
+   .jd_bottom ul{ font-size:12px; color:#666; padding:11px 11px; float:left; list-style:none;}
+   .jd_bottom ul li{ margin-bottom:13px;}
+   .jd_xian{ height:100px; border-right:1px dashed #d9e1ee; margin-right:156px; margin-top:4px;}

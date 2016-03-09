@@ -1,0 +1,173 @@
+笔记
+==================================
+复习：
+字符串的常用方法：
+str.charAt 		查找某一位置的字符
+str.indexOf 		从前往后找，找字符串第一次出现的位置，找到了，返回位置，找不到，返回-1
+str.lastIndexOf 	从后往前找，找字符串第一次出现的位置，找到了，返回位置，找不到，返回-1
+str.substring 		截取字符串
+substring(开始位置,结束位置) 	从开始位置截取到结束位置，不包括结束位置。
+substring(开始位置)		从开始位置截取到最后。
+str.toLowerCase() 		把字符串变成小写。
+str.toUpperCase() 		把字符串变成大写。
+字符串-》数组
+str.split 			字符串拆分成数组
+
+
+数组的常用方法：
+arr.push() 		后面添加
+arr.pop() 		后面删除
+arr.unshift() 		前面添加
+arr.shift() 		前面删除
+arr.splice() 		删除，插入，替换
+arr.splice(开始位置,长度)			删除
+arr.splice(开始位置,0,要插入的东西)		插入
+arr.splice(开始位置,长度,要替换成的东西)	替换
+arr.join()				数组-》字符串
+arr.reverse() 				反转
+arr.concat() 				链接
+arr.sort()				排序
+排数字	 从小到大
+arr.sort(function(n1,n2){
+	return n1-n2;
+});
+从大到小
+arr.sort(function(n1,n2){
+	return n2-n1;
+});
+
+i的问题:
+1.循环中加事件，事件中用i
+	解决：		封闭空间、自定义属性index
+2.循环中加定时器，定时器中用i
+	解决：		封闭空间
+
+封闭空间作用：
+1.解决i的问题
+2.解决变量名冲突
+
+arguments 		实参参数的数组
+什么时候使用：当参数的个数不固定时使用。
+
+json 		装东西
+语法结构:
+{名字:值,名字:值}
+json	
+下标就是名字，是字符串
+json没有length
+用for...in...循环
+for(var i in json){
+	i		//名字（下标）
+	json[i] 		//值
+	json.i
+}
+
+批量设置样式：
+用arguments.length		判断有几个参数
+如果参数是2个，用json的改法。
+否则，用正常的改法。
+
+
+
+
+小练习：
+1. 星星评分 (全颗、半颗、负颗)
+%2==0就是左，==1就是右
+
+
+
+
+5. 数组去重		(json做)
+循环数组，把每个值当做名字给json赋值。
+把json里面的名字都提出来加到新的数组中。
+
+var arr=[12,34,56,34,12,56,78,12,34,56];
+var arr=[12,34,56,78];
+
+url2json
+a=1&b=2&c=3
+{a:1,b:2,c:3}
+json2url
+{a:1,b:2,c:3}
+a=1&b=2&c=3
+
+通过class获取一组元素
+obj.getElementsByClassName() 	
+只兼容，高级浏览器		IE8-不兼容
+前端第二定律：只要是好用的东西，都不兼容。
+
+
+obj.getElementsByTagName('*')获取元素下所有的标签
+
+*系统给的，永远是最好的。
+
+**getByClass(obj,sClass);
+function findInArr(arr,sClass){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==sClass){
+			return true;
+		}
+	}
+	return false;
+}
+function getByClass(obj,sClass){
+	var aResult = [];
+	if(obj.getElementsByClassName){
+		aResult=obj.getElementsByClassName(sClass);
+	}else{
+		var aEle = obj.getElementsByTagName('*');
+		for(var i=0;i<aEle.length;i++){
+			var aClass = aEle[i].className.split(' ');
+			if(findInArr(aClass,sClass){
+				aResult.push(aEle[i]);
+			}
+		}
+	}
+	return aResult;
+}
+
+小练习:
+**例子
+选项卡
+按钮选项卡
+自动播放选项卡
+数字时钟
+图片时钟
+倒计时
+彩票
+简易游戏
+无限下拉菜单延迟版
+延迟选项卡
+qq头像
+星星评分
+新浪延迟广告
+拍卖倒计时
+联动全选
+自定义单选框/多选框/下拉框
+js简易年历
+换肤
+**函数
+判断浏览器版本
+rnd
+toDou
+getStyle
+setStyle
+findInArr
+url2json
+json2url
+数组去重
+getByClass
+**字符串，数组常用方法**
+
+
+
+
+
+
+
+
+
+
+
+
+

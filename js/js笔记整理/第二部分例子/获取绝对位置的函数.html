@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+	function getPos(obj){
+		var l=0;
+		var t=0;
+		while(obj){
+		l+=obj.offsetLeft;
+		t+=obj.offsetTop;
+		obj=obj.offsetParent;
+		}
+		return {left:l,top:t};
+	}
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

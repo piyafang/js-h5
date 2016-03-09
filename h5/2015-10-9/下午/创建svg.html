@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+window.onload=function ()
+{
+	var oRect=document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+	
+	oRect.setAttribute('width', '400');
+	oRect.setAttribute('height', '300');
+	oRect.setAttribute('x', '100');
+	oRect.setAttribute('y', '150');
+	
+	
+	//创建svg标签——也得用NS
+	var oSvg=document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+	
+	oSvg.setAttribute('width', '800');
+	oSvg.setAttribute('height', '600');
+	
+	document.body.appendChild(oSvg);
+	
+	
+	//
+	oSvg.appendChild(oRect);
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

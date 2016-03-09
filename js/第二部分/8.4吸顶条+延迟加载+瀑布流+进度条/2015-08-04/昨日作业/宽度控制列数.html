@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+div{float:left; height:200px; width:12.5%; font-size:50px; color:#fff; font-weight:bold; text-align:center; line-height:200px;}
+</style>
+<script>
+function rnd(n,m){
+	return parseInt(n+Math.random()*(m-n));
+}
+window.onload=function(){
+	var aDiv = document.getElementsByTagName('div');
+	for(var i=0;i<aDiv.length;i++){
+		aDiv[i].innerHTML=i+1;
+		aDiv[i].style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+	}
+	window.onresize=function(){
+		var clientW = document.documentElement.clientWidth;
+		if(clientW>900){
+			for(var i=0;i<aDiv.length;i++){
+				aDiv[i].style.width='12.5%';
+			}
+		}else if(clientW>600){
+			for(var i=0;i<aDiv.length;i++){
+				aDiv[i].style.width='25%';
+			}
+		}else{
+			for(var i=0;i<aDiv.length;i++){
+				aDiv[i].style.width='50%';
+			}
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

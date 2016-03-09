@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:200px; height:200px; background:#f90; position:absolute; top:0; left:0; opacity:1; filter:alpha(opacity:100);}
+</style>
+<script src="move3.js"></script>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	oBox.onclick=function(){
+		//因为调用了两次startMove，后面的会把前面的timer清除
+		/*
+		startMove(oBox,'width',500,700);
+		startMove(oBox,'height',500,700);
+		解决办法。只调用此次就ok。
+		*/
+		startMove(oBox,{'width':500},700);
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

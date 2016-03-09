@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	body{ perspective:2000px;}
+	.box{   margin:100px auto; width:200px; position:relative;transform:rotateY(30deg) rotateX(30deg); 
+	-webkit-transform-style:preserve-3d;
+	transition:all 3s;
+	}
+	.box div{ width:200px; height:200px; background:red; position:absolute; top:0; left:0;
+}
+	.box .l{ background:yellow; transform:rotateY(90deg) translateZ(-100px);}
+	.box .r{ background:blue; transform:rotateY(-90deg) translateZ(-100px);}
+	.box .t{ background:green; transform:rotateX(90deg) translateZ(-100px);}
+	.box .b{ background:red; transform:rotateX(-90deg) translateZ(-100px);}
+	.box .q{ background:black; transform:translateZ(100px);}
+	.box .h{ background:pink; transform:translateZ(-100px);}
+	
+	
+	.box:hover{ transform:rotateX(360deg) rotateY(-180deg) rotateZ(-90deg);}
+</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="l">111</div>
+		<div class="r"></div>
+		<div class="t"></div>
+		<div class="b"></div>
+		<div class="h"></div>
+		<div class="q"></div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

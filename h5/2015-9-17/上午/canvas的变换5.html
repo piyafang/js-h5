@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black;}
+#c1 {background:white;}
+</style>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+function drawRect(gd, x, y, w, h, rotate)
+{
+	gd.save();
+	gd.beginPath();
+	
+	gd.translate(x+w/2, y+h/2);
+	gd.rotate(d2a(rotate));
+	
+	gd.strokeRect(-w/2, -h/2, w, h);
+	
+	gd.restore();
+}
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	var i=0;
+	var j=90;
+	
+	setInterval(function (){
+		gd.clearRect(0, 0, oC.width, oC.height);
+		
+		i++;
+		j--;
+		drawRect(gd, 100, 100, 300, 200, i);
+		drawRect(gd, 400, 200, 200, 100, j);
+	}, 30);
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600">
+</canvas>
+</body>
+</html>
+
+
+
+
+
+

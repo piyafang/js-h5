@@ -1,0 +1,40 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+<meta  charset="utf-8" />
+<title></title>
+<script src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+$(function(){
+		// $('h3').mouseover(function(){
+		// 	$('ul').css({'display':'block','background':'red'});
+		// })
+		// $('h3').mouseout(function(){
+		// 	$('ul').css('display','none');
+		// })
+
+		$('h3').hover(function(){
+			$('ul').show(1000);},function(){
+				$('ul').hide(1000);
+			})
+})
+
+</script>
+<style type="text/css">
+		ul{ width: 200px; border: 1px solid red; display: none;}
+</style>
+</head>
+	
+<body>
+	<div>
+		<h3>点我点我</h3>
+		<ul>
+			<li>下拉菜单</li>
+			<li>下拉菜单</li>
+			<li>下拉菜单</li>
+			<li>下拉菜单</li>
+		</ul>
+	</div>
+
+</body>
+</html>

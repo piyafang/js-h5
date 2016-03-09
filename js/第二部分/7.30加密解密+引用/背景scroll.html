@@ -1,0 +1,38 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<title> scroll </title> 
+<meta charset="utf-8" />
+
+</head> 
+<body> 
+<fieldset> 
+<legend>控制台</legend> 
+<div style="border:0px;width:100%; background-color:#F5F8F0;"> 
+<DIV id="dd" style="overflow:auto;left:49px;height:200px;width:100%;top:40px; border:0px; background-color:pink;"> 
+控制台输出。。。<br> 
+控制台输出。。。<br> 
+控制台输出。。。<br> 
+控制台输出。。。<br> 
+控制台输出。。。<br> 
+</DIV> 
+<input type="text" name="" style="border:0px;width:100%; background-color:#F5F8F0;"> 
+</div> 
+</fieldset> 
+<input type="button" name="" value="不停点我" onclick="test()"> 
+</body> 
+</html> 
+<script language="JavaScript"> 
+function test(){ 
+var vs = document.getElementById("dd").innerHTML; 
+document.getElementById("dd").innerHTML = vs +"控制台输出。。。<br>"; 
+document.getElementById("dd").scrollTop=1000000; 
+} 
+</script> 
+
+
+
+
+
+
+

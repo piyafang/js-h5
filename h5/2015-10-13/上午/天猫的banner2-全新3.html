@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+<style>
+* {margin:0; padding:0; list-style:none;}
+
+#page {width:320px; /*height:?;*/ margin:0 auto; overflow:hidden;}
+#content {width:320px; height:2232px; background:url(a.png) no-repeat; -webkit-transform:translateY(0); position:absolute; left:0; top:0; z-index:99;}
+#top_refresh {position:absolute; top:0; left:0; z-index:1; height:32px; text-align:center; width:100%;}
+#top_refresh .a1 {display:inline;}
+#top_refresh .a2 {display:none;}
+
+#top_refresh img {-webkit-transition:0.3s all ease; -webkit-transform:rotate(0);}
+
+#top_refresh.active .a1 {display:none;}
+#top_refresh.active .a2 {display:inline;}
+#top_refresh.active img {-webkit-transform:rotate(180deg);}
+</style>
+<script>
+window.onload=function ()
+{
+	var oPage=document.getElementById('page');
+	var oContent=document.getElementById('content');
+	var oTopRefresh=document.getElementById('top_refresh');
+	
+	//第一步、添加高
+	oPage.style.height=document.documentElement.clientHeight+'px';
+	
+	//横屏
+	window.onresize=function ()
+	{
+		oPage.style.height=document.documentElement.clientHeight+'px';
+	};
+	
+	//第二步、页面滚动
+	//普通滚动
+	var contentTranslateY=0;
+	document.addEventListener('touchstart', function (ev){
+		var disY=ev.targetTouches[0].pageY-contentTranslateY;
+		
+		function move(ev)
+		{
+			contentTranslateY=ev.targetTouches[0].pageY-disY;
+			
+			if(contentTranslateY>0)
+			{
+				oContent.style.WebkitTransform='translateY('+contentTranslateY/5+'px)';
+			}
+			else
+			{
+				oContent.style.WebkitTransform='translateY('+contentTranslateY+'px)';
+			}
+			
+			//显示下拉刷新
+			if(contentTranslateY>100)
+			{
+				oTopRefresh.className='active';
+			}
+			else
+			{
+				oTopRefresh.className='';
+			}
+		}
+		function end()
+		{
+			document.removeEventListener('touchmove', move, false);
+			document.removeEventListener('touchend', end, false);
+		}
+		
+		document.addEventListener('touchmove', move, false);
+		document.addEventListener('touchend', end, false);
+		
+		ev.preventDefault();
+	}, false);
+	//上下都有“下拉刷新”	【新】
+	//慢慢停下来			【新】
+};
+</script>
+</head>
+
+<body>
+<div id="page">
+	<div id="top_refresh">
+    	<img src="top_arrow_icon.png" />
+        <span class="a1">下拉刷新</span>
+        <span class="a2">松开刷新</span>
+    </div>
+	<div id="content">
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

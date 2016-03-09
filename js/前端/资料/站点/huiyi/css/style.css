@@ -1,0 +1,45 @@
+@charset "gb2312";
+/* CSS Document */
+html,body,div,span,iframe,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,abbr,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,select{margin:0;padding:0}
+body{font:12px/22px Arial,"\5B8B\4F53","SimSun",HELVETICA,"Hiragino Sans GB";color:#333}
+fieldset,img,abbr,acronym{border:0}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+*{outline:none}
+.tf{font-family:"\5FAE\8F6F\96C5\9ED1",Î¢ÈíÑÅºÚ,"Microsoft Yahei",ÑÅºÚ\9,Arial}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.clearfix{zoom:1}
+.clear{clear:both;height:0px;font-size:0px;visibility:hidden;line-height:0px}.vm{vertical-align:middle}.pr{position:relative}
+.fl{ float:left;}
+.fr{ float:right;}
+
+body { background-image: url(../images/bg.jpg); }
+.content { width: 1440px; margin:0 auto; }
+.p_c1 { background: url(../images/p_c1.jpg) no-repeat; height: 254px; }
+.p_c2 { background: url(../images/p_c2.jpg) no-repeat; height: 218px; }
+.p_c3 { background: url(../images/p_c3.jpg) no-repeat; height: 95px; }
+.p_c3 h4,.p_c4 h4{ width: 1200px; margin:0 auto; padding-top: 10px; }
+.p_c4 { background-image: url(../images/p_c4.jpg); background-repeat: no-repeat; height: 104px; }
+.p_c5{background: url(../images/p_c5.jpg) no-repeat; height: 408px;} 
+.p_c6 { background-image: url(../images/p_c6.jpg); background-repeat: no-repeat; height: 144px; }
+.focus { background-image: url(../images/focus.jpg); background-repeat: no-repeat; height: 533px; width: 1440px; padding-top: 24px; }
+
+
+
+#playBox{ width:1200px; height:530px; position:relative; overflow:hidden; margin-right: auto; margin-left: auto; }
+#playBox .oUlplay { width:99999px; position:absolute; left:0px; top:0; height: 498px; overflow: hidden; }
+#playBox .oUlplay li{ float:left; height: 498px; display: block; }
+#playBox .pre{ cursor:pointer; width:42px; height:42px; position:absolute; left:46%; z-index:10; bottom: 10%; background-image: url(../images/leftBtn.jpg); background-repeat: no-repeat; }
+#playBox .next{ cursor:pointer; width:42px; height:42px; position:absolute; right:46%; z-index:10; background-image: url(../images/rightBtn.jpg); background-repeat: no-repeat; bottom: 10%; }
+.smalltitle { width:1200px; height:10px; position:absolute; bottom:6px; z-index:10 }
+.smalltitle ul{ width:160px; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; }
+.smalltitle ul li{ width:12px; height:12px; border-radius:10px; background:#ffffff; float:left; overflow:hidden; *display:inline;*zoom:1;margin-top: 0; margin-right: 5px; margin-bottom: 0; margin-left: 5px; }
+.smalltitle .thistitle,.smalltitle li:hover{ background: url(../images/dian2.png) no-repeat left top;}
+.main_1200 { overflow: hidden; width: 1200px; margin-right: auto; margin-left: auto; }
+.kouhao { width: 654px; padding-right: 40px; }
+.kouhao p { text-indent: 2em; font-size: 14px; line-height: 30px; }
+.shuru input { border: 1px solid #D1D0D0; height:30px; width: 264px; -moz-border-radius: 5px; -webkit-border-radius:5px; border-radius:5px; padding-top: 4px; padding-left: 10px; font-size: 14px; color: #333; -moz-box-shadow: inset 0 1px 4px rgba(0,0,0,.4); -webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,.4); box-shadow: inset 0 1px 4px rgba(0,0,0,.24); }
+.shuru ul li { padding-top: 42px; font-size: 16px; vertical-align: middle; color: #666; }
+.shuru lable{ vertical-align: middle; }
+.shuru ul li a { font-size: 18px; line-height: 40px; height: 40px; width: 276px; color: #FFF; text-decoration: none; background-color: #BE1A23; display: block; text-align: center; margin-left: 48px; -moz-border-radius: 5px; -webkit-border-radius:5px; border-radius:5px; }

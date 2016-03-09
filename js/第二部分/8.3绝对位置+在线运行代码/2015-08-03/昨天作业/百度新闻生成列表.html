@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+//数据
+var data = [
+	{
+		title:'马方确认留尼汪岛飞机残骸来自波音777',
+		href:'http://world.huanqiu.com/exclusive/2015-08/7167955.html',
+		child:[
+			{
+				title:'疑似“飞机舱门”实为梯子',
+				href:'http://news.cnr.cn/gjxw/gnews/20150803/t20150803_519399542.shtml'
+			},
+			{
+				title:'全球仅MH370一架波音777失联',
+				href:'http://focus.china.com.cn/s/guoji/2015/08/03/356535.html'
+			}
+		]
+	},
+	{
+		title:'马方确认留尼汪岛飞机残骸来自波音777',
+		href:'http://world.huanqiu.com/exclusive/2015-08/7167955.html',
+		child:[
+			{
+				title:'疑似“飞机舱门”实为梯子',
+				href:'http://news.cnr.cn/gjxw/gnews/20150803/t20150803_519399542.shtml'
+			},
+			{
+				title:'全球仅MH370一架波音777失联',
+				href:'http://focus.china.com.cn/s/guoji/2015/08/03/356535.html'
+			}
+		]
+	},
+	{
+		title:'马方确认留尼汪岛飞机残骸来自波音777',
+		href:'http://world.huanqiu.com/exclusive/2015-08/7167955.html',
+		child:[
+			{
+				title:'疑似“飞机舱门”实为梯子',
+				href:'http://news.cnr.cn/gjxw/gnews/20150803/t20150803_519399542.shtml'
+			},
+			{
+				title:'全球仅MH370一架波音777失联',
+				href:'http://focus.china.com.cn/s/guoji/2015/08/03/356535.html'
+			}
+		]
+	}
+];
+window.onload=function(){
+	var oUl = document.body.children[0];
+	for(var i=0;i<data.length;i++){
+		var oLi = document.createElement('li');
+		var oH = document.createElement('h2');
+		oH.innerHTML='<a href="'+data[i].href+'">'+data[i].title+'</a>';
+		oLi.appendChild(oH);
+		for(var j = 0;j<data[i].child.length;j++){
+			var oA = document.createElement('a');
+			oA.href=data[i].child[j].href;
+			oA.innerHTML=data[i].child[j].title;
+			oLi.appendChild(oA);
+		}
+		oUl.appendChild(oLi);
+	}
+};
+</script>
+</head>
+
+<body>
+<ul>
+	<!--<li>
+    	<h2><a href="javascript:;">我是大标题</a></h2>
+        <a href="javascript:;">我是一个小</a>
+        <a href="javascript:;">我是一个小</a>
+    </li>-->
+</ul>
+</body>
+</html>
+
+
+
+

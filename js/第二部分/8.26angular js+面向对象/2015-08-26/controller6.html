@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script src="angular.js"></script>
+<script>
+//获取app
+app=angular.module('test',[]);
+//controller
+app.controller('aaa',function($scope,$http){
+	$scope.arr=[];
+	//$http
+	//get
+	//post
+	//jsonp
+	//$http.get(url,params).success(fn).error(fn);
+	$scope.show=function(){
+		$http.get('a.txt',{}).success(function(arr){
+			$scope.arr = arr;
+		}).error(function(){
+			alert('错了');
+		});
+	};
+});
+</script>
+</head>
+
+<body ng-controller="aaa">
+<input type="button" value="按钮" ng-click="show()" />
+<ul>
+	<li ng-repeat="item in arr">{{item}}</li>
+</ul>
+</body>
+</html>

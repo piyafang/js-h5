@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+
+<style>
+* {margin:0; padding:0; list-style:none;}
+
+#page {width:100%; /*height:?;*/ overflow:hidden; position:relative;}
+#content {width:100%; height:2232px; background:url(a.png) no-repeat; -webkit-transform:translateY(0); position:absolute; z-index:99; left:0; top:0;}
+
+#top_refresh {width:100%; position:absolute; z-index:1; text-align:center; left:0; top:0;}
+
+#top_refresh .a1 {display:inline;}
+#top_refresh .a2 {display:none;}
+#top_refresh img {-webkit-transition:0.3s all ease; -webkit-transform:rotate(0);}
+
+#top_refresh.active .a1 {display:none;}
+#top_refresh.active .a2 {display:inline;}
+#top_refresh.active img {-webkit-transform:rotate(180deg);}
+
+#banner {width:320px; height:134px; position:absolute; left:0; top:51px; overflow:hidden;}
+
+#banner ul {width:1920px; height:134px; overflow:hidden; -webkit-transform:translateX(0);}
+#banner ul li {width:320px; height:134px; float:left;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oPage=document.getElementById('page');
+	var oContent=document.getElementById('content');
+	
+	var oTopRefresh=document.getElementById('top_refresh');
+	
+	//banner
+	var oBanner=document.getElementById('banner');
+	var oBannerUl=oBanner.children[0];
+	var aBannerLi=oBannerUl.children;
+	
+	//松手接着走
+	var speedY=0;
+	var lastY=0;
+	var timer=null;
+	
+	//page的高度
+	oPage.style.height=document.documentElement.clientHeight+'px';
+	
+	window.onresize=function ()
+	{
+		oPage.style.height=document.documentElement.clientHeight+'px';
+	};
+	
+	//1.普通拖拽
+	var contentTranslateY=0;
+	document.addEventListener('touchstart', function (ev){
+		var disY=ev.targetTouches[0].pageY-contentTranslateY;
+		
+		clearInterval(timer);
+		
+		function move(ev)
+		{
+			contentTranslateY=ev.targetTouches[0].pageY-disY;
+			
+			//下面——限制一下
+			if(contentTranslateY<oPage.offsetHeight-oContent.offsetHeight)
+			{
+				contentTranslateY=oPage.offsetHeight-oContent.offsetHeight;
+			}
+			
+			//赋值
+			if(contentTranslateY>0)
+			{
+				oContent.style.WebkitTransform='translateY('+contentTranslateY/4+'px)';
+			}
+			else
+			{
+				oContent.style.WebkitTransform='translateY('+contentTranslateY+'px)';
+			}
+			
+			//超过一段距离——翻过来
+			if(contentTranslateY>150)
+			{
+				oTopRefresh.className='active';
+			}
+			else
+			{
+				oTopRefresh.className='';
+			}
+			
+			//松手接着走
+			speedY=ev.targetTouches[0].pageY-lastY;
+			lastY=ev.targetTouches[0].pageY;
+		}
+		function end()
+		{
+			document.removeEventListener('touchmove', move, false);
+			document.removeEventListener('touchend', end, false);
+			
+			//松手——页面回去、top还原
+			if(contentTranslateY>0)
+			{
+				oContent.style.WebkitTransition='0.2s all ease';
+				
+				contentTranslateY=0;
+				oContent.style.WebkitTransform='translateY(0)';
+				oTopRefresh.className='';
+				
+				function transitionend()
+				{
+					oContent.style.WebkitTransition='none';
+					oContent.removeEventListener('transitionend', transitionend, false);
+				}
+				
+				oContent.addEventListener('transitionend', transitionend, false);
+			}
+			
+			//松手跟着走
+			var i=0;
+			
+			clearInterval(timer);
+			timer=setInterval(function (){
+				//真正走
+				contentTranslateY+=speedY;
+				
+				speedY*=0.9;
+				
+				//限制
+				if(contentTranslateY>0)
+				{
+					contentTranslateY=0;
+					clearInterval(timer);
+				}
+				else if(contentTranslateY<oPage.offsetHeight-oContent.offsetHeight)
+				{
+					contentTranslateY=oPage.offsetHeight-oContent.offsetHeight
+					clearInterval(timer);
+				}
+				
+				//看得见
+				oContent.style.WebkitTransform='translateY('+contentTranslateY+'px)';
+				
+				//什么时候停？
+				if(Math.abs(speedY)<1)
+				{
+					speedY=0;
+					clearInterval(timer);
+				}
+				
+				document.title=i++;
+			}, 16);
+		}
+		
+		document.addEventListener('touchmove', move, false);
+		document.addEventListener('touchend', end, false);
+		
+		ev.preventDefault();
+	}, false);
+	
+	//banner的拖拽
+	var bannerTranslateX=0;
+	oBannerUl.addEventListener('touchstart', function (ev){
+		var disX=ev.targetTouches[0].pageX-bannerTranslateX;
+		
+		var downX=ev.targetTouches[0].pageX;
+		var downY=ev.targetTouches[0].pageY;
+		
+		var dir='';
+		
+		function move(ev)
+		{
+			var x=ev.targetTouches[0].pageX;
+			var y=ev.targetTouches[0].pageY;
+			
+			if(dir=='')		//确定之前
+			{
+				if(Math.abs(x-downX)>=5)
+				{
+					dir='lr';
+				}
+				else if(Math.abs(y-downY)>=5)
+				{
+					dir='td';
+				}
+				
+				//阻止
+				ev.cancelBubble=true;
+			}
+			else			//确定之后
+			{
+				if(dir=='lr')	//左右-动banner
+				{
+					//阻止
+					ev.cancelBubble=true;
+					
+					//
+					bannerTranslateX=x-disX;
+					
+					oBannerUl.style.WebkitTransform='translateX('+bannerTranslateX+'px)';
+				}
+				//可以删了
+				else			//上下-动页面
+				{
+				}
+			}
+		}
+		function end()
+		{
+			oBannerUl.removeEventListener('touchmove', move, false);
+			oBannerUl.removeEventListener('touchend', end, false);
+		}
+		
+		oBannerUl.addEventListener('touchmove', move, false);
+		oBannerUl.addEventListener('touchend', end, false);
+	}, false);
+};
+</script>
+</head>
+
+<body>
+<div id="page">
+	<div id="top_refresh">
+    	<img src="top_arrow_icon.png" />
+        <span class="a1">下拉刷新</span>
+        <span class="a2">松手刷新</span>
+    </div>
+	<div id="content">
+    	<div id="banner">
+        	<ul>
+            	<li style="background:#6F0;"></li>
+            	<li style="background:#F60;"></li>
+            	<li style="background:#06F;"></li>
+            	<li style="background:#60F;"></li>
+            	<li style="background:#F06;"></li>
+            	<li style="background:#F60;"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

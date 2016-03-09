@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script src="jsonp.js"></script>
+<script>
+//M
+function readyBaidu(str,fn){
+	jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+		wd:str
+	},
+	function(json){
+		fn(json.s);
+	});
+}
+//V
+function createLi(arr){
+	var oUl = document.getElementById('ul1');
+	for(var i=0;i<arr.length;i++){
+		var oLi = document.createElement('li');
+		oLi.innerHTML=arr[i];
+		oUl.appendChild(oLi);
+	}
+}
+//C
+window.onload=function(){
+	var arr = ['123','545','fdasf','fdsfs'];
+	createLi(arr);
+};
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+

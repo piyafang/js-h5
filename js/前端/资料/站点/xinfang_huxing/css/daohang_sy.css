@@ -1,0 +1,132 @@
+@charset "gb2312";
+
+.t_icon{background:url(http://img1.soufun.com/house/detail_php/images/icon.gif) no-repeat;}
+/************************************************************************** 面包�?*************************************************************************/	
+.breadcrumb{width:1200px; height:43px; border-bottom:1px dashed #dedede;border-top:1px dashed #dedede; margin:0 auto; position:relative;}
+.breadcrumb .br_left,.breadcrumb .br_left ul{width:auto; height:43px;}
+.breadcrumb .br_left li,.breadcrumb .br_right li{float:left;color:#ccc; line-height:45px;} 
+.breadcrumb .br_left li a{color:#999;}
+.breadcrumb .br_left li a:hover,.breadcrumb .br_right li a:hover{color:#f33;}
+.breadcrumb .br_right,.breadcrumb .br_right ul{width:150px; height:43px;z-index:1001;}
+.breadcrumb .br_right li a{color:#999;}
+/*纠错*/ 
+.error_box{width:305px; height:auto; border:solid 1px #e5e5e5; position:absolute;top:44px; right:0px;background-color:#fff; z-index:2100} 
+.error_box .error_nr{width:276px; height:auto; margin:10px 0 0 15px; overflow:hidden;} 
+.error_box .error_nr p{width:276px; height:30px; border-bottom:1px #999 dashed; position:relative;font-size:16px;font-family:'微软雅黑'; color:#333;line-height:25px;} 
+.error_box .error_nr p span a.error_close{ position:absolute; right:6px; top:4px; display:block; width:14px; height:14px; background:url(http://img1.soufun.com/house/detail_php/images/bgmap_a.gif) no-repeat -114px -98px; overflow:hidden; text-indent:-9999em; } 
+.error_box .error_nr p span a:hover.error_close { background-position:-129px -98px; } 
+.error_box .error_nr ul {width:267px !important;height:auto !important; overflow:hidden;margin-top:13px; }
+.error_box .error_nr ul li{width:257px; height:28px;margin-top:15px;_margin-top:13px;*margin-top:13px;} 
+.error_box .error_nr ul li label{width:65px; font-size:13px;color:#666;font-family:'宋体';float:left; line-height:33px;} 
+.error_box .error_nr ul li input{width:185px; height:28px;*height:26px; float:right;border: solid 1px #ddd;font-family:'微软雅黑'; color:#999; line-height:20px;_line-height:28px;*line-height:28px;padding-left:5px;} 
+.error_box .error_nr ul li input:hover{border: solid 1px #6e97c9;} 
+.error_box .error_nr ul li textarea{width:180px; height:28px;*height:26px; float:right;border: solid 1px #ddd;font-family:'微软雅黑'; color:#999; line-height:20px;_line-height:28px;*line-height:28px;padding-left:5px;} 
+.error_box .error_nr ul li textarea:hover{border: solid 1px #6e97c9;} 
+.error_box .error_nr ul .btn_tj { font-family:'宋体'; font-size:12px;float:left; margin-right:11px; border-radius:2px; width:68px; height:24px;line-height:25px; text-align:center; border:none; color:#fff;background-color:#f88123;overflow:hidden; } 
+.error_box .error_nr ul .btn_tj:hover { color:#fff; background:#dd6e17; border:none; } 
+.error_box .error_nr ul .btn_qx {font-family:'宋体'; font-size:12px;float:left; border-radius:2px; width:68px; height:24px;line-height:25px; text-align:center; border:none; color:#f8f8f8;background-color:#bcbaba;overflow:hidden; } 
+.error_box .error_nr ul .btn_qx:hover { color:#fff; background:#999; border:none;} 
+.error_box .error_nr ul .tjqx{width:257px; height:45px;margin:10px 0 0 65px; display:inline;overflow:hidden;}
+/*************************************************************** title ********************************************************************************************/
+a{color:#333; text-decoration:none;}
+.sftitle{height:103px; background:#fff;}
+.lpname dl{width:100%; height:103px;}
+.lpname dl .ewm{width:70px; height:70px; margin-top:20px;}
+.lpname dl dd{margin-top:25px;}
+.lpname dl .lpbt{height:40px;width:100%; line-height:30px;}
+.lpname dl .lpbt h1 { float:left; display:inline;}
+.lpname dl .lpbt h1 a{ font-size:28px; color:#000;}
+.lpname dl .lpbt h1 a:hover{color:#f33;text-decoration:none;}
+.lpname dl .lpbt .h1_label { float:left; display:inline; color:#666; margin-left:15px; margin-top:8px; }
+.relevance_hs { float:left; display:inline; margin:12px 0 0 10px; position:relative; z-index:1000; }
+.relevance_hs .tal_li{ width:50px; height:20px; background:url(http://img1.soufun.com/house/detail_php/images_201408/relevancebg.gif) no-repeat 0 0; line-height:21px; color:#999; position:relative; padding:0 20px 0 7px; z-index:999;  }
+.relevance_hs.on .tal_li { background-position:-78px 0; }
+.relevance_hsli { display:none;   position:absolute; top:18px; left:0;   z-index:998; }
+.relevance_hsli p { display:block;background:#fff;float: left; border:2px solid #ccc; -webkit-border-radius:2px; -moz-border-radius:2px;  border-radius:2px; line-height:30px;}
+.relevance_hsli p a:hover { background:#f2f2f2; }
+.relevance_hsli p a { display:block; padding:0 10px 0 5px; text-decoration:none!important; white-space:nowrap; }
+.lpicon{margin-top:3px; height:23px; overflow:hidden;}
+.lpicon a { display:inline-block;  padding:0 8px; margin-right:5px; text-decoration:none!important; -webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px;-moz-transition:all 0.2s linear;-webkit-transition:all 0.2s linear; -o-transition:all 0.2s linear; transition:all 0.2s linear; overflow:hidden; vertical-align:middle; }
+.lpicon .tag_li{  height:20px; line-height:21px; background:#ccc; color:#fff!important; }
+.lpicon .tag_li:hover{ background:#bbb; color:#fff !important; }
+.lpicon .tal_li{ height:16px; line-height:17px; border:solid 2px #ccc;color:#999; }
+.lpicon .tal_li:hover{ border:solid 2px #bbb; color:#999 !important;}
+.pltg{width: auto; height:15px;margin-top:70px;}
+.pltg li{float:left; margin-right:5px;display:inline;}
+.pltg li a{color:#666;text-decoration:none;}
+.pltg li a:hover{text-decoration:underline; color:#c00;}
+/****************************************************************************************** nav *************************************************************************************/
+.nav{width:960px;height: 37px; line-height: 37px;border-left:0px solid #cc0000;border-right:1px solid #e9e9e9;border-top:1px solid #e9e9e9;border-bottom:2px solid #cc0000;background: #f7f7f7;} 
+.nav .navleft{float:left;font-size:15px;overflow:hidden;width:800px;} 
+.nav .navleft a,.navleft a:visited{float:left;padding:0 11px;font-size:15px;color:#000; font-weight:bold; } 
+.nav .navleft a:hover{color:#c00;text-decoration:none;} 
+.nav .navright{height:37px;width:110px;position:relative;z-index:1000;} 
+.nav .navright .nr_tu{display:inline-block;width:110px; height:43px;background:url(http://img1.soufun.com/house/detail_php/images/icon.gif) no-repeat -528px -14px;border:none; position:absolute; top:-3px;right:0px;} 
+.nav .navright .nr_tu a{display:inline-block;width:103px;height:34px; font-size:18px; color:#c00; font-weight:bold; text-decoration:none; margin:5px;} 
+.nav .navright .nr_tu a i{background-position:-696px -21px;width:10px; height:10px;display: block; position:absolute;top:18px;right:11px; transition:all 0.3s ease-in 0s;} 
+.nav .navright .nr_tu a:hover i{-moz-transform: rotate(180deg);-webkit-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}
+.nav  .nnlon{text-decoration:none; background:#cc0000;color:#fff !important;} 
+
+/*导航弹出*/
+.tccontent{width:453px; height:230px; background:#fff; border:solid 2px #f88123; clear:both; top:50px; right:0; position:absolute;z-index:99999;}
+.hsanj{ width:15px; padding:0 45px; height:9px; right:5px; top:-9px; position:absolute; overflow:hidden; }
+.tccontent .tcnav_nr{width:400px; height:195px;margin:0 auto;}
+.tccontent .tcnav_nr_left{width:170px; overflow:hidden;margin-top:20px;}
+.tccontent .tcnav_nr_left p{text-align:center; font-size:28px; color:#666; line-height:25px;*line-height:30px;_line-height:30px;padding-top:10px;}
+.tccontent .tcnav_nr_left span{text-align:center;}
+.tccontent .tcnav_nr_left ul li{line-height:30px;clear:both;height: 34px;*height:28px;_height:27px; font-size:16px;}
+.tccontent ul li .t_icon{width: 20px; height:26px; display:block;}
+.tccontent .tcnav_nr_left ul .dongtai .t_icon{background-position: 0px -48px; }
+.tccontent .tcnav_nr_left ul .vip .t_icon{background-position: -43px -48px }
+.tccontent .tcnav_nr_left ul .bus .t_icon{background-position: -91px -48px; }
+.tccontent .tcnav_nr_right{width:206px; overflow:hidden; margin-top:20px;}
+.tccontent .tcnav_nr_right ul li{ float:left; width:206px; margin-bottom:10px; clear:both; overflow:hidden;}
+.textstyletc { float:left; width:200px; height:37px; border:1px solid #d3d3d3; text-indent:4px;  line-height:40px; vertical-align:middle; }
+.btn_acma {float:left; height:39px;color:#333; padding:0 10px; border:1px solid #d3d3d3; background:url(http://img.soufun.com/EC_onlineSales/images/rpx.gif) repeat-x 0 -45px #f0f0f0; cursor:pointer; vertical-align:middle; }
+.btn_acma:hover { border:1px solid #ddd; background:#f0f0f0; }
+.textstylean{width:202px; height:40px; background:#f88123; border:none; text-align:center;line-height:40px;color:#fff; cursor:pointer; -moz-transition:all 0.2s linear;-webkit-transition:all 0.2s linear; -o-transition:all 0.2s linear; transition:all 0.2s linear;}
+.textstylean:hover{background:#f60}
+/*团购报名成功*/ 
+.signup{width:206px;height:auto;margin:33px 0 0 8px;display：inline�?overflow:hidden;} 
+.signup img{width:37px;height:42px;margin-left:70px;display:inline;} 
+.signup p{color:#ff9935;font-size:22px;line-height:22px;display:block;} 
+/*60秒后重新获取密码*/ 
+.ndmoa3hint{cursor:pointer;height:39px;font-weight:bold;} 
+.ndmoa3hint em{float:left;width:10px;height:39px;background:url(http://img1.soufun.com/house/detail_php/images/newhousenavhqyzma.jpg) no-repeat left;} 
+.ndmoa3hint span{float:left;height:39px;line-height:39px;background:url(http://img1.soufun.com/house/detail_php/images/newhousenavhqyzma.jpg) no-repeat right;padding-right:10px;color:#999;} 
+.ndmoa3hint span a:visited{color:#676767;} 
+.ndmoa3hint span a:hover{color:#676767;text-decoration:none;}
+/*登陆成功*/ 
+.loadingsuc{width:206px;height:auto;margin:45px 0 0 4px;overflow:hidden;} 
+.loadingsuc li a{color:#06c;text-decoration:none;} 
+.loadingsuc li a:hover{color:#06c;text-decoration:underline;} 
+.Inpbm{width:100px; height:40px; background:#f88123; border:none;display:block; color:#fff; overflow:hidden; margin:0px auto;-moz-transition:all 0.2s linear; -webkit-transition:all 0.2s linear; -o-transition:all 0.2s linear; transition:all 0.2s linear;} 
+.Inpbm:hover{background:#f60;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

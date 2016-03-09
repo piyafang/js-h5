@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+
+#ul1 {width:150px; height:200px; position:relative; margin:100px auto; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px) rotateX(0deg); -webkit-transition:10s all ease;}
+
+#ul1 li {width:148px; height:198px; border:1px solid black; background:yellow; position:absolute; left:0; top:0; -webkit-transform:rotateY(0deg) translateZ(0px); -webkit-transition:0.7s all ease-out;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oUl=document.getElementById('ul1');
+	var aLi=oUl.children;
+	
+	var i=aLi.length-1;
+	var timer=setInterval(function (){
+		aLi[i].style.WebkitTransform='rotateY('+i*(360/aLi.length)+'deg) translateZ(300px)';
+		
+		i--;
+		
+		if(i==-1)
+		{
+			clearInterval(timer);
+		}
+	}, 200);
+};
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</body>
+</html>

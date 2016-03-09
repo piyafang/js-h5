@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+ol{width:200px;}
+li p{height:30px; line-height:30px; background:#ccc;}
+li div{height:100px; line-height:100px; background:red; display:none;}
+li.on p{display:none;}
+li.on div{display:block;}
+</style>
+<script>
+window.onload=function(){
+	var aLi = document.getElementsByTagName('li');
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].onmouseover=function(){
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].className='';
+			}
+			this.className='on';
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<ol>
+	<li class="on">
+    	<p>标题1111</p>
+        <div>大大大大大1111</div>
+    </li>
+	<li>
+    	<p>标题2222</p>
+        <div>大大大大大2222</div>
+    </li>
+	<li>
+    	<p>标题3333</p>
+        <div>大大大大大3333</div>
+    </li>
+	<li>
+    	<p>标题4444</p>
+        <div>大大大大大4444</div>
+    </li>
+	<li>
+    	<p>标题5555</p>
+        <div>大大大大大5555</div>
+    </li>
+</ol>
+</body>
+</html>
+
+
+
+
+
+
+

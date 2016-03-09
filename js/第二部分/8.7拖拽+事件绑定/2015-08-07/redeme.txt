@@ -1,0 +1,178 @@
+笔记
+==============================
+事件对象	获取事件的详细信息。(鼠标，键盘)
+ev参数 		兼容：高版本浏览器
+event		兼容：chrome,ie
+兼容写法：
+var oEvent = ev||event;
+
+获取鼠标在可视区中的坐标
+oEvent.clientX 	X轴坐标
+oEvent.clientY 	Y轴坐标
+**使用它的地方一定要加上滚动距离。
+onload
+onerror
+onclick
+ondblclick
+onmouseover
+onmouseout
+onmousemove
+onmousedown
+onmouseup
+onkeyup
+onkeydown
+onscroll
+onresize
+onchange
+oncontextmenu
+onfocus
+onblur
+
+事件冒泡
+子级会去父级找相同的事件。
+自己没有事件也会往上找。
+只跟结构有关。
+阻止事件冒泡。
+oEvent.cancelBubble
+
+
+键盘按键编码
+oEvent.keyCode
+不能使用组合编码
+oEvent.ctrlKey
+oEvent.shiftKey
+oEvent.altKey
+
+默认事件.	浏览器自带的默认的行为。
+阻止默认事件：	return false;
+
+拖拽：3部分
+1.鼠标按下	保存鼠标在容器中的位置。
+2.鼠标移动 	移动
+3.鼠标抬起	不让它动了
+
+为了性能。不用的东西就干掉。
+在拖拽的例子中ie8-下return false;不好使。
+
+事件捕获	(没有官方的叫法。)
+obj.setCapture();	
+把所有的浏览器默认的事件都给抓住了。只能执行我当前这个元素的事件。
+释放捕获
+obj.releaseCapture();
+
+操作属性的方式
+1.	 .
+2.	[]
+3.	getAttribute(属性名)
+	setAttribute(属性名,属性值)
+	removeAttribute(属性名);
+
+碰撞检测
+判断什么时候没碰到。
+r1<l2||b1<t2||l1>r2||t1>b2
+
+obj.onpropertychange		兼容：ie系列
+obj.oninput			兼容：高级浏览器
+
+**事件不用处理兼容。
+obj.onpropertychange=obj.oninput=function(){
+
+};
+
+兼容：IE9？	删除不了。
+
+
+事件绑定
+作用：给同一个元素加同一个事件加多次。
+obj.addEventListener(sEv,fn,false);
+兼容：IE9+，chrome，firefox
+
+addEventListener	false是什么意思？
+	事件流:		浏览器中事件的走向。
+false	冒泡阶段 	从下往上找相同事件
+true	捕获阶段	从上往下找相同事件
+捕获阶段根本就没用。就算你能用，也不兼容。
+只有addEventListener第三个参数为true时才会触发捕获
+
+obj.attachEvent('on'+sEv,fn);
+兼容：IE10-
+
+事件绑定兼容写法。
+if(obj.addEventListener){
+	obj.addEventListener(sEv,fn,false);
+}else{
+	obj.attachEvent('on'+sEv,fn);
+}
+解除事件绑定
+obj.removeEventListener(sEv,fn,false);
+兼容：IE9+，chrome，firefox
+
+obj.detachEvent('on'+sEv,fn);
+兼容：IE10-
+
+解除事件绑定兼容写法。
+if(obj.removeEventListener){
+	obj.removeEventListener(sEv,fn,false);
+}else{
+	obj.detachEvent('on'+sEv,fn);
+}
+
+解除事件绑定，解除不了匿名函数
+因为函数的真正写法是
+new Function();
+
+this的错误用法。
+1.定时器中不能使用this
+2.事件中套了一层函数
+3.行间事件套了一层
+4.attachEvent中不能使用this
+
+
+事件绑定作用：同一个元素加同一个事件加多次。
+
+
+九宫格拖拽
+
+var oldW = oBox.offsetWidth;
+var oldH = oBox.offsetHeight;
+var oldX = oEvent.clientX;
+var oldY = oEvent.clientY;
+var oldL = oBox.offsetLeft;
+var oldT = oBox.offsetTop;
+
+
+
+上课代码一遍
+------------------------------------
+*拖拽
+*拖拽回放
+*透明拖拽
+*键盘控制div
+*各种右键
+*九宫格拖拽
+*ctrl+q切换拖拽
+
+*日历
+*自定义单选框
+*自定义多选框
+*自定义下拉框
+
+组件到现在的例子(课件包括作业)都来一遍。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

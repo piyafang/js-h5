@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#page {margin:100px auto; font-size:30px; position:relative; -webkit-transform:perspective(800px) rotateY(0deg) rotateX(0deg); height:300px;}
+div {width:300px; -webkit-transform-style:preserve-3d;}
+#div1 {height:200px; background:red; position:absolute; border:1px solid black; left:0; top:0;}
+#div2 {height:100px; background:yellow; position:absolute; border:1px solid black; left:0; top:200px;}
+
+span {position:absolute; left:10px; top:-2px; color:white; text-shadow:0 0 1px black;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv1=document.getElementById('div1');
+	var oDiv2=document.getElementById('div2');
+	var oS1=oDiv1.children[0];
+	var oS2=oDiv2.children[0];
+	
+	var arrDiv1=[];
+	var arrDiv2=[];
+	var arrS1=[];
+	var arrS2=[];
+	
+	function dumpEle(obj)
+	{
+		var oTmp=document.createElement('div');
+		oTmp.innerHTML=obj.outerHTML;
+		
+		//oTmp.children[0].id='';
+		
+		return oTmp.children[0];
+	}
+	
+	function dumpEles(obj, fn, n, arr)
+	{
+		for(var i=1;i<=n;i++)
+		{
+			var obj2=dumpEle(obj);
+			fn(obj2, i, n);
+			obj.parentNode.appendChild(obj2);
+			
+			arr.push({obj: obj2, i: i, n: n});
+		}
+	}
+	
+	//复制div1
+	dumpEles(oDiv1, function (obj, i, n){
+		obj.innerHTML='';
+		obj.style.WebkitTransform='translateZ('+i*1+'px)';
+	}, 10, arrDiv1);
+	oDiv1.style.background='none';
+	
+	//复制div2
+	dumpEles(oDiv2, function (obj, i, n){
+		obj.innerHTML='';
+		obj.style.WebkitTransform='translateZ('+i*1+'px)';
+	}, 10, arrDiv2);
+	oDiv2.style.background='none';
+	
+	//复制文字1
+	dumpEles(oS1, function (obj, i, n){
+		obj.style.WebkitTransform='translateZ('+(i*0.2+10)+'px)';
+	}, 30, arrS1);
+	//复制文字2
+	dumpEles(oS2, function (obj, i, n){
+		obj.style.WebkitTransform='translateZ('+(i*0.2+10)+'px)';
+	}, 30, arrS2);
+	
+	//控制
+	var oDivPage=document.getElementById('page');
+	var aR=document.querySelectorAll('input[type=range]');
+	
+	for(var i=0;i<aR.length;i++)
+	{
+		aR[i].oninput=function ()
+		{
+			oDivPage.style.WebkitTransform='perspective(800px) rotateY('+aR[0].value+'deg) rotateX('+aR[1].value+'deg)';
+		};
+	}
+	
+	//运动
+	var t=700;
+	function move3(obj, time, json, end)
+	{
+		obj.style.WebkitTransition=time+'ms all ease';
+		setTimeout(function (){
+			for(var i in json)
+			{
+				obj.style[i]=json[i];
+			}
+			
+			end && setTimeout(end, time+20);
+		}, 1);
+	}
+	oDivPage.onclick=function ()
+	{
+		for(var i=0;i<arrDiv1.length;i++)
+		{
+			(function (index){
+				move3(arrDiv1[i].obj, t, {WebkitTransform: 'translateZ('+(index*1+10)+'px)'}, function (){});
+			})(i);
+		}
+		for(var i=0;i<arrS1.length;i++)
+		{
+			(function (index){
+				move3(arrS1[i].obj, t, {WebkitTransform: 'translateZ('+(index*0.2+20)+'px)'}, function (){
+					//走div2
+					for(var i=0;i<arrDiv2.length;i++)
+					{
+						(function (index){
+							move3(arrDiv2[i].obj, t+300, {top: 0});
+						})(i);
+					}
+				});
+			})(i);
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+横向：<input type="range" min="-90" max="90" value="0" /><br>
+纵向：<input type="range" min="-90" max="90" value="0" />
+<div id="page">
+    <div id="div1"><span>abcabcccc</span></div>
+    <div id="div2"><span>文字文字</span></div>
+</div>
+</body>
+</html>

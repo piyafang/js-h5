@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+clearFix:after{ content:''; clear:both; display:block;}
+.box{ width:960px; height:600px; margin:0 auto; border:1px solid #ccc;}
+.hd,.ft{ width:960px; height:50px; background:#4e9ce9;}
+.bd{ width:960px; height:500px;}
+.bd_left{ width:680px; height:500px; background:#e2e2e2; float:left;}
+.bd_right { width:270px; height:500px; background:#f7f7f7; float:right;}
+</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="hd"></div>
+		<div class="bd clearFix">
+			<div class="bd_left"></div>
+			<div class="bd_right"></div>
+		</div>
+		<div class="ft"></div>
+	</div>
+</body>
+</html>

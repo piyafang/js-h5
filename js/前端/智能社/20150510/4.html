@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>隔行变色</title>
+    <style type="text/css">
+        body, div, ul, li {
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            font-size: 14px;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        #list {
+            margin: 10px auto 0;
+            padding: 10px;
+            width: 500px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            /*background: -webkit-linear-gradient(top left,#31b0d5,#67b168,#ac2925);*/
+        }
+
+        #list li {
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        /*#list li:hover{
+            background: #67b168;
+        }*/
+
+        .c1 {
+            background: #ddd;
+        }
+
+        .c2 {
+            background: #a6e1ec;
+        }
+
+        .c3 {
+            background: #67b168;
+        }
+    </style>
+</head>
+<body>
+<div id="list">
+    <ul>
+        <li>中储粮“转圈粮”频现 地方干部</li>
+        <li>4月全国CPI同比上涨1.5% 连续3个月处于“1时代”</li>
+        <li>旅游局发游客黑名单 旅行社称暂无权阻其参团</li>
+        <li>郑州幼儿园被曝孩子跪着吃饭 已被责令关停</li>
+        <li>教育部：取消高校行政级别 保障学术相对独立</li>
+        <li>杨澜连任红会常务理事 曾辟谣郭美美事件传闻</li>
+        <li>中储粮“转圈粮”频现 地方干部</li>
+        <li>4月全国CPI同比上涨1.5% 连续3个月处于“1时代”</li>
+        <li>旅游局发游客黑名单 旅行社称暂无权阻其参团</li>
+        <li>郑州幼儿园被曝孩子跪着吃饭 已被责令关停</li>
+        <li>教育部：取消高校行政级别 保障学术相对独立</li>
+        <li>杨澜连任红会常务理事 曾辟谣郭美美事件传闻</li>
+        <li>中储粮“转圈粮”频现 地方干部</li>
+        <li>4月全国CPI同比上涨1.5% 连续3个月处于“1时代”</li>
+        <li>旅游局发游客黑名单 旅行社称暂无权阻其参团</li>
+        <li>郑州幼儿园被曝孩子跪着吃饭 已被责令关停</li>
+        <li>教育部：取消高校行政级别 保障学术相对独立</li>
+        <li>杨澜连任红会常务理事 曾辟谣郭美美事件传闻</li>
+        <li>中储粮“转圈粮”频现 地方干部</li>
+        <li>4月全国CPI同比上涨1.5% 连续3个月处于“1时代”</li>
+        <li>旅游局发游客黑名单 旅行社称暂无权阻其参团</li>
+        <li>郑州幼儿园被曝孩子跪着吃饭 已被责令关停</li>
+        <li>教育部：取消高校行政级别 保障学术相对独立</li>
+        <li>杨澜连任红会常务理事 曾辟谣郭美美事件传闻</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    //原理：操作所有的li，让按照奇偶行的规律，改变他的class样式的属性值，奇数行是c1，偶数行是c2
+
+    var oList = document.getElementById("list");
+    var oLis = oList.getElementsByTagName("li");
+    for (var i = 0; i < oLis.length; i++) {
+        var oLi = oLis[i];
+        i % 2 === 0 ? (oLi.className = "c1", oLi.zhuFeng = "c1") : (oLi.className = "c2", oLi.zhuFeng = "c2");
+        //因为每一个li都是对象数据类型的，那么应用这个思想，我们给每一个li增加一个自定义的属性名(zhuFeng)，属性值就是当前li的className的值
+
+        //鼠标移上去
+        oLi.onmouseover = function () {
+            this.className = "c3";
+        }
+        //鼠标离开
+        oLi.onmouseout = function () {
+            //原来是啥就是啥
+            var oldVal = this.zhuFeng;
+            this.className = oldVal;
+        }
+    }
+
+
+    /*switch(i%3){
+     case 0:
+     oLi.className = "c1";
+     break;
+     case 1:
+     oLi.className = "c2";
+     break;
+     default:
+     oLi.className = "c3";
+     }*/
+
+    /*
+     for(var i=0;i<oLis.length;i++){
+     //i=0 第一次循环 获取第一个li oLis[0]
+     //i=1 第二次循环 获取第二个li oLis[1]
+     //...
+     var oLi=oLis[i];//每一次循环的时候在类数组中把对应的li取出来
+     //i=0 偶数  第一行 奇数行
+     //i=1 奇数  第二行 偶数行
+     //i的值是偶数代表奇数行,i的值是奇数代表偶数行
+     //i%2 i除以2取余数
+     i%2===0?oLi.className ="c1":oLi.className="c2";
+     //oLi.className="c1";//设置每一个li的class样式属性的值
+     }
+     */
+
+    //通过元素的标签名获取一组元素
+    //document.getElementsByTagName("元素的标签名");
+    //在整个文档中(获取的范围,上下文),我们通过元素的标签名(div、li、p....)来获取一组元素
+
+    //获取整个文档中所有的li，他是一个集合，我们把这个集合叫做类数组(类似于数组)，并且类数组是对象数据类型的
+    //var oLis=document.getElementsByTagName("li");
+    //索引(属性名)：就是代表当前是第几个元素的位置下标，索引是从0开始的，索引为0代表第一个li，索引为1代表第二个li....索引为n代表第n+1个li
+    //length:代表获取的集合的长度，或者是当前获取了对少个li
+    //console.log(oLis.length);
+    //console.log(oLis["length"]);
+
+    //console.log(oLis[0]); 获取某一个指定的元素oLis[索引]
+    //通过DOM方法获取的类数组还可以用.item(索引)来获取某一个
+    //console.log(oLis.item(0));
+
+
+</script>
+</body>
+</html>

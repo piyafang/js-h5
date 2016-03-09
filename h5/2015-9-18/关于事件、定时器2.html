@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+window.onload=function ()
+{
+	var aBtn=document.getElementsByTagName('input');
+	
+	for(var i=0;i<aBtn.length;i++)
+	{
+		setTimeout(function (){
+			alert(i);
+		}, 30);
+	}
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="aaa" />
+<input type="button" value="bbb" />
+<input type="button" value="ccc" />
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; list-style:none; }/*清默认值*/
+.clearFix:after{ content:''; clear:both; display:block; }/*清浮动*/
+.top{
+	width:960px;
+	height:46px;
+	background:#4e9ce9;
+	font-size:20px;
+	color:#000;
+	text-align:center;
+	line-height:46px;
+	
+	}
+.center{
+		width:960px;
+		height:494px;
+		line-height:494px;
+		text-align:center;	
+		
+	
+	}
+.box{
+	width:148px;
+	height:494px;
+	background:#d3e3e6;
+	float:left;
+
+	
+	}
+.c1{
+		width:603px;
+		height:494px;
+		background:#fff;
+		border:1px solid blue;
+		float:left;
+		
+	}
+.c2{
+	width:205px;
+	height:494px;
+	background:#f7f7f7;
+	float:left;
+	
+	
+	}
+
+.top1{
+	width:960px;
+	height:46px;
+	background:#4e9ce9;
+	font-size:20px;
+	color:#000;
+	text-align:center;
+	line-height:46px;
+	clear:left;
+	
+	}
+	
+
+
+
+
+</style>
+</head>
+
+<body>
+	<div class="top clearFix">
+	头部
+	</div>
+	<div class="center">
+		<div class="box">
+		侧边导航
+		</div>
+		<div  class="c1">
+		内容区域
+		</div>
+		
+		<div class="c2">
+		工具区域
+		</div>
+	</div>
+	<div class="top1">
+	页面底部
+	</div>
+
+</body>
+</html>

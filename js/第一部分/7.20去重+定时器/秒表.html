@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+</style>
+<script type="text/javascript">
+	function toDou(iNum){
+		if(iNum<10){
+			return iNum='0'+iNum;
+		}else{
+			return iNum;
+		}
+	}
+window.onload=function(){
+	var oTxt=document.getElementsByTagName('input')[0];
+	var oStart=document.getElementsByTagName('input')[1];
+	var oPause=document.getElementsByTagName('input')[2];
+	var timer=null;	
+	oStart.onclick=function(){
+		
+		var count=0;
+		clearInterval(timer);
+		timer=setInterval(function (){
+			count++;
+			oTxt.value=toDou(parseInt(count/60))+':'+toDou(parseInt(count%60));
+		},100);
+	};
+	oPause.onclick=function(){
+		clearInterval(timer);
+	};
+
+
+
+
+
+
+
+
+}
+</script>
+</head>
+<body>
+	<input type="text" value="00:00">
+	<input type="button" value="开始" />
+	<input type="button" value="暂停" />	
+</body>
+</html>
+

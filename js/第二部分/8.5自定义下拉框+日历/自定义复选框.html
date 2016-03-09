@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0;padding:0;list-style:none;}
+	a,h2{ width:13px;height:13px; background:url(img/no1.gif) no-repeat; display:inline-block;}
+	a.on,h2.on{ background:url(img/yes1.gif) no-repeat;}
+</style>
+<script>
+	window.onload=function(){
+		var oChooseAll=document.getElementById('chooseAll');
+		var aInp=document.getElementsByName('code');
+		var oUl=document.createElement('ul');
+		var oHall=document.createElement('h2');
+		oChooseAll.parentNode.insertBefore(oHall,oChooseAll);
+		oChooseAll.style.display='none';
+		var aA=[];
+		for(var i=0;i<aInp.length;i++){
+			var oLi=document.createElement('li');
+			var oA=document.createElement('a');
+			oLi.appendChild(oA);
+			aA.push(oA);
+			aInp[i].parentNode.insertBefore(oLi,aInp[i]);
+			(function(index){
+				oA.onclick=function(){
+					if(this.className==''){
+						this.className='on';
+					}else{
+						this.className='';
+					}
+					if(!aInp[index].checked){
+						aInp[index].checked=true;
+					}else{
+						aInp[index].checked=false;
+					}
+				};			
+			}) (i);
+			
+		}
+		
+		for(var i=0;i<aInp.length;i++){
+			aInp[i].style.display='none';
+		}
+		oHall.onclick=function(){
+			if(this.className==''){
+				this.className='on';				
+				oChooseAll.checked=true;
+				for(var i=0;i<aInp.length;i++){				
+						aA[i].className='on';
+						aInp[i].checked=true;					
+				}
+			}else{
+				this.className='';
+				oChooseAll.checked=false;
+				for(var i=0;i<aInp.length;i++){	
+					aA[i].className='';
+					aInp[i].checked=false;
+				}
+			}
+		};
+
+	};
+</script>
+</head>
+
+<body>
+	<form action="" name="前端">
+		全选：<input  type="checkbox" id="chooseAll"   /><br/><br/>
+		<input type="checkbox" name="code" value="css和html" />css和html
+		<input type="checkbox" name="code"  value="javascript"/>javascript
+		<input type="checkbox" name="code"  value="html5" />html5
+		<input type="checkbox" name="code" value="css3" />css3
+		<input type="submit" style="display:block" />
+	</form>
+</body>
+</html>

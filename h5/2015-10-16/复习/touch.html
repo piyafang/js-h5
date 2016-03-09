@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+<style>
+div {width:100px; height:100px; position:absolute; text-align:center; line-height:100px; font-size:30px;}
+</style>
+<script>
+window.onload=function ()
+{
+	var aDiv=document.getElementsByTagName('div');
+	
+	for(var i=0;i<aDiv.length;i++)
+	{
+		drag(aDiv[i]);
+	}
+	
+	function drag(obj)
+	{
+		obj.addEventListener('touchstart', function (ev){
+			var disX=ev.targetTouches[ev.targetTouches.length-1].pageX-obj.offsetLeft;
+			var disY=ev.targetTouches[ev.targetTouches.length-1].pageY-obj.offsetTop;
+			
+			var id=ev.targetTouches[ev.targetTouches.length-1].identifier;
+			
+			function move(ev)
+			{
+				for(var i=0;i<ev.targetTouches.length;i++)
+				{
+					if(id==ev.targetTouches[i].identifier)
+					{
+						obj.style.left=ev.targetTouches[i].pageX-disX+'px';
+						obj.style.top=ev.targetTouches[i].pageY-disY+'px';
+					}
+				}
+			}
+			function end(ev)
+			{
+				for(var i=0;i<ev.changedTouches.length;i++)
+				{
+					if(ev.changedTouches[i].identifier==id)
+					{
+						obj.removeEventListener('touchmove', move, false);
+						obj.removeEventListener('touchend', end, false);
+					}
+				}
+			}
+			
+			obj.addEventListener('touchmove', move, false);
+			obj.addEventListener('touchend', end, false);
+			
+			ev.preventDefault();
+		}, false);
+	}
+};
+</script>
+</head>
+
+<body>
+<div style="background:#CCC; left:10px; top:10px;">1</div>
+<div style="background:red; left:200px; top:150px;">2</div>
+<div style="background:green; left:50px; top:200px;">3</div>
+</body>
+</html>
+
+
+
+
+
+
+

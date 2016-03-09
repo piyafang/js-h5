@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:200px; height:200px; border:1px solid #000;}
+</style>
+<script>
+window.onload=function(){
+	var oS = document.getElementsByTagName('select')[0];
+	var oTxt = document.getElementsByTagName('input')[0];
+	var oBtn = document.getElementsByTagName('input')[1];
+	var oBox = document.getElementById('box');
+	oBtn.onclick=function(){
+		//
+		oBox.style[oS.value]=oTxt.value;
+	};
+};
+</script>
+</head>
+
+<body>
+<select>
+	<option value="width">width</option>
+	<option value="height">height</option>
+	<option value="background">background</option>
+	<option value="display">display</option>
+</select>
+<input type="text" />
+<input type="button" value="改变" />
+<div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

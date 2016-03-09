@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	#box{ width: 600px;height: 30px; line-height: 30px; background: #ccc; position: relative;
+	margin:100px auto;}
+	#bar{ width:60px; height: 30px; background: #99c; position: absolute;left: 0;top: 0;}
+	#mainBox{ width:600px;height:100px; border:1px solid #ccc;margin:0 auto;overflow:hidden;position:relative;}
+	#main{ width:1500px;height:100px; position:absolute;left:0;top:0; }
+	#main p{ width:200px; height:100px;background:#f90; margin:20px 100px;
+	 float:left; line-height:100px; text-align:center; color:#fff; font-size:30px; }
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var oBar=document.getElementById('bar');
+		var oMain=document.getElementById('main');
+		var oMainBox=document.getElementById('mainBox');
+		oBar.onmousedown=function(ev){
+			var oEv=ev||event;
+			var disX=oEv.clientX-oBar.offsetLeft;
+			document.onmousemove=function(ev){
+				var oEv=ev||event;
+				var l=oEv.clientX-disX;
+				var maxL=oBox.offsetWidth-oBar.offsetWidth;
+				
+				
+				if(l<0){
+					l=0;
+				}else if(l>maxL){
+					l=maxL;
+				}
+				var scale=l/maxL;
+				oBar.style.left=l+'px';
+				oMain.style.left=-(oMain.offsetWidth-oMainBox.offsetWidth)*scale+'px';
+			};
+			document.onmouseup=function(){
+				document.onmousemove=null;
+				document.onmouseup=null;
+				oBar.releaseCapture&&oBar.releaseCapture();
+			};
+			oBar.setCapture&&oBar.setCapture();
+			return false;
+		};
+	};
+</script>
+</head>
+<body>
+	<div id="box">
+		<div id="bar"></div>
+	</div>
+	<div id="mainBox">
+		<div id="main"><p>1</p><p>2</p><p>3</p></div>
+	</div>
+</body>
+</html>
+

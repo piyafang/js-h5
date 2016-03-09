@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+/*
+**构造函数	都是函数，只是作用不同。
+**构造函数	遵守首字母大写。
+*/
+function CreatePerson(name,age){
+	//用了new
+	//this = new Object();
+	this.name=name;
+	this.age=age;
+	this.showName=function(){
+		alert(this.name);
+	};
+	this.showAge=function(){
+		alert(this.age);
+	};
+	//用了new
+	//return this;
+}
+var p1 = new CreatePerson('大娃',70);
+var p2 = new CreatePerson('二娃',60);
+p1.showName();
+p1.showAge();
+p2.showName();
+p2.showAge();
+</script>
+</head>
+
+<body>
+</body>
+</html>

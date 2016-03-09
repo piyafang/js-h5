@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black;}
+#c1 {background:white;}
+</style>
+<script>
+//角度->弧度
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	function tick()
+	{
+		var oDate=new Date();
+		gd.clearRect(0, 0, oC.width, oC.height);
+		
+		//小时
+		gd.beginPath();
+		gd.arc(200, 200, 150, d2a(-90), d2a(-90+360*(oDate.getHours()%12)/12), false);
+		
+		gd.lineCap='round';
+		gd.strokeStyle='#32cd33';
+		gd.lineWidth=20;
+		gd.stroke();
+		
+		//分
+		gd.beginPath();
+		gd.arc(200, 200, 130, d2a(-90), d2a(-90+360*oDate.getMinutes()/60), false);
+		
+		gd.lineCap='round';
+		gd.strokeStyle='#fa7c4a';
+		gd.lineWidth=20;
+		gd.stroke();
+		
+		//秒
+		gd.beginPath();
+		gd.arc(200, 200, 110, d2a(-90), d2a(-90+360*oDate.getSeconds()/60), false);
+		
+		gd.lineCap='round';
+		gd.strokeStyle='#6594ec';
+		gd.lineWidth=20;
+		gd.stroke();
+	}
+	
+	tick();
+	setInterval(tick, 1000);
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600">
+</canvas>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+.clear:after{clear:both; content:''; display:block;}
+.clear{zoom:1;}
+ul{width:135px; margin:100px auto;}
+li{float:left; width:27px; height:27px; background:url(star.gif) no-repeat;}
+li.on{ background-position:0 -29px;}
+</style>
+<script>
+window.onload=function(){
+	var aLi = document.getElementsByTagName('li');
+	for(var i=0;i<aLi.length;i++){
+		(function(index){
+			aLi[i].onmouseover=function(){
+				for(var i=0;i<aLi.length;i++){
+					if(i<=index){
+						aLi[i].className='on';
+					}else{
+						aLi[i].className='';
+					}
+				}
+			};
+		})(i);
+	}
+};
+</script>
+</head>
+
+<body>
+	<ul class="clear">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

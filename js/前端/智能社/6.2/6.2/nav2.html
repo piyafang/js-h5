@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>logo</title>
+	<style>
+		*{ margin: 0; padding: 0;}
+		.nav{ background: #3A6EA5; color:#fff; font-size:11px; height:70px; padding-top:10px;}
+		.clearFix:after{ clear:both; display:block; content:" "; visibility:hidden; height:0; line-height:0;}
+		.clearFix{*zoom:1;}	
+		.txt_l{ float:left;}
+		.txt_r{ float:right;}
+		
+		.nav_bottom{ margin-top:22px;height:33px;}
+		a{  background:url(images/c.png) repeat-x; height:33px; position:relative; padding-left:10px; padding-right:10px;float:left; line-height:33px;}
+		.move_l{ background:url(images/l.png) no-repeat; width:10px; height:33px; position:absolute; left:0; top:0;}	
+		.move_r{ background:url(images/r.png) no-repeat; width:10px;  height:33px;position:absolute; right:0; top:0;}
+		.active{  background:url(images/hover_c.png) repeat-x; height:34px;color:#06C;}	
+		.active .move_l{ background:url(images/hover_l.png) no-repeat; }
+		.active .move_r{background:url(images/hover_r.png) no-repeat; }
+	</style>
+
+</head>
+
+<body>
+	<div class="nav">
+		<div class="nav_top clearFix">
+			<div class="txt_l">您好!</div>
+			<div class="txt_r">浏览站点</div>
+		</div>
+		<div class="nav_bottom clearFix">
+					<a>
+						个人中心
+						<div class="move_l"></div>
+						<div class="move_r"></div>
+					</a>
+					<a >
+						个人中心
+						<div class="move_l"></div>
+						<div class="move_r"></div>
+					</a>
+
+					<a class="active" >
+						个人中心
+						<div class="move_l"></div>
+						<div class="move_r"></div>
+					</a>
+
+		</div>
+
+	</div>
+</body>
+</html>

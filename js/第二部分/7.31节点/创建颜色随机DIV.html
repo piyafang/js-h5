@@ -1,0 +1,57 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+	div{ width: 100px;height: 100px; float: left; margin: 10px; font-size: 20px;line-height: 100px;text-align: center; font-weight: bold;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		function rnd(n,m){
+			return parseInt(n+Math.random()*(m-n));
+		}
+		for(var i=0;i<100;i++){
+			var oDiv=document.createElement('div');
+			oDiv.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+			oDiv.innerHTML=i+1;
+			document.body.appendChild(oDiv);
+		}
+
+		var aDiv=document.body.children;
+		
+		var count=0;
+		var num=0.2;
+		function rndColor(){
+			count++;
+			num+=0.1;
+			if(count==101){
+				count=0;
+			}
+			if(num>1){
+				num=0.1;
+			}
+			aDiv[count].style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+			
+		}
+		rndColor();
+		setInterval(rndColor,100);
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].style.background='rgba('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+','+num+')';
+		}
+		
+	};
+</script>
+</head>
+<body>
+	
+
+
+</body>
+</html>
+
+
+
+

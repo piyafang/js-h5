@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+div{width:100px; height:200px; background:red; position:fixed; _position:absolute; top:50%; margin-top:-100px;_margin-top:0;}
+#ad_left{left:0;}
+#ad_right{right:0;}
+</style>
+<script>
+if(window.navigator.userAgent.indexOf('MSIE 6.0')!=-1){
+	window.onload=window.onscroll=window.onresize=function(){
+	var oLeft = document.getElementById('ad_left');
+	var oRight = document.getElementById('ad_right');
+		var scrollT = document.documentElement.scrollTop||document.body.scrollTop;
+		var clientH = document.documentElement.clientHeight;
+		oLeft.style.top=scrollT+clientH/2-oLeft.offsetHeight/2+'px';
+		oRight.style.top=scrollT+clientH/2-oRight.offsetHeight/2+'px';
+		
+	};
+}
+</script>
+</head>
+
+<body style="height:3000px;">
+<div id="ad_left"></div>
+<div id="ad_right"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

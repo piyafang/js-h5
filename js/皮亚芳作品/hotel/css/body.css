@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*清除默认样式*/
+body,div,p,h1,h2,h3,h4,h5,h6,span,ul,ol,li,dl,dd,dt,a,i,strong,b,em img,form,input{ -webkit-text-size-adjust:none;margin:0;padding:0;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0);font-size:14px;font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;font-style:normal;}
+ul li,ol li{ list-style-type:none;}
+html,body{height:100%;}
+*html{background-image:url(about:blank);background-attachment:fixed;} /* 修正IE6振动bug */
+h1,h2,h3,h4,h5,h6{ line-height:100%; font-size:100%; font-weight: normal;word-wrap:break-word;}
+img,input,button,a,select,textarea{margin:0;padding:0;resize:none;border:none;outline:none;} 
+button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0;}
+input::-ms-clear{ display:none;}
+input{ padding:0; border:none 0; outline:none; background:none;}
+textarea{ overflow:hidden;}
+textarea{ resize:none;}
+a{text-decoration:none; }
+a:active, a:focus{outline:none;}
+img{ vertical-align:top;}
+a img{ border:none;}
+b,strong{ font-weight:normal;}
+i,em{ font-style:normal;}
+
+table{ border-collapse:collapse;text-align:center; vertical-align:middle;}
+
+/*表格内加省略号：	 table{ table-layout:fixed; 限定宽度} td{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}*/
+.fl{ float:left;}
+.fr{ float:right;}
+.clearFix:after{ clear:both; display:block; content:" "; visibility:hidden; height:0; line-height:0;}
+.clearFix{*zoom:1;}
+
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}
+button,input{line-height:normal;}
+button,select{text-transform:none;}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}
+button[disabled],html input[disabled]{cursor:default;}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}

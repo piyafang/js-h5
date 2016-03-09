@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; list-style:none; }/*清默认值*/
+.clearFix:after{ content:''; clear:both; display:block; }/*清浮动*/
+.left{ width:346px; height:230px; float:left;}
+.tit{ width:336px; height:60px; background:#0cf;}
+.list li{ float:left; width:163px; height:75px; background:#06f; margin:10px 10px 0 0;}
+.list .color999{ background:#999;}
+.right{ width:168px; height:230px; float:left; background:#9f0; }
+
+
+
+
+</style>
+</head>
+
+<body>
+	<div class="box clearFix"><!--父级-->
+    	<div class="left"><!--左边-->
+        	<div class="tit"></div><!--左边上面-->
+            <ul class="list clearFix"><!--左边下面-->
+            	<li></li>
+                <li class="color999"></li>
+                <li class="color999"></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="right"></div>
+    </div>
+
+</body>
+</html>

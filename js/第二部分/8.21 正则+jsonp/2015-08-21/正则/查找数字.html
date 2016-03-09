@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+var str = 'a 2 g45 fds234 5fdsfs 439435';
+var arr = [];
+var tmp = '';
+for(var i=0;i<str.length;i++){
+	var c = str.charAt(i);
+	if(c>='0'&&c<='9'){
+		tmp+=c;
+	}else{
+		if(tmp){
+			arr.push(tmp);
+			tmp='';
+		}
+	}
+}
+if(tmp){
+	arr.push(tmp);
+}
+document.write(arr);
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+

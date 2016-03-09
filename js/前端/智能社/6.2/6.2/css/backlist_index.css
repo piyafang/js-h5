@@ -1,0 +1,10 @@
+
+body{ background: #f1f1f1;}
+.box{ background:url(../images/loginbody.gif) no-repeat; 
+		width:328px; height:192px; margin: 0 auto; 
+		font-size: 13px; color: #135891; padding-top:76px; padding-left:122px; position:relative;} 
+.box input{ text-indent:1em;width: 214px; height:26px; border:1px solid #ccc; margin-bottom:24px;}
+span{ display:inline-block;width:48px; text-align:right; font-size:12px; line-height:12px;}
+a{ display:block; background: #3D84C6; width: 52px; height:18px; border:5px solid #3D84C6;
+	color: #fff; font-size: 12px; 
+	line-height: 18px; text-align: center; position:absolute; right:46px; bottom:50px; border-radius:5px;}

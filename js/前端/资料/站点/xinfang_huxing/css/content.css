@@ -1,0 +1,60 @@
+@charset "gb2312";
+/* CSS Document */
+.huxing { border:#CCCCCC solid 1px; border-top:none; position:relative; height:36px; width: 1198px; }
+.huxing ul { overflow:hidden; position:absolute; left:0; top:0; height:37px; line-height: 37px; }
+.huxing ul li { float: left; color: #CCCCCC; }
+.huxing ul li a{ float:left; display:block; padding:0 15px; font-size: 14px; color: #666; }
+.huxing ul .onthis {color: #cc0000; background: url(../images/onthis.gif) no-repeat center bottom; }
+.huxing ul a:hover{ color: #C00; }
+.huxingImg { position: relative; background-color: #E8E8E8; height:72px;}
+.huxingImg .left,.huxingImg .right{ position: absolute; height: 72px; width: 23px; display:block; z-index:100;}
+.huxingImg .left{ left: 0px; top: 0px; background: url(../images/huxingImg_btn.gif) no-repeat left top; }
+.huxingImg .right{right: 0px; top: 0px; background:url(../images/huxingImg_btn.gif) no-repeat left bottom;}
+.huxingImg .left:hover{ background: url(../images/huxingImg_btn.gif) no-repeat right top; }
+.huxingImg .right:hover{background:url(../images/huxingImg_btn.gif) no-repeat right bottom;}
+.huxingImg ul { position: absolute; left: 23px; top: 10px;}
+.huxingImg ul li { float: left;margin-right: 9px;}
+.huxingImg ul li a{ display:block; width:105px; height:40px; border:#dddddd solid 1px; text-align:center; line-height:16px; padding-top:10px; background-color: #FFF; }
+.huxingImg ul li a.current,.huxingImg ul li a:hover{border-color:#cc0000; text-decoration:none;}
+.huxingMeg h2{ padding-left: 18px; }
+.huxingMeg h2 a{ line-height: 60px; height: 60px; font-size: 20px; font-weight: bold; color: #333; }
+.huxingMeg h2 span { font-size: 16px; color: #979797; margin-left: 12px; }
+.focus  { overflow: hidden; padding-left: 6px;_padding-left:0; }
+.focus dt { display: block; height: 398px; width: 598px; border: 1px solid #DDDDDD; position: relative; overflow: hidden; float: left; }
+.focus dd { float: left; width: 556px; padding-left: 38px;_width: 560px;}
+.focus dt ul { position: absolute; left: 0px; top: 0px; overflow: hidden; height: 396px; _left:-2px; width: 2000px; }
+.focus dt ul li { float: left; height: 396px; width: 594px; position: relative; margin-top: 2px; margin-left: 2px; overflow: hidden; }
+.focus ul li span { background-color: #000; display: block; height: 44px; width: 100%; position: absolute; left: 0px; bottom: -44px; filter:alpha(opacity=50); -moz-opacity:0.5; opacity: 0.5; z-index: 1; }
+.focus ul li p { height: 44px; position: absolute; left: 0px; bottom: -44px; z-index: 10; width: 100%; text-align: center; }
+.focus ul li p a { color: #FFF; font-size: 14px; line-height: 44px; }
+.focus dt .left,.focus dt .right{ position: absolute; height: 50px; width: 40px; display:block; z-index:100; }
+.focus dt .left{ left: 2px; top:154px; background: url(../images/focusBtn.png) no-repeat left bottom; }
+.focus dt .right{ right: 2px; top:154px; background: url(../images/focusBtn.png) no-repeat right bottom; }
+.focus dt .left:hover{ background: url(../images/focusBtn.png) no-repeat left top; }
+.focus dt .right:hover{ background: url(../images/focusBtn.png) no-repeat right top; }
+.focus dd ol li { font-size: 14px; overflow: hidden; line-height:30px;height: 30px; *line-height:24px; *height:24px; }
+.focus dd ol .red { color: #cc0000; }
+.focus dd ol li strong,.focus dd ol li span { float: left; }
+.focus dd ol li strong { display: block; width: 80px; }
+.focus dd ol li span{ word-wrap: break-word; word-break: normal} 
+.focus dd ol li span .more { color: #999; font-size: 12px; }
+.focus dd ol li span .more.marginL { font-size: 14px; color: #cc0000; font-weight: bold; margin-left: 28px; }
+.focus dd h3 { font-size: 18px; font-weight: bold; color: #cc0000; background: url(../images/icon_phone.gif) no-repeat left center; padding-left: 28px; }
+.focus dd .online { height: 52px; margin-top: 16px;background-color: #f4f4f4; border: 1px solid #ebebeb; }
+.focus .online ul li { float: left; overflow: hidden; padding-right:6px; color: #666; padding-left: 10px; line-height: 52px; }
+.focus .online ul .title_zixun { width: 30px; line-height: 20px; margin-top: 5px; margin-bottom: 5px; border-left-width: 1px; border-left-style: solid; border-left-color: #ddd; }
+.focus .online li img,.focus .online li em { float: left; }
+.online ul li a img { margin-top: 12px; }
+.focus .online ul li a em { margin-left: 8px; line-height: 20px; padding-top: 5px; }
+.huxingTu_tool { border-bottom: 2px solid #000; height: 44px; width: 100%; }
+.huxingTu_tool a { float: right; font-size: 12px; margin-top: 20px; }
+.huxingTu h4 { font-size: 16px; font-weight: bold; padding-top:20px; height: 24px; max-width:100%; float: left; }
+.huxingTu dl { overflow: hidden; display: block; padding-top: 8px; width: 1200px; }
+.huxingTu dl dt, .huxingTu dl dd { float: left; padding-top:10px; }
+.huxingTu dl dd { margin-left:10px;}
+.huxingTu.other dl dd {width: 231px; margin-left:11px;}
+.huxingTu.other dl dd span { overflow: hidden; line-height: 20px; }
+.huxingTu.other dl span p { float: left; padding-left: 4px; }
+.huxingTu.other dl span cite { float: right; color: #999; margin-right: 4px; }
+.huxingTu.other dl dd span cite a { color: #999; }
+.huxingTu.other dl dd.noMargin { margin: 0px; }

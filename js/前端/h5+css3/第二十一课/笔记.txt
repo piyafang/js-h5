@@ -1,0 +1,90 @@
+回顾：
+	css3
+		transform：变型
+			translate 平移
+			scale     缩放
+			rotate    旋转
+			skew      倾斜
+
+		transition：过渡
+			1s  时间
+			all 所有样式
+
+		background:linear-gradient(red,blue)
+
+			渐变
+
+		text-shadow 文字阴影
+
+text-shadow:10px   10px   10px 10px red;
+			左偏移 上偏移 模糊值 阴影大小值  阴影颜色
+
+box-shadow:10px   10px   10px 10px red inset;
+内阴影
+
+定义字体
+@font-face{
+	font-family:'起个名';
+	src:url('字体文件路径') format('truetype');
+}
+调用字体
+h3{ font-family:'起的那个名';}
+
+	iconfont 字体图标
+
+html5：
+	<!DOCTYPE html>
+
+	<video src="视频路径" controls="controls" autoplay></video>	
+
+	<audio src="音频路径" controls="controls" autoplay></audio>	
+
+	header
+	footer
+	nav
+	aside
+	section
+	article
+
+----------------------------------------
+css3
+	关于运动方式
+		ease-in-out 默认 先加后减
+		linear  匀速
+		ease-in 加速
+		ease-out减速
+
+关于浏览器内核的前缀：
+	-webkit-border-radius 谷歌/safari
+	-moz-border-radius     firefox
+	-ms-border-radius      ie
+	-o-border-radius       欧朋
+
+动画帧：
+	@-webkit-keyframes abc{
+		0%{
+			margin-left:0;
+		}
+		50%{
+			margin-left:300px;
+		}	
+		100%{
+			margin-left:0;
+		}
+	}
+
+background-size:100%; 背景图大小
+
+-webkit-transform-style:preserve-3d; 转换类型 显示成3d
+----------------------------------------
+移动端页面中的图片
+	
+	大小都是普通图片显示大小的2倍
+
+		提高图片的细腻度-高清显示
+
+640px 设计图
+
+
+
+

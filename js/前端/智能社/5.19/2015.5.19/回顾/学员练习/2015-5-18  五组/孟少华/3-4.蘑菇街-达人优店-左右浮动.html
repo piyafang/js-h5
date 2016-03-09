@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>3-4.蘑菇街-达人优店-左右浮动</title>
+<link type="text/css" rel="stylesheet" href="css/css.css" />
+<style>
+.box{
+	width:250px;
+	height:220px;
+	border:1px #ccc solid;
+	padding:16px 25px;
+	margin:100px auto;
+}
+h2{
+	font-size:16px;
+	float:left;
+}
+p{
+	font-size:9px;
+	float:right;
+	margin-right:5px;
+}
+a{
+	display:inline-block;
+	float:right;	
+}
+.float{
+	overflow:hidden;
+	width:248px;
+}
+.top,.bottom{
+	background-image:url(image/4.png);
+	width:248px;
+	height:84px;
+	border:1px #ccc solid;
+}
+.top{
+	margin-top:17px;
+	margin-bottom:10px;
+}
+.center{
+	width:58px;
+	margin:17px 0 0 20px;
+}
+.center a{ color:#000; }
+</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="float">
+			<h2>达人优店</h2>
+			<a href="#">←→</a>
+			<p>1/5</p>
+		</div>
+		<div class="top">
+			<div class="center">
+				<a href="#">DM SHOP</a>
+				<p>大米blog</p>
+				<img src="image/5.png" />
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="center">
+				<a href="#">DM SHOP</a>
+				<p>大米blog</p>
+				<img src="image/5.png" />
+			</div>
+		</div>
+	</div>
+</body>
+</html>

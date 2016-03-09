@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0; padding:0;}
+	.clearFix:after{ content:''; clear:both; display:block;}
+	.box{ width:514px; height:230px; margin:10px auto;}
+	.l{ width:336px; height:230px; float:left;}
+	.t{ width:336px; height:60px; margin-bottom:10px; background:#C0D986;}
+	.b{ width:336px; height:160px;}
+	.b .aa, .bb, .cc, .dd{ width:163px; height:75px; background:#CC3; float:left;}
+	.aa, .cc{  margin-right:10px;}
+	.bb, .cc{ background:#303;}
+	.aa, .bb{ margin-bottom:10px;}
+	.r{ width:168px; height:230px; float:right; background:#036; }
+</style>
+</head>
+
+<body>
+	<div class="box clearFix">
+		<div class="l">
+			<div class="t"></div>
+			<div class="b">
+				<div class="aa"></div>
+				<div class="bb"></div>
+				<div class="cc"></div>
+				<div class="dd"></div>
+			</div>
+		</div>
+		<div class="r"></div>
+	</div>
+</body>
+</html>

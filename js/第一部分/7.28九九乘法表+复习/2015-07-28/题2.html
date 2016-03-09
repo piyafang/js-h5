@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+function show(a){
+	return {
+		plus:function(b){
+			return {
+				minus:function(c){
+					alert(a+b-c);
+				}
+			};
+		}
+	};
+}
+show(2).plus(3).minus(4); //1
+</script>
+</head>
+
+<body>
+</body>
+</html>

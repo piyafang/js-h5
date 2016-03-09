@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script src="raphael.js"></script>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+window.onload=function ()
+{
+	var p=Raphael(0, 0, 800, 600);
+	
+	var rect=p.rect(100, 100, 300, 200);
+	
+	//方法1.直接用rotate不行——不兼容IE6-8
+	//rect.rotate(30);
+	
+	//方法2.官方推荐
+	//rect.transform('r 30');
+	rect.attr('fill', 'yellow');
+	
+	rect.transform('t 100,200 r 30 s 0.5,0.5');
+};
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+

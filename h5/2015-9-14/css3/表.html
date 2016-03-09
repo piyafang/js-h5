@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:400px; height:400px; border:1px solid black; margin:10px auto; border-radius:50%; position:relative;}
+
+#div1 .hour {width:12px; height:100px; background:black; position:absolute; left:50%; top:50%; margin-left:-6px; margin-top:-100px; -webkit-transform-origin:center bottom;}
+#div1 .min {width:6px; height:140px; background:black; position:absolute; left:50%; top:50%; margin-left:-3px; margin-top:-140px;-webkit-transform-origin:center bottom;}
+#div1 .sec {width:2px; height:160px; background:black; position:absolute; left:50%; top:50%; margin-left:-1px; margin-top:-160px;-webkit-transform-origin:center bottom;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function (){
+	var oHour=document.querySelector('#div1 .hour');
+	var oMin=document.querySelector('#div1 .min');
+	var oSec=document.querySelector('#div1 .sec');
+	
+	function tick()
+	{
+		var oDate=new Date();
+		
+		oHour.style.WebkitTransform='rotate('+oDate.getHours()*30+'deg)';
+		oMin.style.WebkitTransform='rotate('+oDate.getMinutes()*6+'deg)';
+		oSec.style.WebkitTransform='rotate('+oDate.getSeconds()*6+'deg)';
+	}
+	
+	tick();
+	setInterval(tick, 1000);
+}, false);
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<div class="hour"></div>
+	<div class="min"></div>
+	<div class="sec"></div>
+</div>
+</body>
+</html>

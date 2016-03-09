@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script type="text/javascript" src="../js/jquery-1.7.2.js" ></script>
+	<style type="text/css">
+		*{ margin: 0; padding: 0;}
+		.clearFix:after{display: block;content: "";clear: both;}
+		.clearFix{zoom:1;}
+		body{ width: 800px; margin: 50px auto;}
+		ul{width: 237px;border-left: 1px solid #000;border-top: 1px solid #000;}
+		li{ float: left; list-style: none;text-align: center;}
+		a{display: block; text-decoration: none;width: 78px; height: 78px; line-height: 78px; border: 1px solid #000;  margin-left: -1px; margin-top: -1px; }
+		li.active a{ border-color: #f00; position: relative;background-color: #f90;}
+/*		a:hover{ border-color: #f00; position: relative; z-index: 3;}
+*/	</style>
+	<script type="text/javascript">
+	 	window.onload=function(){
+	 		var oUl=document.getElementById('ul');
+	 		var aLi=oUl.getElementsByTagName('li');
+	 		for( var i=0;i<aLi.length;i++){
+	 			aLi[i].onmouseover=function(){
+	 				for( var j=0;j<aLi.length;j++){
+	 					aLi[j].className='';
+	 				}
+	 				this.className='active';
+
+	 			}
+	 		}
+
+	 	}
+		
+	</script>
+</head>
+<body>
+	<ul class="clearFix" id="ul">
+		<li><a href="javascript:;">1</a></li>
+		<li><a href="javascript:;">2</a></li>
+		<li><a href="javascript:;">3</a></li>
+		<li><a href="javascript:;">4</a></li>
+		<li><a href="javascript:;">5</a></li>
+		<li><a href="javascript:;">6</a></li>
+		<li><a href="javascript:;">7</a></li>
+		<li><a href="javascript:;">8</a></li>
+		<li><a href="javascript:;">9</a></li>
+	</ul>
+
+</body>
+</html>

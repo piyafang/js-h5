@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0;padding:0;list-style:none; text-decoration:none;}
+	ul{position:relative; width:500px; height:100px;}
+	li{width:24px; height:35px; float:left;overflow:hidden;margin:10px; position:relative;}
+	img{ position:absolute;left:0;top:0;}
+</style>
+<script src="move6.js"></script>
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+}
+window.onload=function(){
+	var oClock=document.getElementById('clock');
+	var oYm=document.getElementById('ym');
+	var aYimg=oYm.getElementsByTagName('img');
+	var oTime=document.getElementById('time');
+	var aTimg=oTime.getElementsByTagName('img');
+	function tick(){
+	//获取年月日
+		var oDate=new Date();
+		var Y = oDate.getFullYear();
+		var M = oDate.getMonth()+1;
+		var D = oDate.getDate();
+		var h = oDate.getHours();
+		var m = oDate.getMinutes();
+		var s = oDate.getSeconds();
+		var W = oDate.getDay();
+		var str = Y+toDou(M)+toDou(D);
+		var str2 = toDou(h)+toDou(m)+toDou(s);
+		for(var i=0;i<aYimg.length;i++){
+			var l=parseInt(str.charAt(i));
+			startMove(aYimg[i],{'top':-l*35});
+//			aYimg[i].style.marginTop=-l*35+'px';
+		}
+		for(var i=0;i<aTimg.length;i++){
+			var l2=parseInt(str2.charAt(i));
+			startMove(aTimg[i],{'top':-l2*35});
+			//aTimg[i].style.marginTop=-l2*35+'px';
+		}
+	}
+tick();
+setInterval(tick,1000);
+};
+</script>
+</head>
+
+<body>
+	<div id="clock">
+		<ul id="ym">
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>		
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+		</ul>
+		<ul id="time">
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+			<li><img src="img/num.png"/></li>
+		</ul>					
+	</div>
+</body>
+</html>

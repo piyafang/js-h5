@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style type="text/css">
+		#box{ width: 200px; height: 200px;background: #ccc;}
+	</style>
+	<script type="text/javascript">
+	
+		function toBlue(){
+			var oBox=document.getElementById('box');
+			oBox.style.backgroundColor='blue';
+		}
+		function toRed(){
+			var oBox=document.getElementById('box');
+			oBox.style.backgroundColor='red';
+		}
+
+		function toGreen(){
+			var oBox=document.getElementById('box');
+			oBox.style.backgroundColor='green';
+		}
+
+
+
+	</script>
+</head>
+<body>
+	<input type="button" value="变蓝" onmouseover="toBlue()" />
+	<input type="button" value="变红" onmouseover="toRed()" />
+	<input type="button"  value="变绿" onmouseover="toGreen()" />
+	<div id="box"></div>
+
+</body>
+</html>

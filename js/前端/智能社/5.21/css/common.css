@@ -1,0 +1,44 @@
+/*清除默认样式*/
+body, div, p, h1, h2, h3, h4, h5, h6, ul, li, ol, dl, dt, dd, span, strong, i, b, em, img, a{ margin:0; padding:0; }
+li{ list-style:none; }
+a{ text-decoration:none; }
+.clearFix:after{ content:''; clear:both; display:block; }
+/*清除默认样式*/
+body{ font-size:12px; color:#777; background:#f7f7f7; }
+
+/*header开始*/
+.header{ border-top:1px solid #aaaaac; background:url(../images/header_bg.jpg) repeat-x 0 4px #030035; padding-top:4px; }
+.header_top{ height:109px; width:960px; margin:0 auto; font-size:38px; color:#fff; line-height:109px;}
+.header_top span{ font-size:14px; font-weight:normal; padding-left:14px; }
+
+.nav{ height:49px; background:#010044; }
+.nav_box{ width:960px; margin:0 auto; overflow:hidden;}
+.nav_clear{ width:954px; overflow:hidden;}
+.nav ul{ width:960px; }
+.nav ul li{ float:left; width:190px; border-right:1px solid #4d9ce7; height:49px; text-align:center; line-height:49px; }
+.nav ul li a{ color:#fff;}
+/*header结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

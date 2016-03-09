@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link id="link" rel="stylesheet" type="text/css" href="skin1.css" />
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	function changeSkin(sHref){
+		var oLink=document.getElementById('link');
+		oLink.href=sHref;
+	}
+
+</script>
+</head>
+<body>
+	<input type="button" value="skin2" onmouseover="changeSkin('skin2.css')" />
+	<input type="button" value="skin3" onmouseover="changeSkin('skin3.css')" />
+	<input type="button"  value="skin1" onmouseover="changeSkin('skin1.css')" />
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="clearFix.css"/>
+	<style type="text/css">
+	*{ margin:0; padding:0; text-decoration:none; list-style-type:none; font-style:normal;margin:0 auto;}
+	img{ vertical-align:top;}
+	a{ color:#000; font-size:14px; display:block;}
+		.box{ width:298px;border:1px solid #E3E6ED; border-top:3px solid #FF8500;}
+		.content{padding-left:6px; padding-right:8px;}
+		h2{ font-size:20px;height:44px; line-height:44px;border-bottom:1px solid #E3E6ED;padding-left:14px;}
+		ul{ padding-bottom:12px; padding-top:9px; height:99px;}
+		li{ float:left; margin-right:20px; }
+		ul li img{ margin-bottom:12px;}
+		ul li a{ text-align:center;}
+		li.left{margin-left:8px;}
+		li.right{margin-right:8px;}
+		span{ display:block;border-top:1px dashed #CCC; height:35px; line-height:35px;}
+		span a{ float:left; margin:0 18px;}
+		.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden} /*所有主流浏览器都支持 :after 伪元素。*/ 
+        .clearfix{*+height:1%;}/*不知道有什么用处，不加ie7也没有问题*/ 
+        .clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;} 
+        .clearfix{*zoom:1;}//只针对IE6/7 
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <h2>新浪产品</h2>
+    <div class="content">
+        <ul class="clearfix">
+            <li class="left">
+                <img src="img/xinlang1.png" width="73" height="72">
+                <a href="#">新浪财经</a>
+            </li>
+            <li>
+                <img src="img/xinlang1.png" width="73" height="72">
+                <a href="#">新浪财经</a>
+            </li>
+            <li   class="right">
+                <img src="img/xinlang1.png" width="73" height="72">
+                <a href="#">新浪财经</a>
+            </li>
+                
+        </ul>
+        <span class="clearfix">
+            <a href="#">新浪阅读</a>
+            <a href="#">新浪阅读</a>
+            <a href="#">新浪阅读</a>
+        </span>
+    <div>
+  </div>
+</body>
+</html>

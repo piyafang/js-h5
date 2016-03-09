@@ -1,0 +1,709 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>乐订优程</title>
+<link href="css/body.css" rel="stylesheet" type="text/css">
+<link href="css/hotel_style.css" rel="stylesheet" type="text/css">
+<link href="css/easydropdown.css" rel="stylesheet" type="text/css">
+<link href="css/demo.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/lrtk.js"></script>
+<script type="text/javascript" src="js/jquery.easydropdown.min.js"></script>
+<script type="text/javascript" src="js/laydate.js"></script>
+</head>
+
+<body>
+<div class="head clearFix">
+    <div class="fl">
+      <h1 class="logo"></h1>
+    </div>
+    <div class="fr">
+      <ul class="clearFix">
+        <li class="language"><a href="#">English</a></li>
+        <li>|<a href="#">客服中心</a>|</li>
+        <li class="phone"><span>电话：<i>400-222-222</i></span></li>
+        <li class="login"><a href="#">登录</a>|<a href="#">注册</a>
+            <dl>
+            	<dd><a href="#">我的订单</a></dd>
+                <dd><a href="#">收藏的酒店</a></dd>
+                <dd><a href="#">帮助</a></dd>
+                <dd><a href="#">网站反馈</a></dd>
+            </dl>
+        </li>
+      </ul>
+  </div>
+  </div>
+  
+  <!-- 代码 开始 -->
+<div class="slide-main" id="touchMain">
+	<a class="prev" href="javascript:;" stat="prev1001"><img src="images/l-btn.png" /></a>
+	<div class="slide-box" id="slideContent">
+		
+		
+        <div class="slide" style="background:url(images/focus.jpg) no-repeat center top;">
+        <img src="images/jiudian.png" width="389" height="136" class="obj-d"></div>
+        
+        <div class="slide" style="background:url(images/focus2.jpg) no-repeat center top;">
+        
+        <img src="images/jiudian.png" width="389" height="136" class="obj-d"></div>
+       
+        <div class="slide" style="background:url(images/focus3.jpg) no-repeat center top;">
+        <img src="images/jiudian.png" width="389" height="136" class="obj-d"></div>
+		
+  </div>
+	<a class="next" href="javascript:;" stat="next1002"><img src="images/r-btn.png" /></a>
+	<div class="item">
+		<a class="cur" stat="item1001" href="javascript:;"></a><a href="javascript:;" stat="item1002"></a><a href="javascript:;" stat="item1003"></a>
+	</div>
+</div>
+<!-- 代码 结束 -->
+
+
+  <div class="content">
+    <div class="searchBox">
+      <div class="search">
+        <div class="choose">
+          <ul class="clearFix">
+            <li class="on" id="a1">国际酒店</li>
+            <li id="a2">国内酒店</li>
+          </ul>
+        </div>
+        <div class="formList" id="ax1">
+          <dl>
+            <dd><input name="destination" type="text" value="选择目的地"><em></em>
+              <div class="chooseCity">
+                <div class="cityTab clearFix">
+                  <ul id="nav">
+                    <li class="selected">亚洲</li>
+                    <li>欧洲</li>
+                    <li>美洲</li>
+                    <li>非洲</li>
+                  </ul>
+                </div>
+               <div class="subbox" id="menu_con">
+			        <div class="tag" style="display:block"><span>韩国</span><span>日本</span><span>泰国</span><span>越南</span><span>柬埔寨</span></div>
+                   <div class="tag" style="display:display:none;"><span>德国</span><span>法国</span><span>意大利</span></div>
+                   <div class="tag" style="display:display:none;"><span>美国</span></div>
+                  <div class="tag" style="display:display:none;"><span>刚果</span><span>南非</span></div>
+                </div>
+                
+              </div>
+            
+            </dd>
+            <dd class="long"><select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                        <option>所有酒店</option>
+                        <option value="">adsaafe sadf</option>
+						<option value="">oasyd e3nw</option>
+						<option value="">oiyybds</option>
+						<option value="">asdfcsfer4xc</option>
+						<option value="">asdf sef</option>
+					</select></dd>
+            <dd class="long"><select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                        <option>客房数</option>
+                        <option value="1">1间</option>
+						<option value="2">2间</option>
+						<option value="3">3间</option>
+						<option value="4">4间</option>
+						<option value="5">5间</option>
+					</select>
+              </dd>
+                    
+            <dd class="date"><input id="zhu" value="入住日期"><i><img src="images/icon_date.jpg" width="16" height="13"></i></dd>
+            <dd class="date"><input id="li" value="离店日期"><i><img src="images/icon_date.jpg" width="16" height="13"></i></dd>
+            <dd class="people"><select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                        <option>成人人数</option>
+                        <option value="1">1人</option>
+						<option value="2">2人</option>
+						<option value="3">3人</option>
+						<option value="4">4人</option>
+						<option value="5">5人</option>
+					</select></dd>
+            <dd class="people"><select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                        <option>儿童人数</option>
+                        <option value="0">无</option>
+                        <option value="1">1人</option>
+						<option value="2">2人</option>
+						<option value="3">3人</option>
+						<option value="4">4人</option>
+						<option value="5">5人</option>
+					</select>
+             </dd>
+             <dt><a href="#">搜 索</a></dt>
+          </dl>
+        </div>
+        <div class="formList" id="ax2" style="display:none;">
+           <dl>
+            <dd>
+            <input name="destination" type="text" value="选择目的地"><em></em>
+              <div class="chooseCity">
+                <div class="cityTab clearFix">
+                  <ul id="nav2">
+                    <li class="selected">热门城市</li>
+                    <li>必去旅游胜地</li>
+                    <li>十大极境</li>
+                   </ul>
+                </div>
+               <div class="subbox" id="menu_con2">
+			        <div class="tag" style="display:block"><span>北京</span><span>上海</span><span>广州</span><span>深圳</span>
+                  <span>成都</span>
+                  </div>
+                   <div class="tag" style="display:display:none;">
+                     <span>丽江</span><span>桂林</span><span>大理</span><span>西藏</span><span>哈尔滨</span>
+                   </div>
+                   <div class="tag" style="display:display:none;"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
+                </div>
+                
+              </div>
+            
+            
+            
+            
+            </dd>
+            <dd class="long"><select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                        <option>所有酒店</option>
+                        <option value="">adsaafe sadf</option>
+						<option value="">oasyd e3nw</option>
+						<option value="">oiyybds</option>
+						<option value="">asdfcsfer4xc</option>
+						<option value="">asdf sef</option>
+					</select></dd>
+            <dd class="long"><select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                        <option>客房数</option>
+                        <option value="1">1间</option>
+						<option value="2">2间</option>
+						<option value="3">3间</option>
+						<option value="4">4间</option>
+						<option value="5">5间</option>
+					</select>
+              </dd>
+                    
+            <dd class="date"><input id="zhu2" value="入住日期"><i><img src="images/icon_date.jpg" width="16" height="13"></i></dd>
+            <dd class="date"><input id="li2" value="离店日期"><i><img src="images/icon_date.jpg" width="16" height="13"></i></dd>
+            <dd class="people"><select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                        <option>成人人数</option>
+                        <option value="1">1人</option>
+						<option value="2">2人</option>
+						<option value="3">3人</option>
+						<option value="4">4人</option>
+						<option value="5">5人</option>
+					</select></dd>
+            <dd class="people"><select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                        <option>儿童人数</option>
+                        <option value="0">无</option>
+                        <option value="1">1人</option>
+						<option value="2">2人</option>
+						<option value="3">3人</option>
+						<option value="4">4人</option>
+						<option value="5">5人</option>
+					</select>
+             </dd>
+             <dt><a href="#">搜 索</a></dt>
+          </dl>
+          
+        </div>
+      </div>
+      <div class="nice_Pic">
+        <img src="images/ad.jpg" width="1000" height="140" />
+      </div>
+    </div>
+  </div>
+  
+  <div class="hotelList">
+    <div class="tool_line blue clearFix">
+      <h4 class="fl">热门短线游</h4>
+      <ul class="fl clearFix">
+        <li><a href="#">热门入住城市</a></li>
+        <li class="current"><a href="#">北京</a></li>
+        <li><a href="#">广州</a></li>
+        <li><a href="#">天津</a></li>
+        <li><a href="#">杭州</a></li>
+        <li><a href="#">上海</a></li>
+      </ul>
+      <a href="#" class="more fr">更多>></a>
+    </div>
+    <div class="list clearFix">
+      <ul>
+        <li>
+          <a href="#"><img src="images/hotel_1.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_2.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_1.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_3.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_1.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_2.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_1.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_3.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="tool_line orange clearFix">
+      <h4 class="fl">热门长线游</h4>
+      <ul class="fl clearFix">
+        <li><a href="#">热门入住城市</a></li>
+        <li class="current"><a href="#">曼谷</a></li>
+        <li><a href="#">韩国</a></li>
+        <li><a href="#">日本</a></li>
+        <li><a href="#">越南</a></li>
+      </ul>
+      <a href="#" class="more fr">更多>></a>
+    </div>
+    <div class="list clearFix">
+      <ul>
+        <li>
+          <a href="#"><img src="images/hotel_3.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_1.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_2.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_1.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_1.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_2.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_1.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+        
+        <li>
+          <a href="#"><img src="images/hotel_3.jpg" width="220">
+          <h5>北京建国大饭店</h5>
+          <p class="clearFix">
+            <span class="fl"><strong>￥808</strong><em>＄105</em></span>
+            <i class="fr">四星级</i>
+          </p></a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="tool_line green clearFix">
+      <h4>发现泰国</h4>
+    </div>
+      <div class="foundArea clearFix">
+        <ul>
+          <li>
+            <a href="#"><img src="images/found_img1.jpg" width="230"></a>
+            <h4>曼谷</h4>
+            <h5>焕然一新的曼谷码头夜市是游客购物、品尝美食和休闲娱乐的好去处，还可以欣赏美丽的城市风景。</h5>
+            <p><span class="fl"><a href="#">5星级酒店</a></span><span class="fr"><strong>￥1,178</strong><i>起</i></span></p>
+            <p><span class="fl"><a href="#">4星级酒店</a></span><span class="fr"><strong>￥668</strong><i>起</i></span></p>
+            <p><span class="fl"><a href="#">3星级酒店</a></span><span class="fr"><strong>￥304</strong><i>起</i></span></p>
+          </li>
+          
+          <li>
+            <a href="#"><img src="images/found_img2.jpg" width="230"></a>
+            <h4>清迈</h4>
+            <h5>在清迈，乘飞索飞越茂盛的丛林，乘坐滑翔机在城市上空盘旋，感受两个不同世界的极致美景。</h5>
+            <p><span class="fl"><a href="#">5星级酒店</a></span><span class="fr"><strong>￥1,178</strong><i>起</i></span></p>
+            <p><span class="fl"><a href="#">4星级酒店</a></span><span class="fr"><strong>￥668</strong><i>起</i></span></p>
+            <p><span class="fl"><a href="#">3星级酒店</a></span><span class="fr"><strong>￥304</strong><i>起</i></span></p>
+          </li>
+          
+          <li>
+            <a href="#"><img src="images/found_img3.jpg" width="230"></a>
+            <h4>普吉岛</h4>
+            <h5>湛蓝海水，洁白沙滩，四周的小岛宛若遗落印度洋中的宝石，普吉岛是万千游客心中的天堂。</h5>
+            <p><span class="fl"><a href="#">5星级酒店</a></span><span class="fr"><strong>￥1,178</strong><i>起</i></span></p>
+            <p><span class="fl"><a href="#">4星级酒店</a></span><span class="fr"><strong>￥668</strong><i>起</i></span></p>
+            <p><span class="fl"><a href="#">3星级酒店</a></span><span class="fr"><strong>￥304</strong><i>起</i></span></p>
+          </li>
+          
+          <li>
+            <a href="#"><img src="images/found_img4.jpg" width="230"></a>
+            <h4>苏梅岛</h4>
+            <h5>白色沙滩，清澈水域与热带风情环抱的度假胜地，有着如诗如画的清新纯净。</h5>
+            <p><span class="fl"><a href="#">5星级酒店</a></span><span class="fr"><strong>￥1,178</strong><i>起</i></span></p>
+            <p><span class="fl"><a href="#">4星级酒店</a></span><span class="fr"><strong>￥668</strong><i>起</i></span></p>
+            <p><span class="fl"><a href="#">3星级酒店</a></span><span class="fr"><strong>￥304</strong><i>起</i></span></p>
+          </li>
+        </ul>
+      </div>
+      
+     <div class="tool_line red clearFix">
+      <h4>旅游指南</h4>
+     </div>
+     <div class="city clearFix">
+       <ul>
+         <li><a href="#">
+           <figure class="effect-oscar">
+            <img src="images/city_img1.jpg" width="230"/>
+          <figcaption>
+                <h2>台北</h2>
+                <p>台北的一些简介等等等等</p>
+            </figcaption>			
+        </figure>
+         </a>
+         </li>
+         <li><a href="#">
+           <figure class="effect-oscar">
+            <img src="images/city_img2.jpg" width="230"/>
+          <figcaption>
+                <h2>曼谷</h2>
+                <p>曼谷的一些简介等等等等</p>
+            </figcaption>			
+        </figure>
+         </a>
+         </li>
+         <li><a href="#">
+           <figure class="effect-oscar">
+            <img src="images/city_img3.jpg" width="230"/>
+          <figcaption>
+                <h2>香港</h2>
+                <p>香港的一些简介等等等等</p>
+            </figcaption>			
+        </figure>
+         </a>
+         </li>
+         <li class="noMarginR"><a href="#">
+           <figure class="effect-oscar">
+            <img src="images/city_img4.jpg" width="230"/>
+          <figcaption>
+                <h2>新加坡</h2>
+                <p>新加坡的一些简介等等等等</p>
+            </figcaption>			
+        </figure>
+         </a>
+         </li>
+         <li><a href="#">
+           <figure class="effect-oscar">
+            <img src="images/city_img5.jpg" width="230"/>
+          <figcaption>
+                <h2>巴黎</h2>
+                <p>巴黎的一些简介等等等等</p>
+            </figcaption>			
+        </figure>
+         </a>
+         </li>
+         <li><a href="#">
+           <figure class="effect-oscar">
+            <img src="images/city_img6.jpg" width="230"/>
+          <figcaption>
+                <h2>罗马</h2>
+                <p>罗马的一些简介等等等等</p>
+            </figcaption>			
+        </figure>
+         </a>
+         </li>
+         <li><a href="#">
+           <figure class="effect-oscar">
+            <img src="images/city_img7.jpg" width="230"/>
+          <figcaption>
+                <h2>槟城</h2>
+                <p>槟城的一些简介等等等等</p>
+            </figcaption>			
+        </figure>
+         </a>
+         </li>
+         <li class="noMarginR"><a href="#">
+           <figure class="effect-oscar">
+            <img src="images/city_img8.jpg" width="230"/>
+          <figcaption>
+                <h2>东京</h2>
+                <p>东京的一些简介等等等等</p>
+            </figcaption>			
+        </figure>
+         </a>
+         </li>
+       </ul>
+     </div>  
+    
+  </div>
+  <div class="footer">
+     <div class="meg"><img src="images/footer.jpg" width="1000" height="266"></div>
+   </div>
+<script>
+       $('.login').click(function(){
+		   $('.login').children('dl').toggle(200);
+		})
+      </script>   
+<script>
+
+             $('#a1').click(function(){
+				 $('#ax1').css("display","block");
+				 $('#a1').addClass('on');
+				 $('#ax2').css("display","none");
+				 $('#a2').removeClass('on');
+				 })
+             $('#a2').click(function(){
+				 $('#ax2').css("display","block");
+				 $('#a2').addClass('on');
+				 $('#ax1').css("display","none");
+				 $('#a1').removeClass('on');
+				 })
+            </script>
+            
+            <script type="text/javascript">
+!function(){
+	laydate.skin('yahui');//切换皮肤，请查看skins下面皮肤库
+	laydate({elem: '#zhu'});//绑定元素
+	laydate({elem: '#li'});
+	laydate({elem: '#zhu2'});//绑定元素
+	laydate({elem: '#li2'});
+}();
+
+//日期范围限制
+var start = {
+    elem: '#start',
+    format: 'YYYY-MM-DD',
+    min: laydate.now(), //设定最小日期为当前日期
+    max: '2099-06-16', //最大日期
+    istime: true,
+    istoday: false,
+    choose: function(datas){
+         end.min = datas; //开始日选好后，重置结束日的最小日期
+         end.start = datas //将结束日的初始值设定为开始日
+    }
+};
+
+var end = {
+    elem: '#end',
+    format: 'YYYY-MM-DD',
+    min: laydate.now(),
+    max: '2099-06-16',
+    istime: true,
+    istoday: false,
+    choose: function(datas){
+        start.max = datas; //结束日选好后，充值开始日的最大日期
+    }
+};
+laydate(start);
+laydate(end);
+
+//自定义日期格式
+laydate({
+    elem: '#test1',
+    format: 'YYYY年MM月DD日',
+    festival: true, //显示节日
+    choose: function(datas){ //选择日期完毕的回调
+        alert('得到：'+datas);
+    }
+});
+
+//日期范围限定在昨天到明天
+laydate({
+    elem: '#hello3',
+    min: laydate.now(-1), //-1代表昨天，-2代表前天，以此类推
+    max: laydate.now(+1) //+1代表明天，+2代表后天，以此类推
+});
+</script>
+<script>
+var tabs=function(){
+    function tag(name,elem){
+        return (elem||document).getElementsByTagName(name);
+    }
+    //获得相应ID的元素
+    function id(name){
+        return document.getElementById(name);
+    }
+    function first(elem){
+        elem=elem.firstChild;
+        return elem&&elem.nodeType==1? elem:next(elem);
+    }
+    function next(elem){
+        do{
+            elem=elem.nextSibling;  
+        }while(
+            elem&&elem.nodeType!=1  
+        )
+        return elem;
+    }
+    return {
+        set:function(elemId,tabId){
+            var elem=tag("li",id(elemId));
+            var tabs=tag("div",id(tabId));
+            var listNum=elem.length;
+            var tabNum=tabs.length;
+            for(var i=0;i<listNum;i++){
+                    elem[i].onclick=(function(i){
+                        return function(){
+                            for(var j=0;j<tabNum;j++){
+                                if(i==j){
+                                    tabs[j].style.display="block";
+                                    //alert(elem[j].firstChild);
+                                    elem[j].className="selected";
+                                }
+                                else{
+                                    tabs[j].style.display="none";
+                                    elem[j].className="";
+                                }
+                            }
+                        }
+                    })(i)
+            }
+        }
+    }
+}();
+tabs.set("nav","menu_con");//执行
+tabs.set("nav2","menu_con2");//执行
+</script>
+<script>
+	function addEvent(obj,sEv,fn){
+		if(obj.addEventListener){
+				obj.addEventListener(sEv,fn,false);		
+		}else{
+			obj.attachEvent('on'+sEv,fn);
+		}	
+	}
+	
+	window.onload=function(){
+		var aDes=document.getElementsByName('destination');
+		var aSubBox=$('.subbox');
+		var aChoosecity=$('.chooseCity');
+		var aChoose=$('.choose')[0];
+		var aHotelType=aChoose.getElementsByTagName('li');
+		chooseTab(aDes[0],aChoosecity[0]);
+		chooseTab(aDes[1],aChoosecity[1]);
+		
+		for(var i=0;i<aHotelType.length;i++){
+			aHotelType[i].onclick=function(){
+				aDes[0].value=aDes[1].value='选择目的地';
+			};
+		}
+		
+		function chooseTab(obj1,obj2){
+			var aSpan=obj2.getElementsByTagName('span');
+			var aLi=obj2.getElementsByTagName('li');
+			obj1.onfocus=function(){
+				obj2.style.display='block';
+				for(var i=0;i<aSpan.length;i++){
+					aSpan[i].onclick=function(){
+						obj1.value=this.innerHTML;
+						obj2.style.display='none';
+					};
+				}
+			};
+			obj1.onclick=function(ev){
+				var oEv=ev||event;
+				oEv.cancelBubble=true;;
+			};
+			
+			for(var i=0;i<aLi.length;i++){
+				addEvent(aLi[i],'click',function(ev){
+					var oEv=ev||event;
+					oEv.cancelBubble=true;
+				})
+			}
+			
+			addEvent(document,'click',function(){
+				obj2.style.display='none';
+			})
+		}
+		
+		
+			
+		
+		
+	};
+</script>
+<!--代码部分end-->
+</body>
+</html>

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors liuwendan (you@example.org)
+ * @date    2015-05-16 22:22:25
+ * @version $Id$
+ */
+*{font-size: 16px;font-family: "宋体";color: #000;}
+.head,.body,.foot{width: 960px;text-align: center;}
+.head,.foot{height: 50px;background: #4e9ce9;line-height: 50px;}
+.body{overflow: hidden;}
+.left-content,.right-content{float: left;height: 500px;line-height: 500px;}
+.left-content{width: 680px;border-left: 1px solid #ccc;background: #e2e2e2;margin-right: 10px;}
+.right-content{width: 268px;border-right: 1px solid #ccc;background: #f7f7f7;}

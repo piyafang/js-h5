@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+.main{width:980px; height:303px; margin:12px auto; background-color:#fff; border-radius:3px 3px 0 0 ;/* 小圆角*/ padding-top:10px;}
+.main-hd{height:91px;}
+.main-hd ul{padding-left:7px;}
+.main-hd ul li{ width:217px; height:65px; background:url(../images/main-li-bg.jpg) no-repeat; padding:10px; float:left; margin-right:5px;}
+.main-hd p{ font-family:"宋体"; font-size:12px; color:#9D9D9D; line-height:20px; padding-left:40px;}
+.main-bd{height:210px; border-top:1px solid #E0E0E0; background:url(../images/main-bd-bg.jpg) repeat-x;}
+.line{background:url(../images/main-bd-line.jpg) no-repeat right top;}
+.main-bd h3{height:60px;  padding:10px 0 0 10px;}
+.main-bd h3 img{float:left;}
+.main-bd h3 span{float:right; margin:10px 11px 0 0;}
+.aboutus{width:323px; height:210px; float:left;}
+.aboutus dt{float:left; border:1px solid #ccc; padding:2px; margin-left:10px;_display:inline; margin-top:2px;}
+.aboutus dd{float:left; width:180px; margin-left:10px; line-height:20px;}
+.aboutus dd a{color:#3E9F11;}
+.aboutus dd a:hover{ text-decoration:underline;}
+.productshow{width:408px; height:210px;float:left;}
+.productshow li{width:120px;  float:left;margin-left:12px;_display:inline;}
+.productshow li div{height:94px; border:1px solid #ccc; background-color:#fff;}
+.productshow li img{ margin: 0 auto;}
+.productshow li p{text-align:center; padding-top:4px;}
+.contactus{width:249px; height:210px; float:left;}
+.contactus p{ padding-left:15px; line-height:20px;}
+

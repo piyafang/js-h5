@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+body{ text-align:center; font-size:50px; font-weight:bold; color:#fff; background:#000;}
+</style>
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:iNum;
+}
+window.onload=function(){
+	var oTime_box = document.getElementById('time');
+	var oDate_box = document.getElementById('date');
+	var oWeek_box = document.getElementById('week');
+	function tick(){
+		var oDate = new Date();
+		var Y = oDate.getFullYear();
+		var M = oDate.getMonth()+1;
+		var D = oDate.getDate();
+		var W = oDate.getDay();
+		var h = oDate.getHours();
+		var m = oDate.getMinutes();
+		var s = oDate.getSeconds();
+		oTime_box.innerHTML=toDou(h)+':'+toDou(m)+':'+toDou(s);
+		oDate_box.innerHTML=Y+'-'+toDou(M)+'-'+toDou(D);
+		oWeek_box.innerHTML='星期'+W;
+	}
+	tick();
+	setInterval(tick,1000);
+};
+</script>
+</head>
+
+<body>
+<div id="time">00:00:00</div>
+<div id="date">0000-00-00</div>
+<div id="week">星期</div>
+</body>
+</html>
+
+
+
+

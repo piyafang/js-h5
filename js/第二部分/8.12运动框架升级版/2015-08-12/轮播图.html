@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+#box{width:840px;height:305px; margin:100px auto; overflow:hidden; position:relative; top:0; left:0;}
+#box ul{position:absolute;top:0; left:0;}
+#box ul li{float:left;width:840px; height:305px;}
+#box ol{overflow:hidden; position:absolute; bottom:50px; right:100px; width:160px; }
+#box ol li{float:left; width: 30px; height:30px; background:#ccc; border-radius:50%; margin-right:10px;}
+#box ol li.on{background:#f90;}
+</style>
+<script src="move6.js"></script>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var oUl = oBox.children[0];
+	var aLi = oUl.children;
+	var oOl = oBox.children[1];
+	var aBtn = oOl.children;
+	for(var i=0;i<aBtn.length;i++){
+		(function(index){
+			aBtn[i].onmouseover=function(){
+				for(var i=0;i<aBtn.length;i++){
+					aBtn[i].className='';
+				}
+				this.className='on';
+				oUl.style.left=-index*aLi[0].offsetWidth+'px';
+			};
+		})(i);
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul>
+    	<li><img src="img/0.jpg" /></li>
+    	<li><img src="img/1.jpg" /></li>
+    	<li><img src="img/2.jpg" /></li>
+    	<li><img src="img/3.jpg" /></li>
+    </ul>
+    <ol>
+    	<li class="on"></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    </ol>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

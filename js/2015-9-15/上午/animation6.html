@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:200px; height:200px; background:#CCC;}
+
+/*定义*/
+@-webkit-keyframes test
+{
+	33% {width:400px; height:200px; background:#CCC;}
+	66% {width:400px; height:400px; background:#CCC;}
+	100% {width:400px; height:400px; background:red;}
+}
+
+/*调用*/
+#div1:hover
+{
+	-webkit-animation-name:test;
+	-webkit-animation-duration:1s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-fill-mode:forwards;
+	/*-webkit-animation-delay:2s;*/
+	/*-webkit-animation-direction:alternate;*/
+	/*-webkit-animation-iteration-count:infinite;*/
+	/*-webkit-animation-play-state:running;*/
+}
+</style>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

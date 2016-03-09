@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+#box{width:966px; margin:0 auto; overflow:hidden;}
+ul{float:left; width:300px; border:1px solid red; margin:0 10px;}
+ul li{width:100%; height:400px; background:#ccc; margin:10px 0;}
+</style>
+<script>
+function rnd(n,m){
+	return parseInt(n+Math.random()*(m-n));
+}
+function createLi(){
+	var oLi = document.createElement('li');
+	oLi.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+	oLi.style.height=rnd(100,400)+'px';
+	return oLi;
+}
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var aUl = oBox.children;
+	//创建20个li
+	for(var i=0;i<20;i++){
+		var oLi = createLi();
+		//根据ul高度不同，往最小的里面插。
+		var h1 = aUl[0].scrollHeight;
+		var h2 = aUl[1].scrollHeight;
+		var h3 = aUl[2].scrollHeight;
+		//假设一个最少的
+		var oMin = null;
+		if(h1<h3){
+			if(h1<h2){
+				oMin = aUl[0];
+			}else{
+				oMin = aUl[1];
+			}
+		}else{
+			if(h2<h3){
+				oMin = aUl[1];
+			}else{
+				oMin = aUl[2];
+			}
+		}
+		oMin.appendChild(oLi);
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul></ul>
+	<ul></ul>
+	<ul></ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+

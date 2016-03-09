@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+<style>
+* {margin:0; padding:0; list-style:none; position:absolute; left:0; top:0;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oImg=document.getElementById('img1');
+	var oTxt=document.getElementById('txt1');
+	
+	oImg.addEventListener('touchstart', function (ev){
+		if(ev.targetTouches.length==2)
+		{
+			//oldDis
+			var a=ev.targetTouches[0].pageX-ev.targetTouches[1].pageX;
+			var b=ev.targetTouches[0].pageY-ev.targetTouches[1].pageY;
+			
+			var oldDis=Math.sqrt(a*a+b*b);
+			
+			//oldW
+			var oldW=oImg.offsetWidth;
+			var oldH=oImg.offsetHeight;
+			
+			//oldPageX
+			var oldPageX=ev.targetTouches[0].pageX;
+			var oldPageY=ev.targetTouches[0].pageY;
+			
+			//oldLeft
+			var oldLeft=oImg.offsetLeft;
+			var oldTop=oImg.offsetTop;
+			
+			function move(ev)
+			{
+				var newPageX=ev.targetTouches[0].pageX;
+				var newPageY=ev.targetTouches[0].pageY;
+				
+				//算大小
+				var a=ev.targetTouches[0].pageX-ev.targetTouches[1].pageX;
+				var b=ev.targetTouches[0].pageY-ev.targetTouches[1].pageY;
+				
+				var newDis=Math.sqrt(a*a+b*b);
+				
+				oImg.style.width=oldW*newDis/oldDis+'px';
+				oImg.style.height=oldH*newDis/oldDis+'px';
+				
+				//算位置
+				//newLeft=newPageX-((oldPageX-oldLeft)/oldW)*newW
+				oImg.style.left=newPageX-((oldPageX-oldLeft)/oldW)*oImg.offsetWidth+'px';
+				oImg.style.top=newPageY-((oldPageY-oldTop)/oldH)*oImg.offsetHeight+'px';
+			}
+			function end()
+			{
+				oImg.removeEventListener('touchmove', move, false);
+				oImg.removeEventListener('touchend', end, false);
+			}
+			
+			oImg.addEventListener('touchmove', move, false);
+			oImg.addEventListener('touchend', end, false);
+			
+			ev.preventDefault();
+		}
+	}, false);
+};
+</script>
+</head>
+
+<body>
+<img src="1.png" id="img1" />
+</body>
+</html>

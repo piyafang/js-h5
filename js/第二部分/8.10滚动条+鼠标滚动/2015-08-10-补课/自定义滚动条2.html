@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style>
+*{margin:0; padding:0;}
+#box {width:500px; height:30px; background:#ccc; position:relative; top:200px; left:0;}
+#bar { width:30px; height:30px; background:blue; position:absolute; top:0; left:0;}
+#move { width:100px; height:100px; background:red; position:absolute; top:50px; left:0;}
+</style>
+<script>
+'use strict'
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var oBar = document.getElementById('bar');
+
+	oBar.onmousedown = function(ev){
+		var oEvent = ev||event;
+
+		var disX = oEvent.clientX - oBar.offsetLeft;
+		document.onmousemove = function(ev){
+			var oEvent = ev||event;
+			var l = oEvent.clientX - disX;
+			if(l<0){
+				l=0;
+			}else if(l>oBox.clientWidth-oBar.offsetWidth){
+				l=oBox.clientWidth-oBar.offsetWidth;
+			}
+			oBar.style.left = l + 'px';
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+			oBar.releaseCapture&&oBar.releaseCapture();
+		}
+		oBar.setCapture&&oBar.setCapture();
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+
+<div id="box">
+	<div id="bar"></div>
+	<div id="move"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<title>xxxx</title>
+<script type="text/javascript" src="cordova.js"></script>
+<script>
+/*
+window.onload=function ()
+{
+};
+
+document.addEventListener('DOMContentLoaded', function (){}, false);
+*/
+
+//PhoneGap——deviceready事件
+document.addEventListener('deviceready', function (){
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function ()
+	{
+		//照片
+		//window.navigator.camera.getPicture(成功, 失败, 选项);
+		
+		navigator.camera.getPicture(function (str){
+			//成功
+			alert(str);
+		}, function (str){
+			//失败
+			alert('照相失败：'+str);
+		}, {
+			quality: 50,
+			destinationType: 0,		//base64
+			encodingType: 1,		//png
+			targetWidth: 800,
+			targetHeight: 600,
+			mediaType: 0			//图片
+		});
+	};
+}, false);
+</script>
+</head>
+
+<body>
+<input type="button" value="照照片" id="btn1" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

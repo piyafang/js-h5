@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0;padding:0; list-style:none; text-decoration:none;}
+	#box{margin:50px auto; width:700px; overflow:hidden;}
+	#box div{ width:200px;height:200px; background:#ccc; position:relative;
+	 overflow:hidden; margin:10px; float:left;}
+	span{ position:absolute;left:-200px;top:0;width:200px;height:200px; background:#9F9;
+	opacity:0.8; filter:alpha(opacity:80);}
+</style>
+<script src="move6.js"></script>
+<script>
+	function throught(oDiv){
+		var oSpan=oDiv.getElementsByTagName('span')[0];
+		function hoverDir(obj,oEv){
+			var w=obj.offsetLeft+obj.offsetWidth/2;
+			var x=w-oEv.clientX;
+			var h=obj.offsetTop+obj.offsetHeight/2;
+			var y=h-oEv.clientY;
+			return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+		}
+		oDiv.onmouseover=function(ev){
+			var oEv=ev||event;
+			var oFrom=oEv.fromElement||oEv.relatedTarget;
+			if(oDiv.contains(oFrom)) return;
+			var dir=hoverDir(oDiv,oEv);
+			switch(dir){
+				case 0:
+					oSpan.style.left='200px';
+					oSpan.style.top=0;
+				break;
+				case 1:
+					oSpan.style.left=0;
+					oSpan.style.top='200px';
+				break;
+				case 2:
+					oSpan.style.left='-200px';
+					oSpan.style.top=0;
+				break;
+				case 3:
+					oSpan.style.left=0;
+					oSpan.style.top='-200px';
+				break;	
+			}
+			startMove(oSpan,{'left':0,'top':0});			
+		};
+		oDiv.onmouseout=function(ev){
+			var oEv=ev||event;
+			var oTo=oEv.toElement||oEv.relatedTarget;
+			if(oDiv.contains(oTo)) return;
+			var dir=hoverDir(oDiv,oEv);
+			switch(dir){
+				case 0:
+					startMove(oSpan,{'left':200,'top':0});
+				break;
+				case 1:
+					startMove(oSpan,{'left':0,'top':200});
+				break;
+				case 2:
+					startMove(oSpan,{'left':-200,'top':0});
+				break;
+				case 3:
+					startMove(oSpan,{'left':0,'top':-200});
+				break;	
+			}			
+		};
+	}
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var aDiv=oBox.children;
+		for(var i=0;i<aDiv.length;i++){
+			throught(aDiv[i]);
+		}
+	};
+</script>
+</head>
+
+<body>
+	<div id="box">
+		<div>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+		</div>
+	</div>
+</body>
+</html>

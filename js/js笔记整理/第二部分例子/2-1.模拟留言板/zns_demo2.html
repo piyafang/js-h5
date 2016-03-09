@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<title>模拟留言板 - 智能课堂课堂 - www.zhinengshe.com</title>
+<link href="zns_style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+	p { width: 100%; background: #f1f1f1; position: relative; margin-bottom: 25px; }
+	span { position: absolute; top: -20px; right: 0px; }
+	i{color: red; font-style: normal;font-weight: bold;}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var oBtn=document.getElementById('btn');
+	var oParent=document.getElementById('parent');
+	var oBox=document.getElementById('box');
+	var oContent=oBox.getElementsByTagName('em')[0];
+	var oTypeTxt=document.getElementById('text');
+
+	var count=0;
+	oBtn.onclick=function(){
+		if(oTypeTxt.value=='')return;
+		oContent.style.display='none';
+		
+		var aP=document.createElement('p');	
+		var aSpan=document.createElement('span');	
+		
+		if(oBox.children.length){
+			oBox.insertBefore(aP,oBox.children[oBox.children.length-1]);
+		}else{
+			oBox.appendChild(aP);
+		}
+		count+=1;
+		aP.innerHTML=count+'、'+oTypeTxt.value;
+		aP.appendChild(aSpan);
+
+		aSpan.innerHTML='确定要把<i>'+aP.innerHTML+'</i>删除吗';
+		aSpan.style.display='none';
+		aP.style.cursor='pointer';
+		oTypeTxt.value='';
+
+		var aP=oBox.getElementsByTagName('p')
+		for(var i=0;i<aP.length;i++){
+			aP[i].onmouseover=function(){
+					var oSpantxt=this.getElementsByTagName('span')[0];
+					this.style.background='#f90';
+					oSpantxt.style.display='block';		
+			};
+			aP[i].onmouseout=function(){
+					var oSpantxt=this.getElementsByTagName('span')[0];
+					this.style.background='#f1f1f1';
+					oSpantxt.style.display='none';		
+			};
+			aP[i].onclick=function(){
+				oBox.removeChild(this);
+				if(!aP.length){
+					oContent.style.display='block';
+				}
+			};
+		}
+	};
+
+
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="parent">
+	<h4>留言内容：</h4>
+	<div id="box"><em>这里会显示留言内容……</em></div>
+	<textarea id="text"></textarea><br />
+	<input id="btn" type="button" onclick="fn()" value="发表留言" />
+</div>
+
+</body>
+</html>

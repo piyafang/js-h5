@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:200px; height:200px; background:#CCC;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function ()
+	{
+		move3(oDiv, {width: '400px'}, {end: function (){
+			move3(oDiv, {height: '400px'}, {end: function (){
+				move3(oDiv, {background: 'red'});
+			}});
+		}});
+	};
+};
+
+function move3(obj, json, options)
+{
+	options=options||{};
+	options.time=options.time||700;
+	options.type=options.type||'ease';
+	
+	//加end
+	function end()
+	{
+		obj.style.WebkitTransition='none';
+		obj.removeEventListener('transitionend', end, false);
+		
+		options.end && options.end();
+	}
+	obj.addEventListener('transitionend', end, false);
+	
+	//加transition
+	obj.style.WebkitTransition=options.time+'ms all '+options.type;
+	
+	//变
+	for(var name in json)
+	{
+		obj.style[name]=json[name];
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="走" id="btn1" />
+<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+

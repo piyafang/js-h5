@@ -1,0 +1,196 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智能课堂 —— 微博ajax接口测试 - www.zhinengshe.com</title>
+<link href="style/weibo.css" rel="stylesheet" type="text/css" />
+<script src="../all_ajax.js"></script>
+<script>
+window.onload=function(){
+	var oTxt = document.getElementById('t1');
+	var oBtn = document.getElementById('btn1');
+	var oReplyBox = document.getElementById('reply_box');
+	var oPageBox = document.getElementById('page_box');
+	//点击留言
+	//weibo.php?act=add&content=xxx
+	//{error:0, id: 新添加内容的ID, time: 添加时间}
+	var URL = 'weibo.php';
+	oBtn.onclick=function(){
+		if(oTxt.value=='')return;
+		ajax({
+			url:URL,
+			data:{
+				act:'add',
+				content:oTxt.value
+			},
+			success:function(str){
+				var json = eval('('+str+')');
+				if(json.error){
+					alert('留言失败');
+				}else{
+					var oReply = createReply(json.id,oTxt.value,json.time,0,0);
+					if(oReplyBox.innerHTML==''){
+						oReplyBox.appendChild(oReply);
+					}else{
+						oReplyBox.insertBefore(oReply,oReplyBox.children[0]);
+					}
+					
+				}
+				oTxt.value='';
+				if(oReplyBox.children.length>6){
+					oReplyBox.removeChild(oReplyBox.children[oReplyBox.children.length-1]);
+				}
+			},
+			error:function(s){
+				alert('错误:'+s);
+			}
+		});
+	};
+	function createReply(ID,con,time,acc,ref){
+		var oDate = new Date();
+		oDate.setTime(time*1000);
+		var oReply=document.createElement('div');
+		oReply.className='reply';
+		oReply.innerHTML='<p class="replyContent">'+con+'</p>'+
+			'<p class="operation">'+
+			'<span class="replyTime">'+oDate.getFullYear()+'年'+(oDate.getMonth()+1)+'月'+oDate.getDate()+'日 '+oDate.getHours()+':'+oDate.getMinutes()+':'+oDate.getSeconds()+'</span>'+
+			'<span class="handle">'+
+			'<a href="javascript:;" class="top">'+acc+'</a>'+
+			'<a href="javascript:;" class="down_icon">'+ref+'</a>'+
+			'<a href="javascript:;" class="cut">删除</a>'+
+			'</span>'+
+			'</p>';
+		var oDel = oReply.getElementsByTagName('a')[2];
+		//weibo.php?act=del&id=12	删除一条数据
+		//{error:0}
+		oDel.onclick=function(){
+			var result = confirm('你确定要删除吗？');
+			if(result){
+				ajax({
+					url:URL,
+					data:{
+						act:'del',
+						id:ID
+					},
+					success:function(str){
+						var json = eval('('+str+')');
+						if(json.error){
+							alert('删除失败');
+						}else{
+							alert('删除成功');
+							getMsg(1);
+						}
+					},
+					error:function(s){
+						alert('错误:'+s);
+					}
+				});
+			}
+		};
+		return oReply;
+	}
+	//获取总页数
+	//weibo.php?act=get_page_count
+	//{count:页数}
+	function getPageCount(){
+		ajax({
+			url:URL,
+			data:{
+				act:'get_page_count'
+			},
+			success:function(str){
+				var json = eval('('+str+')');
+				if(json.count){
+					for(var i=0;i<json.count;i++){
+						var oA = document.createElement('a');
+						oA.href='javascript:;';
+						oA.innerHTML=i+1;
+						if(i==0){
+							oA.className='active';
+						}
+						oPageBox.appendChild(oA);
+						;(function(index){
+							oA.onclick=function(){
+								for(var i=0;i<oPageBox.children.length;i++){
+									oPageBox.children[i].className='';
+								}
+								this.className='active';
+								getMsg(index+1);
+							};
+						})(i);
+					}
+				}
+			},
+			error:function(s){
+				alert('错误：'+s);
+			}
+		});
+	}
+	getPageCount();
+	//获取某一页数据
+	//weibo.php?act=get&page=1
+	//[{id: ID, content: "内容", time: 时间戳, acc: 顶次数, ref: 踩次数}, {...}, ...]
+	function getMsg(pageIndex){
+		ajax({
+			url:URL,
+			data:{
+				act:'get',
+				page:pageIndex
+			},
+			success:function(str){
+				var arr = eval('('+str+')');
+				if(arr){
+					oReplyBox.innerHTML='';
+					for(var i=0;i<arr.length;i++){
+						var oReply = createReply(arr[i].id,arr[i].content,arr[i].time,arr[i].acc,arr[i].ref);
+						oReplyBox.appendChild(oReply);
+					}
+				}
+			},
+			error:function(s){
+				alert('错误:'+s);
+			}
+		});
+	}
+	getMsg(1);
+	
+	
+};
+</script>
+</head>
+
+<body>
+<div class="znsArea">
+<!--留言-->
+     <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="t1"></textarea>
+        <div class="takeSbmComment">
+            <input type="button" class="inputs" value="" id="btn1" />
+            <span>(可按 Enter 回复)</span>
+        </div>
+    </div>
+<!--已留-->
+    <div class="commentOn">
+        <!--<div class="noContent">暂无留言</div>-->
+        <div class="messList" id="reply_box">
+        	<!--<div class="reply">
+                <p class="replyContent">卫士，新款卫士将推出总共14种车身式样。其中， XS旅行款车型售价为32295英镑(约33.6万元)。</p>
+                <p class="operation">
+                    <span class="replyTime">2011-09-08 16:37:60</span>
+                    <span class="handle">
+                    	<a href="javascript:;" class="top">0</a>
+                        <a href="javascript:;" class="down_icon">0</a>
+                        <a href="javascript:;" class="cut">删除</a>
+                    </span>
+                </p>
+            </div>-->
+        </div>
+        <div class="page" id="page_box">
+        	<!--<a href="javascript:;" class="active">1</a>
+        	<a href="javascript:;">2</a>
+        	<a href="javascript:;">3</a>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0;padding:0; list-style:none;}
+	#box{ width:800px;height:112px; position:relative; border:1px solid #ccc; 
+	margin:100px auto;overflow:hidden;}
+	ul{ overflow:hidden; position:absolute;left:0;top:0;}
+	li{ width:200px; height:112px; float:left;}
+	img{ width:100%;}
+</style>
+<script>
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var oUl=oBox.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName('li');
+		oUl.innerHTML+=oUl.innerHTML;
+		oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+		var timer=null;
+		clearInterval(timer);
+		function toGo(){
+			var l=oUl.offsetLeft-10;
+			var w=oUl.offsetWidth/2;
+			if(-l>w)l=0;
+			oUl.style.left=l+'px';
+		}
+		 toGo();
+		timer=setInterval(toGo,30);
+		oUl.onmouseover=function(){
+			clearInterval(timer);
+		};
+		oUl.onmouseout=function(){
+			timer=setInterval(toGo,30);
+		};
+	};
+</script>
+</head>
+
+<body>
+	<div id="box">
+		<ul>
+			<li><img src="img/1.jpg" /></li>
+			<li><img src="img/2.jpg" /></li>
+			<li><img src="img/3.jpg" /></li>
+			<li><img src="img/4.jpg" /></li>
+		</ul>
+	</div>
+</body>
+</html>

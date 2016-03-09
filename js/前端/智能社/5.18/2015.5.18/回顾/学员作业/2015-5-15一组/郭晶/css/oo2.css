@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+*{ magin:0; padding:0; overflow:hidden;}
+.father{ width:620px;
+         height:106px;
+		 background:#fff;
+		 margin:100px auto;}
+.top{ width:620px;
+      height:60px;
+	  background:#39f;
+	  margin-bottom:10px;}
+.bottom{ width:620px;
+         height:36px;} 
+.left{ width:200px; 
+       height:36px;
+	   background:#999;
+	   float:left;}
+.center{ width:200px;
+         height:36px;
+		 background:#000;
+		 float:left;
+		 margin-left:10px;}
+		 
+.right{ width:200px;
+        height:36px;
+		background:#999;
+		float:right;}
+		 

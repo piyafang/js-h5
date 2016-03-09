@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('inp_box');
+	var aTxt = oBox.getElementsByTagName('input');
+	var oBtn = document.getElementById('btn1');
+	oBtn.onclick=function(){
+		var result = 0;
+		for(var i=0;i<5;i++){
+			var num = Number(aTxt[i].value);
+			result+=num;
+		}
+		if(isNaN(result)){
+			alert('哥们，错了');
+		}else{
+			alert(result);
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="inp_box">
+<input type="text" />
+<input type="text" />
+<input type="text" />
+<input type="text" />
+<input type="text" />
+<input type="text" />
+<input type="text" />
+<input type="text" />
+<input type="text" />
+</div>
+<input type="button" value="求和" id="btn1" />
+</body>
+</html>

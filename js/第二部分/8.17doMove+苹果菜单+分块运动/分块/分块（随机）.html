@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0; padding:0;}
+#box{width:700px;height:400px; margin:20px auto; background:url(img/0.jpg) no-repeat; position:relative; top:0; left:0;}
+#box span{position:absolute;  width:100px; height:100px; background:url(img/0.jpg) no-repeat;}
+</style>
+<script src="move.js"></script>
+<script>
+	window.onload=function(){
+		var oBtn = document.getElementById('btn1');
+		var oBox = document.getElementById('box');
+		var R=10;
+		var C=20;
+		var w=oBox.offsetWidth/C;
+		var h=oBox.offsetHeight/R;
+		for(var r=0;r<R;r++){
+			for(var c=0;c<C;c++){
+				var oSpan = document.createElement('span');
+				oSpan.style.width=w+'px';
+				oSpan.style.height=h+'px';
+				oSpan.style.left=w*c+'px';
+				oSpan.style.top=h*r+'px';
+				oSpan.style.backgroundPosition='-'+w*c+'px -'+h*r+'px';
+				oBox.appendChild(oSpan);
+			}
+		}
+		var aSpan=oBox.children;
+		var timer=null;
+		var iNow=0;
+		function picChange(){
+			
+			iNow++;
+			for(var i=0;i<aSpan.length;i++){
+				(function(index){
+					timer=setTimeout(function(){
+						aSpan[index].style.opacity=0;
+						aSpan[index].style.filter='alpha(opacity:0)';
+						aSpan[index].style.backgroundImage='url(img/'+iNow%3+'.jpg)';
+						startMove(aSpan[index],{opacity:1});				
+					},100*Math.random());
+				}) (i);
+			}			
+		}
+		picChange();
+		clearInterval(timer);
+		timer=setInterval(picChange,2000);
+	};
+</script>
+</head>
+
+<body>
+	<input type="button" value="走起" id="btn1" />
+	<div id="box"></div>
+</body>
+</html>

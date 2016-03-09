@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+input.ok{border:1px solid green;}
+input.err{border:1px solid red;}
+</style>
+<script>
+window.onload=function(){
+	var readJson={
+		uname:/^[\w]{6,32}$/,
+		age:/^((1[89])|([2-9]\d)|(100))$/,
+		email:/^\w+@\w+(\.[a-zA-Z]{2,6}){1,2}$/
+	};
+	var oForm = document.getElementById('form1');
+	var aInp = oForm.getElementsByTagName('input');
+	oForm.onsubmit=function(){
+		var bOk = true;
+		for(var i=0;i<aInp.length;i++){
+			if(readJson[aInp[i].name]){
+				if(readJson[aInp[i].name].test(aInp[i].value)){
+					aInp[i].className='ok';
+				}else{
+					aInp[i].className='err';
+					bOk=false;
+				}
+				
+			}
+		}
+		if(!bOk){
+			return false;
+		}
+	};
+	
+};
+</script>
+</head>
+
+<body>
+<form id="form1" action="?">
+	用户名:<input type="text" name="uname" /><br />
+    年&nbsp;龄:<input type="text" name="age" /><br />
+    邮&nbsp;箱:<input type="text" name="email" /><br />
+    <input type="submit" />
+</form>
+</body>
+</html>

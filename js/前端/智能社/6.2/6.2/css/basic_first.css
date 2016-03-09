@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*清除默认样式*/
+body,div,p,h1,h2,h3,h4,h5,h6,span,ul,ol,li,dl,dd,dt,a,i,strong,b,em img,form,input{ margin:0; padding:0;}
+ul li,ol li{ list-style-type:none;}
+body{ line-height:100%; /*确保字体大小为设置值，消除不必要的空格*/font-size:12px;}
+h1,h2,h3,h4,h5,h6{ line-height:100%; font-size:100%/*继承父级的字体大小*/;}
+a{text-decoration:none; }
+img{ vertical-align:top;}
+a img{ border:none;}
+b,strong{ font-weight:normal;}
+i,em{ font-style:normal;}
+
+/*清除input默认样式*/
+input{ padding:0; border:none 0; outline:none; background:none;}
+input::-ms-clear{ display:none;}
+
+textarea{ overflow:hidden;}/*清除下拉框*/
+
+/*清除表格默认样式*/
+table{ border-collapse:collapse;text-align:center; vertical-align:middle;}/*表格设定宽度，默认不换行*/
+
+.clearFix:after{ clear:both; display:block; content:" "; visibility:hidden; height:0; line-height:0;}
+.clearFix{*zoom:1;}

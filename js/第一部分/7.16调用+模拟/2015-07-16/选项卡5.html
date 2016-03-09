@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+div input{background:#ccc;}
+div input.on{background:yellow;}
+div div{width:200px; height:200px; background:#ccc; display:none;}
+</style>
+<script>
+function tab(id){
+	var oBox = document.getElementById(id);
+	var aBtn = oBox.getElementsByTagName('input');
+	var aDiv = oBox.getElementsByTagName('div');
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].index=i;
+		aBtn[i].onclick=function(){
+			//先清空所有
+			for(var i=0;i<aBtn.length;i++){
+				aBtn[i].className='';
+				aDiv[i].style.display='none';
+			}
+			this.className='on';
+			//改变当前
+			aDiv[this.index].style.display='block';
+		};
+	}
+}
+window.onload=function(){
+	tab('box');
+	tab('box2');
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<input type="button" value="aaa" class="on" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+<div id="box2">
+	<input type="button" value="aaa" class="on" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

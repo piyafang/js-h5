@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+	<style>
+	
+	/*清除默认样式*/
+		body,div,p,h1,h2,h3,h4,h5,h6,span,ul,ol,li,dl,dd,dt,a,i,strong,b,em img,form,input{ margin:0; padding:0;}
+		ul li,ol li{ list-style-type:none;}
+		body{ line-height:100%; /*确保字体大小为设置值，消除不必要的空格*/font-size:12px;}
+		h1,h2,h3,h4,h5,h6{ line-height:100%; font-size:100%/*继承父级的字体大小*/;}
+		a{text-decoration:none; }
+		img{ display:block;}
+		a img{ border:none;}
+		b,strong{ font-weight:normal;}
+		i,em{ font-style:normal;}
+
+		.clearFix:after{ clear:both; display:block; content:" ";}
+		.clearFix{*zoom:1;}
+		
+		.box{ position:relative; margin:100px 100px;}
+		.bg{  width:200px; height:200px;background:#000; opacity:0.3; filter:alpha( opacity=30); position:absolute; top:0; left:0; display:none;}
+		.txt{ position:absolute; left:0; top:0; color:#fff; font-size:18px; padding:20px 10px 0 10px; line-height:30px;  display:none;}
+		.txt dt{ font-size:18px;}
+		.txt .player{ height:30px; background:#96F; width:70px; text-align:center; margin-top:15px;}
+		.txt .txt_3 i{display:block; background:url(../%E6%95%B4%E7%AB%99/%E7%BE%8E%E4%B8%BD%E8%AF%B4/images/mls_global140607.png) no-repeat -49px -22px; width:16px; height:16px; position:absolute; left:10px; top:88px;}
+		.txt .txt_3 b{ padding-left:24px; font-size:14px;}
+		.box:hover .bg{ display:block; cursor:pointer;}
+		.box:hover .txt{ display:block;cursor:pointer;}
+	</style>
+</head>
+
+<body>
+	<div class="box" >
+		<img src="../整站/美丽说/images/zhazhi.png" width="200" height="200" alt="背景图" />
+		<div class="bg"></div>
+		<dl class="txt" >
+			<dt>最美的不是下雨天</dt>
+			<dd><i></i><b>素年锦时</b></dd>
+			<dd class="txt_3"><i></i><b>猎头传媒</b></dd>
+			<dd class="player">播 放</dd>
+		</dl>
+	</div>
+</body>
+</html>

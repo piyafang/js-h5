@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+#box{width:500px; margin:100px auto; overflow:hidden;}
+#box ul,#box div{float:left;}
+#box ul{width:80px; }
+#box ul li{width:80px; height:30px; line-height:30px; text-align:center; background:#CCC; margin:5px 0;}
+#box ul li.on{background:#C90;}
+#box div{width:340px;}
+#box div img{width:100%;}
+#middle{position:relative; top:0; left:0;}
+#box #shadow{position:absolute; bottom:0px; left:0; width:330px; height:30px; line-height:30px; padding-left:10px; color:#fff; font-size:20px; font-weight:bold; background:rgba(0,0,0,0.3)};
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var aLi = oBox.getElementsByTagName('li');
+	var oM = document.getElementById('middle');
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].index=i;
+		aLi[i].onmouseover=function(){
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].className='';
+			}
+			this.className='on';
+			oM.innerHTML='<img src="img/'+this.index+'.jpg" /><div id="shadow">'+this.innerHTML+'</div>';
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul>
+    	<li class="on">皮鞋</li>
+    	<li>运动鞋</li>
+    	<li>凉鞋</li>
+    	<li>拖鞋</li>
+    </ul>
+    <div id="middle">
+    	<img src="img/0.jpg" />
+        <div id="shadow">皮鞋</div>
+    </div>
+	<ul>
+    	<li>棉鞋</li>
+    	<li>靴子</li>
+    	<li>马丁鞋</li>
+    	<li>豆豆鞋</li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

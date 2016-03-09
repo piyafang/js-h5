@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+p{height:30px; line-height:30px; float:left; padding:0 10px; background:#ccc; margin:10px;}
+#menu{width:200px; border:1px solid #000; background:#ccc; position:absolute; top:100px; left:100px; display:none;}
+#menu li{width:200px; height:30px; line-height:30px; text-align:center; font-size:20px; border-bottom:1px dashed #666;}
+</style>
+<script>
+window.onload=function(){
+	var aP = document.getElementsByTagName('p');
+	var oM = document.getElementById('menu');
+	var aItem = oM.children;
+	var oNow = null;
+	for(var i=0;i<aP.length;i++){
+		aP[i].oncontextmenu=function(ev){
+			var oEvent = ev||event;
+			oNow = this;
+			oM.style.left=oEvent.clientX+'px';
+			oM.style.top=oEvent.clientY+'px';
+			oM.style.display='block';
+			return false;
+		};
+	}
+	for(var i=0;i<aItem.length;i++){
+		aItem[i].onmouseover=function(){
+			this.style.background='#f90';
+		};
+		aItem[i].onmouseout=function(){
+			this.style.background='';
+		};
+	}
+	
+	document.onclick=function(){
+		oM.style.display='none';
+	};
+	aItem[0].onclick=function(){
+		window.location.reload();
+	};
+	aItem[1].onclick=function(){
+		document.body.removeChild(oNow);
+	};
+	aItem[2].onclick=function(){
+		oNow.style.background='red';
+	};
+	aItem[3].onclick=function(){
+		oNow.style.background='green';
+	};
+	aItem[4].onclick=function(){
+		oNow.style.background='blue';
+	};
+};
+</script>
+</head>
+
+<body>
+<p>今天太阳好大</p>
+<p>早上下着小雨</p>
+<p>我走在干燥的乡间小路</p>
+<p>遇到了一群正在吃着狼的羊</p>
+<p>放羊的是老爷爷</p>
+<p>羊上骑着葫芦娃</p>
+<ul id="menu">
+	<li>刷新</li>
+	<li>删除</li>
+	<li>变红</li>
+	<li>变绿</li>
+	<li>变蓝</li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

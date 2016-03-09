@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0; padding:0;list-style:none; text-decoration:none;}
+
+</style>
+<script src="myCalendar.js"></script>
+<script>
+window.onload=function(){
+	myCalendar('startDate');
+	myCalendar('endDate');
+};
+</script>
+</head>
+
+<body>
+	<form action="http://www.zhinengshe.com">
+    开始日期:<input type="text" name="startDate" />
+	结束日期:<input type="text" name="endDate" />
+    <input type="submit" />
+</form>
+</body>
+</html>

@@ -1,0 +1,134 @@
+=====================
+	2015-5-15
+=====================
+回顾
+	伪类选择器
+	link 	未访问
+	visited 	访问后
+	hover 	鼠标移入
+	active	鼠标按下
+
+	LVHA
+
+	a  link  visited
+
+	除a以外其他标签只能用hover  active
+
+	省略号
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		overflow:hidden;
+
+	a  下划线
+		text-decoration:none;    取消下划线
+				underline   默认下划线
+				line-through 贯穿线
+				overline    上划线
+
+		border-top:none;
+
+	单位
+		px  %  em 
+			em可以给小数
+
+	font
+		font:italic bold 12px/2em "Microsoft Yahei";
+
+	文本缩进
+		text-indent:2em;
+			正值→
+			负值←
+---------------------------------------------------------
+语义化
+	1.合适的地方放合适的标签
+
+	SEO 
+		排名
+		搜索引擎优化
+
+
+	本身有语义
+		h1 - h6  标题
+		p 	段落
+		em strong  强调
+
+	无语义
+	div span i b
+
+	列表
+		ol 	有序列表
+			li
+
+		ul 	无序列表
+			li
+
+		dl 	定义列表
+			dt
+			dd
+
+	padding 内边距
+		top  right bottom left
+
+	padding加上以后需要减去它本身的距离
+
+	上下padding减高度
+	左右padding减去宽度
+
+	盒子模型
+	width/height   padding  border
+
+	行内元素只支持左右padding
+
+	块元素支持四个方向的padding
+
+	padding两个值的时候
+				上下   左右
+		三个值的时候
+				上  左右   下
+		四个值的时候
+				上   右   下  左
+	外边距
+		margin
+
+	默认间距*{margin:0; padding:0;}
+
+	外联样式表
+		<link type="text/css" rel="stylesheet" href="../css/common.css" />
+
+		可以重用
+
+	margin不改变盒子大小
+		块元素支持四个方向
+		行内元素只支持左右margin
+
+		top  right bottom left
+
+		一个值的时候是四个方向
+		两个值    上下    左右
+		三个值     上    左右  下
+		四个值     上  右  下 左
+
+	margin
+		两个块上下排列
+		第一个块有margin-bottom
+		第二个块有margin-top
+		这个时候会取最大值
+
+	float
+		浮动一个元素之后会脱离文档流
+		用浮动必须请浮动
+		浮动过后会宽度会根据内容撑开
+		
+
+		left
+		right
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	*{ margin: 0; padding: 0;list-style: none;text-decoration: none;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oAll=document.getElementById('all');
+		var oBox=document.getElementById('box');
+		 var aInp=oBox.getElementsByTagName('input');
+		 oAll.onclick=function(){
+			 	for(var i=0;i<aInp.length;i++){
+			 		aInp[i].checked=oAll.checked;
+			 }
+		};
+		 
+		for(var i=0;i<aInp.length;i++){
+			aInp[i].onclick=function(){
+				var count=0;
+				for(var i=0;i<aInp.length;i++){
+					if(aInp[i].checked){
+						count++;
+					}
+				}
+
+				if(count==aInp.length){
+					oAll.checked=true;
+				}else{
+					oAll.checked=false;
+				}
+			};
+		}
+		 
+	};
+</script>
+</head>
+<body>
+	<span>全选：</span><input type="checkbox" id="all" /><hr/>
+	<div id="box">
+		<input type="checkbox" /><input type="checkbox" /><input type="checkbox" /><input type="checkbox" /><input type="checkbox" /><input type="checkbox" />
+	</div>
+	
+
+
+</body>
+</html>

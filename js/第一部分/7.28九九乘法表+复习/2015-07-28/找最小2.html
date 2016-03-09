@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+function findMin(arr,index){
+	//假设一个最小值
+	var iMin = arr[index];
+	//假设一个最小位置
+	var iMinIndex = index;
+	for(var i =index;i<arr.length;i++){
+		if(iMin>arr[i]){
+			iMin = arr[i];
+			iMinIndex = i;
+		}
+	}
+	return iMinIndex;
+}
+var arr = [12,5,45,-1,8,1,-32,32];
+document.write(findMin(arr,0));
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+window.onload=function ()
+{
+	var oS=document.getElementById('s1');
+	
+	var cx=500,cy=300;
+	var r=250;
+	
+	function createPie(start, end, color)
+	{
+		var oP=document.createElementNS('http://www.w3.org/2000/svg', 'path');
+		
+		oP.style.stroke='none';
+		oP.style.fill=color;
+		
+		function calc(r)
+		{
+			//第一步、算起点位置
+			var start_x=cx+Math.sin(d2a(start))*r;
+			var start_y=cy-Math.cos(d2a(start))*r;
+			
+			//第二步、算终点位置
+			var end_x=cx+Math.sin(d2a(end))*r;
+			var end_y=cy-Math.cos(d2a(end))*r;
+			
+			//第三步、放到path里面
+			oP.setAttribute('d',
+				'\
+				M '+cx+' '+cy+' \
+				L '+start_x+' '+start_y+' \
+				A '+r+' '+r+' 0 '+((end-start)>180?1:0)+' 1 '+end_x+' '+end_y+'\
+				Z'
+			);
+		}
+		
+		calc(r);
+		
+		oS.appendChild(oP);
+		
+		
+		
+		
+		
+		oP.calc=calc;
+		
+		return oP;
+	}
+	
+	var op=createPie(0, 120, '#4572a7');
+	createPie(120, 175, '#aa4643');
+	createPie(175, 350, '#89a54e');
+	createPie(350, 360, '#71588f');
+	
+	op.onmouseover=function ()
+	{
+		op.calc(280);
+	};
+	op.onmouseout=function ()
+	{
+		op.calc(250);
+	};
+};
+</script>
+</head>
+
+<body>
+<svg id="s1">
+</svg>
+</body>
+</html>

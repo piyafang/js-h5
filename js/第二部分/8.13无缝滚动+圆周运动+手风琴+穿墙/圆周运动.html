@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0;padding:0; list-style:none; text-decoration:none;}
+	#box{ width:300px;height:300px; border-radius:50%; border:1px solid #000;
+	 position:relative; margin:50px auto;}
+	span{width:40px;height:40px; border-radius:50%; background:#f90; position:absolute;
+	left:50%;top:0; margin-left:-20px; margin-top:-20px; }	
+</style>
+<script>
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var R=oBox.offsetWidth/2;
+		for(var i=0;i<10;i++){
+			var oBall=document.createElement('span');
+			oBox.appendChild(oBall);
+			var a=i*360/10;
+			var x=R+Math.sin(a*Math.PI/180)*R;
+			var y=R-Math.cos(a*Math.PI/180)*R;
+			oBall.style.left=x+'px';	
+			oBall.style.top=y+'px';	
+		}
+		function startMove(obj,iTarget){
+			var start=obj.a||0;
+			var dis=iTarget-start;
+			var count=Math.floor(1000/30);
+			var n=0;
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				n++;
+				var a=1-n/count;
+				var cur=start+dis*(1-Math.pow(a,3));
+				obj.a=cur;
+				var x=R+Math.sin(cur*Math.PI/180)*R;
+				var y=R-Math.cos(cur*Math.PI/180)*R;
+				obj.style.left=x+'px';
+				obj.style.top=y+'px';
+				if(n==count){
+					clearInterval(obj.timer);	
+				}
+			},30);
+		}
+		var aBall=oBox.children;
+		var bOk=true; 
+		document.onclick=function(){
+			for(var i=0;i<aBall.length;i++){
+				if(bOk){
+				
+					var iTarget=i*360/aBall.length;
+					startMove(aBall[i],iTarget);
+				}else{
+					startMove(aBall[i],0);
+				}
+			}
+			bOk=!bOk;
+		};
+		
+	};
+</script>
+</head>
+
+<body>
+	<div id="box">
+		<span></span>
+	</div>
+</body>
+</html>

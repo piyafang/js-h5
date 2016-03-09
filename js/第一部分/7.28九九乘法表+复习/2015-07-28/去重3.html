@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+textarea{width:500px; height:200px;}
+</style>	
+<script>
+window.onload=function(){
+	var oTxt1 = document.getElementsByTagName('textarea')[0];
+	var oTxt2 = document.getElementsByTagName('textarea')[1];
+	var oBtn = document.getElementsByTagName('input')[0];
+	oBtn.onclick=function(){
+		var arr = oTxt1.value.split(' ');
+		var json = {};
+		for(var i =0;i<arr.length;i++){
+			var arr2 = arr[i].split('-');
+			if(json[arr2[0]]){
+				json[arr2[0]]+=Number(arr2[1]);
+			}else{
+				json[arr2[0]]=Number(arr2[1]);
+			}
+		}
+		for(var i in json){
+			oTxt2.value+=i+json[i]+'\n';
+		}
+	};
+};
+</script>
+</head>
+<body>
+	<!--去重计算价格-->
+	<textarea>冰红茶-3.5 百事可乐-4 红牛-5.5 怡宝-4 百岁山-3.5 红牛-5.5 怡宝-4 百岁山-3.5 红牛-5.5 怡宝-4 百岁山-3.5 冰红茶-3.5</textarea><br />
+	<input type="button" value="去重" /><br />
+	<textarea></textarea>
+</body>
+</html>

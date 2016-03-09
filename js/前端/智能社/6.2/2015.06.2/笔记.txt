@@ -1,0 +1,31 @@
+====================
+	2015-6-2
+====================
+
+回顾
+-----------------------
+	框架
+	------------------
+		iframe
+			src="地址"
+			frameborder=""
+			width=""
+			height=""
+			scrolling=""
+		a
+			target=""
+				_blank 新的页面打开
+				_self 	当前页面打开
+				_top	最外面的父级打开
+				-parent	父级打开
+	框架集
+	------------------------------
+		frameset  	
+			<frame />
+
+			 rows="200px,*"   *代表自适应
+			 cols=""
+			 frameborder="0"
+			 scrolling="no"
+
+		注意：页面中加frameset就不能加body

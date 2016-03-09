@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,init-scale=1.0" />
+<style>
+#img1 {width:320px; height:134px; position:absolute; left:0; top:0;}
+</style>
+<script>
+function getDis(x1, y1, x2, y2)
+{
+	var a=x1-x2;
+	var b=y1-y2;
+	
+	return Math.sqrt(a*a+b*b);
+}
+
+function getAng(x1, y1, x2, y2)
+{
+	var a=x2-x1;
+	var b=y2-y1;
+	
+	return Math.atan2(b, a)*180/Math.PI;
+}
+
+window.onload=function ()
+{
+	var oImg=document.getElementById('img1');
+	
+	var rotate=0;
+	oImg.addEventListener('touchstart', function (ev){
+		var touches=ev.targetTouches;
+		
+		//准备活动
+		//缩放
+		//oldW/H
+		var oldW=oImg.offsetWidth;
+		var oldH=oImg.offsetHeight;
+		
+		//oldDis
+		var oldDis=getDis(touches[0].pageX, touches[0].pageY, touches[1].pageX, touches[1].pageY);
+		
+		
+		//oldPageX/Y
+		var oldPageX=touches[0].pageX;
+		var oldPageY=touches[0].pageY;
+		
+		//oldLeft/Top
+		var oldLeft=oImg.offsetLeft;
+		var oldTop=oImg.offsetTop;
+		
+		//旋转
+		//oldAng
+		var oldAng=getAng(touches[0].pageX, touches[0].pageY, touches[1].pageX, touches[1].pageY);
+		
+		var downRotate=rotate;
+		
+		if(ev.targetTouches.length==2)
+		{
+			function move(ev)
+			{
+				var touches=ev.targetTouches;
+				
+				//缩放
+				//newDis
+				var newDis=getDis(touches[0].pageX, touches[0].pageY, touches[1].pageX, touches[1].pageY);
+				
+				//newPageX
+				var newPageX=touches[0].pageX;
+				var newPageY=touches[0].pageY;
+				
+				//旋转
+				var newAng=getAng(touches[0].pageX, touches[0].pageY, touches[1].pageX, touches[1].pageY);
+				
+				//---------------------------------
+				//大小
+				//newW=newDis*oldW/oldDis
+				oImg.style.width=newDis*oldW/oldDis+'px';
+				oImg.style.height=newDis*oldH/oldDis+'px';
+				
+				//位置
+				//newLeft=newPageX-newW*(oldPageX-oldLeft)/oldW
+				oImg.style.left=newPageX-oImg.offsetWidth*(oldPageX-oldLeft)/oldW+'px';
+				oImg.style.top=newPageY-oImg.offsetHeight*(oldPageY-oldTop)/oldH+'px';
+				
+				//旋转
+				var ang=newAng-oldAng;
+				
+				rotate=downRotate+ang;
+				
+				oImg.style.WebkitTransform='rotate('+rotate+'deg)';
+			}
+			function end()
+			{
+				oImg.removeEventListener('touchmove', move, false);
+				oImg.removeEventListener('touchend', end, false);
+			}
+			
+			oImg.addEventListener('touchmove', move, false);
+			oImg.addEventListener('touchend', end, false);
+			
+			ev.preventDefault();
+		}
+		
+		ev.preventDefault();
+	}, false);
+};
+</script>
+</head>
+
+<body>
+<img src="1.png" id="img1" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#tmp_li{display:none;}
+</style>
+<script>
+function template(oTmp,data){
+	var obj = oTmp.cloneNode(true);
+	obj.removeAttribute('id');
+	obj.innerHTML=obj.innerHTML.replace(/\{\$\w+\}/g,function(s){
+		//{$name}  {$age}
+		s = s.substring(2,s.length-1);
+		return data[s];
+	});
+	return obj;
+}
+window.onload=function(){
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oBtn = document.getElementById('btn1');
+	var oTmp = document.getElementById('tmp_li');
+	var oUl = document.getElementsByTagName('ul')[0];
+	oBtn.onclick=function(){
+		var oLi = template(oTmp,{name:oTxt1.value,age:oTxt2.value});
+		oUl.appendChild(oLi);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" id="txt1" />
+<input type="text" id="txt2" />
+<input type="button" value="按钮" id="btn1" />
+<ul>
+	<li id="tmp_li" class="active"><strong style="color:#f90;">我的名字是{$name}</strong>,<em>年龄{$age}</em></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+

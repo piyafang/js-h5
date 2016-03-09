@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="w1     w2 w3"></div>
+
+<script type="text/javascript">
+    //惰性载入函数模式:
+    //例如：一个函数在页面中经常的使用,但是在函数中的某一部分不需要重复的执行,这样我们就把重复的部分放在外面，当第一次加载页面后者第一次执行的时候，我们把处理好，接下来在执行，直接的用这个值就好了
+
+    //实现的是：通过class属性的值获取具有这个样式类的所有的元素
+    //document.getElementsByClassName解决这个的兼容问题
+
+    /*var getElementsByClass = (function () {
+     var flag = document.getElementsByClassName ? true : false;
+     return function (cName, context) {
+     context = context || document;
+     if (flag) {
+     return context.getElementsByClassName(cName);
+     }
+     var ary = [], allNodes = context.getElementsByTagName("*"), reg = new RegExp("(?:^| +)" + cName + "(?: +|$)");
+     for (var i = 0; i < allNodes.length; i++) {
+     var cur = allNodes[i];
+     reg.test(cur.className) ? ary.push(cur) : void 0;
+     }
+     return ary;
+     }
+     })();
+     var w2 = getElementsByClass("w2");
+     var w1 = getElementsByClass("w1", document);*/
+
+
+    //问题：我们的方法在页面中使用多次,每一次使用的时候都会检测一下是否兼容，但是我们知道这样是没有必要的
+
+
+    //检测是否兼容的三种常用的方式:
+    //"getElementsByClassName" in document 如果不兼容返回的是false
+    //document.getElementsByClassName 如果不兼容返回的是undefined
+    //对于在低版本浏览器中报错的还可以用 try{}catch(e){}捕获异常进行特殊的处理
+
+
+    function fn() {
+    }
+    fn.prototype = new Array;
+
+    var f = new fn();
+
+    //console.log(f instanceof Array);
+
+    //在基于原型链的继承过程中，用instanceof来检测数据类型是不准确的
+    //Object.prototype.toString.call()：严格检测数据类型的 ，执行我们Object基类原型上的toString这个方法，把里面的this关键字指向我们想检测的值，返回的结果是，对应的数据类型:"[object Number]"、"[object String]"、"[object Boolean]"、"[object Null]"、"[object Undefined]"、"[object Object]"、"[object Array]"、"[object RegExp]"、"[object Function]"...
+    //console.log(Object.prototype.toString.call([]));
+
+
+    ;
+    (function () {
+        var parObj = {
+            isNum: "Number",
+            isStr: "String",
+            isBoo: "Boolean",
+            isNul: "Null",
+            isUnd: "Undefined",
+            isObj: "Object",
+            isAry: "Array",
+            isFun: "Function",
+            isReg: "RegExp",
+            isDat: "Date"
+        };
+        var isType = function (type) {
+            return function (val) {
+                return Object.prototype.toString.call(val) === "[object " + type + "]";
+            }
+        }
+        var cT = {};
+        for (var key in parObj) {
+            cT[key] = isType(parObj[key]);
+        }
+        window.cT = cT;
+    })();
+    console.log(cT.isNum(12));
+</script>
+</body>
+</html>

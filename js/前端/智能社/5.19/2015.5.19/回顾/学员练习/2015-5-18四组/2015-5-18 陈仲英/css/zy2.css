@@ -1,0 +1,14 @@
+@charset "utf-8";
+*{ margin:0; padding:0; list-style:none;}
+div{ margin:0 auto; width:710px;}
+.tou{ width:710px; height:44px; border-bottom:3px solid #ff7a01; overflow:hidden;}
+h2{ width:143px; height:44px; background:url(../img/4.png) no-repeat left center; line-height:44px; font-size:17px; font-weight:normal; padding-left:35px; float:left;}
+a{  width:49px; height:20px; background:url(../img/5.png); color:#666; text-decoration:none; font-size:12px; line-height:20px; text-align:center; float:right; margin-top:12px; }
+ul{ font-size:12px; width:710px; overflow:hidden; }
+li{ width:118px;  background:5px solid red; overflow:hidden; float:left; margin:13px 30px 30px 0;}
+img{ float:left;}
+.yi{ margin-top:10px; float:left;}
+.er{ color:#999; margin-top:7px; float:left;}
+.san{ width:114px; height:21px; border:1px solid #d3d3d3; margin-top:6px; background:url(../img/8.png); float:left; color:#333333; text-align:center; line-height:21px; }
+.ho{ margin-right:0}
+

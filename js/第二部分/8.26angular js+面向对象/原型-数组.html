@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+	Array.prototype.sum=function(){
+		var result=0;
+		for(var i=0;i<this.length;i++){
+			result+=this[i];
+		}
+		return result;
+	};
+	var arr1=[1,4,7];
+	var arr2=[4,6,5];
+	alert(arr1.sum());
+	alert(arr2.sum());
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style type="text/css">
+	#box{ width: 200px; height: 200px;background: #ccc; transition:all .6s;}
+/*	#box:hover{ transform:translate(0,200px);}
+*/</style>
+<script type="text/javascript">
+	function setStyle(sName,sValue){
+		var oBox=document.getElementById('box');
+		oBox.style[sName]=sValue;
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="变宽" onmouseover="setStyle('width','400px')" />
+	<input type="button" value="变高" onmouseover="setStyle('height','400px')" />
+	<input type="button"  value="变色" onmouseover="setStyle('background','#f90')" />
+	<input type="button"  value="移动" onmouseover="setStyle('marginLeft','200px')" />
+	<div id="box"></div>
+
+</body>
+</html>

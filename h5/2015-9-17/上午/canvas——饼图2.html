@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black;}
+#c1 {background:white;}
+</style>
+<script>
+//角度->弧度
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+function rnd(n, m)
+{
+	return Math.floor(Math.random()*(m-n))+n;
+}
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	var arr=[100,100,200,300,500, 300, 2000, 100, 500];
+	var arrColor=['#4572a7', '#aa4643', '#89a54e', '#4198af', '#db843d'];
+	
+	//画饼——
+	var cx=400, cy=300, r=250;
+	
+	function pie(start, end, color)
+	{
+		gd.beginPath();
+		
+		//线1
+		var a=Math.sin(d2a(start))*r;
+		var b=Math.cos(d2a(start))*r;
+		
+		var x=cx+a;
+		var y=cy-b;
+		
+		gd.moveTo(cx, cy);
+		gd.lineTo(x, y);
+		
+		//线2——弧
+		gd.arc(cx, cy, r, d2a(start-90), d2a(end-90), false);
+		
+		//线3——闭合
+		gd.closePath();
+		
+		gd.fillStyle=color;
+		gd.fill();
+	}
+	
+	//总数
+	var sum=0;
+	for(var i=0;i<arr.length;i++)
+	{
+		sum+=arr[i];
+	}
+	
+	//每个人占多大角度
+	var arrAng=[];
+	for(var i=0;i<arr.length;i++)
+	{
+		arrAng[i]=360*arr[i]/sum;
+	}
+	
+	//画饼
+	var last=0;
+	for(var i=0;i<arrAng.length;i++)
+	{
+		pie(last, last+arrAng[i], arrColor[i%arrColor.length]);
+		last+=arrAng[i];
+	}
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600">
+</canvas>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+var str = '你很烦度度度度度搜度度度度好';
+//找出出现次数最多的字母，出现了几次。
+var json = {};
+for(var i = 0;i<str.length;i++){
+	if(json[str.charAt(i)]){
+		json[str.charAt(i)]++;
+	}else{
+		json[str.charAt(i)]=1;
+	}
+}
+var arr = [];
+for(var i in json){
+	arr.push({code:i,count:json[i]})
+}
+arr.sort(function(j1,j2){
+	return j2.count-j1.count;
+});
+document.write('出现次数最多的是'+arr[0].code+'出现了'+arr[0].count+'次');
+</script>
+</head>
+
+<body>
+</body>
+</html>

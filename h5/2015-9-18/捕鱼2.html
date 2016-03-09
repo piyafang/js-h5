@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+body {background:black; text-align:center;}
+#c1 {background:url(img/game_bg_2_hd.jpg) no-repeat;}
+</style>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+function loadImages(json, fn)
+{
+	var total=0;	//所有的
+	var count=0;	//完成的
+	var images={};
+	
+	for(var name in json)
+	{
+		total++;
+		var url=json[name];
+		
+		var oImg=new Image();
+		
+		oImg.src=url;
+		
+		(function (name){
+			oImg.onload=function ()
+			{
+				images[name]=this;
+				count++;
+				
+				if(count==total)
+				{
+					fn(images);
+				}
+			};
+		})(name);
+	}
+}
+
+window.onload=function ()
+{
+	var oC=document.getElementById('c1');
+	var gd=oC.getContext('2d');
+	
+	var x=10,y=10,i=0;
+	var speed=3;
+	var rotate=30;
+	
+	loadImages({
+		fish1:		'img/fish1.png',
+		cannon1:	'img/cannon1.png'
+	}, function (json){
+		//动——摆动+移动
+		//方向
+		//55*37
+		setInterval(function (){
+			gd.clearRect(0, 0, oC.width, oC.height);
+			
+			gd.save();
+			
+			gd.translate(x+55/2, y+37/2);
+			gd.rotate(d2a(rotate));
+			
+			//x+=3;
+			var speedX=Math.cos(d2a(rotate))*speed;
+			var speedY=Math.sin(d2a(rotate))*speed;
+			
+			x+=speedX;
+			y+=speedY;
+			
+			gd.drawImage(
+				json.fish1,
+				0, 37*i, 55, 37,
+				-55/2, -37/2, 55, 37
+			);
+			
+			gd.restore();
+			
+			i++;
+			if(i==4)i=0;
+		}, 150);
+	});
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+

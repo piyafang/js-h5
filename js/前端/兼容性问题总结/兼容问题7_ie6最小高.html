@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+#div1 {width:200px; height:0px; border:1px solid black;}
+
+#div2 {width:200px; height:0px; border:1px solid black; overflow:hidden;}
+
+#div3 {width:200px; height:0px; border:1px solid black; font-size:0px;}
+</style>
+</head>
+
+<body>
+ie6下，div最小高度也有12px
+<div id="div1"></div>
+<br>
+<br>
+解决方法1：overflow——推荐
+<div id="div2"></div>
+<br>
+<br>
+解决方法2：font-size——这个方法没法缩小到零，最多只能到2px
+<div id="div3"></div>
+</body>
+</html>

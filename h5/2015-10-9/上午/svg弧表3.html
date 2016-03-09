@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<script>
+function d2a(n)
+{
+	return n*Math.PI/180;
+}
+
+window.onload=function ()
+{
+	var cx=400,cy=300;
+	
+	var oHour=document.getElementById('hour');
+	var oMin=document.getElementById('min');
+	var oSec=document.getElementById('sec');
+	
+	function setPath(obj, r, ang)
+	{
+		var x=cx+Math.sin(d2a(ang))*r;
+		var y=cy-Math.cos(d2a(ang))*r;
+		
+		obj.setAttribute(
+			'd',
+			[
+				'M', cx, cy-r,
+				'A', r, r, 0, (ang>180?1:0), 1, x, y
+			].join(' ')
+		);
+	}
+	
+	function tick()
+	{
+		var oDate=new Date();
+		
+		setPath(oHour, 250, 30*(oDate.getHours()%12+oDate.getMinutes()/60));
+		setPath(oMin, 220, (oDate.getMinutes()+oDate.getSeconds()/60)*6);
+		setPath(oSec, 190, oDate.getSeconds()*6);
+	}
+	
+	setInterval(tick, 1000);
+	tick();
+};
+</script>
+</head>
+
+<body>
+<svg width="800" height="600">
+	<path id="hour" style="stroke-width:20; stroke:#32cd33; fill:none;" />
+	<path id="min" style="stroke-width:20; stroke:#fa7c4a; fill:none;" />
+	<path id="sec" style="stroke-width:20; stroke:#6594ec; fill:none;" />
+</svg>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

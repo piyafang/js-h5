@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin:0;padding:0;}
+	body{background:#ccc;}
+	span{ font-size:20px; width:20px;height:20px; line-height:30px;color:#93C; display:inline-block;
+	opacity:0;filter:alpha(opacity:0);}
+</style>
+<script src="move-8-14.js"></script>
+<script>
+	window.onload=function(){
+		var str='  很多人认为，圣经是一部优秀的文学作品，是一部伟大的伦理著作，而非真实的历史事实。十九世纪中叶，达尔文提出进化论学说后，圣经的权威受到严重的挑战，被不少人认为是虚构的、不科学的。为了回答这种挑战，圣经考古学应运而生。此门学科的研究范围包括出土文物鉴定、圣经所记录的古代城镇的发掘、与圣经有关的古文字的译解等等。十九世纪以前，有关圣经的时代背景的知识相当贫乏，一般只有参考圣经的记载和古希腊史学家的著作，而这些著作主要是关于新约的，有关旧约的却极为稀少。圣经考古学虽只有一百多年历史，但已硕果累累，尤其二十世纪以来的许多重大发现，帮助人们建造起圣经的历史架构，并验证了一些过去被怀疑和被嘲笑的圣经故事，充分肯定了圣经的历史性。';
+		
+		for(var i=0;i<str.length;i++){
+			var oS=document.createElement('span');
+			oS.innerHTML=str.charAt(i);
+			document.body.appendChild(oS);
+		}
+		var aS=document.body.children;
+		var timer=0;
+		var i=0;
+		clearInterval(timer);
+		timer=setInterval(function(){
+			startMove(aS[i],{'opacity':1});
+			//aS[i].style.opacity=1;
+			i++;
+			if(i==aS.length){
+				clearInterval(timer)
+			};
+		},150);
+	};
+</script>
+</head>
+
+<body>
+</body>
+</html>
